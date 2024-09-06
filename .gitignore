@@ -1,0 +1,8 @@
+arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-linux-gnueabihf.tar.xz
+arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu.tar.xz
+openssl
+optee_client
+optee_*
+ti-*
+trusted-firmware-a
+.vscode

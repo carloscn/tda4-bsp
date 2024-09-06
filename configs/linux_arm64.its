@@ -1,0 +1,81 @@
+/*
+ * Copyright 2024 Carlos
+ *
+ */
+
+
+/dts-v1/;
+
+/ {
+	description = "arm64 kernel, ramdisk and FDT blob";
+	#address-cells = <1>;
+
+	images {
+		kernel {
+			description = "ARM64 Kernel";
+			data = /incbin/("../linux-imx/arch/arm64/boot/Image.gz");
+			type = "kernel";
+			arch = "arm64";
+			os = "linux";
+			compression = "gzip";
+			load = <0xB0000000>;
+			entry = <0xB0000000>;
+			hash {
+				algo = "sha256";
+			};
+			signature {
+				algo = "sha256,rsa2048";
+				key-name-hint = "dev";
+			};
+		};
+
+		initrd {
+			description = "initrd for arm64";
+			data = /incbin/("../imx8_yocto_tiny_arm64.cpio.gz");
+			type = "ramdisk";
+			arch = "arm64";
+			os = "linux";
+			compression = "none";
+			load = <0x00000000>;
+			entry = <0x00000000>;
+			hash {
+				algo = "sha256";
+			};
+			signature {
+				algo = "sha256,rsa2048";
+				key-name-hint = "dev";
+			};
+		};
+
+        imx8-dtb {
+            description = "imx8-dtb";
+            data = /incbin/("../linux-imx/arch/arm64/boot/dts/freescale/imx8mq-evk.dtb");
+            type = "flat_dt";
+            arch = "arm64";
+            os = "linux";
+            compression = "none";
+            load = <0x90000000>;
+            hash {
+                algo = "sha256";
+            };
+            signature {
+                algo = "sha256,rsa2048";
+                key-name-hint = "dev";
+            };
+        };
+	};
+
+	configurations {
+		imx8 {
+			description = "config for imx8-dtb";
+			kernel = "kernel";
+			ramdisk = "initrd";
+			fdt = "imx8-dtb";
+			signature {
+				algo = "sha256,rsa2048";
+				key-name-hint = "dev";
+				sign-images = "kernel", "fdt","ramdisk";
+			};
+		};
+	};
+};
