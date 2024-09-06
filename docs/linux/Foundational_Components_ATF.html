@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.9. ARM Trusted Firmware-A &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.10. OP-TEE" href="Foundational_Components_OPTEE.html" />
+    <link rel="prev" title="3.8.1. Docker Linux Container Runtime" href="Foundational_Components/Virtualization/Docker.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+      <li><span class="section-number">3.9. </span>ARM Trusted Firmware-A</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="arm-trusted-firmware-a">
+<span id="foundational-components-atf"></span><h1><span class="section-number">3.9. </span>ARM Trusted Firmware-A<a class="headerlink" href="#arm-trusted-firmware-a" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Overview</p>
+<p>Trusted Firmware-A (TF-A) provides a reference implementation of secure world
+software for Armv7-A and Armv8-A, including a Secure Monitor executing at
+Exception Level 3 (EL3).</p>
+<p>ATF is used as the initial start code on ARMv8-A cores for all K3 platforms.
+After setting up the initial core state and applying any needed errata fixes
+it sets up itself as the EL3 monitor handler. Following that, it installs the secure
+world software (OP-TEE) and passes execution on to either the Linux kernel or U-Boot
+in the non-secure world.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Getting the ATF Source Code</p>
+<p>The pre-built TF-A binary should be packaged in TI Processor SDK: &lt;path-to-processor-sdk&gt;/board-support/prebuilt-images/&lt;optional-build-machine-name&gt;/bl31.bin.
+Use this binary since it has been tested with TI Processor SDK.</p>
+<p>If it is not possible to use pre-build binary, use the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git
+<span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>&lt;hash&gt;
+</pre></div>
+</div>
+<p>Where &lt;hash&gt; is the commit shown here: <a class="reference internal" href="../devices/J7_Family/linux/Release_Specific_Release_Notes.html#tf-a-release-notes"><span class="std std-ref">TF-A</span></a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Setting up the toolchain paths</p>
+<p>Refer to <a class="reference internal" href="Overview/GCC_ToolChain.html#yocto-toolchain"><span class="std std-ref">Yocto-built SDK Toolchains</span></a> section to use the toolchain packaged in the Processor SDK (recommended).</p>
+<p>Refer to <a class="reference internal" href="Overview/GCC_ToolChain.html#external-arm-toolchain"><span class="std std-ref">ARM toolchains</span></a> to download and setup ARM toolchains, if the Processor SDK is not used.</p>
+<p>In either of the above setups, the build commands in the next section will assume the below variables are set appropriately.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CROSS_COMPILE_64</span></code></p></li>
+</ul>
+<p class="rubric">Building ATF</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>make<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CROSS_COMPILE_64</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>aarch64<span class="w"> </span><span class="nv">PLAT</span><span class="o">=</span>k3<span class="w"> </span><span class="nv">TARGET_BOARD</span><span class="o">=</span>j784s4<span class="w"> </span><span class="nv">SPD</span><span class="o">=</span>opteed<span class="w"> </span><span class="nv">K3_USART</span><span class="o">=</span>0x8
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Default load locations</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>+---------------------------+------------+
+| ATF image                 | 0x70000000 |
++---------------------------+------------+
+| OP-TEE image              | 0x9e800000 |
++---------------------------+------------+
+| U-Boot/Linux kernel image | 0x80080000 |
++---------------------------+------------+
+| DTB                       | 0x82000000 |
++---------------------------+------------+
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Foundational_Components/Virtualization/Docker.html" class="btn btn-neutral float-left" title="3.8.1. Docker Linux Container Runtime" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Foundational_Components_OPTEE.html" class="btn btn-neutral float-right" title="3.10. OP-TEE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

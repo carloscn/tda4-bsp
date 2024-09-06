@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.10. OP-TEE &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. How to Guides" href="How_to_Guides.html" />
+    <link rel="prev" title="3.9. ARM Trusted Firmware-A" href="Foundational_Components_ATF.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+      <li><span class="section-number">3.10. </span>OP-TEE</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="op-tee">
+<span id="foundational-components-optee"></span><h1><span class="section-number">3.10. </span>OP-TEE<a class="headerlink" href="#op-tee" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Overview</p>
+<p>OP-TEE is a Trusted Execution Environment (TEE) designed as a companion to a
+non-secure Linux kernel running on Arm Cortex-A cores using the TrustZone technology.</p>
+<ol class="arabic simple">
+<li><p>Furthur information about it can be found at: <a class="reference external" href="https://optee.readthedocs.io/en/latest/general/about.html">https://optee.readthedocs.io/en/latest/general/about.html</a></p></li>
+<li><p>Official OP-TEE documentation: <a class="reference external" href="https://optee.readthedocs.io/en/latest">https://optee.readthedocs.io/en/latest</a></p></li>
+<li><p>OP-TEE advisory listing: <a class="reference external" href="https://github.com/OP-TEE/optee_os/security/advisories">https://github.com/OP-TEE/optee_os/security/advisories</a></p></li>
+</ol>
+<p>The OP-TEE binary (bl32.bin/tee-pager_v2.bin) is bundled into tispl.bin and the following are the instructions to build:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Getting the OP-TEE Source Code</p>
+<p>The pre-built OPTEE binary should be packaged in TI Processor SDK: &lt;path-to-processor-sdk&gt;/board-support/prebuilt-images/&lt;optional-build-machine-name&gt;/bl32.bin.
+Use this binary since it has been tested with TI Processor SDK.</p>
+<p>If it is not possible to use pre-build binary, use the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/OP-TEE/optee_os.git
+<span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>&lt;hash&gt;
+</pre></div>
+</div>
+<p>Where &lt;hash&gt; is the OPTEE commit shown here: <a class="reference internal" href="../devices/J7_Family/linux/Release_Specific_Release_Notes.html#optee-release-notes"><span class="std std-ref">OP-TEE</span></a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Setting up the toolchain paths</p>
+<p>Refer to <a class="reference internal" href="Overview/GCC_ToolChain.html#yocto-toolchain"><span class="std std-ref">Yocto-built SDK Toolchains</span></a> section to use the toolchain packaged in the Processor SDK (recommended).</p>
+<p>Refer to <a class="reference internal" href="Overview/GCC_ToolChain.html#external-arm-toolchain"><span class="std std-ref">ARM toolchains</span></a> to download and setup ARM toolchains, if the Processor SDK is not used.</p>
+<p>In either of the above setups, the OP-TEE build commands in the next section will assume the below variables are set appropriately.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CROSS_COMPILE_64</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CROSS_COMPILE_32</span></code></p></li>
+</ul>
+<p class="rubric">Building OP-TEE OS</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">export</span><span class="w"> </span><span class="nv">CFG_CONSOLE_UART</span><span class="o">=</span>0x8
+</pre></div>
+</div>
+<ul>
+<li><p>Building the OPTEE image</p>
+<pre class="literal-block">$ make CROSS_COMPILE=&quot;$CROSS_COMPILE_32&quot; CROSS_COMPILE64=&quot;$CROSS_COMPILE_64&quot; PLATFORM=k3-j784s4 CFG_ARM64_core=y</pre>
+</li>
+<li><p>Building the OPTEE image with debug parameters</p>
+<pre class="literal-block">$ make CROSS_COMPILE=&quot;$CROSS_COMPILE_32&quot; CROSS_COMPILE64=&quot;$CROSS_COMPILE_64&quot; PLATFORM=k3-j784s4 CFG_ARM64_core=y CFG_TEE_CORE_LOG_LEVEL=2 CFG_TEE_CORE_DEBUG=y</pre>
+</li>
+</ul>
+<p class="rubric">Secure Storage with RPMB (For HS)</p>
+<p>OP-TEE provides secure storage functionality. TI SoCs with HS configuration have a
+KEK embedded in them that is programmed across OP-TEE instances that are distributed
+in a derived manner. Each HS device has its own HUK signing key (DKEK) which is different
+from other HS devices.</p>
+<p>For enabling RPMB support along with secure storage, additional flags need to be passed to
+the build instructions. The information for the flags can be found here.
+<a class="reference external" href="https://optee.readthedocs.io/en/latest/architecture/secure_storage.html">https://optee.readthedocs.io/en/latest/architecture/secure_storage.html</a></p>
+<p>There is a hybrid mode in which both the flags i.e <cite>CFG_REE_FS=y</cite> and <cite>CFG_RPMB_FS=y</cite> are enabled.
+This mode stores the state of the Secure Storage directory in RPMB partition to check for the
+integrity of the data present in it. It is the recommended way.</p>
+<p>E.g. For enabling hybrid mode of RPMB along with REE_FS</p>
+<pre class="literal-block">$ make CROSS_COMPILE64=&quot;$CROSS_COMPILE_64&quot; PLATFORM=k3-j784s4 CFG_ARM64_core=y CFG_REE_FS=y CFG_RPMB_FS=y</pre>
+<p>OPTEE-client also needs to be updated to enable the use of real
+emmc instead of the virtual emmc that is enabled by default</p>
+<p class="rubric">Getting OP-TEE Client source code</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/OP-TEE/optee_client
+</pre></div>
+</div>
+<p class="rubric">Building OP-TEE Client with RPMB support</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>make<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CROSS_COMPILE_64</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">PLATFORM</span><span class="o">=</span>k3<span class="w"> </span><span class="nv">CFG_TEE_SUPP_LOG_LEVEL</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">RPMB_EMU</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">CFG_ARM64_core</span><span class="o">=</span>y
+</pre></div>
+</div>
+<p>Now update optee-client binary and libraries on your SD card with the generated ones
+in <cite>out/export/usr</cite> folder</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric">Building u-boot with OP-TEE OS</p>
+<p>As of Processor SDK 9.0, the signing functionality earlier provided by the TI Security Development Package, has
+been integrated within U-Boot itself. This means tee-pager_v2.bin does not need to be signed before being packaged
+in tispl.bin in U-Boot for HS devices.</p>
+<p>Expected binary output</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Generated binary: tee-pager_v2.bin</p></li>
+<li><p>Binary saved saved in: &lt;path-to-optee&gt;/out/arm-plat-k3/core</p></li>
+</ol>
+</div></blockquote>
+<p>Integrate binary output into U-boot</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Go to u-boot folder &lt;path-to-u-boot&gt;</p></li>
+<li><p>Re-build U-boot with A72/A53 instructions found under: <a class="reference internal" href="Foundational_Components/U-Boot/UG-General-Info.html#build-u-boot-label"><span class="std std-ref">Build U-Boot</span></a>, but with the TEE parameter pointing to the newly built tee-pager_v2.bin. i.e. TEE=&lt;path-to-optee&gt;/out/arm-plat-k3/core/tee-pager_v2.bin</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>tee-pager_v2.bin may be called bl32.bin in other documentation.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Foundational_Components_ATF.html" class="btn btn-neutral float-left" title="3.9. ARM Trusted Firmware-A" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="How_to_Guides.html" class="btn btn-neutral float-right" title="4. How to Guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

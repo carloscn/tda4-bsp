@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.1.5. SD, eMMC and USB &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.1.6. SPI" href="UG-SPI.html" />
+    <link rel="prev" title="3.1.1.4. NAND" href="UG-NAND.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="UG-General-Info.html">3.1.1.1. General Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DFU.html">3.1.1.2. USB Device Firmware Upgrade (DFU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Network.html">3.1.1.3. Network (Wired or USB Client)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NAND.html">3.1.1.4. NAND</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.1.5. SD, eMMC and USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SPI.html">3.1.1.6. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-QSPI.html">3.1.1.7. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NOR.html">3.1.1.8. NOR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UART.html">3.1.1.9. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SATA.html">3.1.1.10. SATA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UFS.html">3.1.1.11. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DDR3.html">3.1.1.12. DDR3 ECC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-HyperBus.html">3.1.1.13. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-RemoteProc.html">3.1.1.14. RemoteProc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Users-Guide.html"><span class="section-number">3.1.1. </span>User’s Guide</a> &raquo;</li>
+      <li><span class="section-number">3.1.1.5. </span>SD, eMMC and USB</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="sd-emmc-and-usb">
+<h1><span class="section-number">3.1.1.5. </span>SD, eMMC and USB<a class="headerlink" href="#sd-emmc-and-usb" title="Permalink to this headline">¶</a></h1>
+<p>The commands for using SD cards, eMMC flash and USB mass storage devices
+(hard drives, flash drives, card readers, etc) are all very similar. The
+biggest difference is that on some hardware we may not be able to run
+U-Boot out of ROM from the storage device as it is unsupported. Once
+U-Boot is running however, any of these may be used for the kernel and
+the root filesystem.</p>
+<p>Usually in all the platforms there will be two MMC instances of which one
+would be SD and the other would be eMMC. The index of them can vary from
+one class of platforms to the other. For a given platform, the device
+number (device num) can be found in the following way,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">U-Boot# mmc list</span>
+<span class="go">sdhci@fa10000: 0 (eMMC)</span>
+<span class="go">sdhci@fa00000: 1 (SD)</span>
+</pre></div>
+</div>
+<div class="section" id="partitioning-emmc-from-u-boot">
+<span id="partitioning-emmc-from-uboot"></span><h2><span class="section-number">3.1.1.5.1. </span>Partitioning eMMC from U-Boot<a class="headerlink" href="#partitioning-emmc-from-u-boot" title="Permalink to this headline">¶</a></h2>
+<p>The eMMC device typically ships without any partition table. We make use
+of the GPT support in U-Boot to write a GPT partition table to eMMC. In
+this case we need to use the <strong>uuidgen</strong> program on the host to create
+the UUIDs used for the disk and each partition.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uuidgen
+<span class="go">...first uuid...</span>
+<span class="gp">$ </span>uuidgen
+<span class="go">...second uuid...</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">U-Boot # printenv partitions</span>
+<span class="go">uuid_disk=${uuid_gpt_disk};name=rootfs,start=2MiB,size=-,uuid=${uuid_gpt_rootfs}</span>
+<span class="go">U-Boot # setenv uuid_gpt_disk ...first uuid...</span>
+<span class="go">U-Boot # setenv uuid_gpt_rootfs ...second uuid...</span>
+<span class="go">U-Boot # gpt write mmc &lt;device num&gt; ${partitions} /* &lt;device num&gt; is device index obtained from mmc list for eMMC */</span>
+</pre></div>
+</div>
+<p>A reset is required for the partition table to be visible.</p>
+</div>
+<div class="section" id="updating-an-sd-card-from-a-host-pc">
+<h2><span class="section-number">3.1.1.5.2. </span>Updating an SD card from a host PC<a class="headerlink" href="#updating-an-sd-card-from-a-host-pc" title="Permalink to this headline">¶</a></h2>
+<p>This section assume that you have created an SD card using the
+script “create-sdcard.sh” packaged inside the installer or have
+made a compatible layout by hand. In this case, you will need to copy
+the all the boot images (<strong>MLO</strong> and <strong>u-boot.img</strong> for 32-bit platforms,
+<strong>tiboot3.bin</strong>, <strong>sysfw.itb</strong>, <strong>tispl.bin</strong>, <strong>u-boot.img</strong> for K3 based platforms,
+except AM64x and J7200 in which <strong>sysfw.itb</strong> is already combined with <strong>tiboot3.bin</strong>)
+files to the <em>boot</em> partition. At this point, the card is now bootable in the SD card slot.
+We default to using <strong>/boot/${bootfile}</strong> on the <em>rootfs</em> partition and the device tree file
+loaded from <strong>/boot</strong> with the same name as in the kernel.</p>
+</div>
+<div class="section" id="updating-an-sd-card-or-emmc-using-dfu">
+<h2><span class="section-number">3.1.1.5.3. </span>Updating an SD card or eMMC using DFU<a class="headerlink" href="#updating-an-sd-card-or-emmc-using-dfu" title="Permalink to this headline">¶</a></h2>
+<p>To see the list of available places to write to (in DFU terms,
+altsettings) use the <strong>mmc part</strong> command to list the partitions on the
+MMC device and <strong>printenv dfu_alt_settings_mmc</strong> or
+<strong>dfu_alt_settings_emmc</strong> to see how they are mapped and exposed to
+<strong>dfu-util</strong>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">U-Boot# mmc part</span>
+
+<span class="go">Partition Map for MMC device 0  --   Partition Type: DOS</span>
+
+<span class="go">Partition     Start Sector     Num Sectors     Type</span>
+<span class="go">    1                   63          144522       c Boot</span>
+<span class="go">    2               160650         1847475      83</span>
+<span class="go">    3              2024190         1815345      83</span>
+<span class="go">U-Boot# printenv dfu_alt_info_mmc</span>
+<span class="go">dfu_alt_info=boot part 0 1;rootfs part 0 2;MLO fat 0 1;u-boot.img fat 0 1;uEnv.txt fat 0 1&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above command mmc part lists the partitions in the current
+selected device. So, to list the partitions in eMMC or SD one needs to
+switch to the required device by using the command <code class="docutils literal notranslate"><span class="pre">mmc</span> <span class="pre">dev</span> <span class="pre">&lt;device</span>
+<span class="pre">num&gt;</span></code>.</p>
+</div>
+<p>This means that you can tell dfu-util to write anything to any of:</p>
+<ul class="simple">
+<li><p>boot</p></li>
+<li><p>rootfs</p></li>
+<li><p>MLO</p></li>
+<li><p>u-boot.img</p></li>
+<li><p>uEnv.txt</p></li>
+</ul>
+<p>And that the <strong>MLO</strong>, <strong>u-boot.img</strong> and <strong>uEnv.txt</strong> files are to be
+written to a FAT filesystem.</p>
+<p>To start DFU on the target on the first MMC device:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">U-Boot # setenv dfu_alt_info ${dfu_alt_info_mmc}</span>
+<span class="go">U-Boot # dfu 0 mmc 0</span>
+</pre></div>
+</div>
+<p>On boards like AM57x GP EVM or BeagleBoard x15, where the second USB
+instance is used as USB client, the dfu command becomes:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">U-Boot # dfu 1 mmc 0</span>
+</pre></div>
+</div>
+<p>Then on the host PC to write <strong>MLO</strong> to an existing boot partition:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dfu-util<span class="w"> </span>-D<span class="w"> </span>MLO<span class="w"> </span>-a<span class="w"> </span>MLO
+</pre></div>
+</div>
+<p>On the host PC to overwrite the current boot partition contents with a
+new created on the host FAT filesystem image:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dfu-util<span class="w"> </span>-D<span class="w"> </span>fat.img<span class="w"> </span>-a<span class="w"> </span>boot
+</pre></div>
+</div>
+<div class="section" id="updating-an-sd-card-or-emmc-with-raw-writes">
+<h3><span class="section-number">3.1.1.5. </span>Updating an SD card or eMMC with RAW writes<a class="headerlink" href="#updating-an-sd-card-or-emmc-with-raw-writes" title="Permalink to this headline">¶</a></h3>
+<p>In some cases it is desirable to write <strong>MLO</strong> and <strong>u-boot.img</strong> as raw
+images to the MMC device rather than in a filesystem. eMMC requires
+this, for example. In that case, the following is how to program these
+files and not overwrite the partition table on the device. We assume
+that the files exist on a SD card. In addition you may wish to write a
+filesystem image to the device, so an example is also provided.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">U-Boot # mmc dev 0</span>
+<span class="go">U-Boot # mmc rescan</span>
+<span class="go">U-Boot # mmc dev 1</span>
+<span class="go">U-Boot # fatload mmc 0 ${loadaddr} MLO</span>
+<span class="go">U-Boot # mmc write ${loadaddr} 0x100 0x100</span>
+<span class="go">U-Boot # mmc write ${loadaddr} 0x200 0x100</span>
+<span class="go">U-Boot # fatload mmc 0 ${loadaddr} u-boot.img</span>
+<span class="go">U-Boot # mmc write ${loadaddr} 0x300 0x400</span>
+<span class="go">U-Boot # fatload mmc 0 ${loadaddr} rootfs.ext4</span>
+<span class="go">U-Boot # mmc write ${loadaddr} 0x1000 ...rootfs.ext4 size in bytes divided by 512, in hex...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="booting-linux-from-sd-card-or-emmc">
+<span id="boot-linux-from-mmc"></span><h2><span class="section-number">3.1.1.5.4. </span>Booting Linux from SD card or eMMC<a class="headerlink" href="#booting-linux-from-sd-card-or-emmc" title="Permalink to this headline">¶</a></h2>
+<p>Within the default environment for each board that supports SD/MMC there
+is a boot command called <strong>mmcboot</strong> that will set the boot arguments
+correctly and start the kernel. In this case however, you must first run
+<strong>loaduimagefat</strong> or <strong>loaduimage</strong> to first load the kernel into
+memory. For the exact details of each use <strong>printenv</strong> on the
+<strong>mmcboot</strong>, <strong>loaduimagefat</strong> and <strong>loaduimage</strong> variables and then in
+turn <strong>printenv</strong> other sub-sections of the command. The most important
+variables here are <strong>mmcroot</strong> and <strong>mmcrootfstype</strong>.</p>
+</div>
+<div class="section" id="booting-tiboot3-bin-tispl-bin-and-u-boot-img-from-emmc-boot-partition-for-k3-class-of-socs">
+<span id="mmc-boot-label"></span><h2><span class="section-number">3.1.1.5.5. </span>Booting tiboot3.bin, tispl.bin and u-boot.img from eMMC boot partition (For K3 class of SoCs)<a class="headerlink" href="#booting-tiboot3-bin-tispl-bin-and-u-boot-img-from-emmc-boot-partition-for-k3-class-of-socs" title="Permalink to this headline">¶</a></h2>
+<p>The K3 based processors support booting from the eMMC boot partition.
+The following commands can be used to download tiboot3.bin, tispl.bin and
+u-boot.img from an SD card and write them to the eMMC boot0 partition at
+respective addresses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, SDK chooses boot0 partition for eMMC boot (equivalently done
+using <code class="docutils literal notranslate"><span class="pre">mmc</span> <span class="pre">partconf</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">1</span></code>). Boot partition can also be switched from
+boot0 to boot1 by using <code class="docutils literal notranslate"><span class="pre">mmc</span> <span class="pre">partconf</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">1</span></code>. This enables booting from
+boot1 partition. Switch to boot1 partition using <code class="docutils literal notranslate"><span class="pre">mmc</span> <span class="pre">dev</span> <span class="pre">0</span> <span class="pre">2</span></code> and follow
+regular eMMC write commands (seen below). On rebooting with regular eMMC dip
+switch settings, boot1 partition will be used.</p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; mmc dev 0 1</span>
+<span class="go">=&gt; fatload mmc 1 ${loadaddr} tiboot3.bin</span>
+<span class="go">=&gt; mmc write ${loadaddr} 0x0 0x400</span>
+<span class="go">=&gt; fatload mmc 1 ${loadaddr} tispl.bin</span>
+<span class="go">=&gt; mmc write ${loadaddr} 0x400 0x1000</span>
+<span class="go">=&gt; fatload mmc 1 ${loadaddr} u-boot.img</span>
+<span class="go">=&gt; mmc write ${loadaddr} 0x1400 0x2000</span>
+</pre></div>
+</div>
+<p>For loading images from a FAT partition on a different media, replace mmc with the required
+media. For example, to load images from a FAT partition on a USB Storage device connected to
+the zeroth instance of usb,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; fatload usb 0 ${loadaddr} &lt;file name&gt;</span>
+</pre></div>
+</div>
+<p>To give the ROM access to the boot partition, the following commands must be
+used for the first time:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; mmc partconf 0 1 1 1</span>
+<span class="go">=&gt; mmc bootbus 0 2 0 0</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>eMMC layout:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">           boot0 partition (8 MB)                        user partition</span>
+<span class="go">   0x0+----------------------------------+      0x0+-------------------------+</span>
+<span class="go">      |     tiboot3.bin (512 KB)         |         |                         |</span>
+<span class="go"> 0x400+----------------------------------+         |                         |</span>
+<span class="go">      |       tispl.bin (2 MB)           |         |                         |</span>
+<span class="go">0x1400+----------------------------------+         |        rootfs           |</span>
+<span class="go">      |       u-boot.img (4 MB)          |         |                         |</span>
+<span class="go">0x3400+----------------------------------+         |                         |</span>
+<span class="go">      |      environment (128 KB)        |         |                         |</span>
+<span class="go">0x3500+----------------------------------+         |                         |</span>
+<span class="go">      |   backup environment (128 KB)    |         |                         |</span>
+<span class="go">0x3600+----------------------------------+         |                         |</span>
+<span class="go">      |          sysfw (1 MB)            |         |                         |</span>
+<span class="go">0x3E00+----------------------------------+         +-------------------------+</span>
+</pre></div>
+</div>
+<p>To boot from UDA parition of eMMC. Please set following</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; mmc partconf 0 1 7 1</span>
+<span class="go">=&gt; mmc bootbus 0 2 0 0</span>
+</pre></div>
+</div>
+<p><strong>Enable warm reset</strong></p>
+<p>On eMMC devices, warm reset will not work if EXT_CSD[162] bit is unset since the reset input signal
+will be ignored. Warm reset is required to be enabled in order to the eMMC to be in a “clean state”
+on power on reset so that ROM can do clean enumeration.</p>
+<p>To set the EXT_CSD[162] bit, stop at U-boot prompt and execute the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; mmc rst-function 0 1</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>WARNING : This is a write-once field.</p>
+</div>
+<p>For more information, please refer to the latest U-boot documentation: <a class="reference external" href="https://docs.u-boot.org/en/latest/usage/cmd/mmc.html">https://docs.u-boot.org/en/latest/usage/cmd/mmc.html</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Boot kernel from eMMC</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>rootfs is written to the user partition. The user partition is
+first required to be formatted as a ext4 file system and then the rootfs
+has to be written. It is not possible to format a partition to ext4 in
+U-Boot. It is required to boot to kernel and write rootfs to user partition
+after formatting it to ext4. Kernel image and DT are expected to be present
+in the /boot folder of rootfs.</p>
+</div>
+<p>To boot kernel from eMMC, use the following commands after writing rootfs to user partition:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; setenv mmcdev 0</span>
+<span class="go">=&gt; setenv bootpart 0</span>
+<span class="go">=&gt; boot</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="booting-to-u-boot-prompt-from-usb-storage">
+<span id="u-boot-usb-msc-boot-label"></span><h2><span class="section-number">3.1.1.5.6. </span>Booting to U-Boot prompt from USB storage<a class="headerlink" href="#booting-to-u-boot-prompt-from-usb-storage" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While using <code class="docutils literal notranslate"><span class="pre">usb</span> <span class="pre">reset</span></code> or <code class="docutils literal notranslate"><span class="pre">usb</span> <span class="pre">start</span></code> command in U-Boot, or booting from a USB Mass storage device, some of the USB
+devices fail to get detected. This issue is seen because these USB
+devices are failing to follow the spec for power good delay. It can be
+resolved by overriding the power good delay using the environment variable
+<code class="docutils literal notranslate"><span class="pre">usb_pgood_delay</span></code>. Setting it to 2000 should be good enough for all cases.</p>
+</div>
+</div>
+<div class="section" id="booting-linux-from-usb-storage">
+<h2><span class="section-number">3.1.1.5.7. </span>Booting Linux from USB storage<a class="headerlink" href="#booting-linux-from-usb-storage" title="Permalink to this headline">¶</a></h2>
+<p>This feature is currently not supported.</p>
+</div>
+<div class="section" id="steps-for-working-around-sd-card-issues">
+<h2><span class="section-number">3.1.1.5.8. </span>Steps for working around SD card issues<a class="headerlink" href="#steps-for-working-around-sd-card-issues" title="Permalink to this headline">¶</a></h2>
+<p>In some cases issue can be seen while using some SD cards, like</p>
+<ol class="arabic">
+<li><p>Error while trying to initialize,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">U-Boot SPL 2021.01-g74fc69c889 (May 19 2022 - 02:44:29 +0000)</span>
+<span class="go">SYSFW ABI: 3.1 (firmware rev 0x0008 &#39;8.3.2--v08.03.02 (Jolly Jellyfi&#39;)</span>
+<span class="go">Trying to boot from MMC2</span>
+<span class="go">spl: mmc init failed with error: -110</span>
+<span class="go">SPL: failed to boot from all boot devices</span>
+<span class="gp">#</span><span class="c1">## ERROR ### Please RESET the board ###</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Given below are the list of various workarounds that can be done in the
+device tree node to get SD card working. The workarounds are ordered in
+increasing order of reducing performance.</p>
+<p>All the  mentioned below, are to be done in the MMCSD device tree node
+corresponding to the SD instance. This is usually the first(index starting
+from zero) instance.</p>
+<ol class="arabic">
+<li><p>Restricting to a given speed mode</p>
+<ul>
+<li><p>By default the U-Boot driver tries to enumerate a SD card in the highest
+supported speed mode. Given below is the order in which the driver
+tries to enumerate a SD card</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SDR104</p></li>
+<li><p>SDR50</p></li>
+<li><p>DDR50</p></li>
+<li><p>SD HS</p></li>
+<li><p>SD legacy</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>These speed capabilites can be masked using device tree property
+sdhci-caps-mask.</p>
+<blockquote>
+<div><ul>
+<li><p>Limit to SDR50: <code class="docutils literal notranslate"><span class="pre">sdhci-caps-mask</span> <span class="pre">=</span> <span class="pre">&lt;0x00000004</span> <span class="pre">0x00000000&gt;</span></code></p></li>
+<li><p>Limit to DDR50: <code class="docutils literal notranslate"><span class="pre">sdhci-caps-mask</span> <span class="pre">=</span> <span class="pre">&lt;0x00000006</span> <span class="pre">0x00000000&gt;</span></code></p></li>
+<li><p>Limit to SD HS: <code class="docutils literal notranslate"><span class="pre">sdhci-caps-mask</span> <span class="pre">=</span> <span class="pre">&lt;0x00000007</span> <span class="pre">0x00000000&gt;</span></code></p></li>
+<li><p>Limit to SD legacy: <code class="docutils literal notranslate"><span class="pre">sdhci-caps-mask</span> <span class="pre">=</span> <span class="pre">&lt;0x00000007</span> <span class="pre">0x00200000&gt;</span></code></p>
+<blockquote>
+<div><div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="na">sdhci1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* SD/MMC */</span>
+<span class="w">   </span><span class="n">vmmc-supply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">vdd_mmc1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">   </span><span class="n">vqmmc-supply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">vdd_sd_dv</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">   </span><span class="n">pinctrl-names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;default&quot;</span><span class="p">;</span>
+<span class="w">   </span><span class="n">pinctrl-0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">main_mmc1_pins_default</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">   </span><span class="n">ti</span><span class="p">,</span><span class="n">driver-strength-ohm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">50</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">   </span><span class="n">disable-wp</span><span class="p">;</span>
+<span class="w">   </span><span class="n">sdhci-caps-mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x00000006</span><span class="w"> </span><span class="mh">0x00000000</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Limiting to DDR50 speed mode */</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p>Increase power cycle period</p>
+<blockquote>
+<div><ul>
+<li><p>Increasing the delay while power cycling the SD card. This can be done
+by increasing the delay value in the diff indicated below,</p>
+<blockquote>
+<div><div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/drivers/mmc/mmc.c b/drivers/mmc/mmc.c</span>
+<span class="gh">index f486e2a2c364..38cc956b3d53 100644</span>
+<span class="gd">--- a/drivers/mmc/mmc.c</span>
+<span class="gi">+++ b/drivers/mmc/mmc.c</span>
+<span class="gu">@@ -2761,7 +2761,7 @@ static int mmc_power_cycle(struct mmc *mmc)</span>
+<span class="w"> </span>        * SD spec recommends at least 1ms of delay. Let&#39;s wait for 2ms
+<span class="w"> </span>        * to be on the safer side.
+<span class="w"> </span>        */
+<span class="gd">-       udelay(2000);</span>
+<span class="gi">+       udelay(4000);</span>
+<span class="w"> </span>       return mmc_power_on(mmc);
+<span class="w"> </span>}
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Reduce the bus width</p>
+<blockquote>
+<div><ul>
+<li><p>The SD interface supports a bus width of 4. It can be reduced to 1 by
+changing the <code class="docutils literal notranslate"><span class="pre">bus-width</span></code> device tree property from 4 to 1.</p>
+<blockquote>
+<div><div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/arch/arm/dts/k3-am62-main.dtsi b/arch/arm/dts/k3-am62-main.dtsi</span>
+<span class="gh">index c06ec7355035..4ab29b6aa4b7 100644</span>
+<span class="gd">--- a/arch/arm/dts/k3-am62-main.dtsi</span>
+<span class="gi">+++ b/arch/arm/dts/k3-am62-main.dtsi</span>
+<span class="gu">@@ -373,7 +373,7 @@</span>
+<span class="w"> </span>               ti,itap-del-sel-sdr12 = &lt;0x0&gt;;
+<span class="w"> </span>               ti,itap-del-sel-sdr25 = &lt;0x0&gt;;
+<span class="w"> </span>               ti,clkbuf-sel = &lt;0x7&gt;;
+<span class="gd">-               bus-width = &lt;4&gt;;</span>
+<span class="gi">+               bus-width = &lt;1&gt;;</span>
+<span class="w"> </span>};
+
+<span class="w"> </span>sdhci2: mmc@fa20000 {
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="UG-NAND.html" class="btn btn-neutral float-left" title="3.1.1.4. NAND" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="UG-SPI.html" class="btn btn-neutral float-right" title="3.1.1.6. SPI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.1. Users Guide &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.2.2. Kernel Drivers" href="Foundational_Components_Kernel_Drivers.html" />
+    <link rel="prev" title="3.2. Kernel" href="Foundational_Components_Kernel.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.2.1. Users Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">3.2.1.1. Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-kernel-source-code">3.2.1.2. Getting the Kernel Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preparing-to-build">3.2.1.3. Preparing to Build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-kernel">3.2.1.4. Configuring the Kernel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiling-the-sources">3.2.1.5. Compiling the Sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-kernel-fitimage-for-high-security-device-gp-devices">3.2.1.6. Creating the kernel fitImage for high security device / GP devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-the-kernel">3.2.1.7. Installing the Kernel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+      <li><span class="section-number">3.2.1. </span>Users Guide</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="users-guide">
+<span id="linux-kernel-users-guide"></span><h1><a class="toc-backref" href="#id1"><span class="section-number">3.2.1. </span>Users Guide</a><a class="headerlink" href="#users-guide" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="linux-kernel-user-s-guide">
+<p class="topic-title">Linux Kernel User’s Guide</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#users-guide" id="id1">Users Guide</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#getting-the-kernel-source-code" id="id3">Getting the Kernel Source Code</a></p></li>
+<li><p><a class="reference internal" href="#preparing-to-build" id="id4">Preparing to Build</a></p>
+<ul>
+<li><p><a class="reference internal" href="#compiler" id="id5">Compiler</a></p></li>
+<li><p><a class="reference internal" href="#cleaning-the-kernel-sources" id="id6">Cleaning the Kernel Sources</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#configuring-the-kernel" id="id7">Configuring the Kernel</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-default-configurations" id="id8">Using Default Configurations</a></p></li>
+<li><p><a class="reference internal" href="#customizing-the-configuration" id="id9">Customizing the Configuration</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#compiling-the-sources" id="id10">Compiling the Sources</a></p>
+<ul>
+<li><p><a class="reference internal" href="#compiling-the-kernel" id="id11">Compiling the Kernel</a></p></li>
+<li><p><a class="reference internal" href="#compiling-the-device-tree-binaries" id="id12">Compiling the Device Tree Binaries</a></p></li>
+<li><p><a class="reference internal" href="#compiling-the-kernel-modules" id="id13">Compiling the Kernel Modules</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#creating-the-kernel-fitimage-for-high-security-device-gp-devices" id="id14">Creating the kernel fitImage for high security device / GP devices</a></p>
+<ul>
+<li><p><a class="reference internal" href="#describing-fit-source" id="id15">Describing FIT source</a></p></li>
+<li><p><a class="reference internal" href="#generating-the-fitimage" id="id16">Generating the fitImage</a></p></li>
+<li><p><a class="reference internal" href="#build-uboot-again" id="id17">Build uboot again</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#installing-the-kernel" id="id18">Installing the Kernel</a></p>
+<ul>
+<li><p><a class="reference internal" href="#installing-the-kernel-image-and-device-tree-binaries" id="id19">Installing the Kernel Image and Device Tree Binaries</a></p></li>
+<li><p><a class="reference internal" href="#installing-the-kernel-modules" id="id20">Installing the Kernel Modules</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">3.2.1.1. </span>Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This document will cover the basic steps for building the Linux kernel.</p>
+</div>
+<div class="section" id="getting-the-kernel-source-code">
+<h2><a class="toc-backref" href="#id3"><span class="section-number">3.2.1.2. </span>Getting the Kernel Source Code</a><a class="headerlink" href="#getting-the-kernel-source-code" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to get access to the kernel source code is by
+downloading and installing the Processor SDK Linux J784s4. You can download the
+latest Processor SDK Linux J784s4 installer from <a class="reference external" href="https://www.ti.com/tool/download/PROCESSOR-SDK-LINUX-J784S4/">J784S4-Linux-SDK-Download-page</a>. Once
+installed, the kernel source code is included in the SDK’s board-support
+directory. For your convenience the sources also includes the kernel’s
+git repository including commit history.
+Alternatively, Kernel sources can directly be fetched from GIT.</p>
+</div>
+<div class="section" id="preparing-to-build">
+<h2><a class="toc-backref" href="#id4"><span class="section-number">3.2.1.3. </span>Preparing to Build</a><a class="headerlink" href="#preparing-to-build" title="Permalink to this headline">¶</a></h2>
+<p>It is important that when using the GCC toolchain provided with the SDK
+or stand alone from TI that you do <strong>NOT</strong> source the
+<em>environment-setup</em> file included with the toolchain when building the
+kernel. Doing so will cause the compilation of host side components
+within the kernel tree to fail.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following commands are intended to be run from the root of the
+kernel tree unless otherwise specified. The root of the kernel tree is
+the top-level directory and can be identified by looking for the
+“MAINTAINERS” file.</p>
+</div>
+<div class="section" id="compiler">
+<span id="kernel-compiler"></span><h3><a class="toc-backref" href="#id5"><span class="section-number">3.2.1.3.1. </span>Compiler</a><a class="headerlink" href="#compiler" title="Permalink to this headline">¶</a></h3>
+<p>Refer to <a class="reference internal" href="Overview/GCC_ToolChain.html#yocto-toolchain"><span class="std std-ref">Yocto-built SDK Toolchains</span></a> section to use the toolchain packaged in the Processor SDK (recommended).</p>
+<p>Refer to <a class="reference internal" href="Overview/GCC_ToolChain.html#external-arm-toolchain"><span class="std std-ref">ARM toolchains</span></a> to download and setup ARM toolchains, if the Processor SDK is not used.</p>
+<p>In either of the above setups, the build commands in the next section will assume the below variables are set appropriately.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CROSS_COMPILE_64</span></code></p></li>
+</ul>
+<p>The current compiler supported for this release along with download
+location can be found in the release notes for the kernel release.</p>
+</div>
+<div class="section" id="cleaning-the-kernel-sources">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">3.2.1.3.2. </span>Cleaning the Kernel Sources</a><a class="headerlink" href="#cleaning-the-kernel-sources" title="Permalink to this headline">¶</a></h3>
+<p>Prior to compiling the Linux kernel it is often a good idea to make sure
+that the kernel sources are clean and that there are no remnants left
+over from a previous build.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The next step will delete any saved .config file in the kernel tree as
+well as the generated object files. If you have done a previous
+configuration and do not wish to lose your configuration file you should
+save a copy of the configuration file (.config) before proceeding.</p>
+</div>
+<p>The command to clean the kernel is:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; distclean</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="configuring-the-kernel">
+<h2><a class="toc-backref" href="#id7"><span class="section-number">3.2.1.4. </span>Configuring the Kernel</a><a class="headerlink" href="#configuring-the-kernel" title="Permalink to this headline">¶</a></h2>
+<p>Before compiling the Linux kernel it needs to be configured to select
+what components will become part of the kernel image, which components
+will be build as dynamic modules, and which components will be left out
+all together. This is done using the Linux kernel configuration system.</p>
+<p>It is often easiest to start with a base default configuration and then
+customize it for your use case if needed. Apply Linux kernel configurations with
+a command of the form:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; &lt;defconfig&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="using-default-configurations">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">3.2.1.4.1. </span>Using Default Configurations</a><a class="headerlink" href="#using-default-configurations" title="Permalink to this headline">¶</a></h3>
+<p>For this sdk, the defconfig found in arch/arm64/configs is used to create the prebuilt
+files. We recommend users to use this kernel configuration (or at least use it
+as a starting point).</p>
+<p>For example, to apply the recommended kernel configuration for K3 devices, use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; defconfig ti_arm64_prune.config</span>
+</pre></div>
+</div>
+<p>The config fragments found in &lt;path-to-ti-linux-kernel&gt;/kernel/configs can be used to trim/add
+features when building a kernel that targets only TI EVMs. Append a config fragment to the end
+of “make” command like above to add/remove features.</p>
+<p>After the configuration step has run the full configuration file is
+saved to the root of the kernel tree as .config. Any further
+configuration changes are based on this file until it is cleaned up by
+doing a kernel clean as mentioned above.</p>
+</div>
+<div class="section" id="customizing-the-configuration">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">3.2.1.4.2. </span>Customizing the Configuration</a><a class="headerlink" href="#customizing-the-configuration" title="Permalink to this headline">¶</a></h3>
+<p>When you want to customize the kernel configuration the easiest way is
+to use the built in kernel configuration systems. One popular configuration
+system is menuconfig. menuconfig is an ncurses based configuration utility.</p>
+<p>To invoke the kernel configuration you simply use a command like:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; &lt;config type&gt;</span>
+</pre></div>
+</div>
+<p>i.e. for menuconfig the command would look like</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; menuconfig</span>
+</pre></div>
+</div>
+<p>Once the configuration window is open you can then select which kernel
+components should be included in the build. Exiting the configuration
+will save your selections to a file in the root of the kernel tree
+called .config.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="compiling-the-sources">
+<h2><a class="toc-backref" href="#id10"><span class="section-number">3.2.1.5. </span>Compiling the Sources</a><a class="headerlink" href="#compiling-the-sources" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="compiling-the-kernel">
+<h3><a class="toc-backref" href="#id11"><span class="section-number">3.2.1.5.1. </span>Compiling the Kernel</a><a class="headerlink" href="#compiling-the-kernel" title="Permalink to this headline">¶</a></h3>
+<p>By default U-boot expects to boot kernel <cite>Image</cite>, DTB, and DTOs found in root/boot of the
+SD card if using SD/MMC boot. The exception is for HS-SE (High Security - Security Enforced)
+devices where the FIT image (Flattened Image Tree) named <cite>fitImage</cite> will boot by default.</p>
+<p>The FIT image includes the kernel <cite>Image</cite>, DTB, and DTOs. Booting with the FIT image could be
+enabled/disabled by setting/resetting u-boot environment variable <cite>boot_fit</cite>. If <cite>boot_fit</cite> is set
+to <cite>1</cite>, then u-boot will boot the FIT image found in root/boot of the SD card.</p>
+<p>Once the kernel has been configured it must be compiled to generate the bootable kernel <cite>Image</cite>
+as well as any dynamic kernel modules that were selected. To rebuild kernel <cite>Image</cite> to boot as
+is or for FIT image boot, use this command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; Image</span>
+</pre></div>
+</div>
+<p>This will result in a kernel image file being created in the
+arch/arm64/boot/ directory called Image.</p>
+</div>
+<div class="section" id="compiling-the-device-tree-binaries">
+<span id="kernel-users-guide-compiling-the-device-tree-binaries"></span><h3><a class="toc-backref" href="#id12"><span class="section-number">3.2.1.5.2. </span>Compiling the Device Tree Binaries</a><a class="headerlink" href="#compiling-the-device-tree-binaries" title="Permalink to this headline">¶</a></h3>
+<p>Each TI evm has an unique device tree
+binary file required by the kernel. Therefore, you will need to build
+and install the correct dtb for the target device. TI device tree files
+are located in arch/arm64/boot/dts/ti. Below list various TI evms and the
+matching device tree file.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Boards</p></th>
+<th class="head"><p>Device Tree File</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AM62Ax SK</p></td>
+<td><p>k3-am62a7-sk.dts</p></td>
+</tr>
+<tr class="row-odd"><td><p>AM62x LP SK</p></td>
+<td><p>k3-am62-lp-sk.dts</p></td>
+</tr>
+<tr class="row-even"><td><p>AM62SIP SK / AM62x SK</p></td>
+<td><p>k3-am625-sk.dts</p></td>
+</tr>
+<tr class="row-odd"><td><p>AM64x EVM</p></td>
+<td><p>k3-am642-evm.dts</p></td>
+</tr>
+<tr class="row-even"><td><p>AM64x SK</p></td>
+<td><p>k3-am642-sk.dts</p></td>
+</tr>
+<tr class="row-odd"><td><p>AM65x EVM / AM65x IDK</p></td>
+<td><p>k3-am654-base-board.dts,
+daughter cards use .dtso files</p></td>
+</tr>
+<tr class="row-even"><td><p>J721e EVM</p></td>
+<td><p>k3-j721e-common-proc-board.dts</p></td>
+</tr>
+<tr class="row-odd"><td><p>J721e SK</p></td>
+<td><p>k3-j721e-sk.dts</p></td>
+</tr>
+<tr class="row-even"><td><p>J7200 EVM</p></td>
+<td><p>k3-j7200-common-proc-board.dts</p></td>
+</tr>
+<tr class="row-odd"><td><p>J721S2 EVM</p></td>
+<td><p>k3-j721s2-common-proc-board.dts</p></td>
+</tr>
+<tr class="row-even"><td><p>AM68 SK</p></td>
+<td><p>k3-am68-sk-base-board.dts</p></td>
+</tr>
+<tr class="row-odd"><td><p>J784S4 EVM</p></td>
+<td><p>k3-j784s4-evm.dts</p></td>
+</tr>
+<tr class="row-even"><td><p>AM69 SK</p></td>
+<td><p>k3-am69-sk.dts</p></td>
+</tr>
+<tr class="row-odd"><td><p>J722S EVM</p></td>
+<td><p>k3-j722s-evm.dts</p></td>
+</tr>
+</tbody>
+</table>
+<p>To build an individual device tree file find the name of the dts file
+for the board you are using and replace the .dts extension with .dtb.
+Then run the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make DTC_FLAGS=-@ ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; ti/&lt;dt filename&gt;.dtb</span>
+</pre></div>
+</div>
+<p>The compiled device tree file with be located in arch/arm64/boot/dts/ti.</p>
+<p>For example, the AM64x EVM device tree file is named
+k3-am642-evm.dts. To build the device tree binary you would run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make DTC_FLAGS=-@ ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; ti/k3-am642-evm.dtb</span>
+</pre></div>
+</div>
+<p>Alternatively, you can build every device tree binary with command</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; dtbs</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compiling-the-kernel-modules">
+<h3><a class="toc-backref" href="#id13"><span class="section-number">3.2.1.5.3. </span>Compiling the Kernel Modules</a><a class="headerlink" href="#compiling-the-kernel-modules" title="Permalink to this headline">¶</a></h3>
+<p>By default the majority of the Linux drivers used in the sdk are not
+integrated into the kernel image file (Image). These drivers are built as
+dynamic modules. The command to build these modules is:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make ARCH=arm64 CROSS_COMPILE=&quot;$CROSS_COMPILE_64&quot; modules</span>
+</pre></div>
+</div>
+<p>This will result in .ko (kernel object) files being placed in the kernel
+tree. These .ko files are the dynamic kernel modules.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you make a change to the kernel which requires you to recompile
+the kernel, then you should also recompile the kernel modules and
+reinstall the kernel modules. Otherwise your kernel modules may refuse to
+load, which will result in a loss of functionality.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-the-kernel-fitimage-for-high-security-device-gp-devices">
+<span id="fitimage-for-hs"></span><h2><a class="toc-backref" href="#id14"><span class="section-number">3.2.1.6. </span>Creating the kernel fitImage for high security device / GP devices</a><a class="headerlink" href="#creating-the-kernel-fitimage-for-high-security-device-gp-devices" title="Permalink to this headline">¶</a></h2>
+<p>SDKs have pre-built FIT images that contain the default Kernel and DTB files.
+But developers may want to deploy and test new Kernel and DTB without going
+through the standard build system. For the specific purpose, board specific
+fitImage.its will be present in the prebuilt-images directory.</p>
+<p>Pre-requisites ( Already part of SDK installations ):</p>
+<ul class="simple">
+<li><p>Uboot build directory for ARMV8</p></li>
+<li><p>Linux Image and DTB</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>GP/HS-FS devices will also enforce authentication if booting fitImage. To
+disable authentication enforcement, FIT_SIGNATURE_ENFORCE needs to be
+disabled in defconfig for the specific board during uboot build.</p>
+</div>
+<div class="section" id="describing-fit-source">
+<h3><a class="toc-backref" href="#id15"><span class="section-number">3.2.1.6.1. </span>Describing FIT source</a><a class="headerlink" href="#describing-fit-source" title="Permalink to this headline">¶</a></h3>
+<p>FIT Image is a packed structure containing binary blobs and configurations.
+The Kernel FIT Image that we have has Kernel Image, DTB and the DTBOs</p>
+<div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="nf">kernel-1</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Linux kernel&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cp">/incbin/(&quot;linux.bin&quot;)</span><span class="p">;</span>
+<span class="w">        </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;kernel&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">arch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;arm64&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">os</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;linux&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">compression</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gzip&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">load</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x81000000</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x81000000</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">        </span><span class="nf">hash-1</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">algo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sha512&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="p">};</span>
+<span class="nf">fdt-ti_k3-j721e-common-proc-board.dtb</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Flattened Device Tree blob&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cp">/incbin/(&quot;arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dtb&quot;)</span><span class="p">;</span>
+<span class="w">        </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flat_dt&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">arch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;arm64&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">compression</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">load</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x83000000</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">        </span><span class="nf">hash-1</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">algo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sha512&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="p">};</span>
+<span class="nf">fdt-ti_k3-j721e-evm-virt-mac-client.dtbo</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Flattened Device Tree blob&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cp">/incbin/(&quot;arch/arm64/boot/dts/ti/k3-j721e-evm-virt-mac-client.dtbo&quot;)</span><span class="p">;</span>
+<span class="w">        </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;flat_dt&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">arch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;arm64&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">compression</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">load</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x83080000</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">        </span><span class="nf">hash-1</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">algo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sha512&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Change the path in data variables to point to the respective files in your
+local machine.</p>
+<p>For e.g change “linux.bin” to
+“&lt;path-to-tisdk&gt;/board-support/prebuilt-images/Image”.</p>
+<p>The new addition to the FIT from 8.6 to 9.0 is the FIT Signature.</p>
+<div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="nf">conf-ti_k3-j721e-common-proc-board.dtb</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Linux kernel, FDT blob&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">fdt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fdt-ti_k3-j721e-common-proc-board.dtb&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;kernel-1&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nf">signature-1</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">algo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sha512,rsa4096&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">key-name-hint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;custMpk&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">sign-images</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;kernel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;fdt&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Specify all images you need the signature to authenticate as a part of
+sign-images. The key-name-hint needs to be changed if you are using some
+other key other than the TI dummy key that we are using for this example.
+It should be the name of the file containing the keys.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Generating new set of keys:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>keys
+<span class="gp">$ </span>openssl<span class="w"> </span>genpkey<span class="w"> </span>-algorithm<span class="w"> </span>RSA<span class="w"> </span>-out<span class="w"> </span>keys/dev.key<span class="w"> </span><span class="se">\</span>
+-pkeyopt<span class="w"> </span>rsa_keygen_bits:4096<span class="w"> </span>-pkeyopt<span class="w"> </span>rsa_keygen_pubexp:65537
+<span class="gp">$ </span>openssl<span class="w"> </span>req<span class="w"> </span>-batch<span class="w"> </span>-new<span class="w"> </span>-x509<span class="w"> </span>-key<span class="w"> </span>keys/dev.key<span class="w"> </span>-out<span class="w"> </span>keys/dev.crt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="generating-the-fitimage">
+<h3><a class="toc-backref" href="#id16"><span class="section-number">3.2.1.6.2. </span>Generating the fitImage</a><a class="headerlink" href="#generating-the-fitimage" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For signing a secondary platform like SK boards, you’ll require
+additional steps</p>
+<ul>
+<li><p>Change the CONFIG_DEFAULT_DEVICE_TREE</p>
+<blockquote>
+<div><p>For e.g</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/configs/j721e_evm_a72_defconfig b/configs/j721e_evm_a72_defconfig</span>
+<span class="gh">index a5c1df7e0054..6d0126d955ef 100644</span>
+<span class="gd">--- a/configs/j721e_evm_a72_defconfig</span>
+<span class="gi">+++ b/configs/j721e_evm_a72_defconfig</span>
+<span class="gu">@@ -13,7 +13,7 @@ CONFIG_CUSTOM_SYS_INIT_SP_ADDR=0x80480000</span>
+<span class="w"> </span>CONFIG_ENV_SIZE=0x20000
+<span class="w"> </span>CONFIG_DM_GPIO=y
+<span class="w"> </span>CONFIG_SPL_DM_SPI=y
+<span class="gd">-CONFIG_DEFAULT_DEVICE_TREE=&quot;k3-j721e-common-proc-board&quot;</span>
+<span class="gi">+CONFIG_DEFAULT_DEVICE_TREE=&quot;k3-j721e-sk&quot;</span>
+<span class="w"> </span>CONFIG_SPL_TEXT_BASE=0x80080000
+<span class="w"> </span>CONFIG_DM_RESET=y
+<span class="w"> </span>CONFIG_SPL_MMC=y
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Change the binman nodes to package u-boot.dtb for the correct set of platform</p>
+<blockquote>
+<div><p>For e.g</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/arch/arm/dts/k3-j721e-binman.dtsi b/arch/arm/dts/k3-j721e-binman.dtsi</span>
+<span class="gh">index 673be646b1e3..752fa805fe8d 100644</span>
+<span class="gd">--- a/arch/arm/dts/k3-j721e-binman.dtsi</span>
+<span class="gi">+++ b/arch/arm/dts/k3-j721e-binman.dtsi</span>
+<span class="gu">@@ -299,8 +299,8 @@</span>
+#define SPL_J721E_SK_DTB &quot;spl/dts/k3-j721e-sk.dtb&quot;
+
+#define UBOOT_NODTB &quot;u-boot-nodtb.bin&quot;
+<span class="gd">-#define J721E_EVM_DTB &quot;u-boot.dtb&quot;</span>
+<span class="gd">-#define J721E_SK_DTB &quot;arch/arm/dts/k3-j721e-sk.dtb&quot;</span>
+<span class="gi">+#define J721E_EVM_DTB &quot;arch/arm/dts/k3-j721e-common-proc-board.dtb&quot;</span>
+<span class="gi">+#define J721E_SK_DTB &quot;u-boot.dtb&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<p>This step will embed the public key in the u-boot.dtb file that was already
+built during the initial u-boot build.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkimage -r -f fitImage.its -k $UBOOT_PATH/board/ti/keys -K $UBOOT_PATH/build/$ARMV8/dts/dt.dtb fitImage</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have another set of keys then change the -k argument to point to
+the folder where your keys are present, the build requires the presence
+of both .key and .crt file.</p>
+</div>
+</div>
+<div class="section" id="build-uboot-again">
+<h3><a class="toc-backref" href="#id17"><span class="section-number">3.2.1.6.3. </span>Build uboot again</a><a class="headerlink" href="#build-uboot-again" title="Permalink to this headline">¶</a></h3>
+<p>The updated u-boot.dtb needs to be packed in u-boot.img for authentication
+so rebuild uboot ARMV8 without changing any parameters.</p>
+<p>Refer to <a class="reference internal" href="Overview_Top_Level_Makefile.html#top-level-makefile"><span class="std std-ref">Simplified SDK Build Using Top-Level Makefile</span></a></p>
+</div>
+</div>
+<div class="section" id="installing-the-kernel">
+<h2><a class="toc-backref" href="#id18"><span class="section-number">3.2.1.7. </span>Installing the Kernel</a><a class="headerlink" href="#installing-the-kernel" title="Permalink to this headline">¶</a></h2>
+<p>Once the Linux kernel, dtb files and modules have been compiled they
+must be installed. In the case of the kernel image this can be installed
+by copying the kernel image file to the location where it is going to be read
+from. The device tree binaries should also be copied to the same
+directory that the kernel image was copied to.</p>
+<div class="section" id="installing-the-kernel-image-and-device-tree-binaries">
+<h3><a class="toc-backref" href="#id19"><span class="section-number">3.2.1.7.1. </span>Installing the Kernel Image and Device Tree Binaries</a><a class="headerlink" href="#installing-the-kernel-image-and-device-tree-binaries" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd &lt;kernel sources dir&gt;</span>
+<span class="go">sudo cp arch/arm64/boot/Image &lt;rootfs path&gt;/boot</span>
+<span class="go">sudo cp arch/arm64/boot/dts/ti/&lt;dt file&gt;.dtb &lt;rootfs path&gt;/boot</span>
+</pre></div>
+</div>
+<p>For example, if you wanted to copy the kernel image and AM64x EVM
+device tree file to the rootfs partition of a SD card you would
+enter the below commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd &lt;kernel sources dir&gt;</span>
+<span class="go">sudo cp arch/arm64/boot/Image /media/rootfs/boot</span>
+<span class="go">sudo cp arch/arm64/boot/dts/ti/k3-am642-evm.dtb /media/rootfs/boot</span>
+</pre></div>
+</div>
+<p>Starting with U-boot 2013.10, the kernel and device tree binaries are read from
+the root file system’s boot directory when booting from MMC/EMMC. (NOT from the
+/boot/ partition on the MMC). This would mean you copy the kernel image and device
+tree binaries to /media/rootfs/boot instead of /media/boot.</p>
+</div>
+<div class="section" id="installing-the-kernel-modules">
+<h3><a class="toc-backref" href="#id20"><span class="section-number">3.2.1.7.2. </span>Installing the Kernel Modules</a><a class="headerlink" href="#installing-the-kernel-modules" title="Permalink to this headline">¶</a></h3>
+<p>To install the kernel modules you use another make command similar to
+the others, but with an additional parameter which give the base
+location where the modules should be installed. This command will create
+a directory tree from that location like lib/modules/&lt;kernel version&gt;
+which will contain the dynamic modules corresponding to this version of
+the kernel. The base location should usually be the root of your target
+file system. The general format of the command is:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo make ARCH=arm64  INSTALL_MOD_PATH=&lt;path to root of file system&gt; modules_install</span>
+</pre></div>
+</div>
+<p>For example if you are installing the modules on the rootfs partition of
+the SD card you would do:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo make ARCH=arm64 INSTALL_MOD_PATH=/media/rootfs modules_install</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Append <strong>INSTALL_MOD_STRIP=1</strong> to the make modules_install command to
+reduce the size of the resulting installation</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Foundational_Components_Kernel.html" class="btn btn-neutral float-left" title="3.2. Kernel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Foundational_Components_Kernel_Drivers.html" class="btn btn-neutral float-right" title="3.2.2. Kernel Drivers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

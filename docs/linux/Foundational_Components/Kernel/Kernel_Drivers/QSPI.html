@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.16. OSPI/QSPI &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.2.2.17. SERDES" href="SERDES/SERDES.html" />
+    <link rel="prev" title="3.2.2.15.1. DFS" href="Power_Management/pm_dfs.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.16. </span>OSPI/QSPI</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ospi-qspi">
+<h1><span class="section-number">3.2.2.16. </span>OSPI/QSPI<a class="headerlink" href="#ospi-qspi" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="introduction-linux-qspi-ug">Introduction</p>
+<p>Octal Serial Peripheral Interface (OSPI) is a SPI module that has x8 IO
+lines. Quad Serial Peripheral Interface (QSPI) has x4 IO lines. These
+controllers are mainly used to interface with Octal or Quad SPI flashes. OSPI
+is backward compatible with QSPI. These modules can also work in dual
+(x2) and single (x1) modes.</p>
+<p>OSPI and QSPI controllers on TI SoCs support memory mapped IO interfaces,
+which provide a direct interface for accessing data from the external SPI
+flash, thereby simplifying software requirements. These controllers work
+only in master mode.</p>
+<p class="rubric" id="supported-devices-kernel-qspi">Supported Devices</p>
+<p>There are two variants of OSPI/QSPI controller IPs on various TI SoCs.
+The table below provides a mapping of driver and capabilities for
+different TI SoCs:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 17%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>SoC Family</p></th>
+<th class="head"><p>capability</p></th>
+<th class="head"><p>Driver</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AM437x</p></td>
+<td><p>QSPI</p></td>
+<td><p>drivers/spi/spi-ti-qspi.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>DRA7xx/AM57xx</p></td>
+<td><p>QSPI</p></td>
+<td><p>drivers/spi/spi-ti-qspi.c</p></td>
+</tr>
+<tr class="row-even"><td><p>66AK2Gx</p></td>
+<td><p>QSPI</p></td>
+<td><p>drivers/spi/spi-cadence-quadspi.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>AM654/J721e</p></td>
+<td><p>1x OSPI,
+1x QSPI</p></td>
+<td><p>drivers/spi/spi-cadence-quadspi.c</p></td>
+</tr>
+<tr class="row-even"><td><p>AM62x</p></td>
+<td><p>1x OSPI,
+1x QSPI</p></td>
+<td><p>drivers/spi/cadence_qspi.c</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all OSPI flashes can be supported. Users are recommended to check
+whether or not the OSPI flash part chosen for custom board designs meets all
+the criteria listed at <a class="reference external" href="https://e2e.ti.com/support/processors/f/791/t/946418">https://e2e.ti.com/support/processors/f/791/t/946418</a></p>
+</div>
+<p class="rubric">Driver Features</p>
+<p>OSPI controllers support Double Data Rate (DDR) mode in Octal
+configuration wherein data can be read on both edges of the clock.</p>
+<p class="rubric" id="memory-mapped-read-support">Memory mapped read support</p>
+<p>Once the controller is configured in memory map mode, the whole
+flash memory is available as a memory region at SoC specific address.
+This region can be accessed using normal memcpy() (or mem-to-mem dma
+copy). Controller hardware will internally communicate with
+SPI flash over SPI bus and get the requested data. This mode provides
+the best throughput and is the default mode in the SDK.</p>
+<p class="rubric" id="supported-spi-modes">Supported SPI modes</p>
+<p>spi-ti-qspi.c driver supports all clock and polarity modes defined in
+the table “SPI Clock Modes Definition” of particular SoC’s TRM. But make
+sure that the selected mode is supported by the clocking requirements of
+the device as per the device’s datasheet.</p>
+<p>spi-cadence-quadspi.c driver supports standard SPI mode 0 only.</p>
+<p class="rubric" id="dma-support">DMA support</p>
+<p>Driver uses mem-to-mem DMA copy on top of OSPI/QSPI memory mapped port during
+read from flash for maximum throughput and reduced CPU load.</p>
+<p class="rubric" id="driver-architecture-kernel-qspi">Driver Architecture</p>
+<p>Following diagram shows the QSPI driver stack:</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../../_images/QSPI_architecture.png" src="../../../../_images/QSPI_architecture.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">QSPI driver software stack</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The QSPI driver can be used both to access SPI flash devices via mtd
+subsystem or access generic SPI devices (like SPI touchscreen) via SPI
+framework.</p>
+<p>The OSPI driver stack is shown in the following diagram:</p>
+<div class="figure align-default" id="id2">
+<img alt="../../../../_images/linux-ospi.png" src="../../../../_images/linux-ospi.png" />
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">OSPI driver software stack</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>OSPI does not support interfacing with non flash SPI slaves.</p>
+<p class="rubric" id="driver-configuration-qspi">Driver Configuration</p>
+<p class="rubric" id="source-location-qspi">Source Location</p>
+<p>The source file for the QSPI driver can be found at: drivers/spi/spi-ti-qspi.c under Linux kernel source tree.</p>
+<p>OSPI driver is at: drivers/spi/spi-cadence-quadspi.c under Linux kernel source tree.
+This driver also supports QSPI version of the same IP.</p>
+<p class="rubric" id="kconfig-options-qspi">Kernel Configuration Options</p>
+<p>The driver can be built into the kernel or can be compiled as module and
+loaded into the kernel dynamically.</p>
+<p class="rubric" id="enabling-qspi-driver-configurations">Enabling OSPI/QSPI Driver Configurations</p>
+<p>Following needs to be enabled to access OSPI/QSPI flash: TI QSPI controller
+driver, Cadence OSPI controller driver, and SPI NOR framework in the kernel via
+menuconfig.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>OSPI/QSPI drivers and their dependencies are enabled by default in
+the SDK images. So this section can be skipped in that case.</p>
+</div>
+<p>Start the Linux Kernel Configuration tool:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ make menuconfig  ARCH=arm
+</pre></div>
+</div>
+<p>To enable QSPI controller driver:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers  ---&gt;
+ [*] SPI support  ---&gt;
+   &lt;*&gt;   DRA7xxx QSPI controller support
+</pre></div>
+</div>
+<p>To enable SPI NOR framework:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers  ---&gt;
+  &lt;*&gt; Memory Technology Device (MTD) support  ---&gt;
+    &lt;*&gt;   SPI-NOR device support  ---&gt;
+</pre></div>
+</div>
+<p>To enable spi-cadence-quadspi driver:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers  ---&gt;
+  [*] SPI support ---&gt;
+    &lt;*&gt;   Cadence Quad SPI controller
+</pre></div>
+</div>
+<p>To enable them as modules, make &lt;*&gt; as &lt;M&gt;.</p>
+<p>Enabling UBIFS filesystem support:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>File systems  ---&gt;
+  [*] Miscellaneous filesystems  ---&gt;
+    &lt;*&gt;   UBIFS file system support
+</pre></div>
+</div>
+<p class="rubric" id="dt-configuration-kernel-qspi">DT Configuration</p>
+<p>Refer to Documentation/devicetree/bindings/spi/ti_qspi.txt under
+kernel source tree for spi-ti-qspi controller driver’s DT bindings and
+their usage.</p>
+<p>For spi-cadence-quadspi controller refer to Documentation/devicetree/bindings/mtd/cadence-quadspi.txt
+for DT bindings and their usage.</p>
+<p>To configure OSPI/QSPI flash partitions and flash related DT bindings refer
+to Documentation/devicetree/bindings/mtd/jedec,spi-nor.txt and
+Documentation/devicetree/bindings/mtd/partition.txt.</p>
+<p class="rubric" id="driver-usage-qspi">Driver Usage</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although OSPI and QSPI are different at hardware level, from
+Linux point of view, both OSPI and QSPI are managed in the same way and
+are exposed as /dev/mtdX devices to the user space. Therefore, there is
+virtually no difference to end user even though OSPI and QSPI use
+different drivers underneath. Therefore this section applies to both
+OSPI and QSPI.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On J721E EVM, switch SW3.1 should be in OFF position at the time
+of powering on the board to access OSPI flash.</p>
+</div>
+<p>Load UBI module for using ubi commands:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$modprobe ubi
+</pre></div>
+</div>
+<p>This should create /dev/mtdX entries for every partition defined in DT
+or via command line arguments. MTD abstracts all types of flashes and,
+therefore, both OSPI and QSPI appear as MTD devices. To see all MTD
+partitions in the system run:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$cat /proc/mtd
+</pre></div>
+</div>
+<p>Here is an example output (name varies depending on what is passed in DT
+or via command line arguments):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dev:    size   erasesize  name
+mtd0: 00080000 00010000 &quot;QSPI.U_BOOT&quot;
+mtd1: 00080000 00010000 &quot;QSPI.U_BOOT.backup&quot;
+mtd2: 00010000 00010000 &quot;QSPI.U-BOOT-SPL_OS&quot;
+mtd3: 00010000 00010000 &quot;QSPI.U_BOOT_ENV&quot;
+mtd4: 00010000 00010000 &quot;QSPI.U-BOOT-ENV.backup&quot;
+mtd5: 00800000 00010000 &quot;QSPI.KERNEL&quot;
+mtd6: 036d0000 00010000 &quot;QSPI.FILESYSTEM&quot;
+</pre></div>
+</div>
+<p class="rubric" id="testing-kernel-qspi"><span id="testing-kernel-qspi-label"></span>Testing</p>
+<p class="rubric" id="using-mtd-utils">Using mtd-utils</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ cat /proc/mtd       /* Should list QSPI partitions */
+$ flash_erase  /dev/mtd6 0 0  /* Erase entire /dev/mtd6 */
+$ dd if=/dev/random of=tmp_write.txt bs=1 count=num  /* num = bytes to write to flash */
+$ mtd_debug write /dev/mtd6 0 num tmp_write.txt  /* write to num bytes to flash */
+$ mtd_debug read /dev/mtd6 0 num tmp_read.txt /* /* read to num bytes to flash */
+$ diff tmp_read.txt tmp_write.txt /* should be NULL */
+</pre></div>
+</div>
+<p class="rubric" id="using-dd-command">Using dd command</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ cat /proc/mtd       /* Should list QSPI partitions */
+$ flash_erase  /dev/mtd6 0 0  /* Erase entire /dev/mtd6 */
+$ dd if=/dev/random of=tmp_write.txt bs=1 count=num  /* num = bytes to write to flash */
+$ dd if=tmp_write.txt of=/dev/mtd6 bs=num count=1 /* write to num bytes to flash */
+$ dd if=/dev/mtd6 of=tmp_read.txt bs=num count=1  /* read to num bytes to flash */
+$ diff tmp_read.txt tmp_write.txt /* should be NULL */
+</pre></div>
+</div>
+<p class="rubric" id="using-ubifs-on-flash">Using UBIFS on flash</p>
+<p>Make sure UBIFS filesystem is enabled in the kernel (refer to <a class="reference external" href="#enabling-qspi-driver-configurations">this
+section</a> for more information).</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root~# ubiformat /dev/mtd9
+ubiformat: mtd9 (nor), size 23199744 bytes (22.1 MiB), 354 eraseblocks of 65536 bytes (64.0 KiB), min. I/O size 1 bytes
+libscan: scanning eraseblock 353 -- 100 % complete
+ubiformat: 354 eraseblocks are supposedly empty
+ubiformat: formatting eraseblock 353 -- 100 % complete
+root:~# ubiattach -p /dev/mtd9
+[  270.874428] ubi0: attaching mtd9
+[  270.914131] ubi0: scanning is finished
+[  270.921788] ubi0: attached mtd9 (name &quot;QSPI.file-system&quot;, size 22 MiB)
+[  270.928405] ubi0: PEB size: 65536 bytes (64 KiB), LEB size: 65408 bytes
+[  270.935210] ubi0: min./max. I/O unit sizes: 1/256, sub-page size 1
+[  270.941491] ubi0: VID header offset: 64 (aligned 64), data offset: 128
+[  270.948102] ubi0: good PEBs: 354, bad PEBs: 0, corrupted PEBs: 0
+[  270.954215] ubi0: user volume: 0, internal volumes: 1, max. volumes count: 128
+[  270.961602] ubi0: max/mean erase counter: 0/0, WL threshold: 4096, image sequence number: 2077421476
+[  270.970887] ubi0: available PEBs: 350, total reserved PEBs: 4, PEBs reserved for bad PEB handling: 0
+[  270.980204] ubi0: background thread &quot;ubi_bgt0d&quot; started, PID 863
+UBI device number 0, total 354 LEBs (23154432 bytes, 22.1 MiB), available 350 LEBs (22892800 bytes, 21.8 MiB), LEB size 65408 bytes (63.9 KiB)
+root:~# ubimkvol /dev/ubi0 -N flash_fs -s 20MiB
+Volume ID 0, size 321 LEBs (20995968 bytes, 20.0 MiB), LEB size 65408 bytes (63.9 KiB), dynamic, name &quot;flash_fs&quot;, alignment 1
+root:~# mkdir /mnt/flash
+root:~# mount -t ubifs ubi0:flash_fs /mnt/flash/
+[  326.002602] UBIFS (ubi0:0): default file-system created
+[  326.008309] UBIFS (ubi0:0): background thread &quot;ubifs_bgt0_0&quot; started, PID 866
+[  326.027530] UBIFS (ubi0:0): UBIFS: mounted UBI device 0, volume 0, name &quot;flash_fs&quot;
+[  326.035157] UBIFS (ubi0:0): LEB size: 65408 bytes (63 KiB), min./max. I/O unit sizes: 8 bytes/256 bytes
+[  326.044615] UBIFS (ubi0:0): FS size: 20341888 bytes (19 MiB, 311 LEBs), journal size 1046528 bytes (0 MiB, 16 LEBs)
+[  326.055123] UBIFS (ubi0:0): reserved for root: 960797 bytes (938 KiB)
+[  326.061610] UBIFS (ubi0:0): media format: w4/r0 (latest is w4/r0), UUID 828AA98E-3A51-4B35-AD50-9E90144AD4C7, small LPT model
+root:~#
+</pre></div>
+</div>
+<p>Now you can access filesystem at /mnt/flash/.</p>
+<p class="rubric" id="using-cypress-s28-on-j721e">Using Cypress S28HS512TGABHM010 flash on J721E</p>
+<p>J721E by default comes with with the Micron MT35XU512ABA1G12-0AAT flash. But the
+Cypress S28HS512TGABHM010 flash can be used with it with some slight
+modifications to the device tree properties. The below patch should allow using
+the flash on J721E. Note that applying it will likely make the Micron flash unusable.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>diff --git a/arch/arm64/boot/dts/ti/k3-j721e-som-p0.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-som-p0.dtsi
+index 90bcc6be3834..7c43b56cf849 100644
+--- a/arch/arm64/boot/dts/ti/k3-j721e-som-p0.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-j721e-som-p0.dtsi
+@@ -181,13 +181,13 @@
+           cdns,tsd2d-ns = &lt;60&gt;;
+           cdns,tchsh-ns = &lt;60&gt;;
+           cdns,tslch-ns = &lt;60&gt;;
+-          cdns,read-delay = &lt;0&gt;;
++          cdns,read-delay = &lt;4&gt;;
+           cdns,phy-mode;
+           #address-cells = &lt;1&gt;;
+           #size-cells = &lt;1&gt;;
+-          partition@3fe0000 {
++          partition@3fc0000 {
+                   label = &quot;ospi.phypattern&quot;;
+-                  reg = &lt;0x3fe0000 0x20000&gt;;
++                  reg = &lt;0x3fc0000 0x40000&gt;;
+           };
+   };
+ };
+</pre></div>
+</div>
+<p class="rubric" id="using-micron-mt35-on-j7200">Using Micron MT35XU512ABA1G12-0AAT flash on J7200</p>
+<p>J7200 by default comes with with the Cypress S28HS512TGABHM010 flash. But the
+Micron MT35XU512ABA1G12-0AAT flash can be used with it with some slight
+modifications to the device tree properties. The below patch should allow using
+the flash on J7200. Note that applying it will likely make the Cypress flash
+unusable.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>diff --git a/arch/arm64/boot/dts/ti/k3-j7200-som-p0.dtsi b/arch/arm64/boot/dts/ti/k3-j7200-som-p0.dtsi
+index df8d9e2ad3dd..8decb9c0de9a 100644
+--- a/arch/arm64/boot/dts/ti/k3-j7200-som-p0.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-j7200-som-p0.dtsi
+@@ -168,13 +168,13 @@
+           cdns,tsd2d-ns = &lt;60&gt;;
+           cdns,tchsh-ns = &lt;60&gt;;
+           cdns,tslch-ns = &lt;60&gt;;
+-          cdns,read-delay = &lt;4&gt;;
++          cdns,read-delay = &lt;0&gt;;
+           cdns,phy-mode;
+           #address-cells = &lt;1&gt;;
+           #size-cells = &lt;1&gt;;
+-          partition@3fc0000 {
++          partition@3fe0000 {
+                   label = &quot;ospi.phypattern&quot;;
+-                  reg = &lt;0x3fc0000 0x40000&gt;;
++                  reg = &lt;0x3fe0000 0x20000&gt;;
+           };
+   };
+ };
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Power_Management/pm_dfs.html" class="btn btn-neutral float-left" title="3.2.2.15.1. DFS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SERDES/SERDES.html" class="btn btn-neutral float-right" title="3.2.2.17. SERDES" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

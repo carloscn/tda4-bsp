@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.4. Directory Structure Overview &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.5. Processor SDK RTOS" href="Overview_PSDKLA_PSDKRA_Summary.html" />
+    <link rel="prev" title="1.3. Simplified SDK Build Using Top-Level Makefile" href="Overview_Top_Level_Makefile.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Overview.html">1. Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Overview_Getting_Started_Guide.html">1.1. Getting Started Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_Building_the_SDK.html">1.2. Building the SDK with Yocto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_Top_Level_Makefile.html">1.3. Simplified SDK Build Using Top-Level Makefile</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.4. Directory Structure Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_PSDKLA_PSDKRA_Summary.html">1.5. Processor SDK RTOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_Technical_Support.html">1.6. Processor SDK Technical Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_GPLv3_Disclaimer.html">1.7. GPLv3 Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Overview.html"><span class="section-number">1. </span>Overview</a> &raquo;</li>
+      <li><span class="section-number">1.4. </span>Directory Structure Overview</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="overview-directory-structure"></span><div class="section" id="directory-structure-overview">
+<h1><span class="section-number">1.4. </span>Directory Structure Overview<a class="headerlink" href="#directory-structure-overview" title="Permalink to this headline">¶</a></h1>
+<p>The Processor SDK for Linux contains the following top-level
+directories and files</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./</span>
+<span class="go">├── bin/</span>
+<span class="go">├── board-support/</span>
+<span class="go">├── example-applications/</span>
+<span class="go">├── filesystem/</span>
+<span class="go">├── k3r5-devkit/</span>
+<span class="go">├── licenses/</span>
+<span class="go">├── linux-devkit/</span>
+<span class="go">├── Makefile</span>
+<span class="go">├── makerules/</span>
+<span class="go">├── manifest/</span>
+<span class="go">├── Rules.make</span>
+<span class="go">├── setup.sh*</span>
+<span class="go">└── yocto-build/</span>
+</pre></div>
+</div>
+<p>These directories contain the code and tools used to develop for
+Processor SDK devices.</p>
+<ul class="simple">
+<li><p><strong>bin</strong> - Contains the helper scripts for configuring the host system
+and target device. Most of these scripts are used by the setup.sh
+script.</p></li>
+<li><p><strong>board-support</strong> - Contains the SDK components that need to be
+modified when porting to a custom platform. This includes the kernel
+and boot loaders as well as any out of tree drivers.</p></li>
+<li><p><strong>manifest</strong> - Contains software manifest files</p></li>
+<li><p><strong>licenses</strong> - Contains software licenses</p></li>
+<li><p><strong>example-applications</strong> - Contains the sources for the TI provided
+example applications seen during the out-of-box demonstration.</p></li>
+<li><p><strong>filesystem</strong> - Contains the reference file systems. These include
+the smaller base file system as well as the full-featured SDK file
+system.</p></li>
+<li><p><strong>linux-devkit</strong> - Contains the tools and libraries to speed
+development for the target device for the ARMV8 architechture</p></li>
+<li><p><strong>k3r5-devkit</strong> - Contains the tools and libraries to speed
+development for the target device for the ARMV7 architechture</p></li>
+<li><p><strong>Makefile</strong> - Provides build targets for many of the SDK components
+from the top-level of the SDK.</p></li>
+<li><p><strong>makerules</strong> - Make rules for all the topLevel Makefile build targets</p></li>
+<li><p><strong>Rules.make</strong> - Sets default values used by the top-level Makefile
+as well as sub-component Makefiles.</p></li>
+<li><p><strong>setup.sh</strong> - Configures the users host system as well as the target
+system for development.</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>yocto-build</strong> - This directory allows rebuilding SDK components and
+filesystem using yocto bitbake. Refer to <a class="reference external" href="Overview_Building_the_SDK.html">Building the SDK</a>  section
+for more details on running yocto builds.</p></li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Overview_Top_Level_Makefile.html" class="btn btn-neutral float-left" title="1.3. Simplified SDK Build Using Top-Level Makefile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Overview_PSDKLA_PSDKRA_Summary.html" class="btn btn-neutral float-right" title="1.5. Processor SDK RTOS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

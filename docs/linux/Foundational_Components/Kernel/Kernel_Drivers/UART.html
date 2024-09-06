@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.21. UART &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.2.2.22. UFS" href="UFS.html" />
+    <link rel="prev" title="3.2.2.20. MMC/SD" href="Storage/MMC-SD.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.21. </span>UART</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="uart">
+<h1><span class="section-number">3.2.2.21. </span>UART<a class="headerlink" href="#uart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.2.2.21.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This guide covers 8250 OMAP serial driver found at
+drivers/tty/serial/8250/8250_omap.c. It supports UART IP found on
+TI’s J784S4 SoCs. These SoCs have
+8250 compliant UART IPs and hence use common 8250 serial driver
+framework support of Linux kernel.</p>
+<p>This documentation applies to Kernel v4.14 and higher.</p>
+<p class="rubric">Suppported Devices</p>
+<ul class="simple">
+<li><p>J784S4</p></li>
+</ul>
+</div>
+<div class="section" id="driver-features">
+<h2><span class="section-number">3.2.2.21.2. </span>Driver Features<a class="headerlink" href="#driver-features" title="Permalink to this headline">¶</a></h2>
+<p class="rubric">Driver Features</p>
+<p>Driver supports the following features:</p>
+<ul class="simple">
+<li><p>Hardware flow control</p></li>
+<li><p>Standard Baudrates upto 3MBaud</p></li>
+<li><p>DMA support (except AM437x)</p></li>
+</ul>
+<p class="rubric" id="driver-configuration">Driver Configuration</p>
+<p>Driver Source Location: drivers/tty/serial/8250/8250_omap.c</p>
+<p class="rubric" id="kernel-configuration-options">Kernel configuration options</p>
+<div class="figure align-default">
+<img alt="../../../../_images/UART-Kernel-config.png" src="../../../../_images/UART-Kernel-config.png" />
+</div>
+<div class="figure align-default">
+<img alt="../../../../_images/UART-Kernel-config-1.png" src="../../../../_images/UART-Kernel-config-1.png" />
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Configs to be enabled in kernel
+CONFIG_SERIAL_8250 (8250 core support)
+CONFIG_SERIAL_8250_CONSOLE (for console on 8250 UARTs)
+CONFIG_SERIAL_8250_DMA (for DMA support)
+SERIAL_8250_OMAP (Enable 8250 based driver for TI SoCs)
+</pre></div>
+</div>
+<p class="rubric">Example DT configuration</p>
+<p>From k3-j721e.dtsi</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>aliases {
+        ...
+        serial0 = &amp;wkup_uart0;
+        serial1 = &amp;mcu_uart0;
+        serial2 = &amp;main_uart0;
+        serial3 = &amp;main_uart1;
+        ...
+};
+</pre></div>
+</div>
+<p>From k3-j721e-main.dtsi</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>main_uart0: serial@2800000 {
+        compatible = &quot;ti,j721e-uart&quot;, &quot;ti,am654-uart&quot;;
+        reg = &lt;0x00 0x02800000 0x00 0x100&gt;;
+        reg-shift = &lt;2&gt;;
+        reg-io-width = &lt;4&gt;;
+        interrupts = &lt;GIC_SPI 192 IRQ_TYPE_LEVEL_HIGH&gt;;
+        clock-frequency = &lt;48000000&gt;;
+        current-speed = &lt;115200&gt;;
+        power-domains = &lt;&amp;k3_pds 146 TI_SCI_PD_SHARED&gt;;
+        clocks = &lt;&amp;k3_clks 146 0&gt;;
+        clock-names = &quot;fclk&quot;;
+};
+
+main_uart1: serial@2810000 {
+        compatible = &quot;ti,j721e-uart&quot;, &quot;ti,am654-uart&quot;;
+        reg = &lt;0x00 0x02810000 0x00 0x100&gt;;
+        reg-shift = &lt;2&gt;;
+        reg-io-width = &lt;4&gt;;
+        interrupts = &lt;GIC_SPI 193 IRQ_TYPE_LEVEL_HIGH&gt;;
+        clock-frequency = &lt;48000000&gt;;
+        current-speed = &lt;115200&gt;;
+        power-domains = &lt;&amp;k3_pds 278 TI_SCI_PD_EXCLUSIVE&gt;;
+        clocks = &lt;&amp;k3_clks 278 0&gt;;
+        clock-names = &quot;fclk&quot;;
+};
+</pre></div>
+</div>
+<p class="rubric" id="linux-kernel-omap-uart-driver-usage">Driver Usage</p>
+<p>Once the driver is probed, each of serial ports are exposed as a character
+device file by the kernel to be used by userspace:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/dev/ttySX        X- Serial port number (zero indexed)
+</pre></div>
+</div>
+<p>Therefore UART0 -&gt; /dev/ttyS0</p>
+<p>Reading from serial port:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/dev/ttyS0
+</pre></div>
+</div>
+<p>Writing to serial port:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/ttyS0
+</pre></div>
+</div>
+<p>Changing serial port baudrate:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>stty<span class="w"> </span>-F<span class="w"> </span>/dev/ttyS0<span class="w"> </span>&lt;baudrate&gt;
+stty<span class="w"> </span>-F<span class="w"> </span>/dev/ttyS0<span class="w"> </span><span class="m">115200</span>
+</pre></div>
+</div>
+<p class="rubric">Testing UART communication</p>
+<p>Either connect two UART ports to one other with flow control lines,
+or connect a single UART in external loopback mode(RTS-CTS, RX-TX).
+Internal loopback mode cannot be used for testing UART, as there is no
+guarantee that HW flow control will work reliably.</p>
+</div>
+<div class="section" id="basic-external-loopback-testing">
+<h2><span class="section-number">3.2.2.21.3. </span>Basic External loopback testing<a class="headerlink" href="#basic-external-loopback-testing" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>stty<span class="w"> </span>-F<span class="w"> </span>/dev/ttySX<span class="w"> </span><span class="m">115200</span><span class="w"> </span>/*<span class="w"> </span>Set<span class="w"> </span>baudrate<span class="w"> </span>to<span class="w"> </span><span class="m">115200</span>:<span class="w"> </span>*/
+cat<span class="w"> </span>/dev/ttySX<span class="w"> </span><span class="p">&amp;</span>
+<span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span>/de/ttySX
+</pre></div>
+</div>
+<p>This should print “hello” on the shell. That verifies RX-TX external loopback.</p>
+<p class="rubric">Testing UART communication with HW flow control</p>
+<p>Make sure all the pins are connected properly (RTS-CTS, RX-TX) and pinmux
+is setup. Clone the following repo for tool to test serial port:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://github.com/nsekhar/serialcheck">https://github.com/nsekhar/serialcheck</a></p>
+</div></blockquote>
+<p>Compile serialcheck tool:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~/serialcheck$<span class="w"> </span>gcc<span class="w"> </span>-o<span class="w"> </span>serialcheck<span class="w"> </span>serialcheck.c<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-
+</pre></div>
+</div>
+<p>Compile serialstats tool:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~/serialcheck$<span class="w"> </span>gcc<span class="w"> </span>-o<span class="w"> </span>serialstats<span class="w"> </span>serialstats.c<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span>arm-linux-gnueabihf-
+</pre></div>
+</div>
+<p><strong>serialcheck</strong>: Used to configure UART and then send/receive data over UART.
+The tool reports any inconsistencies observed during UART transfer by comparing
+it with a reference file.</p>
+<p>For more information run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>serialcheck<span class="w"> </span>--help
+</pre></div>
+</div>
+<p><strong>serialstats</strong>: Prints UART statistics provided by Kernel’s tty layer.</p>
+<p>For more information run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>serialstats<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>Create a random file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/urandom<span class="w"> </span><span class="nv">of</span><span class="o">=</span>binary<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">bs</span><span class="o">=</span><span class="m">4096</span>
+</pre></div>
+</div>
+<p>Copy the random file to both nodes (TX side and RX side).</p>
+<p>Start serialstats in the background to collect stats/errors:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>serialstats<span class="w"> </span>-d<span class="w"> </span>/dev/ttySX<span class="w"> </span>-i<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>Start the test (with HW flow control enabled at 3MBaud):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>receiving<span class="w"> </span>node<span class="o">(</span>-m<span class="w"> </span>r<span class="o">)</span>:
+<span class="w">    </span>serialcheck<span class="w"> </span>-h<span class="w"> </span>-d<span class="w"> </span>/dev/ttyS0<span class="w"> </span>-f<span class="w"> </span>binary<span class="w"> </span>-m<span class="w"> </span>r<span class="w"> </span>-l<span class="w"> </span><span class="m">10</span><span class="w"> </span>-b<span class="w"> </span><span class="m">3000000</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sending<span class="w"> </span>node<span class="o">(</span>-m<span class="w"> </span>t<span class="o">)</span>:
+<span class="w">    </span>serialcheck<span class="w"> </span>-h<span class="w"> </span>-d<span class="w"> </span>/dev/ttyS0<span class="w"> </span>-f<span class="w"> </span>binary<span class="w"> </span>-m<span class="w"> </span>t<span class="w"> </span>-l<span class="w"> </span><span class="m">10</span><span class="w"> </span>-b<span class="w"> </span><span class="m">3000000</span>
+</pre></div>
+</div>
+<p>Start the receiving side before the sending side. This will transfer the
+“binary” file 10 times, and the other side will expect the file 10 times.</p>
+<p>Once the program completes both sides should write something similar
+if the test was successful.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Needed 0 reads 1 writes loops 10 / 10
+cts: 3 dsr: 0 rng: 0 dcd: 0 rx: 40960 tx: 40960 frame 0 ovr 0 par: 0 brk: 0 buf_ovrr: 0
+</pre></div>
+</div>
+<p>Or an example output if there is an error:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Needed 20 reads 0 writes Oh oh, inconsistency at pos 2273 (0x8e1).
+Original sample:
+000008b0: 28 b2 18 c9 ec b5 2c b3  3a a1 29 b1 fc 27 20 7f   (.....,.:.)..&#39; .
+000008c0: 42 f8 d5 cb d8 52 ec b5  c8 76 d3 4b d2 57 44 6a   B....R...v.K.WDj
+000008d0: 40 81 6a 82 27 fd 8d 50  84 70 bc 24 6b 3d 88 fd   @.j.&#39;..P.p.$k=..
+000008e0: 9f ac 78 a4 76 9b f9 1c  74 2c d6 79 22 60 c5 de   ..x.v...t,.y&quot;`..
+000008f0: 02 9c fb 52 21 4b 40 6f  80 69 2e 80 df 12 ba a0   ...R!K@o.i......
+00000900: 75 57 d5 22 33 c0 f3 bc  94 f8 aa 22 9d 02 59 20   uW.&quot;3......&quot;..Y
+
+Received sample:
+000008b0: 28 b2 18 c9 ec b5 2c b3  3a a1 29 b1 fc 27 20 7f   (.....,.:.)..&#39; .
+000008c0: 42 f8 d5 cb d8 52 ec b5  c8 76 d3 4b d2 57 44 6a   B....R...v.K.WDj
+000008d0: 40 81 6a 82 27 fd 8d 50  84 70 bc 24 6b 3d 88 fd   @.j.&#39;..P.p.$k=..
+000008e0: 9f 00 ac 78 a4 76 9b f9  1c 74 2c d6 79 22 60 c5   ...x.v...t,.y&quot;`.
+000008f0: de 02 9c fb 52 21 4b 40  6f 80 69 2e 80 df 12 ba   ....R!K@o.i.....
+00000900: a0 75 57 d5 22 33 c0 f3  bc 94 f8 aa 22 9d 02 59   .uW.&quot;3......&quot;..Y
+loops 54878 / 4294967295
+
+cts: 0 dsr: 0 rng: 0 dcd: 0 rx: 224792017 tx: 223379456 frame 0 ovr 1 par: 0 brk: 0 buf_ovrr: 0
+</pre></div>
+</div>
+<p class="rubric">Meaning of different counters</p>
+<p><strong>cts</strong>: Number of times flow control lines was asserted</p>
+<p><strong>dsr/rng/dcd</strong>: Correspond to Modem control line statistics</p>
+<p><strong>rx/tx</strong>: The rx and tx counters. Denotes number of bytes sent/received in the
+session. A mismatch here would indicate data loss.</p>
+<p><strong>frame</strong>: Number of framing errors</p>
+<p><strong>ovr</strong>: Number of times UART HW FIFO overruns</p>
+<p><strong>par</strong>: Number of parity errors</p>
+<p><strong>brk</strong>: Number of times break character was received.
+(For more details on above errors see:
+<a class="reference external" href="https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter">https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter</a>)</p>
+<p><strong>buf_ovrr</strong>: Number of bytes lost due to overrun software buffer at
+kernel’s tty layer.</p>
+<p class="rubric">Standalone Testing of HW flow control</p>
+<p>Start only TX side of serial check:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>serialcheck<span class="w"> </span>-h<span class="w"> </span>-d<span class="w"> </span>/dev/ttySX<span class="w"> </span>-f<span class="w"> </span>binary<span class="w"> </span>-m<span class="w"> </span>t<span class="w"> </span>-l<span class="w"> </span><span class="m">10</span><span class="w"> </span>-b<span class="w"> </span><span class="m">3000000</span>
+</pre></div>
+</div>
+<p>Run only serialstats on the RX side without starting RX receiver process.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>serialstats<span class="w"> </span>-d<span class="w"> </span>/dev/ttySX<span class="w"> </span>-i<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+<p>If cts is non zero and ovr and buf_ovrr are not reported,
+then HW flow control is working.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Make sure to start the RX side before starting TX.</p></li>
+<li><p>RX side waits for 100s before reporting timeout. Make sure TX side
+starts sending data before 100s.</p></li>
+<li><p>serialcheck tool does not support duplex mode(-m d -&gt; simulatenous
+RX and TX). Workaround would be to start second send/receive pair in
+reverse direction.</p></li>
+</ul>
+</div>
+<p class="rubric">Probable reason for different errors</p>
+<p><strong>Frame error/parity error</strong>: Mostly due to faulty external loopback connection
+or signal interference on the wire</p>
+<p><strong>overruns</strong>: This field corresponds to HW FIFO overruns. TI’s 8250 UART IP
+supports auto HW flow control as long as flow control is enabled in
+IP by the driver and the RTS-CTS lines are connected. Overrun indicates either
+the HW flow control lines are not connected or it is not turned on by
+userspace (pass -h option when using serialcheck).</p>
+<p><strong>buf_ovrr</strong>: indicates either a driver bug or tty ldisc driver bug (default
+ldisc is n_tty drivers/tty/n_tty.c). It is the duty of ldisc layer to call the
+uart_throttle() function if the receiver is overwhelmed to avoid buf_ovrr.</p>
+<ul class="simple">
+<li><p>One other tool to test the UART driver would be:
+<a class="reference external" href="https://github.com/cbrake/linux-serial-test">https://github.com/cbrake/linux-serial-test</a></p></li>
+<li><p>To explore/use other features of UART port, please use system calls provided
+by termios.h: <a class="reference external" href="http://man7.org/linux/man-pages/man3/termios.3.html">http://man7.org/linux/man-pages/man3/termios.3.html</a></p></li>
+<li><p>This file shows an example of how to enable HW flow control, set
+baudrate, and change other tty settings:
+<a class="reference external" href="https://github.com/nsekhar/serialcheck/blob/master/serialcheck.c">https://github.com/nsekhar/serialcheck/blob/master/serialcheck.c</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is always recommended to connect HW flow control lines for UART
+communication. Also, software should enable HW flow control explicitly.
+Otherwise, there will be data loss and data corruption.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Storage/MMC-SD.html" class="btn btn-neutral float-left" title="3.2.2.20. MMC/SD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="UFS.html" class="btn btn-neutral float-right" title="3.2.2.22. UFS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

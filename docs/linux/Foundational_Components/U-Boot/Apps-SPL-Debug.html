@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.2.2. Debugging SPL in CCS &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.2.3. Loading Uboot through CCS" href="Apps-Load-in-CCS.html" />
+    <link rel="prev" title="3.1.2.1. U-Boot Debug Tips" href="Apps-TroubleShooting.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Apps-TroubleShooting.html">3.1.2.1. U-Boot Debug Tips</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.2.2. Debugging SPL in CCS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Apps-Load-in-CCS.html">3.1.2.3. Loading Uboot through CCS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Applications.html"><span class="section-number">3.1.2. </span>Troubleshooting</a> &raquo;</li>
+      <li><span class="section-number">3.1.2.2. </span>Debugging SPL in CCS</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="debugging-spl-in-ccs">
+<h1><span class="section-number">3.1.2.2. </span>Debugging SPL in CCS<a class="headerlink" href="#debugging-spl-in-ccs" title="Permalink to this headline">¶</a></h1>
+<p>The following section demonstrates how to connect a board to CCS and load the SPL symbols for debugging. For the experiment below, users are expected to boot their board from a SD card.</p>
+<div class="section" id="step-1-downloading-ccs">
+<h2><span class="section-number">3.1.2.2.1. </span>Step 1: Downloading CCS<a class="headerlink" href="#step-1-downloading-ccs" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Please download the CCS from the following link: <a class="reference external" href="http://software-dl.ti.com/ccs/esd/documents/ccs_downloads.html">http://software-dl.ti.com/ccs/esd/documents/ccs_downloads.html</a></p></li>
+</ol>
+<p><strong>NOTE</strong>: We will be building Uboot on a Linux machine and it is recommended to install CCS on the same operating system (OS). If CCS is not installed on the same OS, CCS will not be able to locate the code files. Please follow the Linux instructions on the following link: <a class="reference external" href="http://software-dl.ti.com/ccs/esd/documents/ccs_linux_host_support.html">http://software-dl.ti.com/ccs/esd/documents/ccs_linux_host_support.html</a></p>
+</div>
+<div class="section" id="step-2-creating-a-target-configuration-file">
+<h2><span class="section-number">3.1.2.2.2. </span>Step 2: Creating a Target Configuration File<a class="headerlink" href="#step-2-creating-a-target-configuration-file" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>The first step is to create a target configuration file in CCS. Navigate to “View”-&gt; “Target Configurations”:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image1.png" src="../../../_images/Uboot_Image1.png" />
+</div></blockquote>
+</li>
+<li><p>Right click on the “Target Configurations” window and select “New Target Configuration”:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image2.png" src="../../../_images/Uboot_Image2.png" />
+</div></blockquote>
+</li>
+<li><p>Create a name for target configuration:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image3.png" src="../../../_images/Uboot_Image3.png" />
+</div></blockquote>
+</li>
+<li><p>Select the appropriate SoC and JTAG. <strong>Note</strong>: If we select the SoC name, the GEL files will not be loaded. However, if we select the board options, the GEL files will be loaded by default. In the below example, if GPEVM_AM65x or IDK_AM65x is selected, the GEL files are automatically enabled in the configuration. While debugging Uboot, it is recommended to avoid GEL files because Uboot is responsible for initializing the peripherals:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image4.png" src="../../../_images/Uboot_Image4.png" />
+</div></blockquote>
+</li>
+<li><p>Next, click save and test connection to ensure CCS is able to communicate with the debugger:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image5.png" src="../../../_images/Uboot_Image5.png" />
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="step-3-loading-symbol-files">
+<h2><span class="section-number">3.1.2.2.3. </span>Step 3: Loading Symbol files<a class="headerlink" href="#step-3-loading-symbol-files" title="Permalink to this headline">¶</a></h2>
+<p>Before the symbols are loaded, a test code will be added to the SPL code. The test code will loop within itself and the only way to break the loop is to change the Program Counter via the CCS. For the current experiment, the AM65EVM is used but the same experiment could be performed on other boards. The following test code is added to the “board_init_f” function in the file &lt;ti_sdk_dir&gt;/board-support/&lt;u-boot_version&gt;/arch/arm/mach-k3/am6_init.c:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">store_boot_index_from_rom</span><span class="p">();</span>
+
+<span class="cm">/* Make all control module registers accessible */</span>
+<span class="n">ctrl_mmr_unlock</span><span class="p">();</span>
+
+<span class="k">asm</span><span class="p">(</span><span class="s">&quot;test: nop&quot;</span><span class="p">);</span>
+<span class="k">asm</span><span class="p">(</span><span class="s">&quot;       nop&quot;</span><span class="p">);</span>
+<span class="k">asm</span><span class="p">(</span><span class="s">&quot;  b test &quot;</span><span class="p">);</span>
+<span class="k">asm</span><span class="p">(</span><span class="s">&quot; nop&quot;</span><span class="p">);</span>
+<span class="k">asm</span><span class="p">(</span><span class="s">&quot; nop&quot;</span><span class="p">);</span>
+
+<span class="n">setup_am654_navss_northbridge</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>If a user is working with AM335x/AM437x/AM57xx, the test code could be added in the “early_system_init” function in the file &lt;ti_sdk_dir&gt;/board-support/&lt;u-boot_version&gt;/arch/arm/mach-omap2/hwinit-common.c. The location of the test code on all platforms will vary based on the section of the SPL we are trying to debug.</p>
+<ol class="arabic">
+<li><p>There are two methods of compiling Uboot: <a class="reference external" href="Top_Level_Makefile.html">method1</a> and <a class="reference external" href="Foundational_Components_U-Boot.html#build-and-boot-flow-on-32-bit-platforms">method2</a>. Both methods will generate the necessary symbol file required for SPL debugging.</p></li>
+<li><p>On AM335x/AM437x/AM57xx, the symbol file is located in the following directory “&lt;ti_sdk_dir&gt;/board-support/&lt;u-boot_version&gt;/spl/u-boot-spl”. For AM654x, the symbol file is located in the following directory “&lt;ti_sdk_dir&gt;/board-support/u-boot_build/r5/spl/u-boot-spl”.</p></li>
+<li><p>After building Uboot, copy the relevant images on the SD card. For AM335x/AM437x/AM57xx, copy MLO and u-boot.img to the SD card. For AM65x, copy sysfw.itb, tiboot3.bin, tispl.bin and u-boot.img to the SD card.</p></li>
+<li><p>Install the SD card and power on the board.</p></li>
+<li><p>On CCS, launch the target configuration file created in Step2:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image6.png" src="../../../_images/Uboot_Image6.png" />
+</div></blockquote>
+</li>
+<li><p>After successful launch, connect to one of the ARM cores. On AM65x, the inital SPL code is executed on the R5 so the user would connect to the R5 core. For the AM335x/AM437/AM57xx, please connect to the A8/A9/A15 core.</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image7.png" src="../../../_images/Uboot_Image7.png" />
+</div></blockquote>
+</li>
+<li><p>After connecting to the core, click on “Run”-&gt; “Load”-&gt;”Load Symbols…”:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image8.png" src="../../../_images/Uboot_Image8.png" />
+<img alt="../../../_images/Uboot_Image9.png" src="../../../_images/Uboot_Image9.png" />
+<img alt="../../../_images/Uboot_Image10.png" src="../../../_images/Uboot_Image10.png" />
+</div></blockquote>
+</li>
+<li><p>After loading the code, CCS should find the source code file and it should be stuck at the code previously added:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image11.png" src="../../../_images/Uboot_Image11.png" />
+</div></blockquote>
+</li>
+<li><p>To break out of the loop, change the program counter in the Register Window:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_Image12.png" src="../../../_images/Uboot_Image12.png" />
+</div></blockquote>
+</li>
+</ol>
+<p>At this point, the user has the ability to step through the SPL code and debug issues in the SPL.</p>
+<p><strong>NOTE</strong>: On K3 family of devices such as AM654x, a watchdog timer part of the DMSC is enabled by default by the ROM bootcode with a timeout of 3 minutes. The watchdog timer is serviced by System Firmware (SYSFW) during normal operation. If one is debugging SPL before the SYSFW is loaded, the watchdog timer will not get serviced automatically and the debug session will reset after 3 minutes. Therefore, it is recommended to start debugging SPL code only after the startup of SYSFW to avoid running into the watchdog timer reset. Similarly, the watchdog timer is also enabled on the AM335x/AM437x/AM57xx devices and please refer to the “Disable_Watchdog()” function in our gel files.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Apps-TroubleShooting.html" class="btn btn-neutral float-left" title="3.1.2.1. U-Boot Debug Tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Apps-Load-in-CCS.html" class="btn btn-neutral float-right" title="3.1.2.3. Loading Uboot through CCS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

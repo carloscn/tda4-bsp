@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.10.3.3.2.4. IET &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.10.3.3.3.1. TSN Switch Tuning Guide" href="CPSW-TSN-Tuning.html" />
+    <link rel="prev" title="3.2.2.10.3.3.2.3. CBS" href="CPSW-CBS.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+          <li><a href="CPSW-Ethernet.html"><span class="section-number">3.2.2.10. </span>CPSW Ethernet</a> &raquo;</li>
+          <li><a href="CPSW-TSN.html"><span class="section-number">3.2.2.10.3.3. </span>TSN with CPSW</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.10.3.3.2.4. </span>IET</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="iet">
+<span id="kernel-driver-cpsw2g-iet"></span><h1><span class="section-number">3.2.2.10.3.3.2.4. </span>IET<a class="headerlink" href="#iet" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#warning-iet-with-fixed-link-interface" id="id2">Warning: IET with Fixed-Link Interface</a></p></li>
+<li><p><a class="reference internal" href="#iet-in-mac-mode" id="id3">IET in MAC mode</a></p>
+<ul>
+<li><p><a class="reference internal" href="#am625-sk-fragments-frames-and-j7vcl-assembles-them" id="id4">AM625-SK fragments frames and J7VCL assembles them</a></p></li>
+<li><p><a class="reference internal" href="#j7vcl-fragments-frames-and-am625-sk-assembles-them" id="id5">J7VCL fragments frames and AM625-SK assembles them</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#iet-in-switch-mode" id="id6">IET in Switch mode</a></p>
+<ul>
+<li><p><a class="reference internal" href="#case-1-frame-is-preempted-on-sender-and-assembled-on-switch-ingress-port" id="id7">CASE-1: Frame is preempted on Sender and Assembled on Switch Ingress Port</a></p></li>
+<li><p><a class="reference internal" href="#case-2-frame-is-preempted-on-switch-egress-port-and-assembled-on-receiver" id="id8">CASE-2: Frame is preempted on Switch Egress Port and Assembled on Receiver</a></p></li>
+<li><p><a class="reference internal" href="#case-3-frame-is-preempted-on-both-sender-and-switch-egress-port" id="id9">CASE-3: Frame is preempted on both Sender and Switch Egress Port</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1"><span class="section-number">3.2.2.10.3.3.2.4.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>CPSW h/w support Intersperse Express Traffic (IET, defined in P802.3br/D2.0 spec which later is included in IEEE 802.3 2018) Frame preemption (FPE) feature and also to allow MAC layer to Verify if the peer supports IET MAC merge layer or not. MAC merge layer is responsible for preempting the transmission of frame from a preemptible queue if there is frame waiting for transmission at a higher priority Express queue. The h/w sends an initial segment of the frame satisfying min fragment size requirement and then schedule frame from the Express queue for transmission. Finally when no more frames available at the Express queue, it will resume transmission of remaining segments of the frame of the preemptible queue which was preempted. At the peer end, the segments are re-assembled and delivered to the MAC interface.</p>
+<p>IET FPE feature is configured for a port through ethtool –set-priv-flags command. Note that this is a temporary interface to allow configure IET FPE in CPSW2g driver and is not approved by netdev subsystem maintainers in Linux Kernel Mailing List (LKML) and may change in the future. Driver configures IET FPE for a port when network device is opened (ndo_open()) if user has turned ON the iet-frame-preemption priv flag. Note that since IET is a common feature applicable to all slave ports, this has to be done before the network ports of the CPSW2g are brought up. The user may also turn ON the iec-mac-verify flag if the peer device connected to CPSW2g port is also capable of verifying MAC merge/FPE capability. For this, driver schedules a worker thread to do the MAC/Verify process as soon as the Link is up and iec-mac-verify priv flag is set.  It resets the LINKFAIL bit and check if the Verify succeeds or not.  On failure, the MAC Verify state machine is reset by toggling LINKFAIL bit and process repeats for 20 times before bailing out. If iec-mac-verify priv flag is not set, driver assumes that peer is capable of supporting FPE, but not able to do MAC Verify. So it configures the device into force mode. User needs to verify that peer device is capable of supporting IET FPE to use force mode.</p>
+<p>Driver assumes highest priority h/w Queue as the express Queue and configures lower queues (Q0-QN-2, where N is the maximum number of queues configured) as preemptible queues by programming the PN_REG_IET_CTRL register if the MAC Verify succeeds or if the force mode is enabled. p0-rx-ptype-rrobin flag should be turned off before using IET feature. i.e CPSW2g h/w should be programmed into strict priority mode for IET to work.</p>
+<p>To enable IET FPE with MAC Verify, do</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+</pre></div>
+</div>
+<p>To enable IET FPE with no MAC Verify (Force mode)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+</pre></div>
+</div>
+<p>To disable IET FPE and restore rrobin mode</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ethtool --set-priv-flags eth0 iet-frame-preemption off
+ethtool --set-priv-flags eth0 iet-mac-verify off
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin on
+</pre></div>
+</div>
+<p class="rubric" id="iet-mac-verify">Example session to enable IET FPE with MAC Verify.</p>
+<p>Assume 2 AM65x IDKs are connected back to back over MCU Ethernet port (typically eth0 interface. Example assumes 2 h/w queues configured. Q1 will be express queue and Q0 the preemption queue in this configuration.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@evm:~# ip link set dev eth0 down
+[  169.798571] am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+root@evm:~# ethtool -L eth0 tx 2
+root@evm:~# ethtool -l eth0
+Channel parameters for eth0:
+Pre-set maximums:
+RX:             1
+TX:             8
+Other:          0
+Combined:       0
+Current hardware settings:
+RX:             1
+TX:             2
+Other:          0
+Combined:       0
+@evm:~# ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+root@evm:~# ethtool --set-priv-flags eth0 iet-frame-preemption on
+root@evm:~# ethtool --show-priv-flags eth0
+Private flags for eth0:
+p0-rx-ptype-rrobin  : off
+iet-frame-preemption: on
+iet-mac-verify      : off
+root@evm:~# ethtool --set-priv-flags eth0 iet-mac-verify on
+root@evm:~# ethtool --show-priv-flags eth0
+Private flags for eth0:
+p0-rx-ptype-rrobin  : off
+iet-frame-preemption: on
+iet-mac-verify      : on
+root@evm:~# ip link set dev eth0 up
+root@evm:~#
+root@evm:~# [  267.393967] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[  267.400353] am65-cpsw-nuss 46000000.ethernet eth0: Starting IET/FPE MAC Verify
+[  267.465086] am65-cpsw-nuss 46000000.ethernet eth0: IET/FPE MAC Verify Success
+[  267.472276] am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+</pre></div>
+</div>
+<p class="rubric" id="iet-no-mac-verify">Example session to enable IET FPE with no MAC Verify (Force mode)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@evm:~# ip link set dev eth0 down
+[  394.590576] am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+root@evm:~# ethtool --set-priv-flags eth0 iet-frame-preemption on
+#if iet-mac-verify was enabled before, turn it of
+root@evm:~# ethtool --set-priv-flags eth0 iet-mac-verify off
+root@evm:~# ethtool --show-priv-flags eth0
+Private flags for eth0:
+p0-rx-ptype-rrobin  : off
+iet-frame-preemption: on
+iet-mac-verify      : off
+root@evm:~#
+root@evm:~# ip link set dev eth0 up
+root@evm:~# ip addr add 192.168.100.20/24 dev eth0
+[  500.502660] TI DP83867 46000f00.mdio:00: attached PHY driver [TI DP83867] (mii_bus:phy_addr=46000f00.mdio:00, irq=POLL)
+root@evm:~# [  500.516232] am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+root@evm:~# [  552.738077] am65-cpsw-nuss 46000000.ethernet eth0: IET Enable Force mode
+[  552.744839] am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[  552.753434] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+</pre></div>
+</div>
+<p class="rubric" id="iep-fpe-testing">IET FPE example</p>
+<p>Highest priority Queue is Express queue. I.e if there are 8 queues configured through ethtool -L command, Q7 will be express and Q0-Q6 will be preemptible. Similarly if 4 queues are configured then Q3 will be express queue and Q0-Q2 will be preemptible queues. See below an example on how to verify preemption is happening in the hardware.  Setup requires 2 IDKs (Example AM65x) connected over MCU Ethernet/CPSW2g port. Assume that IET is enabled on both IDKs as in previous sections and either Force mode or MAC Verify mode is enabled. As soon as the Link comes up, the IET FPE gets enabled. The test requires MQPRIO qdisc to be configured at the Talker DUT’s eth0 port and enable classifier to map UDP frames with specific port to be to a given traffic class. Traffic class is used as the index to direct traffic to the specific h/w queue. CPSW2g stats module provide a statistics counter for following that can be used to verify the IET FPE is functional:-</p>
+<ul class="simple">
+<li><p>iet_rx_assembly_ok - Increments at the receiver if re-assembly of MAC fragments are successful.</p></li>
+<li><p>iet_rx_frag - Incremenets at the receiver if MAC fragments are received due to preemption</p></li>
+<li><p>iet_tx_frag - Increments at the sender side if fragments are created due to frame preemption.</p></li>
+</ul>
+<p>So to test, need to have traffic at the preemption queue as well as at the express queue and use the above statistics counters to verify if fragmentation happens at the sender side and re-assembly at the receiver side. Below logs provide some example usage.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># At the Talker side
+# Set up mqprio qdisc at eth0 - 2 Queues configured. Q0 - preemption queue and Q1 express queue
+root@evm:~# tc qdisc replace dev eth0 handle 100: parent root mqprio num_tc 2  map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 queues 1@0
+1@1 hw 0
+root@evm:~# tc -g class show dev eth0
++---(100:ffe1) mqprio
+|    +---(100:2) mqprio
+|
++---(100:ffe0) mqprio
+    +---(100:1) mqprio
+# Enable classifier at net core
+root@evm:~# tc qdisc add dev eth0 clsact
+# Add tc filter rule to mark packet priority based on destination UDP port number - Port 5002 mapped to prio 2
+# From above mqprio settings, TC at index 2 is 0. So this TC packets go to Q0
+root@evm:~# tc filter add dev eth0 egress protocol ip prio 1 u32 match ip dport 5002 0xffff action skbedit priority 2
+[  285.576105] u32 classifier
+[  285.578910]     input device check on
+[  285.582640]     Actions configured
+# Add tc filter rule to map packets with UDP port number - Port 5003 to prio 3
+# From above mqprio settings, TC at index 3 is 1. So this TC packets go to Q1
+root@evm:~# tc filter add dev eth0 egress protocol ip prio 1 u32 match ip dport 5003 0xffff action skbedit priority 3
+root@evm:~#
+root@evm:~# ip addr add 192.168.100.20/24 dev eth0
+
+# At the Listener DUT, setup ip address and run iperf3 server session listening to port 5002 and 5003.
+# ip addr add 192.168.100.30/24 dev eth0
+root@evm:~# iperf3 -s -i30 -p5002&amp;
+[1] 1224
+root@evm:~# iperf3 -s -i30 -p5003&amp;
+-----------------------------------------------------------
+Server listening on 5002
+-----------------------------------------------------------
+[2] 1225
+-----------------------------------------------------------
+Server listening on 5003
+-----------------------------------------------------------
+root@evm:~#
+# At Listener DUT start iperf3 client session to port 5002 and 5003
+root@evm:~# iperf3 -c 192.168.100.30 -u -b200M -l1472 -u -t30 -i30 -p5002&amp;
+[1] 1050
+root@evm:~# iperf3 -c 192.168.100.30 -u -b50M -l1472 -u -t30 -i30 -p5003&amp;
+[2] 1051
+root@evm:~#
+root@evm:~# warning: UDP block size 1472 exceeds TCP MSS 1448, may result in fragmentation / drops
+warning: UDP block size 1472 exceeds TCP MSS 1448, may result in fragmentation / drops
+Connecting to host 192.168.100.30, port 5003
+Connecting to host 192.168.100.30, port 5002
+[  5] local 192.168.100.20 port 60646 connected to 192.168.100.30 port 5003
+[  5] local 192.168.100.20 port 39515 connected to 192.168.100.30 port 5002
+
+# Now at the Talker DUT, dump statistics counter for Q0 and Q1 as well as IET statistics
+root@evm:~# ethtool -S eth0 | grep &#39;tx_pri1&#39;
+    p0_tx_pri1: 0
+    p0_tx_pri1_bcnt: 0
+    p0_tx_pri1_drop: 0
+    p0_tx_pri1_drop_bcnt: 0
+    tx_pri1: 24869
+    tx_pri1_bcnt: 37722660
+    tx_pri1_drop: 0
+    tx_pri1_drop_bcnt: 0
+root@evm:~# ethtool -S eth0 | grep &#39;tx_pri0&#39;
+    p0_tx_pri0: 0
+    p0_tx_pri0_bcnt: 0
+    p0_tx_pri0_drop: 0
+    p0_tx_pri0_drop_bcnt: 0
+    tx_pri0: 100271
+    tx_pri0_bcnt: 152067960
+    tx_pri0_drop: 0
+    tx_pri0_drop_bcnt: 0
+root@evm:~# ethtool -S eth0 | grep iet
+    iet_rx_assembly_err: 0
+    iet_rx_assembly_ok: 0
+    iet_rx_smd_err: 0
+    iet_rx_frag: 0
+    iet_tx_hold: 0
+    iet_tx_frag: 159
+root@evm:~# ethtool -S eth0 | grep &#39;tx_pri1&#39;
+    p0_tx_pri1: 0
+    p0_tx_pri1_bcnt: 0
+    p0_tx_pri1_drop: 0
+    p0_tx_pri1_drop_bcnt: 0
+    tx_pri1: 27718
+    tx_pri1_bcnt: 42047442
+    tx_pri1_drop: 0
+    tx_pri1_drop_bcnt: 0
+root@evm:~# ethtool -S eth0 | grep &#39;tx_pri0&#39;
+    p0_tx_pri0: 0
+    p0_tx_pri0_bcnt: 0
+    p0_tx_pri0_drop: 0
+    p0_tx_pri0_drop_bcnt: 0
+    tx_pri0: 111637
+    tx_pri0_bcnt: 169320030
+    tx_pri0_drop: 0
+    tx_pri0_drop_bcnt: 0
+root@evm:~# ethtool -S eth0 | grep iet
+    iet_rx_assembly_err: 0
+    iet_rx_assembly_ok: 0
+    iet_rx_smd_err: 0
+    iet_rx_frag: 0
+    iet_tx_hold: 0
+    iet_tx_frag: 175
+
+# As seen, iet_tx_frag statistics counter increments at the Talker showing fragmentation at the Talker
+# Also dump the statistics at the listener DUT
+ethtool -S eth0 | grep iet
+    iet_rx_assembly_err: 0
+    iet_rx_assembly_ok: 248
+    iet_rx_smd_err: 0
+    iet_rx_frag: 248
+    iet_tx_hold: 0
+    iet_tx_frag: 0
+root@evm:~# ethtool -S eth0 | grep iet
+    iet_rx_assembly_err: 0
+    iet_rx_assembly_ok: 252
+    iet_rx_smd_err: 0
+    iet_rx_frag: 252
+    iet_tx_hold: 0
+    iet_tx_frag: 0
+root@evm:~# ethtool -S eth0 | grep iet
+    iet_rx_assembly_err: 0
+    iet_rx_assembly_ok: 252
+    iet_rx_smd_err: 0
+    iet_rx_frag: 252
+    iet_tx_hold: 0
+    iet_tx_frag: 0
+# As seen, iet_rx_frag and iet_rx_assembly_ok statistics counter increments at the Listener showing re-assembly at the Listener
+</pre></div>
+</div>
+<p class="rubric" id="iet-with-est">Using IET together with EST</p>
+<p>Express and preemption queues/Gates may be used as part of the EST schedule. If only Preemption queues are in a schedule entry, preceding an entry with Express queue, the guard band requirement reduces to 2048 nsec (0x100 = 256 * 8) so that packets don’t spill over to the next sched-entry. Otherwise, the guard band required is as explained in the EST section.</p>
+</div>
+<div class="section" id="warning-iet-with-fixed-link-interface">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">3.2.2.10.3.3.2.4.2. </span>Warning: IET with Fixed-Link Interface</a><a class="headerlink" href="#warning-iet-with-fixed-link-interface" title="Permalink to this headline">¶</a></h2>
+<p>If one of the interfaces which takes part in IET is in fixed-link mode,
+then do NOT enable MAC verify for IET on either of the devices
+connected to each other directly by the LAN cable. This is because, in
+the case of fixed-link, the link state cannot be detected by interfaces
+on either side of the link. The process of IET MAC Verification depends
+on the link state being toggled, with the verification starting
+immediately after the link comes up and lasting for 1 second. Thus,
+unless this process starts roughly simultaneously on both interfaces
+connected over the link (Which would happen in the non fixed-link case),
+IET MAC Verification would fail with a Timeout message, thereby causing
+frame fragmentation to fail.</p>
+<p>Thus, if either of the interfaces that are directly connected by a LAN
+cable, is in fixed-link mode, then do NOT enable MAC verify on BOTH the
+interfaces. Simply enable IET Frame Preemption on both devices and IET
+will work. The rest of the steps are the same as documented in the
+upcoming sectionss.</p>
+<p>IET MAC Verification in ethtool corresponds to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iet-mac-verify
+</pre></div>
+</div>
+<p>IET Frame Preemption in ethtool corresponds to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iet-frame-preemption
+</pre></div>
+</div>
+</div>
+<div class="section" id="iet-in-mac-mode">
+<h2><a class="toc-backref" href="#id3"><span class="section-number">3.2.2.10.3.3.2.4.3. </span>IET in MAC mode</a><a class="headerlink" href="#iet-in-mac-mode" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="am625-sk-fragments-frames-and-j7vcl-assembles-them">
+<h3><a class="toc-backref" href="#id4"><span class="section-number">3.2.2.10.3.3.2.4.3.1. </span>AM625-SK fragments frames and J7VCL assembles them</a><a class="headerlink" href="#am625-sk-fragments-frames-and-j7vcl-assembles-them" title="Permalink to this headline">¶</a></h3>
+<p>Connect eth0 of AM625-SK to eth1 of J7VCL.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>Create and run the following script on J7VCL:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth1 down
+ifconfig eth2 down
+ifconfig eth3 down
+ifconfig eth4 down
+ethtool -L eth1 tx 2
+ethtool --set-priv-flags eth1 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth1 iet-frame-preemption on
+ethtool --set-priv-flags eth1 iet-mac-verify on
+ifconfig eth1 up
+sleep 5
+
+iperf3 -s -i30 -p5002&amp;
+iperf3 -s -i30 -p5003&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create and run the following script on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ifconfig eth0 up
+sleep 5
+
+tc qdisc replace dev eth0 handle 100: parent root mqprio \
+    num_tc 2 \
+    map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 \
+    queues 1@0 1@1 \
+    hw 0
+
+tc -g class show dev eth0
+tc qdisc add dev eth0 clsact
+tc filter add dev eth0 egress protocol ip prio 1 u32 match ip dport 5002 0xffff action skbedit priority 2
+tc filter add dev eth0 egress protocol ip prio 1 u32 match ip dport 5003 0xffff action skbedit priority 3
+ip addr add 192.168.100.20/24 dev eth0
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>On J7VCL, run the following command:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ifconfig eth1 192.168.100.30
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Now, run the following commands on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iperf3 -c 192.168.100.30 -u -b200M -l1472 -u -t30 -i30 -p5002&amp;
+iperf3 -c 192.168.100.30 -u -b50M -l1472 -u -t30 -i30 -p5003&amp;
+</pre></div>
+</div>
+<p><strong>Results:</strong></p>
+<p>On AM625-SK (Sender):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am62xx-evm:~/IET# ethtool -S eth0 | grep &#39;tx_pri1&#39;
+     p0_tx_pri1: 0
+     p0_tx_pri1_bcnt: 0
+     p0_tx_pri1_drop: 0
+     p0_tx_pri1_drop_bcnt: 0
+     tx_pri1: 127400
+     tx_pri1_bcnt: 193357542
+     tx_pri1_drop: 0
+     tx_pri1_drop_bcnt: 0
+root@am62xx-evm:~/IET# ethtool -S eth0 | grep &#39;tx_pri0&#39;
+     p0_tx_pri0: 67
+     p0_tx_pri0_bcnt: 10496
+     p0_tx_pri0_drop: 0
+     p0_tx_pri0_drop_bcnt: 0
+     tx_pri0: 509608
+     tx_pri0_bcnt: 773438547
+     tx_pri0_drop: 0
+     tx_pri0_drop_bcnt: 0
+root@am62xx-evm:~/IET# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 63
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 120056
+</pre></div>
+</div>
+<p>On J7VCL (Receiver):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j7200-evm:~/IET# ethtool -S eth1 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 32334
+     iet_rx_smd_err: 1
+     iet_rx_frag: 120056
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+</pre></div>
+</div>
+<p><strong>Explanation:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On AM625-SK, the higher priority traffic preempts the lower priority
+traffic, thereby resulting in the fragmentation of frames of lower
+priority. This can be seen in the iet_tx_frag statistic on AM625-SK.
+
+Similarly, on J7VCL, the received fragmented frames can be observed
+in the iet_rx_frag statistic, while the assembled frames can be seen
+in the iet_rx_assembly_ok statistic.
+</pre></div>
+</div>
+</div>
+<div class="section" id="j7vcl-fragments-frames-and-am625-sk-assembles-them">
+<h3><a class="toc-backref" href="#id5"><span class="section-number">3.2.2.10.3.3.2.4.3.2. </span>J7VCL fragments frames and AM625-SK assembles them</a><a class="headerlink" href="#j7vcl-fragments-frames-and-am625-sk-assembles-them" title="Permalink to this headline">¶</a></h3>
+<p>Connect eth1 of J7VCL to eth0 of AM625-SK.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>Create and run the following script on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ifconfig eth0 up
+sleep 5
+
+iperf3 -s -i30 -p5002&amp;
+iperf3 -s -i30 -p5003&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create and run the following script on J7VCL:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth1 down
+ifconfig eth2 down
+ifconfig eth3 down
+ifconfig eth4 down
+ethtool -L eth1 tx 2
+ethtool --set-priv-flags eth1 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth1 iet-frame-preemption on
+ethtool --set-priv-flags eth1 iet-mac-verify on
+ifconfig eth1 up
+sleep 5
+
+tc qdisc replace dev eth1 handle 100: parent root mqprio \
+    num_tc 2 \
+    map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 \
+    queues 1@0 1@1 \
+    hw 0
+
+tc -g class show dev eth1
+tc qdisc add dev eth1 clsact
+tc filter add dev eth1 egress protocol ip prio 1 u32 match ip dport 5002 0xffff action skbedit priority 2
+tc filter add dev eth1 egress protocol ip prio 1 u32 match ip dport 5003 0xffff action skbedit priority 3
+ip addr add 192.168.100.20/24 dev eth1
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Run the following command on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ifconfig eth0 192.168.100.30
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Next, run the following commands on J7VCL:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iperf3 -c 192.168.100.30 -u -b200M -l1472 -u -t30 -i30 -p5002&amp;
+iperf3 -c 192.168.100.30 -u -b50M -l1472 -u -t30 -i30 -p5003&amp;
+</pre></div>
+</div>
+<p><strong>Results:</strong></p>
+<p>On J7VCL (Sender):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j7200-evm:~/IET# ethtool -S eth1 | grep &#39;tx_pri1&#39;
+     p0_tx_pri1: 0
+     p0_tx_pri1_bcnt: 0
+     p0_tx_pri1_drop: 0
+     p0_tx_pri1_drop_bcnt: 0
+     tx_pri1: 254787
+     tx_pri1_bcnt: 386711048
+     tx_pri1_drop: 0
+     tx_pri1_drop_bcnt: 0
+root@j7200-evm:~/IET# ethtool -S eth1 | grep &#39;tx_pri0&#39;
+     p0_tx_pri0: 110
+     p0_tx_pri0_bcnt: 16002
+     p0_tx_pri0_drop: 0
+     p0_tx_pri0_drop_bcnt: 0
+     tx_pri0: 1019126
+     tx_pri0_bcnt: 1546856078
+     tx_pri0_drop: 0
+     tx_pri0_drop_bcnt: 0
+root@j7200-evm:~/IET# ethtool -S eth1 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 36
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 42
+</pre></div>
+</div>
+<p>On AM625-SK (Receiver):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am62xx-evm:~/IET# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 29
+     iet_rx_smd_err: 1
+     iet_rx_frag: 42
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+</pre></div>
+</div>
+<p><strong>Explanation:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>On J7VCL, the higher priority traffic preempts the lower priority
+traffic, thereby resulting in the fragmentation of frames of lower
+priority. This can be seen in the iet_tx_frag statistic on J7VCL.
+
+Similarly, on AM625-SK, the received fragmented frames can be observed
+in the iet_rx_frag statistic, while the assembled frames can be seen
+in the iet_rx_assembly_ok statistic.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="iet-in-switch-mode">
+<h2><a class="toc-backref" href="#id6"><span class="section-number">3.2.2.10.3.3.2.4.4. </span>IET in Switch mode</a><a class="headerlink" href="#iet-in-switch-mode" title="Permalink to this headline">¶</a></h2>
+<p>3 Devices are connected: Sender, Switch and Receiver.</p>
+<p>3 Cases:</p>
+<ol class="arabic simple">
+<li><p>Frame is preempted on Sender and Assembled on Switch Ingress Port.</p></li>
+<li><p>Frame is preempted on Switch Egress Port and Assembled on Receiver.</p></li>
+<li><p>Frame is preempted on Sender and Assembled on Switch Ingress Port, and also, frame is preempted on Switch Egress Port and Assembled on Receiver.</p></li>
+</ol>
+<p>Devices Used:</p>
+<ol class="arabic simple">
+<li><p>AM625-SK (As Switch/Sender)</p></li>
+<li><p>J7VCL (As Switch/Sender)</p></li>
+<li><p>AM64-SK (As Receiver)</p></li>
+</ol>
+<div class="section" id="case-1-frame-is-preempted-on-sender-and-assembled-on-switch-ingress-port">
+<h3><a class="toc-backref" href="#id7"><span class="section-number">3.2.2.10.3.3.2.4.4.1. </span>CASE-1: Frame is preempted on Sender and Assembled on Switch Ingress Port</a><a class="headerlink" href="#case-1-frame-is-preempted-on-sender-and-assembled-on-switch-ingress-port" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="preemption-on-am625-sk-sender-and-assembly-on-j7vcl-switch-ingress-port-and-sent-to-am64-sk-receiver">
+<h4><span class="section-number">3.2.2.10.3.3.2.4.4.1.1. </span>Preemption on AM625-SK (Sender) and Assembly on J7VCL (Switch) Ingress Port and sent to AM64-SK (Receiver)<a class="headerlink" href="#preemption-on-am625-sk-sender-and-assembly-on-j7vcl-switch-ingress-port-and-sent-to-am64-sk-receiver" title="Permalink to this headline">¶</a></h4>
+<p>Connect eth0 of AM625-SK to eth1 of J7VCL and eth0 of AM64-SK to eth2 of J7VCL.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>On J7VCL, create and run the following script:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth1 down
+ifconfig eth2 down
+ifconfig eth3 down
+ifconfig eth4 down
+ethtool -L eth1 tx 2
+ethtool --set-priv-flags eth1 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth1 iet-frame-preemption on
+ethtool --set-priv-flags eth1 iet-mac-verify on
+ifconfig eth1 up
+ifconfig eth2 up
+sleep 5
+
+devlink dev param set platform/c000000.ethernet name switch_mode value true cmode runtime
+ip link add name br0 type bridge
+ip link set dev br0 type bridge ageing_time 1000
+ip link set dev eth1 up
+ip link set dev eth2 up
+ip link set dev eth1 master br0
+ip link set dev eth2 master br0
+ip link set dev br0 up
+ip link set dev br0 type bridge vlan_filtering 1
+bridge vlan add dev br0 vid 1 self
+bridge vlan add dev br0 vid 1 pvid untagged self
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>On AM625-SK, create and run the following script:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ifconfig eth0 up
+sleep 5
+
+tc qdisc replace dev eth0 handle 100: parent root mqprio \
+    num_tc 2 \
+    map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 \
+    queues 1@0 1@1 \
+    hw 0
+
+tc -g class show dev eth0
+tc qdisc add dev eth0 clsact
+tc filter add dev eth0 egress protocol ip prio 1 u32 match ip dport 5002 0xffff action skbedit priority 2
+tc filter add dev eth0 egress protocol ip prio 1 u32 match ip dport 5003 0xffff action skbedit priority 3
+ifconfig eth0 192.168.100.20 netmask 255.255.255.0
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>On AM64-SK, run the following commands:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ifconfig eth0 192.168.100.30
+iperf3 -s -i30 -p5002&amp; \
+iperf3 -s -i30 -p5003&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Then, on AM625-SK, run the following commands:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iperf3 -c 192.168.100.30 -u -b200M -l1472 -u -t30 -i30 -p5002&amp; \
+iperf3 -c 192.168.100.30 -u -b50M -l1472 -u -t30 -i30 -p5003&amp;
+</pre></div>
+</div>
+<p><strong>Results:</strong></p>
+<p>On AM625-SK (Sender):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am62xx-evm:~/IET# ethtool -S eth0 | grep &#39;tx_pri1&#39;
+     p0_tx_pri1: 0
+     p0_tx_pri1_bcnt: 0
+     p0_tx_pri1_drop: 0
+     p0_tx_pri1_drop_bcnt: 0
+     tx_pri1: 127395
+     tx_pri1_bcnt: 193357336
+     tx_pri1_drop: 0
+     tx_pri1_drop_bcnt: 0
+root@am62xx-evm:~/IET# ethtool -S eth0 | grep &#39;tx_pri0&#39;
+     p0_tx_pri0: 165
+     p0_tx_pri0_bcnt: 34444
+     p0_tx_pri0_drop: 0
+     p0_tx_pri0_drop_bcnt: 0
+     tx_pri0: 509721
+     tx_pri0_bcnt: 773459795
+     tx_pri0_drop: 0
+     tx_pri0_drop_bcnt: 0
+root@am62xx-evm:~/IET# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 128
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 114
+</pre></div>
+</div>
+<p>On J7VCL (Switch):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j7200-evm:~/IET# ethtool -S eth1 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 108
+     iet_rx_smd_err: 1
+     iet_rx_frag: 114
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+</pre></div>
+</div>
+</div>
+<div class="section" id="preemption-on-j7vcl-sender-and-assembly-on-am625-sk-switch-ingress-port-and-sent-to-am64-sk-receiver">
+<h4><span class="section-number">3.2.2.10.3.3.2.4.4.1.2. </span>Preemption on J7VCL (Sender) and Assembly on AM625-SK (Switch) Ingress Port and sent to AM64-SK (Receiver)<a class="headerlink" href="#preemption-on-j7vcl-sender-and-assembly-on-am625-sk-switch-ingress-port-and-sent-to-am64-sk-receiver" title="Permalink to this headline">¶</a></h4>
+<p>Connect eth1 of J7VCL to eth0 of AM625-SK and eth0 of AM64-SK to eth1 of AM625-SK.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>On AM625-SK, create and run the following script:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ifconfig eth0 up
+ifconfig eth1 up
+sleep 5
+
+devlink dev param set platform/8000000.ethernet name switch_mode value true cmode runtime
+ip link add name br0 type bridge
+ip link set dev br0 type bridge ageing_time 1000
+ip link set dev eth0 up
+ip link set dev eth1 up
+ip link set dev eth0 master br0
+ip link set dev eth1 master br0
+ip link set dev br0 up
+ip link set dev br0 type bridge vlan_filtering 1
+bridge vlan add dev br0 vid 1 self
+bridge vlan add dev br0 vid 1 pvid untagged self
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>On J7VCL, create and run the following script:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth1 down
+ifconfig eth2 down
+ifconfig eth3 down
+ifconfig eth4 down
+ethtool -L eth1 tx 2
+ethtool --set-priv-flags eth1 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth1 iet-frame-preemption on
+ethtool --set-priv-flags eth1 iet-mac-verify on
+ifconfig eth1 up
+sleep 5
+
+tc qdisc replace dev eth1 handle 100: parent root mqprio \
+    num_tc 2 \
+    map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 \
+    queues 1@0 1@1 \
+    hw 0
+
+tc -g class show dev eth1
+tc qdisc add dev eth1 clsact
+tc filter add dev eth1 egress protocol ip prio 1 u32 match ip dport 5002 0xffff action skbedit priority 2
+tc filter add dev eth1 egress protocol ip prio 1 u32 match ip dport 5003 0xffff action skbedit priority 3
+ifconfig eth1 192.168.100.20 netmask 255.255.255.0
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>On AM64-SK, run the following commands:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ifconfig eth0 192.168.100.30
+iperf3 -s -i30 -p5002&amp; \
+iperf3 -s -i30 -p5003&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Then, on J7VCL, run the following commands:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iperf3 -c 192.168.100.30 -u -b200M -l1472 -u -t30 -i30 -p5002&amp; \
+iperf3 -c 192.168.100.30 -u -b50M -l1472 -u -t30 -i30 -p5003&amp;
+</pre></div>
+</div>
+<p><strong>Results:</strong></p>
+<p>On J7VCL (Sender):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j7200-evm:~/IET# ethtool -S eth1 | grep &#39;tx_pri1&#39;
+     p0_tx_pri1: 0
+     p0_tx_pri1_bcnt: 0
+     p0_tx_pri1_drop: 0
+     p0_tx_pri1_drop_bcnt: 0
+     tx_pri1: 127396
+     tx_pri1_bcnt: 193356005
+     tx_pri1_drop: 0
+     tx_pri1_drop_bcnt: 0
+root@j7200-evm:~/IET# ethtool -S eth1 | grep &#39;tx_pri0&#39;
+     p0_tx_pri0: 76
+     p0_tx_pri0_bcnt: 14563
+     p0_tx_pri0_drop: 0
+     p0_tx_pri0_drop_bcnt: 0
+     tx_pri0: 509604
+     tx_pri0_bcnt: 773435752
+     tx_pri0_drop: 0
+     tx_pri0_drop_bcnt: 0
+root@j7200-evm:~/IET# ethtool -S eth1 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 10
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 77331
+</pre></div>
+</div>
+<p>On AM625-SK (Switch):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am62xx-evm:~/IET# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 11
+     iet_rx_assembly_ok: 20790
+     iet_rx_smd_err: 1092
+     iet_rx_frag: 77300
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="case-2-frame-is-preempted-on-switch-egress-port-and-assembled-on-receiver">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">3.2.2.10.3.3.2.4.4.2. </span>CASE-2: Frame is preempted on Switch Egress Port and Assembled on Receiver</a><a class="headerlink" href="#case-2-frame-is-preempted-on-switch-egress-port-and-assembled-on-receiver" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the following tests, all interfaces which are a part of the test
+need to be a part of the same VLAN, since the switch needs to receive
+priority of the frames in order to perform preemption.</p>
+</div>
+<p>In addition to the Sender, the Switch’s Host Port also transmits traffic
+of lower priority to the receiver. This is done to ensure a higher chance
+of frame preemption and therefore frame fragmentation on the Switch’ Egress
+Port.</p>
+<div class="section" id="highest-priority-frame-sent-by-am625-sk-with-preemption-on-j7vcl-s-switch-egress-port-and-assembly-on-am64-sk">
+<h4><span class="section-number">3.2.2.10.3.3.2.4.4.2.1. </span>Highest priority frame sent by AM625-SK with preemption on J7VCL’s (Switch) Egress Port and Assembly on AM64-SK<a class="headerlink" href="#highest-priority-frame-sent-by-am625-sk-with-preemption-on-j7vcl-s-switch-egress-port-and-assembly-on-am64-sk" title="Permalink to this headline">¶</a></h4>
+<p>Connect eth0 of AM625-SK to eth1 of J7VCL and eth0 of AM64-SK to eth2 of
+J7VCL.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>Create and run the following script on J7VCL:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth1 down
+ifconfig eth2 down
+ifconfig eth3 down
+ifconfig eth4 down
+ethtool -L eth2 tx 2
+ethtool --set-priv-flags eth2 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth2 iet-frame-preemption on
+ethtool --set-priv-flags eth2 iet-mac-verify on
+ifconfig eth1 up
+ifconfig eth2 up
+sleep 5
+
+tc qdisc replace dev eth2 handle 100: parent root mqprio \
+    num_tc 2 \
+    map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 \
+    queues 1@0 1@1 \
+    hw 0
+
+tc -g class show dev eth2
+
+devlink dev param set platform/c000000.ethernet name switch_mode value true cmode runtime
+ip link add name br0 type bridge
+ip link set dev br0 type bridge ageing_time 1000
+ip link set dev eth1 up
+ip link set dev eth2 up
+ip link set dev eth1 master br0
+ip link set dev eth2 master br0
+ip link set dev br0 up
+sleep 2
+
+ip link set dev br0 type bridge vlan_filtering 1
+bridge vlan add dev br0 vid 100 self
+bridge vlan add dev br0 vid 100 pvid tagged self
+bridge vlan add dev eth1 vid 100 master
+bridge vlan add dev eth2 vid 100 master
+sleep 2
+
+ip link add link br0 name br0.100 type vlan id 100
+ip link set br0.100 type vlan egress 0:0 1:1 2:2 3:3 4:4 5:5 6:6 7:7
+sleep 2
+
+tc qdisc add dev br0.100 clsact
+tc filter add dev br0.100 egress protocol ip prio 1 u32 match ip dport 5002 0xffff action skbedit priority 2
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create and run the following script on AM64-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ifconfig eth0 up
+sleep 5
+
+ip link add link eth0 name eth0.100 type vlan id 100
+sleep 5
+ifconfig eth0.100 192.168.100.30
+iperf3 -s -i30 -p5001&amp;
+iperf3 -s -i30 -p5002&amp;
+iperf3 -s -i30 -p5003&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create and run the following script on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ifconfig eth0 up
+sleep 5
+ip link add link eth0 name eth0.100 type vlan id 100
+ip link set eth0.100 type vlan egress 0:0 1:1 2:2 3:3 4:4 5:5 6:6 7:7
+sleep 5
+
+tc qdisc add dev eth0.100 clsact
+tc filter add dev eth0.100 egress protocol ip prio 1 u32 match ip dport 5003 0xffff action skbedit priority 3
+ifconfig eth0.100 192.168.100.20 netmask 255.255.255.0
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Run the following commands on J7VCL:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ifconfig br0.100 192.168.100.10
+sleep 10
+iperf3 -c 192.168.100.30 -u -b100M -l1472 t30 -i30 -p5001&amp;
+iperf3 -c 192.168.100.30 -u -b100M -l1472 t30 -i30 -p5002&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Now, run the following command on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iperf3 -c 192.168.100.30 -u -b50M -l1472 -t30 -i30 -p5003&amp;
+</pre></div>
+</div>
+<p><strong>Results:</strong></p>
+<p>On J7VCL (Switch):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j7200-evm:~/IET# ethtool -S eth2 | grep &#39;tx_pri0&#39;
+     p0_tx_pri0: 173
+     p0_tx_pri0_bcnt: 31039
+     p0_tx_pri0_drop: 0
+     p0_tx_pri0_drop_bcnt: 0
+     tx_pri0: 85135
+     tx_pri0_bcnt: 129274224
+     tx_pri0_drop: 0
+     tx_pri0_drop_bcnt: 0
+root@j7200-evm:~/IET# ethtool -S eth2 | grep &#39;tx_pri2&#39;
+     p0_tx_pri2: 0
+     p0_tx_pri2_bcnt: 0
+     p0_tx_pri2_drop: 0
+     p0_tx_pri2_drop_bcnt: 0
+     tx_pri2: 84932
+     tx_pri2_bcnt: 129237975
+     tx_pri2_drop: 0
+     tx_pri2_drop_bcnt: 0
+root@j7200-evm:~/IET# ethtool -S eth2 | grep &#39;tx_pri3&#39;
+     p0_tx_pri3: 0
+     p0_tx_pri3_bcnt: 0
+     p0_tx_pri3_drop: 0
+     p0_tx_pri3_drop_bcnt: 0
+     tx_pri3: 3775
+     tx_pri3_bcnt: 5717026
+     tx_pri3_drop: 0
+     tx_pri3_drop_bcnt: 0
+root@j7200-evm:~/IET# ethtool -S eth2 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 2
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 107
+</pre></div>
+</div>
+<p>On AM64-SK (Receiver):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am64xx-evm:~# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 1
+     iet_rx_assembly_ok: 94
+     iet_rx_smd_err: 72
+     iet_rx_frag: 106
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+</pre></div>
+</div>
+</div>
+<div class="section" id="highest-priority-frame-sent-by-j7vcl-with-preemption-on-am625-sk-s-switch-egress-port-and-assembly-on-am64-sk">
+<h4><span class="section-number">3.2.2.10.3.3.2.4.4.2.2. </span>Highest priority frame sent by J7VCL with preemption on AM625-SK’s (Switch) Egress Port and Assembly on AM64-SK<a class="headerlink" href="#highest-priority-frame-sent-by-j7vcl-with-preemption-on-am625-sk-s-switch-egress-port-and-assembly-on-am64-sk" title="Permalink to this headline">¶</a></h4>
+<p>Connect eth1 of J7VCL to eth0 of AM625-SK and eth0 of AM64-SK to eth1 of
+AM625-SK.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>On AM625-SK, create and run the following script:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth1 tx 2
+ethtool --set-priv-flags eth1 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth1 iet-frame-preemption on
+ethtool --set-priv-flags eth1 iet-mac-verify on
+ifconfig eth0 up
+ifconfig eth1 up
+sleep 5
+
+tc qdisc replace dev eth1 handle 100: parent root mqprio \
+    num_tc 2 \
+    map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 \
+    queues 1@0 1@1 \
+    hw 0
+
+tc -g class show dev eth1
+
+devlink dev param set platform/8000000.ethernet name switch_mode value true cmode runtime
+ip link add name br0 type bridge
+ip link set dev br0 type bridge ageing_time 1000
+ip link set dev eth0 up
+ip link set dev eth1 up
+ip link set dev eth0 master br0
+ip link set dev eth1 master br0
+ip link set dev br0 up
+sleep 2
+
+ip link set dev br0 type bridge vlan_filtering 1
+bridge vlan add dev br0 vid 100 self
+bridge vlan add dev br0 vid 100 pvid tagged self
+bridge vlan add dev eth0 vid 100 master
+bridge vlan add dev eth1 vid 100 master
+sleep 2
+
+ip link add link br0 name br0.100 type vlan id 100
+ip link set br0.100 type vlan egress 0:0 1:1 2:2 3:3 4:4 5:5 6:6 7:7
+sleep 2
+
+tc qdisc add dev br0.100 clsact
+tc filter add dev br0.100 egress protocol ip prio 1 u32 match ip dport 5002 0xffff action skbedit priority 2
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>On AM64-SK, create and run the following script:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ifconfig eth0 up
+sleep 5
+
+ip link add link eth0 name eth0.100 type vlan id 100
+sleep 5
+ifconfig eth0.100 192.168.100.30
+iperf3 -s -i30 -p5002&amp;
+iperf3 -s -i30 -p5003&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>On J7VCL, create and run the following script:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth1 down
+ifconfig eth2 down
+ifconfig eth3 down
+ifconfig eth4 down
+ethtool -L eth1 tx 2
+ethtool --set-priv-flags eth1 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth1 iet-frame-preemption on
+ethtool --set-priv-flags eth1 iet-mac-verify on
+ifconfig eth1 up
+sleep 5
+
+tc qdisc replace dev eth1 handle 100: parent root mqprio \
+    num_tc 2 \
+    map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 \
+    queues 1@0 1@1 \
+    hw 0
+
+tc -g class show dev eth1
+
+ip link add link eth1 name eth1.100 type vlan id 100
+ip link set eth1.100 type vlan egress 0:0 1:1 2:2 3:3 4:4 5:5 6:6 7:7
+sleep 5
+
+tc qdisc add dev eth1.100 clsact
+tc filter add dev eth1.100 egress protocol ip prio 1 u32 match ip dport 5003 0xffff action skbedit priority 3
+ifconfig eth1.100 192.168.100.20 netmask 255.255.255.0
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Run the following commands on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ifconfig br0.100 192.168.100.10
+sleep 10
+iperf3 -c 192.168.100.30 -u -b100M -l1472 t30 -i30 -p5001&amp; \
+iperf3 -c 192.168.100.30 -u -b100M -l1472 t30 -i30 -p5002&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Now, on J7VCL, run the following command:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iperf3 -c 192.168.100.30 -u -b50M -l1472 -t30 -i30 -p5003&amp;
+</pre></div>
+</div>
+<p><strong>Results:</strong></p>
+<p>On AM625-SK (Switch):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am62xx-evm:~/IET# ethtool -S eth1 | grep &#39;tx_pri0
+     p0_tx_pri0: 228
+     p0_tx_pri0_bcnt: 44010
+     p0_tx_pri0_drop: 0
+     p0_tx_pri0_drop_bcnt: 0
+     tx_pri0: 792
+     tx_pri0_bcnt: 938162
+     tx_pri0_drop: 0
+     tx_pri0_drop_bcnt: 0
+root@am62xx-evm:~/IET# ethtool -S eth1 | grep &#39;tx_pri2&#39;
+     p0_tx_pri2: 0
+     p0_tx_pri2_bcnt: 0
+     p0_tx_pri2_drop: 0
+     p0_tx_pri2_drop_bcnt: 0
+     tx_pri2: 706
+     tx_pri2_bcnt: 1047447
+     tx_pri2_drop: 0
+     tx_pri2_drop_bcnt: 0
+root@am62xx-evm:~/IET# ethtool -S eth1 | grep &#39;tx_pri3&#39;
+     p0_tx_pri3: 0
+     p0_tx_pri3_bcnt: 0
+     p0_tx_pri3_drop: 0
+     p0_tx_pri3_drop_bcnt: 0
+     tx_pri3: 127393
+     tx_pri3_bcnt: 193865046
+     tx_pri3_drop: 0
+     tx_pri3_drop_bcnt: 0
+root@am62xx-evm:~/IET# ethtool -S eth1 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 0
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 54
+</pre></div>
+</div>
+<p>On AM64-SK (Receiver):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am64xx-evm:~# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 23
+     iet_rx_smd_err: 120
+     iet_rx_frag: 54
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="case-3-frame-is-preempted-on-both-sender-and-switch-egress-port">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">3.2.2.10.3.3.2.4.4.3. </span>CASE-3: Frame is preempted on both Sender and Switch Egress Port</a><a class="headerlink" href="#case-3-frame-is-preempted-on-both-sender-and-switch-egress-port" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the following tests, all interfaces which are a part of the test
+need to be a part of the same VLAN, since the switch needs to receive
+priority of the frames in order to perform preemption.</p>
+</div>
+<p>In addition to the Sender, the Switch’s Host Port also transmits traffic
+of lower priority to the receiver. This is done to ensure a higher chance
+of frame preemption and therefore frame fragmentation on the Switch’ Egress
+Port.</p>
+<p>CASE-3 is the same as CASE-1 and CASE-2 combined.</p>
+<div class="section" id="frame-sent-by-am625-sk-with-preemption-on-am625-sk-egress-port-and-assembled-on-j7vcl-s-switch-ingress-port-followed-by-preemption-on-j7vcl-s-switch-egress-port-and-assembled-on-am64-sk">
+<h4><span class="section-number">3.2.2.10.3.3.2.4.4.3.1. </span>Frame sent by AM625-SK with preemption on AM625-SK Egress Port and Assembled on J7VCL’s (Switch) Ingress Port followed by preemption on J7VCL’s (Switch) Egress Port and Assembled on AM64-SK<a class="headerlink" href="#frame-sent-by-am625-sk-with-preemption-on-am625-sk-egress-port-and-assembled-on-j7vcl-s-switch-ingress-port-followed-by-preemption-on-j7vcl-s-switch-egress-port-and-assembled-on-am64-sk" title="Permalink to this headline">¶</a></h4>
+<p>Connect eth0 of AM625-SK to eth1 of J7VCL and eth0 of AM64-SK to eth2 of
+J7VCL.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>Create and run the following script on J7VCL:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth1 down
+ifconfig eth2 down
+ifconfig eth3 down
+ifconfig eth4 down
+ethtool -L eth1 tx 2
+ethtool --set-priv-flags eth1 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth1 iet-frame-preemption on
+ethtool --set-priv-flags eth1 iet-mac-verify on
+ethtool -L eth2 tx 2
+ethtool --set-priv-flags eth2 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth2 iet-frame-preemption on
+ethtool --set-priv-flags eth2 iet-mac-verify on
+ifconfig eth1 up
+ifconfig eth2 up
+sleep 5
+
+tc qdisc replace dev eth2 handle 100: parent root mqprio \
+    num_tc 2 \
+    map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 \
+    queues 1@0 1@1 \
+    hw 0
+
+tc -g class show dev eth2
+
+devlink dev param set platform/c000000.ethernet name switch_mode value true cmode runtime
+ip link add name br0 type bridge
+ip link set dev br0 type bridge ageing_time 1000
+ip link set dev eth1 up
+ip link set dev eth2 up
+ip link set dev eth1 master br0
+ip link set dev eth2 master br0
+ip link set dev br0 up
+sleep 2
+
+ip link set dev br0 type bridge vlan_filtering 1
+bridge vlan add dev br0 vid 100 self
+bridge vlan add dev br0 vid 100 pvid tagged self
+bridge vlan add dev eth1 vid 100 master
+bridge vlan add dev eth2 vid 100 master
+sleep 2
+
+ip link add link br0 name br0.100 type vlan id 100
+ip link set br0.100 type vlan egress 0:0 1:1 2:2 3:3 4:4 5:5 6:6 7:7
+sleep 2
+
+tc qdisc add dev br0.100 clsact
+tc filter add dev br0.100 egress protocol ip prio 1 u32 match ip dport 5002 0xffff action skbedit priority 2
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create and run the following script on AM64-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ifconfig eth0 up
+sleep 5
+
+ip link add link eth0 name eth0.100 type vlan id 100
+sleep 5
+ifconfig eth0.100 192.168.100.30
+iperf3 -s -i30 -p5001&amp;
+iperf3 -s -i30 -p5002&amp;
+iperf3 -s -i30 -p5003&amp;
+iperf3 -s -i30 -p5004&amp;
+iperf3 -s -i30 -p5005&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create and run the following script on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ifconfig eth0 up
+sleep 5
+ip link add link eth0 name eth0.100 type vlan id 100
+ip link set eth0.100 type vlan egress 0:0 1:1 2:2 3:3 4:4 5:5 6:6 7:7
+sleep 5
+
+tc qdisc add dev eth0.100 clsact
+tc filter add dev eth0.100 egress protocol ip prio 1 u32 match ip dport 5003 0xffff action skbedit priority 2
+tc filter add dev eth0.100 egress protocol ip prio 1 u32 match ip dport 5004 0xffff action skbedit priority 3
+ifconfig eth0.100 192.168.100.20 netmask 255.255.255.0
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Run the following commands on J7VCL:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ifconfig br0.100 192.168.100.10
+sleep 10
+iperf3 -c 192.168.100.30 -u -b100M -l1472 t30 -i30 -p5001&amp; \
+iperf3 -c 192.168.100.30 -u -b100M -l1472 t30 -i30 -p5002&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Now, run the following commands on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iperf3 -c 192.168.100.30 -u -b100M -l1472 -t30 -i30 -p5003&amp; \
+iperf3 -c 192.168.100.30 -u -b50M -l1472 -t30 -i30 -p5004&amp; \
+iperf3 -c 192.168.100.30 -u -b100M -l1472 -t30 -i30 -p5005&amp;
+</pre></div>
+</div>
+<p><strong>Results:</strong></p>
+<p>On AM625-SK (Sender):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am62xx-evm:~/IET# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 63
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 4
+</pre></div>
+</div>
+<p>On J7VCL (Switch):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j7200-evm:~/IET# ethtool -S eth1 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 4
+     iet_rx_smd_err: 1
+     iet_rx_frag: 4
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+root@j7200-evm:~/IET# ethtool -S eth2 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 1
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 127
+</pre></div>
+</div>
+<p>On AM64-SK (Receiver):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am64xx-evm:~# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 68
+     iet_rx_smd_err: 34
+     iet_rx_frag: 127
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+</pre></div>
+</div>
+</div>
+<div class="section" id="frame-sent-by-j7vcl-with-preemption-on-j7vcl-egress-port-and-assembled-on-am625-sk-s-switch-ingress-port-followed-by-preemption-on-am625-sk-s-switch-egress-port-and-assembled-on-am64-sk">
+<h4><span class="section-number">3.2.2.10.3.3.2.4.4.3.2. </span>Frame sent by J7VCL with preemption on J7VCL Egress Port and Assembled on AM625-SK’s (Switch) Ingress Port followed by preemption on AM625-SK’s (Switch) Egress Port and Assembled on AM64-SK<a class="headerlink" href="#frame-sent-by-j7vcl-with-preemption-on-j7vcl-egress-port-and-assembled-on-am625-sk-s-switch-ingress-port-followed-by-preemption-on-am625-sk-s-switch-egress-port-and-assembled-on-am64-sk" title="Permalink to this headline">¶</a></h4>
+<p>Connect eth1 of J7VCL to eth0 of AM625-SK and eth0 of AM64-SK to eth1 of
+AM625-SK.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>Create and run the following script on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ethtool -L eth1 tx 2
+ethtool --set-priv-flags eth1 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth1 iet-frame-preemption on
+ethtool --set-priv-flags eth1 iet-mac-verify on
+ifconfig eth0 up
+ifconfig eth1 up
+sleep 5
+
+tc qdisc replace dev eth1 handle 100: parent root mqprio \
+    num_tc 2 \
+    map 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 \
+    queues 1@0 1@1 \
+    hw 0
+
+tc -g class show dev eth1
+
+devlink dev param set platform/8000000.ethernet name switch_mode value true cmode runtime
+ip link add name br0 type bridge
+ip link set dev br0 type bridge ageing_time 1000
+ip link set dev eth0 up
+ip link set dev eth1 up
+ip link set dev eth0 master br0
+ip link set dev eth1 master br0
+ip link set dev br0 up
+sleep 2
+
+ip link set dev br0 type bridge vlan_filtering 1
+bridge vlan add dev br0 vid 100 self
+bridge vlan add dev br0 vid 100 pvid tagged self
+bridge vlan add dev eth0 vid 100 master
+bridge vlan add dev eth1 vid 100 master
+sleep 2
+
+ip link add link br0 name br0.100 type vlan id 100
+ip link set br0.100 type vlan egress 0:0 1:1 2:2 3:3 4:4 5:5 6:6 7:7
+sleep 2
+
+tc qdisc add dev br0.100 clsact
+tc filter add dev br0.100 egress protocol ip prio 1 u32 match ip dport 5002 0xffff action skbedit priority 2
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create and run the following script on AM64-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth0 down
+ifconfig eth1 down
+ethtool -L eth0 tx 2
+ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth0 iet-frame-preemption on
+ethtool --set-priv-flags eth0 iet-mac-verify on
+ifconfig eth0 up
+sleep 5
+
+ip link add link eth0 name eth0.100 type vlan id 100
+sleep 5
+ifconfig eth0.100 192.168.100.30
+iperf3 -s -i30 -p5001&amp;
+iperf3 -s -i30 -p5002&amp;
+iperf3 -s -i30 -p5003&amp;
+iperf3 -s -i30 -p5004&amp;
+iperf3 -s -i30 -p5005&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create and run the following script on J7VCL:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+ifconfig eth1 down
+ifconfig eth2 down
+ifconfig eth3 down
+ifconfig eth4 down
+ethtool -L eth1 tx 2
+ethtool --set-priv-flags eth1 p0-rx-ptype-rrobin off
+ethtool --set-priv-flags eth1 iet-frame-preemption on
+ethtool --set-priv-flags eth1 iet-mac-verify on
+ifconfig eth1 up
+sleep 5
+ip link add link eth1 name eth1.100 type vlan id 100
+ip link set eth1.100 type vlan egress 0:0 1:1 2:2 3:3 4:4 5:5 6:6 7:7
+sleep 5
+
+tc qdisc add dev eth1.100 clsact
+tc filter add dev eth1.100 egress protocol ip prio 1 u32 match ip dport 5003 0xffff action skbedit priority 2
+tc filter add dev eth1.100 egress protocol ip prio 1 u32 match ip dport 5004 0xffff action skbedit priority 3
+ifconfig eth1.100 192.168.100.20 netmask 255.255.255.0
+sleep 2
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Run the following commands on AM625-SK:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ifconfig br0.100 192.168.100.10
+sleep 10
+iperf3 -c 192.168.100.30 -u -b100M -l1472 t30 -i30 -p5001&amp; \
+iperf3 -c 192.168.100.30 -u -b100M -l1472 t30 -i30 -p5002&amp;
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Now, run the following commands on J7VCL:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>iperf3 -c 192.168.100.30 -u -b100M -l1472 -t30 -i30 -p5003&amp; \
+iperf3 -c 192.168.100.30 -u -b50M -l1472 -t30 -i30 -p5004&amp; \
+iperf3 -c 192.168.100.30 -u -b100M -l1472 -t30 -i30 -p5005&amp;
+</pre></div>
+</div>
+<p><strong>Results:</strong></p>
+<p>On J7VCL (Sender):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j7200-evm:~/IET# ethtool -S eth1 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 55
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 220
+</pre></div>
+</div>
+<p>On AM625-SK (Switch):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am62xx-evm:~/IET# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 106
+     iet_rx_smd_err: 4
+     iet_rx_frag: 220
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+root@am62xx-evm:~/IET# ethtool -S eth1 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 0
+     iet_rx_smd_err: 0
+     iet_rx_frag: 0
+     iet_tx_hold: 0
+     iet_tx_frag: 212
+</pre></div>
+</div>
+<p>On AM64-SK (Receiver):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@am64xx-evm:~# ethtool -S eth0 | grep iet
+     iet_rx_assembly_err: 0
+     iet_rx_assembly_ok: 148
+     iet_rx_smd_err: 109
+     iet_rx_frag: 212
+     iet_tx_hold: 0
+     iet_tx_frag: 0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CPSW-CBS.html" class="btn btn-neutral float-left" title="3.2.2.10.3.3.2.3. CBS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CPSW-TSN-Tuning.html" class="btn btn-neutral float-right" title="3.2.2.10.3.3.3.1. TSN Switch Tuning Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

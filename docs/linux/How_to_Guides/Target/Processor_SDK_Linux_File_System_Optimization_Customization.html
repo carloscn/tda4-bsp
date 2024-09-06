@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.6. SDK File System Optimization/Customization &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.1.7. How to change dtb files" href="How_to_Change_dtb_File.html" />
+    <link rel="prev" title="4.1.5. How to Flash from U-boot Shell" href="../Host/How_to_Flash_Linux_System_from_U-boot.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../How_to_Guides_Developer_Notes.html">4.1. Developer Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Host/Connect_to_an_EVM_via_Telnet.html">4.1.1. Connect to an EVM via Telnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Setup_a_Samba_Server.html">4.1.2. How to Setup a Samba Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/Boot_Sequence.html">4.1.3. Boot Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/Moving_Files_to_the_Target_System.html">4.1.4. Moving Files to the Target System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Flash_Linux_System_from_U-boot.html">4.1.5. How to Flash from U-boot Shell</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.6. SDK File System Optimization/Customization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Change_dtb_File.html">4.1.7. How to change dtb files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_flash_emmc_device.html">4.1.8. How to flash eMMC device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_enable_DT_overlays_in_linux.html">4.1.9. How to enable DT overlays in linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_visualize_statistics_data.html">4.1.10. How to visualize statistics data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Use_K3Conf_Tool.html">4.1.11. How to Use K3Conf Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Verify_Ipc_Linux_R5.html">4.1.12. How to verify IPC between Linux and MCU R5 in Keystone devices?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Configure_MSMC_memory.html">4.1.13. How to configure K3 MSMC memory for use as SRAM or L3 cache?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Check_Device_Tree_Info.html">4.1.14. How to check some device tree information from user-space of Linux?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Integrate_Open_Source_Software.html">4.1.15. How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Build_a_Ubuntu_Linux_host_under_VMware.html">4.1.16. How to Build a Ubuntu Linux host under VMware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/K3_Resource_Partitioning_Tool.html">4.1.17. K3 Resource Partitioning Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/Tda4_Latest_FAQs.html">4.1.18. Latest FAQs on TDA4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../How_to_Guides_Hardware_Setup_with_CCS.html">4.2. Hardware EVM Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../How_to_Guides.html"><span class="section-number">4. </span>How to Guides</a> &raquo;</li>
+          <li><a href="../../How_to_Guides_Developer_Notes.html"><span class="section-number">4.1. </span>Developer Notes</a> &raquo;</li>
+      <li><span class="section-number">4.1.6. </span>SDK File System Optimization/Customization</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="sdk-file-system-optimization-customization">
+<h1><span class="section-number">4.1.6. </span>SDK File System Optimization/Customization<a class="headerlink" href="#sdk-file-system-optimization-customization" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="rootfs-optimization-purpose">Purpose</p>
+<p>The purpose of this article is to explain the file system that is
+delivered as part of the Processor SDK Linux J784s4 and how this file system
+can be modified to customize it for your use case. The tools discussed
+in this article are installed by default in the Processor SDK Linux J784s4 file
+system for your convenience.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="pre-built-file-systems">Pre-built File Systems</p>
+<p>The Processor SDK Linux J784s4 ships with a default file system:</p>
+<ol class="arabic simple">
+<li><p>tisdk-default-image-&lt;machine&gt;.tar.gz - This file system is created by taking
+a base file system and adding all the additional SDK components
+such as 3D graphics, matrix, profiling tools, etc. It is somewhat larger than
+a base file system, but is meant to have most of the tools developers would
+need when working with TI processors.</p></li>
+</ol>
+<p>This file system contains the <strong>opkg</strong> package manager and can
+be used as a starting point for system optimization as discussed in the
+next sections.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="the-basics-of-opkg">The Basics of OPKG</p>
+<p class="rubric" id="opkg-list-commands">opkg - list commands</p>
+<p><strong>opkg</strong> is the package manager used in the SDK file system to install
+and remove packages. You can get a list of the full commands supported
+by <strong>opkg</strong> by running the following command on the target device:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>target# opkg
+</pre></div>
+</div>
+<p class="rubric" id="opkg-list-installed-packages">opkg - list installed packages</p>
+<p>To the list of packages are part of the file system and the version of
+each package you can run the following command on the target device:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>target# opkg list-installed
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This list only contains information about packages that were
+installed using the package manager. Applications that were built and
+copied to the file system and not installed as a .ipk package are not
+tracked by <strong>opkg</strong></p>
+</div>
+<p class="rubric" id="opkg-list-package-contents">opkg - list package contents</p>
+<p>Sometimes it is useful to know what files a package has installed. To do
+this you can use the following command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>target# opkg files &lt;pkgname&gt;
+</pre></div>
+</div>
+<p>Where &lt;pkgname&gt; is the name of the package as given in the <em>opkg
+list-installed</em> output. This command will produce a list of all the
+files on the file system that belong to the given package.</p>
+<p class="rubric" id="opkg-find-a-file-owner">opkg - find a file owner</p>
+<p>Sometimes you may find a file on the target file system that you want to
+remove, or just know where it came from. In this case you can use the
+following command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>target# opkg search &lt;file&gt;
+</pre></div>
+</div>
+<p>This command will find which package installed the given file. This may
+be useful later when you want to remove an particular file because this
+command can help you find the package to remove.</p>
+<p class="rubric" id="opkg-finding-dependencies">opkg - finding dependencies</p>
+<p>Sometimes when you want to remove a package it is useful to find out
+what other packages depend on the package you are removing. While the
+opkg remove command will tell you the immediate dependencies you can
+find the longer list of dependencies using:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>target# opkg whatdepends &lt;pkgname&gt;
+</pre></div>
+</div>
+<p>This command will print the list of packages the depend on the package
+you entered, as well as the packages that depend on those packages, and
+so forth.</p>
+<p class="rubric" id="removing-packages">Removing Packages</p>
+<p>One of the simplest ways to modify the contents of the file system is to
+use the <strong>opkg</strong> utility to remove packages (or install if you have
+pre-built packages). Removing a package is often as simple as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>target# opkg remove &lt;pkgname&gt;
+</pre></div>
+</div>
+<p>However, sometimes a package is a DEPENDENCY of another package. In this
+case you have the following options:</p>
+<ul class="simple">
+<li><p>Use the –force-depends option</p>
+<ul>
+<li><p>This option will force the removal of the package but will leave
+any packages that depend on this package installed. This can be
+useful in the case that you want to remove a particular package,
+but that package is depended on by some other package that you do
+not want removed.</p></li>
+</ul>
+</li>
+<li><p>Use the –force-removal-of-dependent-packages option</p>
+<ul>
+<li><p>This option will go up the dependency list and remove all packages
+in the dependency chain. You should check all the packages being
+removed to make sure they are indeed packages you want to remove
+and do not contain other files you want.</p></li>
+</ul>
+</li>
+<li><p>Remove the individual packages that depend on this package first</p>
+<ul>
+<li><p>This way you can control exactly which dependent packages are
+removed and which are left in place.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>target# opkg remove --force-removal-of-dependent-packages &lt;pkgname&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>opkg will print the packages that depend on the package being
+removed. It is usually a good idea to use the <em>opkg files</em> command for
+the packages that depend on the one being removed so that you can make
+sure that no files you really want to keep are going to be removed.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also use the whatdepends option discussed above to see
+the dependency list for a package</p>
+</div>
+<p>By using the <em>opkg remove</em> command in conjunction with the commands for
+listing packages, finding file owners, and listing package contents, you
+can quickly strip down a full file system into something smaller and
+more optimized for your use case. However, once a package is removed it
+cannot currently be re-installed without generating the .ipk file to
+install it.</p>
+<p class="rubric" id="adding-applications">Adding Applications</p>
+<p>In most cases installing additional applications can be as simple as
+copying the the binary executable to the file system. However, if you
+have built your own .ipk packages you can use opkg to install those ipks
+into the target file system. One major advantage of using the package
+manager is the ability to track the package and it’s content with the
+opkg package manager. More details will be coming about how to build
+your own packages, but for now please refer to <a class="reference external" href="../../Overview_Building_the_SDK.html">Building the
+SDK</a> .</p>
+<p>To learn about Arago project, please refer <a class="reference external" href="https://git.yoctoproject.org/meta-arago">this
+link</a>.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Host/How_to_Flash_Linux_System_from_U-boot.html" class="btn btn-neutral float-left" title="4.1.5. How to Flash from U-boot Shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="How_to_Change_dtb_File.html" class="btn btn-neutral float-right" title="4.1.7. How to change dtb files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

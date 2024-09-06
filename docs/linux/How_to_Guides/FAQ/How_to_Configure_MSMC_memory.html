@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.13. How to configure K3 MSMC memory for use as SRAM or L3 cache? &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.1.14. How to check some device tree information from user-space of Linux?" href="How_to_Check_Device_Tree_Info.html" />
+    <link rel="prev" title="4.1.12. How to verify IPC between Linux and MCU R5 in Keystone devices?" href="How_to_Verify_Ipc_Linux_R5.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../How_to_Guides_Developer_Notes.html">4.1. Developer Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Host/Connect_to_an_EVM_via_Telnet.html">4.1.1. Connect to an EVM via Telnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Setup_a_Samba_Server.html">4.1.2. How to Setup a Samba Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/Boot_Sequence.html">4.1.3. Boot Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/Moving_Files_to_the_Target_System.html">4.1.4. Moving Files to the Target System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Flash_Linux_System_from_U-boot.html">4.1.5. How to Flash from U-boot Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/Processor_SDK_Linux_File_System_Optimization_Customization.html">4.1.6. SDK File System Optimization/Customization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_Change_dtb_File.html">4.1.7. How to change dtb files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_flash_emmc_device.html">4.1.8. How to flash eMMC device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_enable_DT_overlays_in_linux.html">4.1.9. How to enable DT overlays in linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_visualize_statistics_data.html">4.1.10. How to visualize statistics data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_Use_K3Conf_Tool.html">4.1.11. How to Use K3Conf Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Verify_Ipc_Linux_R5.html">4.1.12. How to verify IPC between Linux and MCU R5 in Keystone devices?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.13. How to configure K3 MSMC memory for use as SRAM or L3 cache?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Check_Device_Tree_Info.html">4.1.14. How to check some device tree information from user-space of Linux?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Integrate_Open_Source_Software.html">4.1.15. How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Build_a_Ubuntu_Linux_host_under_VMware.html">4.1.16. How to Build a Ubuntu Linux host under VMware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/K3_Resource_Partitioning_Tool.html">4.1.17. K3 Resource Partitioning Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tda4_Latest_FAQs.html">4.1.18. Latest FAQs on TDA4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../How_to_Guides_Hardware_Setup_with_CCS.html">4.2. Hardware EVM Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../How_to_Guides.html"><span class="section-number">4. </span>How to Guides</a> &raquo;</li>
+          <li><a href="../../How_to_Guides_Developer_Notes.html"><span class="section-number">4.1. </span>Developer Notes</a> &raquo;</li>
+      <li><span class="section-number">4.1.13. </span>How to configure K3 MSMC memory for use as SRAM or L3 cache?</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="how-to-configure-k3-msmc-memory-for-use-as-sram-or-l3-cache">
+<h1><span class="section-number">4.1.13. </span>How to configure K3 MSMC memory for use as SRAM or L3 cache?<a class="headerlink" href="#how-to-configure-k3-msmc-memory-for-use-as-sram-or-l3-cache" title="Permalink to this headline">¶</a></h1>
+<p>In Keystone devices, there exists on-chip memory at the MSMC interconnect.
+This can be configured either as SRAM or as L3 cache.</p>
+<p>Automotive ADAS applications, which use C7x, benefit a lot when the MSMC memory
+is configured as SRAM. Alternatively, the CPU benchmark applications get performance
+boost when the memory is configured as cache.</p>
+<p>Typically, MSMC memory needs to be split between SRAM and cache with the split boundary
+being aligned at 1MB. System firmware partitions SRAM between cache and SRAM at
+the bootup based on the board config data structure.</p>
+<p>Rebuild R5 bootloader images (tiboot3.bin and in case of legacy boot flow,
+sysfw.itb) with the right board configuration to change to desired behaviour.
+Following are the steps to achieve this:</p>
+<p>Modify the file <strong>board/ti/&lt;soc&gt;/board-cfg.yaml</strong> in the <strong>U-Boot</strong> repo:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">msmc</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">subhdr</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">magic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0xA5C3</span>
+<span class="w">        </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">    </span><span class="nt">msmc_cache_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x0</span>
+</pre></div>
+</div>
+<p>Here, the msmc_cache_size variable can take values from 0x0 to 0xf, where 0x0
+describes zero cache and 0xf describes full cache. Note that due to hardware
+restriction, the total memory that gets configured as cache is rounded up to 1MB.</p>
+<p>Following table describes an example of this for J721e platform.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>msmc_cache_size</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x0</p></td>
+<td><p>All of MSMC memory (i.e. 8MB) configured as SRAM</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x3</p></td>
+<td><p>2MB of MSMC memory configured as cache, rest 6MB is SRAM</p></td>
+</tr>
+<tr class="row-even"><td><p>0x6</p></td>
+<td><p>3MB of MSMC memory configured as cache, rest 5MB is SRAM</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xf</p></td>
+<td><p>All of MSMC memory (i.e. 8MB) configured as cache</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="How_to_Verify_Ipc_Linux_R5.html" class="btn btn-neutral float-left" title="4.1.12. How to verify IPC between Linux and MCU R5 in Keystone devices?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="How_to_Check_Device_Tree_Info.html" class="btn btn-neutral float-right" title="4.1.14. How to check some device tree information from user-space of Linux?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

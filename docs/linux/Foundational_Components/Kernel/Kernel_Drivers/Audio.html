@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.2. Audio &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.2.2.3. CSI2RX" href="Camera/CSI2RX.html" />
+    <link rel="prev" title="3.2.2.1. ADC" href="ADC.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.2. </span>Audio</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="audio">
+<span id="audio-user-guide"></span><h1><span class="section-number">3.2.2.2. </span>Audio<a class="headerlink" href="#audio" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.2.2.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The audio subsystem present on various TI SoCs consists of two major components:</p>
+<ol class="arabic simple">
+<li><p><strong>Multi-channel Audio Serial Port (McASP)</strong> - Provides a full-duplex
+serial interface between the host processor and external audio peripherals
+like codecs over industry-standard protocols like Inter-IC sound (I2S).</p></li>
+<li><p><strong>System DMA engine</strong> - Provides McASP with direct access to system
+memory to read audio samples from (for playback) or store audio samples to
+(for capture).</p></li>
+</ol>
+<p>Along with the above, most TI EVMs and SKs have line input/output jack(s) wired
+to an on-board codec that can convert between the analog signals and the
+digital protocol supported by McASP.</p>
+</div>
+<div class="section" id="software-architecture">
+<h2><span class="section-number">3.2.2.2.2. </span>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h2>
+<p>All the hardware components are exposed to userspace applications using the
+Linux ALSA (Advance Linux Sound Architecture) framework, which allows control
+and configuration of the hardware through common APIs. For more details check
+the <a class="reference external" href="#additional-information">links below</a>.</p>
+<p>Within the kernel there are separate drivers for each component. For each
+board a sound-card instance is created, usually using the <code class="code docutils literal notranslate"><span class="pre">sound</span> <span class="pre">{}</span></code>
+device tree node, that links together various components like different McASP
+instances to a codec or an HDMI bridge.</p>
+<img alt="../../../../_images/audio-asoc-arch.png" src="../../../../_images/audio-asoc-arch.png" />
+</div>
+<div class="section" id="generic-commands-and-instructions">
+<h2><span class="section-number">3.2.2.2.3. </span>Generic commands and instructions<a class="headerlink" href="#generic-commands-and-instructions" title="Permalink to this headline">¶</a></h2>
+<p>Most of the boards have simple audio setup which means we have one
+sound card with one playback and one capture PCM.
+To list the available sound cards and PCMs for playback:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>aplay -l
+</pre></div>
+</div>
+<p>To list the available sound cards and PCMs for capture:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>arecord -l
+</pre></div>
+</div>
+<p>In most cases <code class="docutils literal notranslate"><span class="pre">-Dplughw:0,0</span></code> is the device we want to use for audio
+but in case we have several audio devices (onboard + USB for example)
+one need to specify which device to use for audio:</p>
+<p><code class="docutils literal notranslate"><span class="pre">-Dplughw:j721ecpbanalog,0</span></code> will use the onboard audio on J721E-EVM
+board.</p>
+<p>To play audio on card0’s PCM0 and let ALSA to decide if resampling is
+needed:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>aplay -Dplughw:0,0 &lt;path to wav file&gt;
+</pre></div>
+</div>
+<p>To record audio to a file:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>arecord -Dplughw:0,0 -t wav &lt;path to wav file&gt;
+</pre></div>
+</div>
+<p>To test full duplex audio (play back the recorded audio w/o intermediate
+file):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>arecord -Dplughw:0,0 | aplay -Dplughw:0,0
+</pre></div>
+</div>
+<p>To request specific audio format to be used for playback/capture take a look
+at the help of aplay/arecord.   For example, one can specify the format with <code class="docutils literal notranslate"><span class="pre">-f</span></code>,
+the sampling rate with <code class="docutils literal notranslate"><span class="pre">-r</span></code>, or the number of channels with <code class="docutils literal notranslate"><span class="pre">-c</span></code>.
+In this case, one should open the hw device (not the plughw) via <code class="docutils literal notranslate"><span class="pre">-Dhw:0,0</span></code>.
+For example, record 48KHz, stereo 16bit audio:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>arecord -Dhw:0,0 -fdat -t wav record_48K_stereo_16bit.wav
+</pre></div>
+</div>
+<p>Or to record record 96KHz, stereo 24bit audio:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>arecord -Dhw:0,0 -fS24_LE -c2 -r96000 -t wav record_96K_stereo_24bit.wav
+</pre></div>
+</div>
+<p>It is a good practice to save the mixer settings found to be good and
+reload them after every boot (if your distribution is not doing this
+already)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Set the mixers for the board with amixer, alsamixer
+alsactl -f board.aconf store
+</pre></div>
+</div>
+<p>After booting up the board it can be restored with a single command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>alsactl -f board.aconf restore
+</pre></div>
+</div>
+</div>
+<div class="section" id="board-specific-instructions">
+<h2><span class="section-number">3.2.2.2.4. </span>Board-specific instructions<a class="headerlink" href="#board-specific-instructions" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="j721e-cpb">J721e Common Processor Board</p>
+<div class="line-block">
+<div class="line">The board uses <strong>pcm3168a codec</strong> connected through <strong>McASP10 [AXR0-3 for playback, AXR4-6 for capture]</strong>.
+The codec receives its SCKI clock from the AUDIO_EXT_REFCLK2 pin output of the j721e.</div>
+<div class="line">PLL4 is configured to 1179648000 Hz for the 48KHz sampling rate family.</div>
+<div class="line">PLL15 is configured to 1083801600 Hz for the 44.1KHz sampling rate family.</div>
+<div class="line">The board has seven stereo jacks, including four jacks for playback and three jacks for capture.</div>
+<div class="line"><br /></div>
+</div>
+<p>The audio channel mapping to jacks depends on the number of channels (slots) in the audio stream:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>       |o|c1  |o|p1  |o|p3
+ _     | |    | |    | |
+|o|c3  |o|c2  |o|p4  |o|p2
+--------------------------
+
+c1/2/3 - capture jacks (3rd is line input)
+p1/2/3/4 - playback jacks (4th is line output)
+
+2 channel audio (stereo):
+-------------------------
+0 (left):  p1/c1 left
+1 (right): p1/c1 right
+
+4 channel audio:
+----------------
+0: p1/c1 left
+1: p2/c2 left
+2: p1/c1 right
+3: p2/c2 right
+
+6 channel audio:
+----------------
+0: p1/c1 left
+1: p2/c2 left
+2: p3/c3 left
+3: p1/c1 right
+4: p2/c2 right
+5: p3/c3 right
+
+8 channel audio:
+----------------
+0: p1/c1 left
+1: p2/c2 left
+2: p3/c3 left
+3: p4 left
+4: p1/c1 right
+5: p2/c2 right
+6: p3/c3 right
+7: p4 right
+</pre></div>
+</div>
+<p>For example, if the playback is opened in <strong>8-channel</strong> mode and <strong>stereo</strong> audio is
+desired on the <strong>line output (p4)</strong>,  then the <strong>left channel</strong> of the 8-channel stream should
+be placed to <strong>time slot 3</strong>, and the <strong>right channel</strong> of the 8-channel stream should be placed in <strong>time slot 7</strong>.</p>
+<p class="rubric" id="kernel-config-8">Kernel config</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers  ---&gt;
+  Sound card support  ---&gt;
+    Advanced Linux Sound Architecture  ---&gt;
+      ALSA for SoC audio support  ---&gt;
+        Audio support for Texas Instruments SoCs  ---&gt;
+          &lt;*&gt; SoC Audio support for j721e EVM
+</pre></div>
+</div>
+<p class="rubric" id="user-space-8-kernel-audio">User space</p>
+<p><code class="docutils literal notranslate"><span class="pre">NOTE:</span> <span class="pre">Playback</span> <span class="pre">volume</span> <span class="pre">is</span> <span class="pre">HIGH</span> <span class="pre">after</span> <span class="pre">boot.</span> <span class="pre">Do</span> <span class="pre">not</span> <span class="pre">use</span> <span class="pre">headset</span> <span class="pre">without</span> <span class="pre">lowering</span> <span class="pre">it!!!</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>amixer -c j721ecpbanalog sset &#39;codec1 DAC1&#39; 141  # Playback volume for p1 jack
+amixer -c j721ecpbanalog sset &#39;codec1 DAC2&#39; 141  # Playback volume for p2 jack
+amixer -c j721ecpbanalog sset &#39;codec1 DAC3&#39; 141  # Playback volume for p3 jack
+amixer -c j721ecpbanalog sset &#39;codec1 DAC4&#39; 141  # Playback volume for p4 jack
+</pre></div>
+</div>
+<p>Master volume control is disabled by default. It can be enabled by:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>amixer -c j721ecpbanalog sset &#39;codec1 DAC Volume Control Type&#39; &#39;Master + Individual&#39;
+</pre></div>
+</div>
+<p>Then, a master gain control can be applied to all outputs:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>amixer -c j721ecpbanalog sset &#39;codec1 Master&#39; 141  # Master Playback volume for p1/2/3/4 jack
+</pre></div>
+</div>
+</div>
+<div class="section" id="potential-issues">
+<h2><span class="section-number">3.2.2.2.5. </span>Potential issues<a class="headerlink" href="#potential-issues" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="in-case-of-xrun-under-or-overrun">In case of XRUN (under or overrun)</p>
+<div class="line-block">
+<div class="line">The underrun can happen when an application does not feed new samples
+in time to alsa-lib (due CPU usage). The overrun can happen when an
+application does not take new captured samples in time from alsa-lib.</div>
+<div class="line">There could be several reasons for XRUN to happen, but it usually
+points to system latency issues connected to CPU utilization or
+latency caused by the storage device.</div>
+<div class="line">Things to try:</div>
+</div>
+<ul class="simple">
+<li><p>Increase the buffer size (ALSA buffer and period size)</p></li>
+<li><p>Try to cache the file to be played in memory</p></li>
+<li><p>Try to use application which uses threads for interacting with ALSA
+and with the filesystem</p></li>
+</ul>
+<p class="rubric" id="in-case-of-cpu-stalls-when-recording">In case of CPU stalls (when recording)</p>
+<div class="line-block">
+<div class="line"><strong>No longer relevant</strong> as DMA driver does a force teardown of the channel.</div>
+<div class="line">On some platforms, recording audio on high sample rates may work fine the
+first time, but due to issues with channel cleanup it may cause CPU stalls
+when recording the second time, requiring a reboot to fix.</div>
+<div class="line">In such scenarios, use smaller period sizes (64 to 256) while recording. For
+example:</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>arecord -Dplughw:0,0 -r 48000 -t wav --period-size=64 &lt;path to wav file&gt;
+</pre></div>
+</div>
+<p class="rubric" id="alsa-period-size-must-be-aligned-with-the-fifo-depth-txrx-numevt">ALSA period size must be aligned with the FIFO depth (tx/rx
+numevt)</p>
+<div class="line-block">
+<div class="line"><strong>No longer relevant</strong> as the kernel side takes care of the AFIFO
+depth vs period size issue.</div>
+<div class="line">To decrease audio-caused stress on the system, the AFIFO is enabled and
+the depth is set to 32 for McASP.</div>
+<div class="line">If the ALSA period size is not aligned with this FIFO setting, a constant
+‘trrrrr’ can be heard on the output. This is caused by the eDMA not being able
+to handle a fragment size that is not aligned with burst size (AFIFO depth).</div>
+<div class="line">Application needs to make sure that <strong>period_size / FIFO depth</strong> is
+even number.</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="additional-information">
+<h2><span class="section-number">3.2.2.2.6. </span>Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="additional-information-alsa-links">ALSA links</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.alsa-project.org/main/index.php/ASoC">ALSA SoC Project
+Homepage</a></p></li>
+<li><p><a class="reference external" href="http://www.alsa-project.org/main/index.php/Main_Page">ALSA Project
+Homepage</a></p></li>
+<li><p><a class="reference external" href="http://www.alsa-project.org/alsa-doc/alsa-lib/">ALSA User Space
+Library</a></p></li>
+<li><p><a class="reference external" href="http://www.equalarea.com/paul/alsa-audio.html">Using ALSA Audio
+API</a> Author: Paul
+Davis</p></li>
+</ol>
+<p class="rubric" id="additional-information-software-help">Software Help</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.ti.com/lit/an/sprac10/sprac10.pdf">Tools and Techniques for Audio Debugging</a></p></li>
+</ol>
+<p class="rubric" id="additional-information-audio-hardware-codecs">Audio hardware codecs</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.ti.com/lit/ds/symlink/pcm3168a.pdf">PCM3168A - 24-Bit, 96kHz/192kHz, 6-In/8-Out Audio CODEC with
+Differential Input/Output</a></p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ADC.html" class="btn btn-neutral float-left" title="3.2.2.1. ADC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Camera/CSI2RX.html" class="btn btn-neutral float-right" title="3.2.2.3. CSI2RX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.1.1. Download and Install the SDK &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.1.2. Run Setup Scripts" href="Run_Setup_Scripts.html" />
+    <link rel="prev" title="1.1. Getting Started Guide" href="../Overview_Getting_Started_Guide.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../Overview.html">1. Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Overview_Getting_Started_Guide.html">1.1. Getting Started Guide</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.1.1. Download and Install the SDK</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#download-install-the-sdk-installer-inside-a-container">1.1.1.1. Download &amp; Install the SDK Installer Inside a Container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-install-the-sdk-installer-on-host">1.1.1.2. Download &amp; Install the SDK Installer on Host</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Run_Setup_Scripts.html">1.1.2. Run Setup Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Processor_SDK_Linux_create_SD_card.html">1.1.3. Create SD Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GCC_ToolChain.html">1.1.4. GCC ToolChain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Building_the_SDK.html">1.2. Building the SDK with Yocto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Top_Level_Makefile.html">1.3. Simplified SDK Build Using Top-Level Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Directory_Structure_Overview.html">1.4. Directory Structure Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_PSDKLA_PSDKRA_Summary.html">1.5. Processor SDK RTOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Technical_Support.html">1.6. Processor SDK Technical Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_GPLv3_Disclaimer.html">1.7. GPLv3 Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Overview.html"><span class="section-number">1. </span>Overview</a> &raquo;</li>
+          <li><a href="../Overview_Getting_Started_Guide.html"><span class="section-number">1.1. </span>Getting Started Guide</a> &raquo;</li>
+      <li><span class="section-number">1.1.1. </span>Download and Install the SDK</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="download-and-install-the-sdk">
+<span id="download-and-install-sdk"></span><h1><span class="section-number">1.1.1. </span>Download and Install the SDK<a class="headerlink" href="#download-and-install-the-sdk" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="download-and-install-sdk-overview">Overview</p>
+<p>The Processor SDK Linux J784s4 Installer (ti-processor-sdk-linux-adas-j784s4-evm-&lt;version&gt;-Linux-x86-Install.bin)
+will install the necessary components to start your development on the
+TI microprocessor.</p>
+<p>The SDK consists of a development filesystem, a
+target filesystem, example applications, toolchain and board support
+package, ease of use scripts and documentation.</p>
+<p>The Processor SDK Linux J784s4 now includes the ARM GCC toolchain.
+The Processor SDK Linux J784s4 was built and tested against a specific Linux
+Distribution name and version, Ubuntu 22.04.
+Note this <strong>does not</strong> prevent the user from installing the SDK on other Linux
+distributions.</p>
+<div class="section" id="download-install-the-sdk-installer-inside-a-container">
+<h2><span class="section-number">1.1.1.1. </span>Download &amp; Install the SDK Installer Inside a Container<a class="headerlink" href="#download-install-the-sdk-installer-inside-a-container" title="Permalink to this headline">¶</a></h2>
+<p>TI provides a Ubuntu 22.04 based docker image with all the packages that are required to install the SDK Installer.</p>
+<p>The Docker image is hosted on <a class="reference external" href="https://github.com/TexasInstruments/ti-docker-images/pkgs/container/ubuntu-distro">ghcr.io/texasinstruments</a>.</p>
+<p>Refer <a class="reference external" href="https://github.com/TexasInstruments/ti-docker-images?tab=readme-ov-file#steps-to-run-sdk-installer-inside-container">Steps to Run SDK Installer inside a Container</a> for a comprehensive guide.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before starting the container, ensure that you have completed all the Pre-Requisites as mentioned <a class="reference external" href="https://github.com/TexasInstruments/ti-docker-images?tab=readme-ov-file#pre-requisites">here</a>.</p>
+</div>
+</div>
+<div class="section" id="download-install-the-sdk-installer-on-host">
+<h2><span class="section-number">1.1.1.2. </span>Download &amp; Install the SDK Installer on Host<a class="headerlink" href="#download-install-the-sdk-installer-on-host" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="downloading-the-sdk-installer">Downloading the SDK installer</p>
+<p>You can download the latest Processor SDK Linux J784s4 installer from the
+<a class="reference external" href="https://www.ti.com/tool/download/PROCESSOR-SDK-LINUX-J784S4/">J784S4-Linux-SDK-Download-page</a>.</p>
+<p class="rubric" id="how-to-run-the-sdk-installer">How to Run the SDK Installer</p>
+<p>Make sure that the execute permissions are set. Bring up a terminal
+window and change directories to where the installer is located
+(probably the Downloads directory) and run the following commands:</p>
+<pre class="literal-block">chmod +x ./ti-processor-sdk-linux-adas-j784s4-evm-&lt;version&gt;-Linux-x86-Install.bin
+./ti-processor-sdk-linux-adas-j784s4-evm-&lt;version&gt;-Linux-x86-Install.bin</pre>
+<p>Alternatively, you can give execute permissions and run the “ti-processor-sdk-linux-adas-j784s4-evm-&lt;version&gt;-Linux-x86-Install.bin”
+by double clicking on it within your Linux host PC.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As a part of the installation, the packaging will run a script to configure your
+environment and download the Linux devkit.  This will cause the installation to
+continue for roughly a minute even once it shows that it has reached 100%.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If nothing seems to happen, you are probably running a 32-bit version of
+Linux. The installer is 64-bit, and will not execute properly.</p>
+</div>
+<p class="rubric" id="additional-installer-options">Additional Installer Options</p>
+<p>Invoking the installer with argument –help will list available options
+for the installer (e.g. text installer, etc.):</p>
+<pre class="literal-block">./ti-processor-sdk-linux-adas-j784s4-evm-&lt;version&gt;-Linux-x86-Install.bin --help</pre>
+<p class="rubric" id="sdkinstaller-execution-steps">SDK Installer Execution Steps</p>
+<ol class="arabic simple">
+<li><p><strong>Confirm</strong>
+User is to confirm if loading the Processor SDK Linux J784s4 is ok. This is
+important to note if the user is trying to over-install on an existing
+directory and has made changes to the directory.</p></li>
+<li><p><strong>Directory Install Location</strong>
+The user will be prompted for a location on where to put the Processor SDK Linux J784s4.
+An example is given below.</p></li>
+<li><p><strong>Installation of software</strong>
+The software is installed.</p></li>
+</ol>
+<p class="rubric" id="where-to-install-the-processor-sdk-package">Where to install the Processor SDK package</p>
+<p>The default selection of where to install is the user’s home directory.</p>
+<img alt="../../_images/Processor_sdk_jacinto_select_directory.png" src="../../_images/Processor_sdk_jacinto_select_directory.png" />
+<p>After the installation, refer to section <a class="reference external" href="Run_Setup_Scripts.html">Setting up host environment</a> for next steps.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Overview_Getting_Started_Guide.html" class="btn btn-neutral float-left" title="1.1. Getting Started Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Run_Setup_Scripts.html" class="btn btn-neutral float-right" title="1.1.2. Run Setup Scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

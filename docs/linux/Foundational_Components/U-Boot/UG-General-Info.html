@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.1.1. General Information &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.1.2. USB Device Firmware Upgrade (DFU)" href="UG-DFU.html" />
+    <link rel="prev" title="3.1.1. User’s Guide" href="Users-Guide.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.1.1. General Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DFU.html">3.1.1.2. USB Device Firmware Upgrade (DFU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Network.html">3.1.1.3. Network (Wired or USB Client)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NAND.html">3.1.1.4. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Memory.html">3.1.1.5. SD, eMMC and USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SPI.html">3.1.1.6. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-QSPI.html">3.1.1.7. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NOR.html">3.1.1.8. NOR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UART.html">3.1.1.9. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SATA.html">3.1.1.10. SATA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UFS.html">3.1.1.11. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DDR3.html">3.1.1.12. DDR3 ECC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-HyperBus.html">3.1.1.13. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-RemoteProc.html">3.1.1.14. RemoteProc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Users-Guide.html"><span class="section-number">3.1.1. </span>User’s Guide</a> &raquo;</li>
+      <li><span class="section-number">3.1.1.1. </span>General Information</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="general-information">
+<h1><span class="section-number">3.1.1.1. </span>General Information<a class="headerlink" href="#general-information" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-the-u-boot-source-code">
+<h2><span class="section-number">3.1.1.1.1. </span>Getting the U-Boot Source Code<a class="headerlink" href="#getting-the-u-boot-source-code" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to get access to the U-boot source code is by
+downloading and installing the Processor SDK Linux. Once installed,
+the U-Boot source code is included in the SDK at the path <code class="docutils literal notranslate"><span class="pre">&lt;path</span> <span class="pre">to</span> <span class="pre">tisdk&gt;/board-support</span></code>.
+For your convenience the sources also includes the U-Boot’s
+git repository including commit history.</p>
+<p>Alternatively, U-Boot sources can directly be fetched from GIT. The GIT
+repo URL, branch and commit id can be found in the <a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific_Release_Notes.html#u-boot-release-notes"><span class="std std-ref">U-Boot</span></a>
+section of the release notes.</p>
+</div>
+<div class="section" id="build-u-boot">
+<span id="build-u-boot-label"></span><h2><span class="section-number">3.1.1.1.2. </span>Build U-Boot<a class="headerlink" href="#build-u-boot" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following commands are intended to be run from the root of the
+U-Boot tree unless otherwise specified. The root of the U-Boot tree is
+the top-level directory and can be identified by looking for the
+“MAINTAINERS” file.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note about HSM Rearchitecture</p>
+<p>After HSM rearchitecture in bootloader, loading of remote cores with firmware
+will be supported at A72 SPL stage only and not at R5 SPL stage. Early loading
+of remote core firmware in R5 SPL requires core reset functionality. As part
+of HSM rearchitecture, this functionality has moved into the DM service which
+requires SPL to re-implement device and clock control. This support is not
+present in Uboot R5 SPL due to memory constraints on the existing 64-bit TI devices.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As of Processor SDK 9.0, compilation of bootloader images will no longer require
+different defconfigs for GP and HS devices. The same build commands will generate images
+for GP, HS-SE and HS-FS devices.</p>
+</div>
+<p class="rubric">Prebuilt Images</p>
+<p>Several prebuilt images are required from the TI Processor SDK for building U-Boot on K3 based platforms.</p>
+<ul class="simple">
+<li><p>TF-A (BL31): Refer to <a class="reference internal" href="../../Foundational_Components_ATF.html#foundational-components-atf"><span class="std std-ref">ARM Trusted Firmware-A</span></a> for more information</p></li>
+<li><p>OP-TEE (TEE): Refer to <a class="reference internal" href="../../Foundational_Components_OPTEE.html#foundational-components-optee"><span class="std std-ref">OP-TEE</span></a> for more information</p></li>
+<li><p>ti-linux-firmware (BINMAN_INDIRS): Prebuilt binaries for DM and SYSFW available <a class="reference external" href="https://git.ti.com/cgit/processor-firmware/ti-linux-firmware/log/?h=ti-linux-firmware">here</a>.</p></li>
+</ul>
+<p>All of these are available in the SDK at <code class="docutils literal notranslate"><span class="pre">&lt;path</span> <span class="pre">to</span> <span class="pre">tisdk&gt;/board-support/prebuilt-images&gt;</span></code></p>
+<p>Go <a class="reference internal" href="../../Overview/Download_and_Install_the_SDK.html#download-and-install-sdk"><span class="std std-ref">here</span></a> to download and install the SDK.</p>
+<p class="rubric">Setting up the toolchain paths</p>
+<p>Refer to <a class="reference internal" href="../../Overview/GCC_ToolChain.html#yocto-toolchain"><span class="std std-ref">Yocto-built SDK Toolchains</span></a> section to use the toolchain packaged in the Processor SDK (recommended).</p>
+<p>Refer to <a class="reference internal" href="../../Overview/GCC_ToolChain.html#external-arm-toolchain"><span class="std std-ref">ARM toolchains</span></a> to download and setup ARM toolchains, if the Processor SDK is not used.</p>
+<p>In either of the above setups, the u-boot build commands in the next section will assume the below variables are set appropriately.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CROSS_COMPILE_64</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CC_64</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CROSS_COMPILE_32</span></code></p></li>
+</ul>
+<p class="rubric">Compiling R5 and ARM64 images</p>
+<p>Use the following table to determine what defconfig to use to configure with:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 21%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Board</p></th>
+<th class="head"><p>SD/eMMC Boot</p></th>
+<th class="head"><p>UART boot</p></th>
+<th class="head"><p>OSPI boot</p></th>
+<th class="head"><p>USB DFU</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>J784S4 EVM</p></td>
+<td><p>j784s4_evm_r5_defconfig
+j784s4_evm_a72_defconfig</p></td>
+<td><p>j784s4_evm_r5_defconfig
+j784s4_evm_a72_defconfig</p></td>
+<td><p>j784s4_evm_r5_defconfig
+j784s4_evm_a72_defconfig</p></td>
+<td><p>j784s4_evm_r5_defconfig
+j784s4_evm_a72_defconfig</p></td>
+</tr>
+<tr class="row-odd"><td><p>AM69 HS-FS SK</p></td>
+<td><p>j784s4_evm_r5_defconfig
+j784s4_evm_a72_defconfig</p></td>
+<td><p>j784s4_evm_r5_defconfig
+j784s4_evm_a72_defconfig</p></td>
+<td><p>j784s4_evm_r5_defconfig
+j784s4_evm_a72_defconfig</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>u-boot<span class="w"> </span>dir&gt;
+<span class="gp">$ </span><span class="nv">PREBUILT_IMAGES</span><span class="o">=</span>&lt;path<span class="w"> </span>to<span class="w"> </span>tisdk&gt;/board-support/prebuilt-images
+
+<span class="go">R5</span>
+<span class="gp">$ </span>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">O</span><span class="o">=</span>&lt;output<span class="w"> </span>directory&gt;/r5<span class="w"> </span>&lt;soc&gt;_evm_r5_defconfig
+<span class="gp">$ </span>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">O</span><span class="o">=</span>&lt;output<span class="w"> </span>directory&gt;/r5<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CROSS_COMPILE_32</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">BINMAN_INDIRS</span><span class="o">=</span><span class="si">${</span><span class="nv">PREBUILT_IMAGES</span><span class="si">}</span>
+
+
+<span class="go">A72</span>
+<span class="gp">$ </span>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">O</span><span class="o">=</span>&lt;output<span class="w"> </span>directory&gt;/a72<span class="w"> </span>&lt;soc&gt;_evm_a72_defconfig
+<span class="gp">$ </span>make<span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm<span class="w"> </span><span class="nv">O</span><span class="o">=</span>&lt;output<span class="w"> </span>directory&gt;/a72<span class="w"> </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CROSS_COMPILE_64</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CC_64</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">BL31</span><span class="o">=</span><span class="si">${</span><span class="nv">PREBUILT_IMAGES</span><span class="si">}</span>/bl31.bin<span class="w"> </span><span class="nv">TEE</span><span class="o">=</span><span class="si">${</span><span class="nv">PREBUILT_IMAGES</span><span class="si">}</span>/bl32.bin<span class="w"> </span><span class="nv">BINMAN_INDIRS</span><span class="o">=</span><span class="si">${</span><span class="nv">PREBUILT_IMAGES</span><span class="si">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>BINMAN_INDIRS is used to fetch the DM binary from board-support/prebuilt-images/ti-dm/ and SYSFW binaries from board-support/prebuilt-images/ti-sysfw/. If not using the SDK, BINMAN_INDIRS can point to either ti-linux-firmware or any folder where DM is located in &lt;path to folder&gt;/ti-dm/ and SYSFW binaries are present in &lt;path to folder&gt;/ti-sysfw/. Please make sure to use the absolute path.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is also possible to pick up a custom DM binary by adding TI_DM argument pointing to the file. If not provided, it defaults to picking up the DM binary from BINMAN_INDIRS. This is only applicable to devices that utilize split firmware.</p>
+</div>
+<p class="rubric" id="target-images">Target Images</p>
+<p>Copy the below images to the boot partition of an SD card and boot.
+Instructions to format the SD card can be found <a class="reference external" href="../../Overview/Processor_SDK_Linux_create_SD_card.html">here</a>.</p>
+<ul class="simple">
+<li><p>GP</p>
+<ul>
+<li><p>tiboot3-j784s4-gp-evm.bin from &lt;output directory&gt;/r5</p></li>
+<li><p>tispl.bin_unsigned, u-boot.img_unsigned from &lt;output directory&gt;/a53</p></li>
+</ul>
+</li>
+<li><p>HS-FS</p>
+<ul>
+<li><p>tiboot3-j784s4-hs-fs-evm.bin from &lt;output directory&gt;/r5</p></li>
+<li><p>tispl.bin, u-boot.img from &lt;output directory&gt;/a53</p></li>
+</ul>
+</li>
+<li><p>HS-SE</p>
+<ul>
+<li><p>tiboot3-j784s4-hs-evm.bin from &lt;output directory&gt;/r5</p></li>
+<li><p>tispl.bin, u-boot.img from &lt;output directory&gt;/a53</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="image-formats">
+<h2><span class="section-number">3.1.1.1.3. </span>Image Formats<a class="headerlink" href="#image-formats" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p>tiboot3.bin:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>+-----------------------+
+|        X.509          |
+|      Certificate      |
+| +-------------------+ |
+| |                   | |
+| |        R5         | |
+| |   u-boot-spl.bin  | |
+| |                   | |
+| +-------------------+ |
+| |                   | |
+| |     FIT header    | |
+| | +---------------+ | |
+| | |               | | |
+| | |   DTB 1...N   | | |
+| | +---------------+ | |
+| +-------------------+ |
+| |                   | |
+| |      FIT HEADER   | |
+| | +---------------+ | |
+| | |               | | |
+| | |   sysfw.bin   | | |
+| | +---------------+ | |
+| | |               | | |
+| | |  board config | | |
+| | +---------------+ | |
+| | |               | | |
+| | |   PM config   | | |
+| | +---------------+ | |
+| | |               | | |
+| | |   RM config   | | |
+| | +---------------+ | |
+| | |               | | |
+| | | Secure config | | |
+| | +---------------+ | |
+| +-------------------+ |
++-----------------------+
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>tispl.bin</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>+-----------------------+
+|                       |
+|       FIT HEADER      |
+| +-------------------+ |
+| |                   | |
+| |      A72 ATF      | |
+| +-------------------+ |
+| |                   | |
+| |     A72 OPTEE     | |
+| +-------------------+ |
+| |                   | |
+| |      R5 DM FW     | |
+| +-------------------+ |
+| |                   | |
+| |      A72 SPL      | |
+| +-------------------+ |
+| |                   | |
+| |   SPL DTB 1...N   | |
+| +-------------------+ |
++-----------------------+
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="boot-flow">
+<h2><span class="section-number">3.1.1.1.4. </span>Boot Flow<a class="headerlink" href="#boot-flow" title="Permalink to this headline">¶</a></h2>
+<p>On K3 architecture based devices, ROM supports boot only via MCU(R5). This means that
+bootloader has to run on R5 core. In order to meet this constraint, keeping
+safety in picture and to have faster boot time, the software boot architecture
+is designed as below:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>+------------------------------------------------------------------------+-----------------------+
+|        SMS             |      MCU R5           |        A72            |  MAIN R5/C7x          |
++------------------------------------------------------------------------+-----------------------+
+|    +--------+          |                       |                       |                       |
+|    |  Reset |          |                       |                       |                       |
+|    +--------+          |                       |                       |                       |
+|         :              |                       |                       |                       |
+|    +--------+          |   +-----------+       |                       |                       |
+|    | *ROM*  |----------|--&gt;| Reset rls |       |                       |                       |
+|    +--------+          |   +-----------+       |                       |                       |
+|    |        |          |         :             |                       |                       |
+|    |  ROM   |          |         :             |                       |                       |
+|    |services|          |         :             |                       |                       |
+|    |        |          |   +-------------+     |                       |                       |
+|    |        |          |   |  *R5 ROM*   |     |                       |                       |
+|    |        |          |   +-------------+     |                       |                       |
+|    |        |&lt;---------|---|Load and auth|     |                       |                       |
+|    |        |          |   | tiboot3.bin |     |                       |                       |
+|    | Start  |          |   +-------------+     |                       |                       |
+|    |  TIFS  |&lt;---------|---|    Start    |     |                       |                       |
+|    |        |          |   |    TIFS     |     |                       |                       |
+|    +--------+          |   +-------------+     |                       |                       |
+|        :               |   |             |     |                       |                       |
+|    +---------+         |   |   Load      |     |                       |                       |
+|    | *TIFS*  |         |   |   system    |     |                       |                       |
+|    +---------+         |   | Config data |     |                       |                       |
+|    |         |&lt;--------|---|             |     |                       |                       |
+|    |         |         |   +-------------+     |                       |                       |
+|    |         |         |         :             |                       |                       |
+|    |         |         |         :             |                       |                       |
+|    |         |         |         :             |                       |                       |
+|    |         |         |   +-------------+     |                       |                       |
+|    |         |         |   |  *R5 SPL*   |     |                       |                       |
+|    |         |         |   +-------------+     |                       |                       |
+|    |         |         |   |    DDR      |     |                       |                       |
+|    |         |         |   |   config    |     |                       |                       |
+|    |         |         |   +-------------+     |                       |                       |
+|    |         |         |   |    Load     |     |                       |                       |
+|    |         |         |   |  tispl.bin  |     |                       |                       |
+|    |         |         |   +-------------+     |                       |                       |
+|    |         |         |   |   Load R5   |     |                       |                       |
+|    |         |         |   |   firmware  |     |                       |                       |
+|    |         |         |   +-------------+     |                       |                       |
+|    |         |&lt;--------|---| Start A72   |     |                       |                       |
+|    |         |         |   | and jump to |     |                       |                       |
+|    |         |         |   | DM fw image |     |                       |                       |
+|    |         |         |   +-------------+     |                       |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |---------|-----------------------|----&gt;| Reset rls |     |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |  TIFS   |         |                       |          :            |                       |
+|    |Services |         |                       |     +-----------+     |                       |
+|    |         |&lt;--------|-----------------------|----&gt;|*ATF/OPTEE*|     |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |         |                       |          :            |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |&lt;--------|-----------------------|----&gt;| *A72 SPL* |     |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |         |                       |     |   Load    |     |                       |
+|    |         |         |                       |     | u-boot.img|     |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |         |                       |          :            |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |&lt;--------|-----------------------|----&gt;| *U-Boot*  |     |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |         |                       |     |  prompt   |     |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |         |                       |     |  Load R5  |     |                       |
+|    |         |         |                       |     |  Firmware |     |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |&lt;--------|-----------------------|-----|  Start R5 |     |      +-----------+    |
+|    |         |---------|-----------------------|-----+-----------+-----|-----&gt;| R5 starts |    |
+|    |         |         |                       |     |  Load C7  |     |      +-----------+    |
+|    |         |         |                       |     |  Firmware |     |                       |
+|    |         |         |                       |     +-----------+     |                       |
+|    |         |&lt;--------|-----------------------|-----|  Start C7 |     |      +-----------+    |
+|    |         |---------|-----------------------|-----+-----------+-----|-----&gt;| C7 starts |    |
+|    |         |         |                       |                       |      +-----------+    |
+|    |         |         |                       |                       |                       |
+|    +---------+         |                       |                       |                       |
+|                        |                       |                       |                       |
++------------------------------------------------------------------------+-----------------------+
+</pre></div>
+</div>
+<p>Here TIFS acts as master and provides all the critical services. R5/ARM64
+requests TIFS to get these services done as shown in the above diagram.</p>
+</div>
+<div class="section" id="u-boot-environment">
+<h2><span class="section-number">3.1.1.1.5. </span>U-Boot Environment<a class="headerlink" href="#u-boot-environment" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SDK 9.0 will not default to the environments that are saved on the boards,
+It will default to the ones that are given with the particular uboot in
+the release.</p>
+</div>
+<p>By default the SDK builds will have the default environments whenever being
+run, to have some custom environments, one needs to rely on uEnv.txt
+file.</p>
+<p>The added benefit of using uEnv.txt is that it is more granular than the
+saveenv counterpart as we can choose to store the variables that are
+actually being set during the development workflow.</p>
+<p><strong>Writing to MMC/EMMC</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; env export -t $loadaddr &lt;list of variables&gt;</span>
+<span class="go">=&gt; fatwrite mmc ${mmcdev} ${loadaddr} ${bootenvfile} ${filesize}</span>
+</pre></div>
+</div>
+<p>The following will update the uEnv.txt file on the bootmedia and then
+whenever “run envboot” is run on the board, uEnv.txt will be read based on
+mmcdev value to be read either from emmc/sd card.</p>
+<p>You can specifically choose the variables that you are changing in your
+development process so that the other variables are not affected due to the
+whole environment being saved. Optionally, one can save the full
+environment too in uEnv.txt by not specifying &lt;list of variables&gt; this
+will have some issues with the ethernet mac addresses not being overridden
+but other things will be set.</p>
+<p><strong>Reading from MMC/EMMC</strong></p>
+<p>By default run envboot will read it from the MMC/EMMC partition ( based on
+mmcdev) and set the environments.</p>
+<p>If manually needs to be done then the environment can be read from the
+filesystem and then imported</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; fatload mmc ${mmcdev} ${loadaddr} ${bootenvfile}</span>
+<span class="go">=&gt; env import -t ${loadaddr} ${filesize}</span>
+</pre></div>
+</div>
+<p>For production environments if one needs to rely on saveenv counterpart
+then they can always refer to the <a class="reference external" href="https://git.ti.com/cgit/ti-u-boot/ti-u-boot/commit/?h=ti-u-boot-2023.04-next&amp;id=949e9cf709391136aa9a7a7f2c2215a9855261ef">commit</a></p>
+<p class="rubric" id="networking-environment">Networking Environment</p>
+<p>When using a USB-Ethernet dongle a valid MAC address must be set in the
+environment. To create a valid address please read <a class="reference external" href="http://www.denx.de/wiki/view/DULG/WhereCanIGetAValidMACAddress">**this
+page**</a>.
+Then issue the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; setenv usbethaddr value:from:link:above</span>
+</pre></div>
+</div>
+<p>You can use the <strong>printenv</strong> command to see if <strong>usbethaddr</strong> is already
+set.</p>
+<p>Then start the USB subsystem:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; usb start</span>
+</pre></div>
+</div>
+<p>The default behavior of U-Boot is to utilize all information that a DHCP
+server passes to us when the user issues the <strong>dhcp</strong> command. This will
+include the dhcp parameter <em>next-server</em> which indicates where to fetch
+files from via TFTP. There may be times however where the dhcp server on
+your network provides incorrect information and you are unable to modify
+the server. In this case the following steps can be helpful:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; setenv autoload no</span>
+<span class="go">=&gt; dhcp</span>
+<span class="go">=&gt; setenv serverip correct.server.ip</span>
+<span class="go">=&gt; tftp</span>
+</pre></div>
+</div>
+<p>Another alternative is to utilize the full syntax of the tftp command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; setenv autoload no</span>
+<span class="go">=&gt; dhcp</span>
+<span class="go">=&gt; tftp ${loadaddr} server.ip:fileName</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="available-ram-for-image-download">
+<h2><span class="section-number">3.1.1.1.6. </span>Available RAM for image download<a class="headerlink" href="#available-ram-for-image-download" title="Permalink to this headline">¶</a></h2>
+<p>To know the amount of RAM available for downloading images or for other
+usage, use <code class="docutils literal notranslate"><span class="pre">bdinfo</span></code> command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; bdinfo</span>
+<span class="go">arch_number = 0x00000000</span>
+<span class="go">boot_params = 0x80000100</span>
+<span class="go">DRAM bank   = 0x00000000</span>
+<span class="go">-&gt; start    = 0x80000000</span>
+<span class="go">-&gt; size     = 0x7F000000</span>
+<span class="go">baudrate    = 115200 bps</span>
+<span class="go">TLB addr    = 0xFEFF0000</span>
+<span class="go">relocaddr   = 0xFEF30000</span>
+<span class="go">reloc off   = 0x7E730000</span>
+<span class="go">irq_sp      = 0xFCEF8880</span>
+<span class="go">sp start    = 0xFCEF8870</span>
+<span class="go">Early malloc usage: 890 / 2000</span>
+</pre></div>
+</div>
+<p>After booting, U-Boot relocates itself (along with its various reserved
+RAM areas) and places itself at end of available RAM (starting at
+<code class="docutils literal notranslate"><span class="pre">relocaddr</span></code> in <code class="docutils literal notranslate"><span class="pre">bdinfo</span></code> output above). Only the stack is located
+just before that area. The address of top of the stack is in
+<code class="docutils literal notranslate"><span class="pre">sp</span> <span class="pre">start</span></code> in <code class="docutils literal notranslate"><span class="pre">bdinfo</span></code> output and it grows downwards. Users should
+reserve at least about 1MB for stack, so in the example output above,
+RAM in the range of <code class="docutils literal notranslate"><span class="pre">[0x80000000,</span> <span class="pre">0xFCE00000]</span></code> is safely available for
+use.</p>
+</div>
+<div class="section" id="device-trees">
+<h2><span class="section-number">3.1.1.1.7. </span>Device Trees<a class="headerlink" href="#device-trees" title="Permalink to this headline">¶</a></h2>
+<p>A note about device trees. Now all supported boards are required to use a
+device tree to boot. To facilitate this in supported platforms, a command
+in U-Boot environment <strong>findfdt</strong> is available that will set the <strong>fdtfile</strong>
+variable to the name of the device tree to use, as found with the kernel
+sources. In the Keystone-2 family devices (K2H/K/E/L/G), it is specified
+by <strong>name_fdt</strong> variable for each platform. The device tree is expected
+to be loaded from the same media as the kernel, and from the same relative path.</p>
+</div>
+<div class="section" id="sram-memory-layout-during-r5-spl-bootloader-stage">
+<span id="am64-sram-layout-label"></span><h2><span class="section-number">3.1.1.1.8. </span>SRAM memory Layout during R5 SPL bootloader stage<a class="headerlink" href="#sram-memory-layout-during-r5-spl-bootloader-stage" title="Permalink to this headline">¶</a></h2>
+<p>The SRAM memory layout explains the memory used for Bootloader’s operation.</p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Users-Guide.html" class="btn btn-neutral float-left" title="3.1.1. User’s Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="UG-DFU.html" class="btn btn-neutral float-right" title="3.1.1.2. USB Device Firmware Upgrade (DFU)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

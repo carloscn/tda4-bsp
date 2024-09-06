@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.3. Simplified SDK Build Using Top-Level Makefile &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.4. Directory Structure Overview" href="Overview_Directory_Structure_Overview.html" />
+    <link rel="prev" title="1.2. Building the SDK with Yocto" href="Overview_Building_the_SDK.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Overview.html">1. Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Overview_Getting_Started_Guide.html">1.1. Getting Started Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_Building_the_SDK.html">1.2. Building the SDK with Yocto</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.3. Simplified SDK Build Using Top-Level Makefile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">1.3.1. Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#makerules">1.3.1.1. makerules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rules-make">1.3.1.2. Rules.make</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">1.3.1.3. Top Level Makefile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-examples">1.3.2. Usage Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_Directory_Structure_Overview.html">1.4. Directory Structure Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_PSDKLA_PSDKRA_Summary.html">1.5. Processor SDK RTOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_Technical_Support.html">1.6. Processor SDK Technical Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview_GPLv3_Disclaimer.html">1.7. GPLv3 Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Overview.html"><span class="section-number">1. </span>Overview</a> &raquo;</li>
+      <li><span class="section-number">1.3. </span>Simplified SDK Build Using Top-Level Makefile</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="overview-top-level-makefile"></span><div class="section" id="simplified-sdk-build-using-top-level-makefile">
+<span id="top-level-makefile"></span><h1><span class="section-number">1.3. </span>Simplified SDK Build Using Top-Level Makefile<a class="headerlink" href="#simplified-sdk-build-using-top-level-makefile" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2><span class="section-number">1.3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Inside of the Processor SDK Linux J784s4 package, there is a top-level Makefile that can
+be used to build some of the sub-components found within the SDK. This
+Makefile uses the Rules.make file and gives an example of how the
+various components can be built and the parameters to use for J784S4.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should not call this makefile with the <a class="reference external" href="Overview/GCC_ToolChain.html#environment-setup-script">environment-setup
+script</a>
+sourced. The sub-component Makefiles will handle sourcing this script
+where appropriate, but some make targets such as the Linux kernel make
+target do not work properly when this script is already sourced.</p>
+</div>
+<p class="rubric" id="makefile-required-packages">Required Host Packages</p>
+<p>Please run the top level setup.sh script to install all packages required by the
+makefile targets.</p>
+<p class="rubric" id="top-level-makefile-overview">Components:</p>
+<p>The functionality of the Top Level Makefile is implemented by these components:</p>
+<ul class="simple">
+<li><p>makerules/Makefile_*    : These have all of the makerules that are common for TI SDKs across various platforms</p></li>
+<li><p>Rules.make               : This defines variables to configure Makefile for Processor SDK Linux J784s4</p></li>
+<li><p>Makefile                 : Only pulls in these variable definitions and the make rules</p></li>
+</ul>
+<p>Below sections will give a bottoms-up description of these components in some more detail</p>
+<div class="section" id="makerules">
+<h3><span class="section-number">1.3.1.1. </span>makerules<a class="headerlink" href="#makerules" title="Permalink to this headline">¶</a></h3>
+<p class="rubric" id="target-types">Target Types</p>
+<p>For each of the targets discussed below, the following target types are
+defined</p>
+<ul class="simple">
+<li><p><strong>&lt;target&gt;</strong> - This is the build target which will compile the
+release version of the component.</p></li>
+<li><p><strong>&lt;target&gt;_install</strong> - This target will install the component to the
+location pointed to by DESTDIR/BOOTFS</p></li>
+<li><p><strong>&lt;target&gt;_clean</strong> - This target will clean the component.</p></li>
+</ul>
+<p class="rubric">Component Targets</p>
+<p>The following is a list of the basic Makefile targets that are provided in the Processor SDK Linux J784s4
+package as component Makefiles under makerules/ directory:</p>
+<ul>
+<li><p><strong>u-boot</strong> - This target will build the u-boot binaries for the
+SOC and SOC_TYPE combination defined in Rules.make. The built binaries will include:</p>
+<ul class="simple">
+<li><p>tiboot3.bin,</p></li>
+<li><p>tispl.bin,</p></li>
+<li><p>u-boot.img</p></li>
+</ul>
+<p>Refer to <a class="reference internal" href="Foundational_Components/U-Boot/UG-General-Info.html#build-u-boot-label"><span class="std std-ref">Build U-Boot</span></a> section for more details on these binaries.</p>
+</li>
+<li><p><strong>linux-dtbs</strong> - Compiles and creates the device tree blobs. It uses the
+KERNEL_DEVICETREE_PREFIX variable defined in Rules.make to parse which dtb[o]s to build.</p></li>
+<li><p><strong>linux</strong> - Configures the Linux kernel for TI SOCs and Compiles the following:</p>
+<ul class="simple">
+<li><p>Image,</p></li>
+<li><p>modules,</p></li>
+<li><p>and dtbs.</p></li>
+<li><p>For SOC_TYPE=hs, This also triggers a build for the linux-fitImage target.</p></li>
+</ul>
+<p>Refer to <a class="reference internal" href="Foundational_Components_Kernel_Users_Guide.html#linux-kernel-users-guide"><span class="std std-ref">Users Guide</span></a> section for more details on the TI Linux Kernel.</p>
+</li>
+<li><p><strong>linux-fitImage</strong> - Picks up images built by ‘u-boot-a72’ and ‘linux’ targets and generates
+a signed fitImage, u-boot-a72 combination. This is necessary to boot successfully on HS-SE devices
+(SOC_TYPE=hs), but the fitImage can optionally be authenticated on GP (gp), HS-FS (hs-fs) devices
+as well by manually setting boot_fit=1 in the u-boot prompt.</p>
+<p>Refer to <a class="reference internal" href="Foundational_Components_Kernel_Users_Guide.html#fitimage-for-hs"><span class="std std-ref">Creating the kernel fitImage for high security device / GP devices</span></a> section for more information on the signed linux fitImage.</p>
+</li>
+<li><p><strong>am-benchmarks</strong> - Builds the ARM Benchmarks for the ARCH defined in Rules.make.</p></li>
+<li><p><strong>cryptodev</strong> - Builds the kernel module for the crypto device driver</p></li>
+<li><p><strong>ti-img-rogue-driver</strong> - Builds the Kernel drivers for the PowerVR Rogue GPU</p></li>
+</ul>
+<p>For a full list of supported subcomponent targets, one can also simply run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">list-targets</span></code> at the SDK install location.</p>
+</div>
+<div class="section" id="rules-make">
+<h3><span class="section-number">1.3.1.2. </span>Rules.make<a class="headerlink" href="#rules-make" title="Permalink to this headline">¶</a></h3>
+<p>Here, we cover the Rules.make file found in the top-level
+of the Processor SDK Linux J784s4 package. This file is used not only by the
+top-level Makefile, but also by many of the sub-component Makefiles to
+gain access to common shared variables and settings. The variables defined
+in here are all of the required flags/parameters that will be required to
+build/compile any of the sub-component makefile targets for J784S4.</p>
+<p class="rubric" id="variables-defined">Key Variables Defined</p>
+<p>Below we describe a subset of the variables defined in the Rules.make
+that can be editted/overriden by the user as required. These can either
+be editted into the Rules.make file itself (to reset new defaults)
+OR can be specified over command line when calling the make command.</p>
+<ul class="simple">
+<li><p><strong>SOC_TYPE</strong> - This describes the HS configuration to build for. It
+can be set to ‘gp’, ‘hs’, and ‘hs-fs’. It is used when building
+u-boot and linux to use unsigned or signed images as required.</p></li>
+<li><p><strong>KERNEL_DEVICETREE_PREFIX</strong> - This is a regex filter to parse which dtb[o]s
+should be built for J784S4 SOC, when building linux kernel.</p></li>
+<li><p><strong>ROOTFS_PART</strong> - This points to the base installation directory that
+applications/drivers should be installed to. This is usually the root
+of a target file system but can be changed to point anywhere.</p></li>
+<li><p><strong>BOOT_PART</strong> - This points to the base installation directory that
+u-boot binaries should be installed to. This is usually the boot partition
+of an SD card but can be changed to point anywhere.</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3><span class="section-number">1.3.1.3. </span>Top Level Makefile<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p class="rubric" id="top-level-targets">Top-Level Targets</p>
+<p>The Processor SDK Linux J784s4 package provides the following targets by default, which
+will invoke the corresponding component targets:</p>
+<ul class="simple">
+<li><p><strong>all</strong> - This will call the build target for each component included
+in the Makefile.</p></li>
+<li><p><strong>install</strong> - This will call the install target for each component
+included in the Makefile.</p></li>
+<li><p><strong>clean</strong> - This will call the clean target for each component
+included in the Makefile.</p></li>
+<li><p><strong>list-targets</strong> - This only lists all the supported targets/components for the platform</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="usage-examples">
+<h2><span class="section-number">1.3.2. </span>Usage Examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h2>
+<p>The following example demonstrates how to use the top-level Makefile for
+building and installing u-boot and linux images. All of the examples below
+assume that you are calling the Makefile from the top-level of the SDK.</p>
+<ul>
+<li><p>If using an SD card, edit below variables in the Rules.make to point to
+the boot and root partitions. Else, point them to directories where you
+want to install the boot and root-filesystem images respectively.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>BOOT_PART?=/path/to/sd-card/boot-partition
+ROOTFS_PART?=/path/to/sd-card/root-partition
+</pre></div>
+</div>
+</li>
+<li><p>Set the correct value for the SOC_TYPE variable in Rules.make according
+to the platform being used.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SOC_TYPE?=&lt;gp/hs-fs/hs&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Now build u-boot, linux kernel images.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>make u-boot
+make linux
+</pre></div>
+</div>
+</li>
+<li><p>Install to SD card (BOOT_PART &amp; ROOT_PART).</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>make u-boot_install
+make linux_install
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Now you can eject the SD card and boot the devices using the newly built images!</p>
+<p class="rubric" id="a-note-about-out-of-tree-kernel-modules">A Note about Out-of-tree Kernel Modules</p>
+<p>Some drivers like the GPU drivers are delivered as modules outside of
+the kernel tree. If you rebuild the kernel and install it using the
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">linux_install</span></code> target you will also need to rebuild the out of
+tree modules and install them as well. The modules_install command used
+by the linux_install target will remove any existing drivers before
+installing the new ones. This means those drivers are no longer
+available until they have been rebuilt against the kernel and
+re-installed.</p>
+<p class="rubric" id="top-level-makefile-hs-devices">A Note about the SOC_TYPE variable</p>
+<p>The SOC_TYPE variable serves 2 purposes:</p>
+<ol class="arabic">
+<li><p>The U-Boot build generates the bootloader images for all 3 SOC types, namely,
+GP, HS-FS, and HS-SE. These are not compatible with one another. So the SOC_TYPE
+variable picks up the correct binary accordingly when installing u-boot.
+For example, below command will install the u-boot images for HS-FS device.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SOC_TYPE=hs-fs make u-boot
+SOC_TYPE=hs-fs make u-boot_install
+</pre></div>
+</div>
+</li>
+<li><p>HS-SE devices enforce fitImage based authentication when booting up. They will fail to boot if (u-boot.img + fitImage) authentication fails.
+To simplify fitImage generation and testing one can simply set SOC_TYPE=hs when building/installing linux for HS-SE devices.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SOC_TYPE=hs make linux
+SOC_TYPE=hs make linux_install
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Overview_Building_the_SDK.html" class="btn btn-neutral float-left" title="1.2. Building the SDK with Yocto" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Overview_Directory_Structure_Overview.html" class="btn btn-neutral float-right" title="1.4. Directory Structure Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

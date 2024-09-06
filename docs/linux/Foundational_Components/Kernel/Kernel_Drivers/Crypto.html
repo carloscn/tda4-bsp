@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.4. Crypto &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.2.2.5. MCAN" href="MCAN.html" />
+    <link rel="prev" title="3.2.2.3. CSI2RX" href="Camera/CSI2RX.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.4. </span>Crypto</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="crypto">
+<h1><span class="section-number">3.2.2.4. </span>Crypto<a class="headerlink" href="#crypto" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="introduction-linux-core-crypto">Introduction</p>
+<p>The Crypto API Driver is a set of Linux drivers that provide access to
+the hardware cryptographic accelerators available on
+AM335x/AM437x/AM57x/DRA7/AM65/J721E/J721S2/J784S4/AM62 devices. These drivers are
+available built-in in the kernel in the current SDK release.</p>
+<p>Following are the Hardware accelerators supported on the following
+devices:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>* AM335X             : MD5, SHA1, SHA224, SHA256, AES, DES
+* AM437X             : MD5, SHA1, SAH224, SHA256, SHA384, SHA512, AES, DES, DES3DES
+* AM57x/DRA7         : AES, DES, DES3DES
+* AM65x/J721e        : AES, DES3DES, SHA1, SHA256, SHA512
+* J721S2/J784S4      : AES, DES3DES, SHA1, SHA256, SHA512
+* AM64X/AM62X/J722S  : AES, SHA256, SHA512
+</pre></div>
+</div>
+<p class="rubric" id="building-the-drivers">Building the Drivers</p>
+<p>For devices with available cryptographic hardware accelerators, a Linux
+driver and additionally a Cryptodev kernel module (for OpenSSL) is used
+to access them.  Other devices use the pure software implementation of these
+cryptographic operations.</p>
+<p>J784S4 SoCs support a hardware accelerator called
+Security Accelerator 2/3 Ultra Light (SA2UL/SA3UL) for crypto operations.</p>
+<p>The kernel configuration has already been set up in the SDK and no further
+configuration is needed for the drivers to be built-in to the kernel.</p>
+<p>For reference, the configuration details are shown below. The
+configuration of the cryptographic drivers is done under the
+Hardware crypto devices sub-menu of the Cryptographic API menu in the
+kernel configuration.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Symbol: CRYPTO_DEV_SA2UL [=m]
+  ¦ Type  : tristate
+  ¦ Prompt: Support for TI security accelerator
+  ¦   Location:
+  ¦     -&gt; Cryptographic API (CRYPTO [=y])
+  ¦ (1)   -&gt; Hardware crypto devices (CRYPTO_HW [=y])
+</pre></div>
+</div>
+<p>To check if sa2ul module is properly installed,
+run the below command from the Linux command prompt:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">lsmod | grep sa2ul</span>
+</pre></div>
+</div>
+<p>Output should show something similar to below:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sa2ul 262144 0
+</pre></div>
+</div>
+<p class="rubric" id="build-the-cryptodev-kernel-module-using-sdk">Build the Cryptodev kernel module using SDK</p>
+<p>For using OpenSSL to access the Crypto Hardware Accelerator Drivers
+above, the Cryptodev is required (can be built as module). The framework
+is not officially in the kernel and was ported to Linux under the name
+“cryptodev”. It is built as part of the SDK and no further configuration is needed.</p>
+<p class="rubric" id="using-cryptographic-hardware-accelerators-from-openssl">Using Cryptographic Hardware Accelerators from OpenSSL</p>
+<p>In order to use these drivers from OpenSSL, a
+special driver is available which abstracts the access to these
+accelerators through Cryprodev module.</p>
+<p>Cryptodev is itself a special device driver which provides a general
+interface for higher level applications such as OpenSSL to access
+hardware accelerators.</p>
+<p>The filesystem which comes with the SDK comes built with the Cryptodev
+kernel modules and the TI driver which directly accesses the hardware
+accelerators is built into the kernel.</p>
+<p>The following shows the command used to query the system for the state of
+the cryptodev module.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@evm:~# </span>lsmod<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cryptodev
+<span class="go">cryptodev              11962  0</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The following example demonstrates the OpenSSL built-in speed
+test to demonstrate performance. The addition of the parameter <strong>-engine
+devcrypto</strong> tells OpenSSL to use the Cryptodev driver if it exists.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@evm:~# </span>openssl<span class="w"> </span>speed<span class="w"> </span>-evp<span class="w"> </span>aes-128-cbc<span class="w"> </span>-engine<span class="w"> </span>devcrypto
+<span class="go">engine &quot;devcrypto&quot; set.</span>
+<span class="go">Doing aes-128-cbc for 3s on 16 size blocks: 108107 aes-128-cbc&#39;s in 0.16s</span>
+<span class="go">Doing aes-128-cbc for 3s on 64 size blocks: 103730 aes-128-cbc&#39;s in 0.20s</span>
+<span class="go">Doing aes-128-cbc for 3s on 256 size blocks: 15181 aes-128-cbc&#39;s in 0.03s</span>
+<span class="go">Doing aes-128-cbc for 3s on 1024 size blocks: 15879 aes-128-cbc&#39;s in 0.03s</span>
+<span class="go">Doing aes-128-cbc for 3s on 8192 size blocks: 4879 aes-128-cbc&#39;s in 0.02s</span>
+<span class="go">OpenSSL 1.0.0b 16 Nov 2010</span>
+<span class="go">built on: Thu Jan 20 10:23:44 CST 2011</span>
+<span class="go">options:bn(64,32) rc4(ptr,int) des(idx,risc1,2,long) aes(partial) idea(int) blowfish(idx)</span>
+<span class="go">compiler: arm-none-linux-gnueabi-gcc -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -mthumb-interwork -mno-thumb -fPS</span>
+<span class="go">The &#39;numbers&#39; are in 1000s of bytes per second processed.</span>
+<span class="go">type 16 bytes 64 bytes 256 bytes 1024 bytes 8192 bytes</span>
+<span class="go">aes-128-cbc 10810.70k 33193.60k 129544.53k 542003.20k 1998438.40k</span>
+<span class="gp">root@evm:~#</span>
+</pre></div>
+</div>
+<p>Using the Linux time -v function gives more information about CPU usage
+during the test.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@evm:~# </span><span class="nb">time</span><span class="w"> </span>-v<span class="w"> </span>openssl<span class="w"> </span>speed<span class="w"> </span>-evp<span class="w"> </span>aes-128-cbc<span class="w"> </span>-engine<span class="w"> </span>devcrypto
+<span class="go">engine &quot;devcrypto&quot; set.</span>
+<span class="go">Doing aes-128-cbc for 3s on 16 size blocks: 108799 aes-128-cbc&#39;s in 0.17s</span>
+<span class="go">Doing aes-128-cbc for 3s on 64 size blocks: 102699 aes-128-cbc&#39;s in 0.18s</span>
+<span class="go">Doing aes-128-cbc for 3s on 256 size blocks: 16166 aes-128-cbc&#39;s in 0.03s</span>
+<span class="go">Doing aes-128-cbc for 3s on 1024 size blocks: 15080 aes-128-cbc&#39;s in 0.03s</span>
+<span class="go">Doing aes-128-cbc for 3s on 8192 size blocks: 4838 aes-128-cbc&#39;s in 0.03s</span>
+<span class="go">OpenSSL 1.0.0b 16 Nov 2010</span>
+<span class="go">built on: Thu Jan 20 10:23:44 CST 2011</span>
+<span class="go">options:bn(64,32) rc4(ptr,int) des(idx,risc1,2,long) aes(partial) idea(int) blowfish(idx)</span>
+<span class="go">compiler: arm-none-linux-gnueabi-gcc -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -mthumb-interwork -mno-thumb -fPS</span>
+<span class="go">The &#39;numbers&#39; are in 1000s of bytes per second processed.</span>
+<span class="go">type 16 bytes 64 bytes 256 bytes 1024 bytes 8192 bytes</span>
+<span class="go">aes-128-cbc 10239.91k 36515.20k 137949.87k 514730.67k 1321096.53k</span>
+<span class="go">Command being timed: &quot;openssl speed -evp aes-128-cbc -engine devcrypto&quot;</span>
+<span class="go">User time (seconds): 0.46</span>
+<span class="go">System time (seconds): 5.89</span>
+<span class="go">Percent of CPU this job got: 42%</span>
+<span class="go">Elapsed (wall clock) time (h:mm:ss or m:ss): 0m 15.06s</span>
+<span class="go">Average shared text size (kbytes): 0</span>
+<span class="go">Average unshared data size (kbytes): 0</span>
+<span class="go">Average stack size (kbytes): 0</span>
+<span class="go">Average total size (kbytes): 0</span>
+<span class="go">Maximum resident set size (kbytes): 7104</span>
+<span class="go">Average resident set size (kbytes): 0</span>
+<span class="go">Major (requiring I/O) page faults: 0</span>
+<span class="go">Minor (reclaiming a frame) page faults: 479</span>
+<span class="go">Voluntary context switches: 36143</span>
+<span class="go">Involuntary context switches: 211570</span>
+<span class="go">Swaps: 0</span>
+<span class="go">File system inputs: 0</span>
+<span class="go">File system outputs: 0</span>
+<span class="go">Socket messages sent: 0</span>
+<span class="go">Socket messages received: 0</span>
+<span class="go">Signals delivered: 0</span>
+<span class="go">Page size (bytes): 4096</span>
+<span class="go">Exit status: 0</span>
+</pre></div>
+</div>
+<p>When the cryptodev driver is removed, OpenSSL reverts to the software
+implementation of the crypto algorithm. The performance using the
+software only implementation can be compared to the previous test.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@evm:~# </span>modprobe<span class="w"> </span>-r<span class="w"> </span>cryptodev
+<span class="gp">root@evm:~# </span><span class="nb">time</span><span class="w"> </span>-v<span class="w"> </span>openssl<span class="w"> </span>speed<span class="w"> </span>-evp<span class="w"> </span>aes-128-cbc
+<span class="go">Doing aes-128-cbc for 3s on 16 size blocks: 697674 aes-128-cbc&#39;s in 2.99s</span>
+<span class="go">Doing aes-128-cbc for 3s on 64 size blocks: 187556 aes-128-cbc&#39;s in 3.00s</span>
+<span class="go">Doing aes-128-cbc for 3s on 256 size blocks: 47922 aes-128-cbc&#39;s in 3.00s</span>
+<span class="go">Doing aes-128-cbc for 3s on 1024 size blocks: 12049 aes-128-cbc&#39;s in 3.00s</span>
+<span class="go">Doing aes-128-cbc for 3s on 8192 size blocks: 1509 aes-128-cbc&#39;s in 3.00s</span>
+<span class="go">OpenSSL 1.0.0b 16 Nov 2010</span>
+<span class="go">built on: Thu Jan 20 10:23:44 CST 2011</span>
+<span class="go">options:bn(64,32) rc4(ptr,int) des(idx,risc1,2,long) aes(partial) idea(int) blowfish(idx)</span>
+<span class="go">compiler: arm-none-linux-gnueabi-gcc -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -mthumb-interwork -mno-thumb -fPS</span>
+<span class="go">The &#39;numbers&#39; are in 1000s of bytes per second processed.</span>
+<span class="go">type 16 bytes 64 bytes 256 bytes 1024 bytes 8192 bytes</span>
+<span class="go">aes-128-cbc 3733.37k 4001.19k 4089.34k 4112.73k 4120.58k</span>
+<span class="go">Command being timed: &quot;openssl speed -evp aes-128-cbc&quot;</span>
+<span class="go">User time (seconds): 15.03</span>
+<span class="go">System time (seconds): 0.00</span>
+<span class="go">Percent of CPU this job got: 99%</span>
+<span class="go">Elapsed (wall clock) time (h:mm:ss or m:ss): 0m 15.07s</span>
+<span class="go">Average shared text size (kbytes): 0</span>
+<span class="go">Average unshared data size (kbytes): 0</span>
+<span class="go">Average stack size (kbytes): 0</span>
+<span class="go">Average total size (kbytes): 0</span>
+<span class="go">Maximum resident set size (kbytes): 7216</span>
+<span class="go">Average resident set size (kbytes): 0</span>
+<span class="go">Major (requiring I/O) page faults: 1</span>
+<span class="go">Minor (reclaiming a frame) page faults: 484</span>
+<span class="go">Voluntary context switches: 13</span>
+<span class="go">Involuntary context switches: 35</span>
+<span class="go">Swaps: 0</span>
+<span class="go">File system inputs: 0</span>
+<span class="go">File system outputs: 0</span>
+<span class="go">Socket messages sent: 0</span>
+<span class="go">Socket messages received: 0</span>
+<span class="go">Signals delivered: 0</span>
+<span class="go">Page size (bytes): 4096</span>
+<span class="go">Exit status: 0</span>
+</pre></div>
+</div>
+<p class="rubric" id="using-the-trng-hardware-accelerator">Using the TRNG Hardware Accelerator</p>
+<p>The pre built kernel that come with the SDK already has the TRNG driver
+built into the kernel. No further configuration is required.</p>
+<p>Check that the optee-rng driver is loaded:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@evm:~# </span>cat<span class="w"> </span>/sys/class/misc/hw_random/rng_current
+<span class="go">optee-rng</span>
+</pre></div>
+</div>
+<p>The hwrng device should now show up in the filesystem.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@evm:~# </span>ls<span class="w"> </span>-l<span class="w"> </span>/dev/hwrng
+<span class="go">crw------- 1 root root 10, 183 Jan 1 2000 /dev/hwrng</span>
+</pre></div>
+</div>
+<p>Use cat on this device to generate random numbers.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@evm:~# </span>cat<span class="w"> </span>/dev/hwrng<span class="w"> </span><span class="p">|</span><span class="w"> </span>od<span class="w"> </span>-x
+<span class="go">0000000 b2bd ae08 4477 be48 4836 bf64 5d92 01c9</span>
+<span class="go">0000020 0cb6 7ac5 16f9 8616 a483 7dfd 6bf4 3aa5</span>
+<span class="go">0000040 d693 db24 d917 5ee7 feb7 34c3 34e9 e7a5</span>
+<span class="go">0000060 36b7 ea85 fc17 0e66 555c 0934 7a0c 4c69</span>
+<span class="go">0000100 523b 9f21 1546 fddb d58b e5ed 142a 6712</span>
+<span class="go">0000120 8d76 8f80 a6d2 30d8 d107 32bc 7f45 f997</span>
+<span class="go">0000140 9d5d 0d0c f1f0 64f9 a77f 408f b0c1 f5a0</span>
+<span class="go">0000160 39c6 f0ae 4b59 1a76 84a7 a364 8964 f557</span>
+<span class="gp">root@evm:~#</span>
+</pre></div>
+</div>
+<p>Test the random number generator on the target.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@evm:~# </span>cat<span class="w"> </span>/dev/hwrng<span class="w"> </span><span class="p">|</span><span class="w"> </span>rngtest<span class="w"> </span>-c<span class="w"> </span><span class="m">1000</span>
+<span class="go">rngtest 3</span>
+<span class="go">Copyright (c) 2004 by Henrique de Moraes Holschuh</span>
+<span class="go">This is free software; see the source for copying conditions.  There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span>
+
+<span class="go">rngtest: starting FIPS tests...</span>
+<span class="go">rngtest: bits received from input: 20000032</span>
+<span class="go">rngtest: FIPS 140-2 successes: 999</span>
+<span class="go">rngtest: FIPS 140-2 failures: 1</span>
+<span class="go">rngtest: FIPS 140-2(2001-10-10) Monobit: 0</span>
+<span class="go">rngtest: FIPS 140-2(2001-10-10) Poker: 0</span>
+<span class="go">rngtest: FIPS 140-2(2001-10-10) Runs: 1</span>
+<span class="go">rngtest: FIPS 140-2(2001-10-10) Long run: 0</span>
+<span class="go">rngtest: FIPS 140-2(2001-10-10) Continuous run: 0</span>
+<span class="go">rngtest: input channel speed: (min=788.218; avg=4070.983; max=2790178.571)Kibits/s</span>
+<span class="go">rngtest: FIPS tests speed: (min=846.755; avg=15388.376; max=21920.595)Kibits/s</span>
+<span class="go">rngtest: Program run time: 6072670 microseconds</span>
+</pre></div>
+</div>
+<p>Note that the results may be slightly different on your system, since,
+after all, we’re dealing with a random number generator. Any appreciable
+number of errors typically indicates a bad random number generator.</p>
+<p>If you’re satisfied the random number generator is working correctly,
+you can use <strong>rngd</strong> (the random number generator daemon) to feed the
+/dev/random entropy pool.</p>
+<p class="rubric">Hardware Accelerator testing</p>
+<p>Testing using the tcrypt module:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>modprobe<span class="w"> </span>tcrypt<span class="w"> </span><span class="nv">mode</span><span class="o">=</span><span class="m">500</span><span class="w"> </span><span class="nv">sec</span><span class="o">=</span><span class="m">1</span>
+<span class="go">[ 3006.234145] tcrypt:</span>
+<span class="go">[ 3006.234145] testing speed of async ecb(aes) (ecb-aes-sa2ul) encryption</span>
+<span class="go">[ 3006.242891] tcrypt: test 0 (128 bit key, 16 byte blocks): 87335 operations in 1 seconds (1397360 bytes)</span>
+<span class="go">[ 3007.251651] tcrypt: test 1 (128 bit key, 64 byte blocks): 87669 operations in 1 seconds (5610816 bytes)</span>
+<span class="go">[ 3008.259651] tcrypt: test 2 (128 bit key, 256 byte blocks): 87481 operations in 1 seconds (22395136 bytes)</span>
+<span class="go">[ 3009.267828] tcrypt: test 3 (128 bit key, 1024 byte blocks): 58076 operations in 1 seconds (59469824 bytes)</span>
+<span class="go">[ 3010.275914] tcrypt: test 4 (128 bit key, 8192 byte blocks): 22556 operations in 1 seconds (184778752 bytes)</span>
+<span class="go">[ 3011.284006] tcrypt: test 5 (192 bit key, 16 byte blocks): 80305 operations in 1 seconds (1284880 bytes)</span>
+<span class="go">[ 3012.291648] tcrypt: test 6 (192 bit key, 64 byte blocks): 84537 operations in 1 seconds (5410368 bytes)</span>
+<span class="go">[ 3013.299648] tcrypt: test 7 (192 bit key, 256 byte blocks): 90540 operations in 1 seconds (23178240 bytes)</span>
+<span class="go">[ 3014.307834] tcrypt: test 8 (192 bit key, 1024 byte blocks): 56054 operations in 1 seconds (57399296 bytes)</span>
+<span class="go">[ 3015.315915] tcrypt: test 9 (192 bit key, 8192 byte blocks): 20701 operations in 1 seconds (169582592 bytes)</span>
+<span class="go">[ 3016.324006] tcrypt: test 10 (256 bit key, 16 byte blocks): 81816 operations in 1 seconds (1309056 bytes)</span>
+<span class="go">[ 3017.331736] tcrypt: test 11 (256 bit key, 64 byte blocks): 82418 operations in 1 seconds (5274752 bytes)</span>
+<span class="go">[ 3018.339739] tcrypt: test 12 (256 bit key, 256 byte blocks): 87217 operations in 1 seconds (22327552 bytes)</span>
+<span class="go">[ 3019.347917] tcrypt: test 13 (256 bit key, 1024 byte blocks): 56534 operations in 1 seconds (57890816 bytes)</span>
+<span class="go">[ 3020.356012] tcrypt: test 14 (256 bit key, 8192 byte blocks): 20428 operations in 1 seconds (167346176 bytes)</span>
+<span class="go">[ 3021.364131] tcrypt:</span>
+<span class="go">[ 3021.364131] testing speed of async ecb(aes) (ecb-aes-sa2ul) decryption</span>
+<span class="go">[ 3021.373505] tcrypt: test 0 (128 bit key, 16 byte blocks): 81655 operations in 1 seconds (1306480 bytes)</span>
+<span class="go">[ 3022.379660] tcrypt: test 1 (128 bit key, 64 byte blocks): 87373 operations in 1 seconds (5591872 bytes)</span>
+<span class="go">[ 3023.387659] tcrypt: test 2 (128 bit key, 256 byte blocks): 81323 operations in 1 seconds (20818688 bytes)</span>
+<span class="go">[ 3024.395825] tcrypt: test 3 (128 bit key, 1024 byte blocks): 58990 operations in 1 seconds (60405760 bytes)</span>
+<span class="go">[ 3025.403928] tcrypt: test 4 (128 bit key, 8192 byte blocks): 22613 operations in 1 seconds (185245696 bytes)</span>
+<span class="go">[ 3026.411996] tcrypt: test 5 (192 bit key, 16 byte blocks): 79558 operations in 1 seconds (1272928 bytes)</span>
+<span class="go">[ 3027.419648] tcrypt: test 6 (192 bit key, 64 byte blocks): 86877 operations in 1 seconds (5560128 bytes)</span>
+<span class="go">[ 3028.427648] tcrypt: test 7 (192 bit key, 256 byte blocks): 80615 operations in 1 seconds (20637440 bytes)</span>
+<span class="go">[ 3029.435831] tcrypt: test 8 (192 bit key, 1024 byte blocks): 62007 operations in 1 seconds (63495168 bytes)</span>
+<span class="go">[ 3030.443907] tcrypt: test 9 (192 bit key, 8192 byte blocks): 21569 operations in 1 seconds (176693248 bytes)</span>
+<span class="go">[ 3031.452015] tcrypt: test 10 (256 bit key, 16 byte blocks): 86171 operations in 1 seconds (1378736 bytes)</span>
+<span class="go">[ 3032.459743] tcrypt: test 11 (256 bit key, 64 byte blocks): 79752 operations in 1 seconds (5104128 bytes)</span>
+<span class="go">[ 3033.467770] tcrypt: test 12 (256 bit key, 256 byte blocks): 84351 operations in 1 seconds (21593856 bytes)</span>
+<span class="go">[ 3034.475919] tcrypt: test 13 (256 bit key, 1024 byte blocks): 57082 operations in 1 seconds (58451968 bytes)</span>
+<span class="go">[ 3035.483995] tcrypt: test 14 (256 bit key, 8192 byte blocks): 20489 operations in 1 seconds (167845888 bytes)</span>
+<span class="go">[ 3036.492101] tcrypt:</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+<p>IPSec Testing:</p>
+<p>Server side</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>iperf3<span class="w"> </span>--server
+
+<span class="go">Accepted connection from 192.168.1.1, port 41266</span>
+<span class="go">[  5] local 192.168.1.1 port 5201 connected to 192.168.1.2 port 58177</span>
+<span class="go">[ ID] Interval       Transfer     Bandwidth       Jitter    Lost/Total Datagrams</span>
+<span class="go">[  5]   0.00-1.00   sec  45.6 MBytes   382 Mbits/sec  0.021 ms  0/33017 (0%)</span>
+<span class="go">[  5]   1.00-2.00   sec  47.7 MBytes   400 Mbits/sec  0.014 ms  0/34534 (0%)</span>
+<span class="go">[  5]   2.00-3.00   sec  47.7 MBytes   400 Mbits/sec  0.013 ms  0/34527 (0%)</span>
+<span class="go">[  5]   3.00-4.00   sec  47.7 MBytes   400 Mbits/sec  0.037 ms  0/34507 (0%)</span>
+<span class="go">[  5]   4.00-5.00   sec  47.7 MBytes   400 Mbits/sec  0.021 ms  0/34540 (0%)</span>
+<span class="go">[  5]   5.00-6.00   sec  47.7 MBytes   400 Mbits/sec  0.020 ms  0/34537 (0%)</span>
+<span class="go">[  5]   6.00-7.00   sec  47.7 MBytes   400 Mbits/sec  0.013 ms  0/34511 (0%)</span>
+<span class="go">[  5]   7.00-8.00   sec  47.7 MBytes   400 Mbits/sec  0.017 ms  0/34543 (0%)</span>
+<span class="go">[  5]   8.00-9.00   sec  47.7 MBytes   400 Mbits/sec  0.012 ms  0/34518 (0%)</span>
+<span class="go">[  5]   9.00-10.00  sec  47.7 MBytes   400 Mbits/sec  0.022 ms  0/34532 (0%)</span>
+<span class="go">[  5]  10.00-10.04  sec  2.10 MBytes   403 Mbits/sec  0.014 ms  0/1518 (0%)</span>
+</pre></div>
+</div>
+<p>Client side</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>iperf3<span class="w"> </span>-c<span class="w"> </span><span class="m">192</span>.168.1.1<span class="w"> </span>-u<span class="w"> </span>-b<span class="w"> </span><span class="m">400</span>.0M<span class="w"> </span>-t<span class="w"> </span><span class="m">10</span>
+<span class="go">Connecting to host 192.168.1.1, port 5201</span>
+<span class="go">[  5] local 192.168.1.2 port 58177 connected to 192.168.1.1 port 5201</span>
+<span class="go">[ ID] Interval           Transfer     Bitrate         Total Datagrams</span>
+<span class="go">[  5]   0.00-1.00   sec  47.7 MBytes   400 Mbits/sec  34510</span>
+<span class="go">[  5]   1.00-2.00   sec  47.7 MBytes   400 Mbits/sec  34531</span>
+<span class="go">[  5]   2.00-3.00   sec     ytes   400 Mbits/sec  34530</span>
+<span class="go">[  5]   3.00-4.00   sec  47.7 MBytes   400 Mbits/sec  34531</span>
+<span class="go">[  5]   4.00-5.00   sec  47.7 MBytes   400 Mbits/sec  34530</span>
+<span class="go">[  5]   5.00-6.00   sec  47.7 MBytes   400 Mbits/sec  34530</span>
+<span class="go">[  5]   6.00-7.00   sec  47.7 MBytes   400 Mbits/sec  34531</span>
+<span class="go">[  5]   7.00-8.00   sec  47.7 MBytes   400 Mbits/sec  34530</span>
+<span class="go">[  5]   8.00-9.00   sec  47.7 MBytes   400 Mbits/sec  34530</span>
+<span class="go">[  5]   9.00-10.00  sec  47.7 MBytes   400 Mbits/sec  34531</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Camera/CSI2RX.html" class="btn btn-neutral float-left" title="3.2.2.3. CSI2RX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MCAN.html" class="btn btn-neutral float-right" title="3.2.2.5. MCAN" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

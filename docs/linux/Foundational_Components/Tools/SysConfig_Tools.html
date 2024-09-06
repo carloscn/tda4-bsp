@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.4.4. System configuration tool &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.5. IPC for J784S4" href="../../Foundational_Components_IPC_J784S4.html" />
+    <link rel="prev" title="3.4.3. Code Composer Studio" href="Code_Composer_Studio.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Development_Tools.html">3.4.1. Development Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flash_Tools.html">3.4.2. Flash Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Code_Composer_Studio.html">3.4.3. Code Composer Studio</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.4. System configuration tool</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_Tools.html"><span class="section-number">3.4. </span>Tools</a> &raquo;</li>
+      <li><span class="section-number">3.4.4. </span>System configuration tool</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="system-configuration-tool">
+<h1><span class="section-number">3.4.4. </span>System configuration tool<a class="headerlink" href="#system-configuration-tool" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="introduction-linux-sysconf-utility">Introduction</p>
+<p>SysConfig is a configuration tool designed to simplify hardware and software
+configuration challenges to accelerate software development.</p>
+<p>SysConfig is available as part of the Code Composer Studio™ integrated development
+environment as well as a standalone application. Additionally SysConfig can be run in the cloud by
+visiting the  <a class="reference external" href="https://dev.ti.com/sysconfig/">TI developer zone</a> .</p>
+<p>SysConfig provides an intuitive graphical user interface for configuring pins,
+peripherals, radios, software stacks, RTOS, clock tree and other components.</p>
+<p>SysConfig will automatically detect, expose and resolve conflicts to speed software development.</p>
+<p class="rubric" id="features">Features</p>
+<p>The features available vary by the device and software development kit used.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Pin mux</p></li>
+<li><p>Peripheral/driver configuration</p></li>
+<li><p>Software stack configuration</p></li>
+<li><p>Clock tree configuration</p></li>
+<li><p>Memory configuration</p></li>
+<li><p>RTOS configuration</p></li>
+<li><p>Automatic code generation</p></li>
+<li><p>Device- and board-level views</p></li>
+<li><p>Contextual documentation</p></li>
+<li><p>Real-time code preview</p></li>
+</ul>
+</div></blockquote>
+<p class="rubric" id="disclaimer">Disclaimer</p>
+<p><strong>NOTE:</strong> Although these utilities are tested and intended to be
+accurate, they are provided ‘as is’ and are not guaranteed to provide
+accurate results. In the event of a conflict between the device data
+contained in this software tool and the device datasheet, the datasheet
+shall take precedence. Please check configuration results against the
+datasheet for your device to be assured your sysconfig tool is
+<em>possible</em> and accurate. It is up to the user to verify all of the bits
+in the registers based on the information in the device datasheet and
+that all IOSETs selected by the tool are valid and supported. Although
+we try to maintain backwards compatibility between Sysconfig Tool versions
+it isn’t guarunteed.</p>
+<p class="rubric" id="software-users-guide">Software User’s Guide</p>
+<p>A quick overview of the TI Sysconfig Tool and usage is available on
+the main <a class="reference external" href="https://ti.com/tool/SYSCONFIG">Sysconfig Tool</a>.</p>
+<p class="rubric" id="release">Release</p>
+<p>Please refer for latest sysconfig tool
+<a class="reference external" href="https://ti.com/tool/SYSCONFIG#downloads">Sysconfig Release</a>.</p>
+<p class="rubric" id="application-launch">Application Launch</p>
+<p>At launch the tool will present the option to start a new design or to
+open an existing design. To start a new design use the drop-down menu
+indicating which devices are supported by this installation of the
+Sysconf Tool. Select your device and click <strong>Start</strong>. Previously saved
+designs can be opened too. Although we try to maintain backwards
+compatibility between Sysconf Tool versions, it isn’t guaranteed.</p>
+<p class="rubric" id="output-file-formats">Output File Formats</p>
+<p>Code files generated by the Sysconfig tool  vary by each device and its
+requirements. For Linux generally include a partial devicetree format is
+generated for Processor SDK Linux and that should be manually patched into the
+reference devicetree file included with the <a class="reference external" href="../../Foundational_Components_Kernel_Users_Guide.html">Linux
+kernel</a>.</p>
+<p>Some devices will have a generic format that is intended for use with
+<a class="reference internal" href="../U-Boot/Users-Guide.html#u-boot-user-guide"><span class="std std-ref">U-Boot</span></a>.
+These devices require pin multiplexing to be done once, in isolation,
+and while executing from SRAM.</p>
+<p class="rubric" id="processor-sdk-linux">Processor SDK Linux</p>
+<p>Recompiling u-boot is required after making updates. Instructions are
+available in the <a class="reference internal" href="../U-Boot/Users-Guide.html#u-boot-user-guide"><span class="std std-ref">Linux Core U-Boot User’s Guide</span></a>.
+Compiling the devicetree dts to dtb is also required after making
+updates. Instructions are available in the <a class="reference external" href="../../Foundational_Components_Kernel_Users_Guide.html#compiling-the-sources">Linux Kernel Users
+Guide</a>.</p>
+<p class="rubric" id="devicetree">devicetree</p>
+<p>Edit the appropriate file in this directory:</p>
+<p>${SDK_INSTALL_DIR}\board_support\linux-*\arch\arm64\boot\dts\${BOARD}.dts</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Code_Composer_Studio.html" class="btn btn-neutral float-left" title="3.4.3. Code Composer Studio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../Foundational_Components_IPC_J784S4.html" class="btn btn-neutral float-right" title="3.5. IPC for J784S4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

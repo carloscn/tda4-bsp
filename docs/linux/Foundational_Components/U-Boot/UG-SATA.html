@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.1.10. SATA &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.1.11. UFS" href="UG-UFS.html" />
+    <link rel="prev" title="3.1.1.9. UART" href="UG-UART.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="UG-General-Info.html">3.1.1.1. General Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DFU.html">3.1.1.2. USB Device Firmware Upgrade (DFU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Network.html">3.1.1.3. Network (Wired or USB Client)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NAND.html">3.1.1.4. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Memory.html">3.1.1.5. SD, eMMC and USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SPI.html">3.1.1.6. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-QSPI.html">3.1.1.7. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NOR.html">3.1.1.8. NOR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UART.html">3.1.1.9. UART</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.1.10. SATA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UFS.html">3.1.1.11. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DDR3.html">3.1.1.12. DDR3 ECC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-HyperBus.html">3.1.1.13. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-RemoteProc.html">3.1.1.14. RemoteProc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Users-Guide.html"><span class="section-number">3.1.1. </span>User’s Guide</a> &raquo;</li>
+      <li><span class="section-number">3.1.1.10. </span>SATA</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="sata">
+<h1><span class="section-number">3.1.1.10. </span>SATA<a class="headerlink" href="#sata" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SATA is not supported on J721E platform.</p>
+</div>
+<p>SATA and eSATA devices show up as SCSI devices in U-boot.</p>
+<div class="section" id="viewing-sata-devices">
+<h2><span class="section-number">3.1.1.10.1. </span>Viewing SATA Devices<a class="headerlink" href="#viewing-sata-devices" title="Permalink to this headline">¶</a></h2>
+<p>To view all SCSI devices that U-boot sees the command “scsi info” can be
+used.</p>
+<p>Output of this command when ran on AM57x General Purpose EVM can be seen
+below.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>scsi part
+Device 0: (0:0) Vendor: ATA Prod.: PLEXTOR PX-64M6M Rev: 1.08
+            Type: Hard Disk
+            Capacity: 61057.3 MB = 59.6 GB (125045424 x 512)
+</pre></div>
+</div>
+<p>Device 0 represents the instance of the scsi device. Therefore, in later
+commands when a “&lt;dev&gt;” parameter is seen replace it with the
+appropriate device number.</p>
+</div>
+<div class="section" id="viewing-partitions">
+<h2><span class="section-number">3.1.1.10.2. </span>Viewing Partitions<a class="headerlink" href="#viewing-partitions" title="Permalink to this headline">¶</a></h2>
+<p>To view all the partitions found on the SATA device the command “scsi
+part &lt;dev&gt;” can be used.</p>
+<p>Output of this command when ran on AM57x General Purpose EVM can be seen
+below.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Partition Map for SCSI device 0  --   Partition Type: DOS
+
+Part    Start Sector    Num Sectors     UUID            Type
+  1     2048            161793          6cc50771-01     0c Boot
+  2     165888          33552385        6cc50771-02     83
+  3     33720320        91325104        6cc50771-03     83
+</pre></div>
+</div>
+<p>All entries above represent different partitions that exist on the
+particular scsi device. To reference a particular partition a user will
+reference it the part number shown above. In commands shown below &lt;part&gt;
+should be replaced with the appropriate partition number seen from this
+table.</p>
+</div>
+<div class="section" id="identifying-partition-filesystem-type">
+<h2><span class="section-number">3.1.1.10.3. </span>Identifying Partition Filesystem Type<a class="headerlink" href="#identifying-partition-filesystem-type" title="Permalink to this headline">¶</a></h2>
+<p>As shown above the “scsi part &lt;dev&gt;” command can be used to view all the
+partitions available on the particular scsi device. However, the proper
+commands to use depend on the filesystem type each partition have been
+formatted to.</p>
+<p>In the “scsi part &lt;dev&gt;” command the partition type can be found under
+the type column. The values under the Type column are referred to as
+partition id. Depending on the partition id will dedicate which commands
+to use to read and write partition. Partition id of “0c” refers to a
+FAT32 partition. Partition id of “83” refers to a native Linux file
+system which ext2,ext3 and ext4 fall under. Go
+<a class="reference external" href="https://en.wikipedia.org/wiki/Partition_type#List_of_partition_IDs">here</a>
+to find a complete list of partition ids.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="viewing-reading-and-writing-to-partition">
+<h2><span class="section-number">3.1.1.10.4. </span>Viewing, Reading and Writing to Partition<a class="headerlink" href="#viewing-reading-and-writing-to-partition" title="Permalink to this headline">¶</a></h2>
+<p>Depending on the filesystem type of the partition will depend on the
+exact commands to use to read and write to the partition. The two most
+common partitions are FAT32, EXT2 and EXT4. Luckily the commands to
+view, read and write to the partition all look the same. Viewing
+partition uses &lt;prefix&gt;ls, reading files is &lt;prefix&gt;load and writing
+files is &lt;prefix&gt;write. Replace &lt;prefix&gt; with fat, ext2 and ext4
+depending on the filesystem type.</p>
+</div>
+<div class="section" id="view-partition-contents">
+<h2><span class="section-number">3.1.1.10.5. </span>View Partition Contents<a class="headerlink" href="#view-partition-contents" title="Permalink to this headline">¶</a></h2>
+<p>To view the contents of a FAT32 partition the user would use “fatls scsi
+&lt;dev&gt;:&lt;partition&gt;”</p>
+<p>Below command list the contents of SCSI device 0 partition 1 on AM57x
+General Purpose EVM:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=&gt; fatls scsi 0:1
+   110578   test
+1 file(s), 0 dir(s)
+</pre></div>
+</div>
+<p class="rubric" id="write-file-to-partition">Write File to Partition</p>
+<p>To write a file on a EXT4 partition the user must have first read the
+file to be written into memory and then also know the size of the file.
+Luckily U-boot automatically sets the environment variable “filesize” to
+the filesize of a file that was loaded into memory via U-boot load
+command.</p>
+<p>To write to a ext4 partition the user would execute the below command:
+ext4write scsi &lt;dev&gt;:&lt;partition&gt; &lt;ddr address&gt; &lt;absolute filename path&gt;
+&lt;filesize&gt;</p>
+<p>In the above command &lt;ddr address&gt; refers to the address in memory the
+file has already been loaded into. Absolute filename path must start
+with / to indicate the root. Filesize is the amount in bytes to be
+written.</p>
+<p>Below is an example of writing the file “tester” previously loaded into
+memory onto a EXT4 partition</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=&gt; ext4write scsi 0:3 ${loadaddr} /tester ${filesize}
+File System is consistent
+update journal finished
+110578 bytes written in 2650 ms (40 KiB/s)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="UG-UART.html" class="btn btn-neutral float-left" title="3.1.1.9. UART" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="UG-UFS.html" class="btn btn-neutral float-right" title="3.1.1.11. UFS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

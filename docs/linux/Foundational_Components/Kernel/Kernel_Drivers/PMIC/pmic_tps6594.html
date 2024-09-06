@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.14. TPS6594 PMIC &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.15. Power Management" href="../Power_Management.html" />
+    <link rel="prev" title="3.2.2.13. PCIe Root Complex" href="../PCIe/PCIe_Root_Complex.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.14. </span>TPS6594 PMIC</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="tps6594-pmic">
+<h1><span class="section-number">3.2.2.14. </span>TPS6594 PMIC<a class="headerlink" href="#tps6594-pmic" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.2.2.14.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>TPS6594 is a Power Management IC which provides regulators (bucks and LDOs)
+and others features like GPIOs, RTC, watchdog, ESMs (Error Signal Monitor),
+and PFSM (Pre-configurable Finite State Machine). The SoC and the PMIC can
+communicate through the I2C or SPI interfaces.
+TPS6594 is the super-set device while TPS6593 and LP8764 are derivatives.</p>
+<p>This guide covers TPS6594/TPS6593/LP8764 PMIC drivers.</p>
+<p>At least one of the two interfaces should be selected : either I2C or SPI driver.
+The others drivers are sub-modules and may be selected or not, depending on the
+application.</p>
+<p class="rubric" id="supported-boards">Supported boards (using I2C interface)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>AM62A SK EVM -&gt; 1 TPS6593
+J721E EVM    -&gt; 2 TPS6594
+J721S2 EVM   -&gt; 2 TPS6594 + 1 LP8764
+J7200 EVM    -&gt; 1 TPS6594 + 1 LP8764
+J784S4 EVM   -&gt; 1 TPS6594
+</pre></div>
+</div>
+</div>
+<div class="section" id="device-tree-configuration">
+<h2><span class="section-number">3.2.2.14.2. </span>Device tree configuration<a class="headerlink" href="#device-tree-configuration" title="Permalink to this headline">¶</a></h2>
+<p>See device tree binding:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Documentation/devicetree/bindings/mfd/ti,tps6594.yaml
+</pre></div>
+</div>
+</div>
+<div class="section" id="tps6594-i2c-driver">
+<h2><span class="section-number">3.2.2.14.3. </span>TPS6594 I2C driver<a class="headerlink" href="#tps6594-i2c-driver" title="Permalink to this headline">¶</a></h2>
+<p>Driver source location:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drivers/mfd/tps6594-i2c.c
+</pre></div>
+</div>
+<p class="rubric" id="kernel-configuration-options-i2c">Kernel configuration options</p>
+<p>Configs to be enabled in kernel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_I2C
+CONFIG_MFD_TPS6594_I2C (TPS6594 I2C support)
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers ---&gt;
+   Multifunction device drivers ---&gt;
+      &lt;*&gt; TI TPS6594 Power Management chip with I2C
+</pre></div>
+</div>
+<p class="rubric" id="crc-feature-i2c">CRC feature</p>
+<p class="rubric" id="crc-feature-i2c-modules">- When drivers are built as ‘modules’</p>
+<p>For safety applications, a CRC feature can be enabled from userspace:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;options tps6594_i2c enable_crc=true&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/modprobe.d/tps6594.conf<span class="p">;</span><span class="w"> </span>sync<span class="p">;</span>
+</pre></div>
+</div>
+<p>Then, the board must be powered off/on with the mechanical switch to apply
+the new setting.</p>
+<p>CRC feature will be enabled at module loading. Example of kernel messages
+for J721S2:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[    5.060454] tps6594 0-0048: CRC feature enabled on primary PMIC
+[    5.086440] tps6594 0-004c: CRC feature enabled on secondary PMIC
+[    5.115762] tps6594 0-0058: CRC feature enabled on secondary PMIC
+</pre></div>
+</div>
+<p>To disable CRC feature, the modprobe conf file must be removed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>/etc/modprobe.d/tps6594.conf<span class="p">;</span><span class="w"> </span>sync<span class="p">;</span>
+</pre></div>
+</div>
+<p>Then, the board must be powered off/on with the mechanical switch to apply
+the new setting.</p>
+<p class="rubric" id="crc-feature-i2c-builtin">- When drivers are built statically into the kernel (‘built-in’)</p>
+<p>CRC feature can be enabled through the kernel command line parameter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tps6594_i2c.enable_crc<span class="o">=</span>Y
+</pre></div>
+</div>
+<p>If the kernel command line is edited from uboot, the new setting can be
+saved to the persistent storage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>saveenv
+</pre></div>
+</div>
+</div>
+<div class="section" id="tps6594-spi-driver">
+<h2><span class="section-number">3.2.2.14.4. </span>TPS6594 SPI driver<a class="headerlink" href="#tps6594-spi-driver" title="Permalink to this headline">¶</a></h2>
+<p>Driver source location:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drivers/mfd/tps6594-spi.c
+</pre></div>
+</div>
+<p class="rubric" id="kernel-configuration-options-spi">Kernel configuration options</p>
+<p>Configs to be enabled in kernel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_SPI_MASTER
+CONFIG_MFD_TPS6594_SPI (TPS6594 SPI support)
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers ---&gt;
+   Multifunction device drivers ---&gt;
+      &lt;*&gt; TI TPS6594 Power Management chip with SPI
+</pre></div>
+</div>
+<p class="rubric" id="crc-feature-spi">CRC feature</p>
+<p>For safety applications, a CRC feature can be enabled (see ‘TPS6594 I2C
+driver’ chapter).</p>
+</div>
+<div class="section" id="tps6594-gpio-pinctrl-driver">
+<h2><span class="section-number">3.2.2.14.5. </span>TPS6594 GPIO/pinctrl driver<a class="headerlink" href="#tps6594-gpio-pinctrl-driver" title="Permalink to this headline">¶</a></h2>
+<p>The TPS6594 device integrates 11 configurable general-purpose I/Os that are
+multiplexed with alternative functions.</p>
+<p>Driver source location:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drivers/pinctrl/pinctrl-tps6594.c
+</pre></div>
+</div>
+<p>[WARNING] GPIO indexation is 0-based in linux, whereas it is 1-based in the
+PMIC TRM. So GPIO5 in linux corresponds to GPIO6 in the TRM.</p>
+<p class="rubric" id="kernel-configuration-options-gpio-pinctrl">Kernel configuration options</p>
+<p>Configs to be enabled in kernel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_PINCTRL_TPS6594 (TPS6594 GPIO support)
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers ---&gt;
+   Pin controllers ---&gt;
+      &lt;*&gt; Pinctrl and GPIO driver for TI TPS6594 PMIC
+</pre></div>
+</div>
+<p class="rubric" id="driver-usage-inputs-outputs">Driver usage (inputs - outputs)</p>
+<p>Examples given for AM62A.</p>
+<p>List all gpiochips present on the system, their names, labels and number
+of GPIO lines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpiodetect
+
+<span class="w">    </span><span class="o">[</span>...<span class="o">]</span>
+<span class="w">    </span>gpiochip4<span class="w"> </span><span class="o">[</span>tps6594-gpio<span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="m">11</span><span class="w"> </span>lines<span class="o">)</span>
+</pre></div>
+</div>
+<p>List all lines of specified gpiochips, their names, consumers, direction,
+active state and additional flags:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpioinfo<span class="w"> </span>gpiochip4
+
+<span class="w">    </span>gpiochip4<span class="w"> </span>-<span class="w"> </span><span class="m">11</span><span class="w"> </span>lines:
+<span class="w">        </span>line<span class="w">   </span><span class="m">0</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">   </span>input<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">   </span><span class="m">1</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">   </span>input<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">   </span><span class="m">2</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">   </span>input<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">   </span><span class="m">3</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">  </span>output<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">   </span><span class="m">4</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">   </span>input<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">   </span><span class="m">5</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">  </span>output<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">   </span><span class="m">6</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">   </span>input<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">   </span><span class="m">7</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">   </span>input<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">   </span><span class="m">8</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">   </span>input<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">   </span><span class="m">9</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">   </span>input<span class="w">  </span>active-high
+<span class="w">        </span>line<span class="w">  </span><span class="m">10</span>:<span class="w">      </span>unnamed<span class="w">       </span>unused<span class="w">   </span>input<span class="w">  </span>active-high
+</pre></div>
+</div>
+<p>Read values of specified GPIO lines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpioget<span class="w"> </span>gpiochip4<span class="w"> </span><span class="m">5</span>
+
+<span class="w">    </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>Set values of specified GPIO lines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpioset<span class="w"> </span>gpiochip4<span class="w"> </span><span class="nv">5</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p class="rubric" id="driver-usage-pinctrl">Driver usage (pinctrl)</p>
+<p>Examples given for AM62A.</p>
+<p>Get functions available for each pin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/kernel/debug/pinctrl/tps6594-pinctrl.1.auto/pinmux-functions
+
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">0</span>:<span class="w"> </span>gpio,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO0<span class="w"> </span>GPIO1<span class="w"> </span>GPIO2<span class="w"> </span>GPIO3<span class="w"> </span>GPIO4<span class="w"> </span>GPIO5<span class="w"> </span>GPIO6<span class="w"> </span>GPIO7<span class="w"> </span>GPIO8<span class="w"> </span>GPIO9<span class="w"> </span>GPIO10<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">1</span>:<span class="w"> </span>nsleep1,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO0<span class="w"> </span>GPIO1<span class="w"> </span>GPIO2<span class="w"> </span>GPIO3<span class="w"> </span>GPIO4<span class="w"> </span>GPIO5<span class="w"> </span>GPIO6<span class="w"> </span>GPIO7<span class="w"> </span>GPIO8<span class="w"> </span>GPIO9<span class="w"> </span>GPIO10<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">2</span>:<span class="w"> </span>nsleep2,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO0<span class="w"> </span>GPIO1<span class="w"> </span>GPIO2<span class="w"> </span>GPIO3<span class="w"> </span>GPIO4<span class="w"> </span>GPIO5<span class="w"> </span>GPIO6<span class="w"> </span>GPIO7<span class="w"> </span>GPIO8<span class="w"> </span>GPIO9<span class="w"> </span>GPIO10<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">3</span>:<span class="w"> </span>wkup1,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO0<span class="w"> </span>GPIO1<span class="w"> </span>GPIO2<span class="w"> </span>GPIO3<span class="w"> </span>GPIO4<span class="w"> </span>GPIO5<span class="w"> </span>GPIO6<span class="w"> </span>GPIO7<span class="w"> </span>GPIO8<span class="w"> </span>GPIO9<span class="w"> </span>GPIO10<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">4</span>:<span class="w"> </span>wkup2,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO0<span class="w"> </span>GPIO1<span class="w"> </span>GPIO2<span class="w"> </span>GPIO3<span class="w"> </span>GPIO4<span class="w"> </span>GPIO5<span class="w"> </span>GPIO6<span class="w"> </span>GPIO7<span class="w"> </span>GPIO8<span class="w"> </span>GPIO9<span class="w"> </span>GPIO10<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">5</span>:<span class="w"> </span>scl_i2c2-cs_spi,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO0<span class="w"> </span>GPIO1<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">6</span>:<span class="w"> </span>nrstout_soc,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO0<span class="w"> </span>GPIO10<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">7</span>:<span class="w"> </span>trig_wdog,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO1<span class="w"> </span>GPIO10<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">8</span>:<span class="w"> </span>sda_i2c2-sdo_spi,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO1<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">9</span>:<span class="w"> </span>clk32kout,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO2<span class="w"> </span>GPIO3<span class="w"> </span>GPIO7<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">10</span>:<span class="w"> </span>nerr_soc,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO2<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">11</span>:<span class="w"> </span>sclk_spmi,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO4<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">12</span>:<span class="w"> </span>sdata_spmi,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO5<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">13</span>:<span class="w"> </span>nerr_mcu,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO6<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">14</span>:<span class="w"> </span>syncclkout,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO7<span class="w"> </span>GPIO9<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">15</span>:<span class="w"> </span>disable_wdog,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO7<span class="w"> </span>GPIO8<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">16</span>:<span class="w"> </span>pdog,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO8<span class="w"> </span><span class="o">]</span>
+<span class="w">    </span><span class="k">function</span><span class="w"> </span><span class="m">17</span>:<span class="w"> </span>syncclkin,<span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>GPIO9<span class="w"> </span><span class="o">]</span>
+</pre></div>
+</div>
+<p>Modify the function for a pin:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;group&gt; &lt;function&gt;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/pinctrl/tps6594-pinctrl.1.auto/pinmux-select
+
+Examples:
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;GPIO7 gpio&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/pinctrl/tps6594-pinctrl.1.auto/pinmux-select
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;GPIO2 nerr_soc&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/pinctrl/tps6594-pinctrl.1.auto/pinmux-select
+</pre></div>
+</div>
+</div>
+<div class="section" id="tps6594-regulator-driver">
+<h2><span class="section-number">3.2.2.14.6. </span>TPS6594 regulator driver<a class="headerlink" href="#tps6594-regulator-driver" title="Permalink to this headline">¶</a></h2>
+<p>The TPS6594 provides regulators (bucks and LDOs). The output voltages are
+configurable and are meant to supply power to the main processor and other
+components. Bucks can be used in single or multiphase mode, depending on
+the PMIC part number.</p>
+<p>Driver source location:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drivers/regulator/tps6594-regulator.c
+</pre></div>
+</div>
+<p class="rubric" id="kernel-configuration-options-regul">Kernel configuration options</p>
+<p>Configs to be enabled in kernel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_REGULATOR_TPS6594 (TPS6594 regulator support)
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers ---&gt;
+   Voltage and Current Regulator Support ---&gt;
+      &lt;*&gt; TI TPS6594 Power regulators
+</pre></div>
+</div>
+<p class="rubric" id="driver-usage-regul">Driver usage</p>
+<p>Regulator summary can be displayed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/kernel/debug/regulator/regulator_summary
+</pre></div>
+</div>
+<p>Regulator events, if any, can be seen by running this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/proc/interrupts
+</pre></div>
+</div>
+</div>
+<div class="section" id="tps6594-esm-driver">
+<h2><span class="section-number">3.2.2.14.7. </span>TPS6594 ESM driver<a class="headerlink" href="#tps6594-esm-driver" title="Permalink to this headline">¶</a></h2>
+<p>This device monitors the SoC error output signal at its nERR_SOC input pin.
+In error condition, ESM toggles its nRSTOUT_SOC pin to reset the SoC.</p>
+<p>Typically, Error Signal Monitor (on PMIC side) can be set up along with
+Error Signaling Module (on SoC side).</p>
+<p>Driver source location:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drivers/misc/tps6594-esm.c
+</pre></div>
+</div>
+<p class="rubric" id="kernel-configuration-options-esm">Kernel configuration options</p>
+<p>Configs to be enabled in kernel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_TPS6594_ESM (TPS6594 ESM support)
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers ---&gt;
+   Misc devices ---&gt;
+      &lt;*&gt; TI TPS6594 Error Signal Monitor support
+</pre></div>
+</div>
+<p class="rubric" id="driver-usage-esm">Driver usage</p>
+<p>PMIC ESM will be started at module loading.</p>
+<p>ESM errors, if any, can be seen by running this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/proc/interrupts
+</pre></div>
+</div>
+</div>
+<div class="section" id="tps6594-rtc-driver">
+<h2><span class="section-number">3.2.2.14.8. </span>TPS6594 RTC driver<a class="headerlink" href="#tps6594-rtc-driver" title="Permalink to this headline">¶</a></h2>
+<p>Driver source location:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drivers/rtc/rtc-tps6594.c
+</pre></div>
+</div>
+<p class="rubric" id="kernel-configuration-options-rtc">Kernel configuration options</p>
+<p>Configs to be enabled in kernel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_RTC_DRV_TPS6594 (TPS6594 RTC support)
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers ---&gt;
+   Real Time Clock ---&gt;
+      &lt;*&gt; TI TPS6594 RTC driver
+</pre></div>
+</div>
+<p class="rubric" id="driver-usage-rtc">Driver usage</p>
+<p>Once the module is loaded, each RTC is exposed as a character
+device file by the kernel to be used by userspace:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/dev/rtcX           X - index (zero-based)
+</pre></div>
+</div>
+<p>Read date/time as follow:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/class/rtc/rtc0/date
+cat<span class="w"> </span>/sys/class/rtc/rtc0/time
+</pre></div>
+</div>
+<p>Alarms, if any, can be seen by running this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/proc/interrupts
+</pre></div>
+</div>
+<p>An example of how to use RTC from a userspace application is given
+in PFSM driver chapter.</p>
+</div>
+<div class="section" id="tps6594-pfsm-driver">
+<h2><span class="section-number">3.2.2.14.9. </span>TPS6594 PFSM driver<a class="headerlink" href="#tps6594-pfsm-driver" title="Permalink to this headline">¶</a></h2>
+<p>Strictly speaking, PFSM is not hardware. It is a piece of code.
+PMIC integrates a state machine which manages operational modes.
+Depending on the current operational mode, some voltage domains
+remain energized while others can be off.</p>
+<p>PFSM driver can be used to trigger transitions between configured
+states.</p>
+<p>Driver source location:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drivers/misc/tps6594-pfsm.c
+</pre></div>
+</div>
+<p class="rubric" id="kernel-configuration-options-pfsm">Kernel configuration options</p>
+<p>Configs to be enabled in kernel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_TPS6594_PFSM (TPS6594 PFSM support)
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers ---&gt;
+   Misc devices ---&gt;
+      &lt;*&gt; TI TPS6594 Pre-configurable Finite State Machine support
+</pre></div>
+</div>
+<p class="rubric" id="driver-usage-pfsm">Driver usage</p>
+<p>Once the module is loaded, each PFSM is exposed as a character
+device file by the kernel to be used by userspace:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/dev/pfsm-X-Y       X - chip ID
+                        [0] = TPS6594
+                        [1] = TPS6593
+                        [2] = LP8764
+
+                    Y - I2C address or SPI chip select
+
+Example: &#39;/dev/pfsm-1-0x4c&#39; is TPS6593 @ I2C address 0x4c
+</pre></div>
+</div>
+<p>Dump the registers of pages 0 and 1 as follow:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hexdump<span class="w"> </span>-C<span class="w"> </span>/dev/pfsm-1-0x4c
+</pre></div>
+</div>
+<p>PFSM events, if any, can be seen by running this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/proc/interrupts
+</pre></div>
+</div>
+<p>For more information, see kernel documentation:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Documentation/misc-devices/tps6594-pfsm.rst
+</pre></div>
+</div>
+<p>A userspace code example is also provided:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>samples/pfsm
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../PCIe/PCIe_Root_Complex.html" class="btn btn-neutral float-left" title="3.2.2.13. PCIe Root Complex" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Power_Management.html" class="btn btn-neutral float-right" title="3.2.2.15. Power Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

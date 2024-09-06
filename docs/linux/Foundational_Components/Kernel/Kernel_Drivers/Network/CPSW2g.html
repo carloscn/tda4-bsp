@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.10.3.1. CPSW2g Ethernet &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.10.3.2. CPSWng Ethernet" href="CPSWng.html" />
+    <link rel="prev" title="3.2.2.10. CPSW Ethernet" href="CPSW-Ethernet.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+          <li><a href="CPSW-Ethernet.html"><span class="section-number">3.2.2.10. </span>CPSW Ethernet</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.10.3.1. </span>CPSW2g Ethernet</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="cpsw2g-ethernet">
+<span id="cpsw2g"></span><h1><span class="section-number">3.2.2.10.3.1. </span>CPSW2g Ethernet<a class="headerlink" href="#cpsw2g-ethernet" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p>
+<ul>
+<li><p><a class="reference internal" href="#supported-platforms" id="id2">Supported platforms</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#driver-configuration" id="id3">Driver Configuration</a></p></li>
+<li><p><a class="reference internal" href="#device-tree-bindings" id="id4">Device tree bindings</a></p></li>
+<li><p><a class="reference internal" href="#mac-mode" id="id5">MAC mode</a></p>
+<ul>
+<li><p><a class="reference internal" href="#interrupt-pacing" id="id6">Interrupt pacing</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#errata-i2329-mdio-interface-corruption-cpsw-and-pruss" id="id7">Errata: i2329 MDIO interface corruption (CPSW and PRUSS)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#description" id="id8">Description</a></p></li>
+<li><p><a class="reference internal" href="#workaround-for-ti-sdk-version-8-4" id="id9">Workaround for TI SDK Version &gt; 8.4</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1"><span class="section-number">3.2.2.10.3.1.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The TI J784S4 SoC has integrated two-port Gigabit Ethernet Switch subsystem
+with selectable RGMII and RMII interfaces and an internal Communications
+Port Programming Interface (CPPI) port (Host port 0). Host Port 0 CPPI Packet
+Streaming Interface interface supports 8 TX channels and one RX channel
+operating by TI J784S4 NAVSS Unified DMA Peripheral Root Complex (UDMA-P) controller.</p>
+<p>The driver follows the standard Linux network interface architecture and
+supports the following features:</p>
+<ol class="arabic simple">
+<li><p>10/100/1000 Mbps mode of operation.</p></li>
+<li><p>Auto negotiation.</p></li>
+<li><p>Linux NAPI support</p></li>
+<li><p>VLAN filtering</p></li>
+<li><p>Ethertool</p></li>
+<li><p>CPTS/PTP as per 802.1AS-2011 (TSN)</p></li>
+<li><p>EST/TAS offload as per 802.1Q-2018 (TSN)</p></li>
+<li><p>IET/preemption offload as per 802.1Q-2018 (TSN)</p></li>
+<li><p>Forwarding and Queuing Enhancements for Time-Sensitive Streams (FQTSS) as per 802.1Q-2018 previously referred to as CBS or 802.1Qav</p></li>
+</ol>
+<div class="section" id="supported-platforms">
+<h3><a class="toc-backref" href="#id2"><span class="section-number">3.2.2.10.3.1.1.1. </span>Supported platforms</a><a class="headerlink" href="#supported-platforms" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 50%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>SoC</p></th>
+<th class="head"><p>Number of external ports</p></th>
+<th class="head"><p>Instances - Domain</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>J721e</p></td>
+<td><p>1 external port (CPSW2g)</p></td>
+<td><p>1 - MCU</p></td>
+</tr>
+<tr class="row-odd"><td><p>J7200</p></td>
+<td><p>1 external port (CPSW2g)</p></td>
+<td><p>1 - MCU</p></td>
+</tr>
+<tr class="row-even"><td><p>J721S2</p></td>
+<td><p>1 external port (CPSW2g)</p></td>
+<td><p>2 - MAIN, MCU</p></td>
+</tr>
+<tr class="row-odd"><td><p>J784S4</p></td>
+<td><p>1 external port (CPSW2g)</p></td>
+<td><p>2 - MAIN, MCU</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="driver-configuration">
+<h2><a class="toc-backref" href="#id3"><span class="section-number">3.2.2.10.3.1.2. </span>Driver Configuration</a><a class="headerlink" href="#driver-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The TI Processor SDK has J784S4 CPSW2g driver enabled by default.
+In case of custom builds, please ensure following configs are enabled.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_TI_DAVINCI_MDIO
+CONFIG_TI_K3_AM65_CPSW_NUSS
+CONFIG_TI_K3_AM65_CPTS
+CONFIG_TI_AM65_CPSW_TAS
+CONFIG_PHY_TI_GMII_SEL
+</pre></div>
+</div>
+<p>For further details regarding the above configs, refer:
+#. drivers/net/ethernet/ti/Kconfig
+#. drivers/phy/ti/Kconfig</p>
+<p class="rubric" id="k3-module-build"><strong>Module Build</strong></p>
+<p>Module build for the cpsw driver is supported. To do this, use option ‘m’ for above configs, where applicable.</p>
+</div>
+<div class="section" id="device-tree-bindings">
+<h2><a class="toc-backref" href="#id4"><span class="section-number">3.2.2.10.3.1.3. </span>Device tree bindings</a><a class="headerlink" href="#device-tree-bindings" title="Permalink to this headline">¶</a></h2>
+<p>The DT bindings description can be found at:</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://git.ti.com/ti-linux-kernel/ti-linux-kernel/blobs/ti-linux-5.10.y/Documentation/devicetree/bindings/net/ti,k3-am654-cpsw-nuss.yaml">Documentation/devicetree/bindings/net/ti,k3-am654-cpsw-nuss.yaml</a></div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://git.ti.com/ti-linux-kernel/ti-linux-kernel/blobs/ti-linux-5.10.y/Documentation/devicetree/bindings/net/ti,k3-am654-cpts.yaml">Documentation/devicetree/bindings/net/ti,k3-am654-cpts.yaml</a></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="mac-mode">
+<h2><a class="toc-backref" href="#id5"><span class="section-number">3.2.2.10.3.1.4. </span>MAC mode</a><a class="headerlink" href="#mac-mode" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="k3-bringing-up-interfaces">Bringing Up interface</p>
+<p>The network interface can be configured automatically depending on root file system or configured manually. Manual configuration:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ip addr add 192.168.1.1/24 dev eth0
+ip link set dev eth0 up
+
+&lt; or &gt;
+
+ifconfig eth0 &lt;ip&gt; netmask &lt;mask&gt; up
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-i-driver">Get driver information</p>
+<p>The MCU_CPSW0 interface can be identified by using <code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-i|--driver</span></code> command.
+It also provides some information about supported features.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -i &lt;dev&gt;
+driver: am65-cpsw-nuss
+version: 0.1
+firmware-version:
+expansion-rom-version:
+bus-info: 46000000.ethernet
+supports-statistics: yes
+supports-test: no
+supports-eeprom-access: no
+supports-register-dump: yes
+supports-priv-flags: yes
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-display-standard-information-about-device">ethtool - Display standard information about device/link</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>   # ethtool eth0
+Supported ports: [ TP MII ]
+Supported link modes:   10baseT/Half 10baseT/Full
+                        100baseT/Half 100baseT/Full
+                        1000baseT/Half 1000baseT/Full
+Supported pause frame use: Symmetric Receive-only
+Supports auto-negotiation: Yes
+Supported FEC modes: Not reported
+Advertised link modes:  10baseT/Half 10baseT/Full
+                        100baseT/Half 100baseT/Full
+                        1000baseT/Half 1000baseT/Full
+Advertised pause frame use: No
+Advertised auto-negotiation: Yes
+Advertised FEC modes: Not reported
+Link partner advertised link modes:  10baseT/Half 10baseT/Full
+                                     100baseT/Half 100baseT/Full
+Link partner advertised pause frame use: Symmetric
+Link partner advertised auto-negotiation: Yes
+Link partner advertised FEC modes: Not reported
+Speed: 100Mb/s
+Duplex: Full
+Port: MII
+PHYAD: 0
+Transceiver: internal
+Auto-negotiation: on
+Supports Wake-on: d
+Wake-on: d
+Current message level: 0x00000000 (0)
+
+Link detected: yes
+</pre></div>
+</div>
+<p class="rubric" id="k3-rx-csum-offload">RX checksum offload</p>
+<p>The Driver enables RX checksum offload by default. It can be disabled/enabled by using <code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-K</span></code> command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -k &lt;dev&gt;
+....
+rx-checksumming: on
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ethtool -K &lt;dev&gt; rx-checksum on|off
+</pre></div>
+</div>
+<p class="rubric" id="k3-vlan-config"><strong>VLAN Config</strong></p>
+<p>VLAN can be added/deleted using <code class="docutils literal notranslate"><span class="pre">ip</span></code> or <code class="docutils literal notranslate"><span class="pre">vconfig</span></code> utility.</p>
+<p><em>VLAN Add</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ip link add link eth0 name eth0.5 type vlan id 5
+
+&lt; or &gt;
+
+vconfig add eth0 5
+</pre></div>
+</div>
+<p><em>VLAN del</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ip link del eth0.5
+
+&lt; or &gt;
+
+vconfig rem eth0 5
+</pre></div>
+</div>
+<p><em>VLAN IP assigning</em></p>
+<p>IP address can be assigned to the VLAN interface either via udhcpc
+when a VLAN aware dhcp server is present or via static ip assigning
+using <code class="docutils literal notranslate"><span class="pre">ip</span></code> or <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code>.</p>
+<p>Once VLAN is added, it will create a new entry in Ethernet interfaces
+like eth0.5, below is an example how it check the vlan interface</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ip addr add 192.168.1.1/24 dev eth0.5
+
+&lt; or &gt;
+
+ifconfig eth0.5
+....
+eth0.5    Link encap:Ethernet  HWaddr 20:CD:39:2B:C7:BE
+          inet addr:192.168.10.5  Bcast:192.168.10.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+</pre></div>
+</div>
+<p><em>VLAN Packet Send/Receive</em></p>
+<p>To Send or receive packets with the VLAN tag, bind the socket to the
+proper Ethernet interface shown above and can send/receive via that
+socket-fd.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="k3-multicast-adddelete"><strong>Multicast Add/Delete</strong></p>
+<p>Multicast MAC address can be added/deleted using <em>ip maddr</em> commands or Linux
+socket ioctl SIOCADDMULTI/SIOCDELMULTI.</p>
+<p><em>Show muliticast address</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ip maddr show dev &lt;dev&gt;
+2:      eth0
+    link  01:00:5e:00:00:01
+    link  01:80:c2:00:00:00
+    link  01:80:c2:00:00:03
+    link  01:80:c2:00:00:0e
+    link  01:00:5e:00:00:fc
+    inet  224.0.0.252
+    inet  224.0.0.1
+</pre></div>
+</div>
+<p><em>Add muliticast address</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ip maddr add 01:00:5e:00:00:05 dev eth0
+# ip maddr show dev eth0
+2:      eth0
+    link  01:00:5e:00:00:01
+    link  01:80:c2:00:00:00
+    link  01:80:c2:00:00:03
+    link  01:80:c2:00:00:0e
+    link  01:00:5e:00:00:fc
+    link  01:00:5e:00:00:05 static
+    inet  224.0.0.252
+    inet  224.0.0.1
+</pre></div>
+</div>
+<p><em>Delete muliticast address</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ip maddr del 01:00:5e:00:00:05 dev eth0
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="k3-ethtool-show-permaddr"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-P|--show-permaddr</span> <span class="pre">DEVNAME</span></code> Show permanent hardware
+address</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -P eth0
+Permanent address: a0:f6:fd:a6:46:6e&quot;
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-change-generic-options"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-s|--change</span> <span class="pre">DEVNAME</span></code> Change generic options</p>
+<p>Below commands will be redirected to the phy driver:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -s &lt;dev&gt;
+[ speed %d ]
+[ duplex half|full ]
+[ autoneg on|off ]
+[ wol p|u|m|b|a|g|s|d... ]
+[ sopass %x:%x:%x:%x:%x:%x ]
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CPSW driver do not perform any kind of WOL specific actions or
+configurations.</p>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#ethtool -s eth0 duplex half speed 100
+[ 3550.892112] cpsw 48484000.ethernet eth0: Link is Down
+[ 3556.088704] cpsw 48484000.ethernet eth0: Link is Up - 100Mbps/Half - flow control off
+</pre></div>
+</div>
+<p>Sets the driver message type flags by name or number</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[ msglvl %d | msglvl type on|off ... ]
+# ethtool -s eth0 msglvl drv off
+# ethtool -s eth0 msglvl ifdown off
+# ethtool -s eth0 msglvl ifup off
+# ethtool eth0
+Current message level: 0x00000031 (49)
+                       drv ifdown ifup
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-restart-n-way-negotiation"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-r|--negotiate</span> <span class="pre">DEVNAME</span></code> Restart N-WAY negotiation</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -r eth0
+[ 4338.167685] cpsw 48484000.ethernet eth0: Link is Down
+[ 4341.288695] cpsw 48484000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx&quot;
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-show-pause-options"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-a|--show-pause</span> <span class="pre">DEVNAME</span></code> Show pause options</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -a eth0
+Pause parameters for eth0:
+Autonegotiate:  off
+RX:             off
+TX:             off
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-set-pause-options"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-A|--pause</span> <span class="pre">DEVNAME</span></code> Set pause options</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -A eth0 rx on tx on
+cpsw 48484000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+# ethtool -a eth0
+Pause parameters for eth0:
+Autonegotiate:  off
+RX:             on
+TX:             on
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-query-rxtx-ring-parameters"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-g|--show-ring</span> <span class="pre">DEVNAME</span></code> Query RX/TX ring parameters</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -g eth0
+Ring parameters for eth0:
+Pre-set maximums:
+RX:             0
+RX Mini:        0
+RX Jumbo:       0
+TX:             0
+Current hardware settings:
+RX:             500
+RX Mini:        0
+RX Jumbo:       0
+TX:             512
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-query-channels"><code class="docutils literal notranslate"><span class="pre">ethtool-l|--show-channels</span> <span class="pre">DEVNAME</span></code> Query Channels</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -l eth0
+Channel parameters for eth0:
+Pre-set maximums:
+RX:             1
+TX:             8
+Other:          0
+Combined:       0
+Current hardware settings:
+RX:             1
+TX:             8
+Other:          0
+Combined:       0
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-l-set-channels"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-L\|--set-channels</span> <span class="pre">DEVNAME</span></code> Set Channels.</p>
+<p>Allows to control number of TX channels driver is allowed to work with at DMA level. The maximum number of TX channels is 8.
+Supported options <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">tx</span> <span class="pre">N</span> <span class="pre">]</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -L eth0 tx 3
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-priv-flags"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">--show-priv-flags/--set-priv-flags</span> <span class="pre">DEVNAME</span></code> Show/Set private flags</p>
+<p>Allows to control private flags supported by driver.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Flag</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>p0-rx-ptype-rrobin</p></td>
+<td><p>Controls TX DMA channels processing mode: round-robin or priority mode.
+In case priority mode is enabled, the high number channel will have higher priority: TX 7 - prio 7 … TX 0 - prio 0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>iet-frame-preemption</p></td>
+<td><p>Enables support for Interspersed Express Traffic (IET) IEEE 802.3br (frame preemption).</p></td>
+</tr>
+<tr class="row-even"><td><p>iet-mac-verify</p></td>
+<td><p>Enables Interspersed Express Traffic (IET) MAC verification procedure on link up event.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool --show-priv-flags eth0
+Private flags for eth0:
+p0-rx-ptype-rrobin  : on
+iet-frame-preemption: off
+iet-mac-verify      : off
+
+# ethtool --set-priv-flags eth0 p0-rx-ptype-rrobin off
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The network interface have to be down for private flags configuration.</p>
+</div>
+<p class="rubric" id="k3-ethtool-show-adapter-statistics"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-S|--statistics</span> <span class="pre">DEVNAME</span></code> Show adapter statistics</p>
+<p>“ethtool -S” command displays statistic for both external Port 1 and Host port 0.
+Host port 0 statistics prefixed with <em>p0_</em>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> # ethtool -S eth0
+NIC statistics:
+     p0_rx_good_frames: 347
+     p0_rx_broadcast_frames: 4
+     p0_rx_multicast_frames: 264
+     p0_rx_crc_errors: 0
+     p0_rx_oversized_frames: 0
+     p0_rx_undersized_frames: 0
+     p0_ale_drop: 0
+     p0_ale_overrun_drop: 0
+     p0_rx_octets: 25756
+     p0_tx_good_frames: 4816
+     p0_tx_broadcast_frames: 3629
+     p0_tx_multicast_frames: 1120
+     p0_tx_octets: 878055
+     p0_tx_64B_frames: 735
+     p0_tx_65_to_127B_frames: 1023
+     ...
+     rx_good_frames: 4816
+     rx_broadcast_frames: 3629
+     rx_multicast_frames: 1120
+     rx_pause_frames: 0
+     rx_crc_errors: 0
+     rx_align_code_errors: 0
+     rx_oversized_frames: 0
+     rx_jabber_frames: 0
+     rx_undersized_frames: 0
+     rx_fragments: 0
+     ale_drop: 0
+     ale_overrun_drop: 0
+     rx_octets: 878055
+     tx_good_frames: 347
+     tx_broadcast_frames: 4
+     tx_multicast_frames: 264
+     tx_pause_frames: 0
+     tx_deferred_frames: 0
+     tx_collision_frames: 0
+     tx_single_coll_frames: 0
+     tx_mult_coll_frames: 0
+     tx_excessive_collisions: 0
+     tx_late_collisions: 0
+     ...
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-show-time-stamping-capabilities"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-T|--show-time-stamping</span> <span class="pre">DEVNAME</span></code> Show time stamping
+capabilities.</p>
+<p>Accessible when CPTS is enabled.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  # ethtool -T eth0
+Time stamping parameters for eth0:
+Capabilities:
+        hardware-transmit     (SOF_TIMESTAMPING_TX_HARDWARE)
+        software-transmit     (SOF_TIMESTAMPING_TX_SOFTWARE)
+        hardware-receive      (SOF_TIMESTAMPING_RX_HARDWARE)
+        software-receive      (SOF_TIMESTAMPING_RX_SOFTWARE)
+        software-system-clock (SOF_TIMESTAMPING_SOFTWARE)
+        hardware-raw-clock    (SOF_TIMESTAMPING_RAW_HARDWARE)
+PTP Hardware Clock: 1
+Hardware Transmit Timestamp Modes:
+        off                   (HWTSTAMP_TX_OFF)
+        on                    (HWTSTAMP_TX_ON)
+Hardware Receive Filter Modes:
+        none                  (HWTSTAMP_FILTER_NONE)
+        all                   (HWTSTAMP_FILTER_ALL)
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-show-eee-settings"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">--show-eee</span> <span class="pre">DEVNAME</span></code> Show EEE settings</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#ethtool --show-eee eth0
+EEE Settings for eth0:
+        EEE status: not supported
+</pre></div>
+</div>
+<p class="rubric" id="k3-ethtool-set-eee-settings"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">--set-eee</span> <span class="pre">DEVNAME</span></code> Set EEE settings.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Full EEE is not supported in driver, but it enables reading
+and writing of EEE advertising settings in Ethernet PHY. This way one
+can disable advertising EEE for certain speeds.</p>
+</div>
+<p class="rubric" id="k3-ethtool-do-a-register-dump"><code class="docutils literal notranslate"><span class="pre">ethtool</span> <span class="pre">-d|--register-dump</span> <span class="pre">DEVNAME</span></code> Do a register dump</p>
+<p>This command dumps all CPSW MMIO regions in the below format.
+The TI switch-config tool can be used for CPSW NUSS register dump parsing.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>MMIO region header (8 Bytes)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>module_id
+(u32)</p></td>
+<td><p>MMIO region id
+NUSS = 1,
+RGMII_STATUS = 2,
+MDIO = 3,
+CPSW = 4,
+CPSW_P0 = 5,
+CPSW_P1 = 6,
+CPSW_CPTS = 7,
+CPSW_ALE = 8,
+CPSW_ALE_TBL = 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>len (u32)</p></td>
+<td><p>MMIO region dump length, including header</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>MMIO region registers dump (num_regs * 8 Bytes)</p></td>
+</tr>
+<tr class="row-odd"><td><p>reg_offset (u32)</p></td>
+<td><p>register offset from the start
+of MCU NAVSS MMIO space</p></td>
+</tr>
+<tr class="row-even"><td><p>reg_value (u32)</p></td>
+<td><p>MMIO region dump length, including header</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exception: ALE table dumped as raw array of ALE records (3 * u32 per record).</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -d eth0
+Offset          Values
+------          ------
+0x0000:         01 00 00 00 48 00 00 00 00 00 00 00 00 71 a0 6b
+0x0010:         04 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00
+0x0020:         0c 00 00 00 00 00 00 00 10 00 00 00 01 00 00 00
+0x0030:         14 00 00 00 00 00 00 00 18 00 00 00 00 00 00 00
+0x0040:         1c 00 00 00 00 00 00 00 02 00 00 00 48 00 00 00
+0x0050:         30 00 00 00 0b 00 00 00 34 00 00 00 00 00 00 00
+0x0060:         38 00 00 00 00 00 00 00 3c 00 00 00 00 00 00 00
+...
+</pre></div>
+</div>
+<div class="section" id="interrupt-pacing">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">3.2.2.10.3.1.4.1. </span>Interrupt pacing</a><a class="headerlink" href="#interrupt-pacing" title="Permalink to this headline">¶</a></h3>
+<p>The Interrupt pacing (IRQ coalescing) based on hrtimers for RX/TX data path separately can be enabled by following ethtool commands (min value is 20us).</p>
+<p>The RX data path - only one queue:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># ethtool -C ethX rx-usecs N
+</pre></div>
+</div>
+<p>The TX data path - any of enabed TX queue (up to 8):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>- by default enables coalesing for TX0
+  # ethtool -C ethX tx-usecs N
+
+- configure TX0
+  # ethtool -Q ethX queue_mask 1 --coalesce tx-usecs N
+
+- configure TX1
+  # ethtool -Q ethX queue_mask 2 --coalesce tx-usecs N
+
+- configure TX0 and TX1
+  # ethtool -Q ethX queue_mask 3 --coalesce tx-usecs N --coalesce tx-usecs N
+</pre></div>
+</div>
+<p>The Interrupt pacing (IRQ coalescing) configuration can be retrieved by commands:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  # ethtool -c ethX
+
+- show configuration for TX0 and TX1:
+  # ethtool -Q eth0 queue_mask 3 --show-coalesce
+</pre></div>
+</div>
+<p>It is also possible to use standard Linux Net core hard irqs deferral feature which can be enabled by configuring:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/sys/class/net/ethX/
+ gro_flush_timeout (in ns)
+ napi_defer_hard_irqs (number of retries)
+</pre></div>
+</div>
+<p>Enabling of hard IRQ will be deferred napi_defer_hard_irqs times with gro_flush_timeout timeout.</p>
+<p>The main difference of the hard irqs deferral feature from ethtool interrupt pacing (IRQ coalescing) is that it affects on both RX/TX data path and all TX/RX queues simultaneously.</p>
+<p class="rubric" id="k3-am65x-switch-config">TI AM65x switch-config tool</p>
+<p>The TI Processor SDK includes precompiled correct version of J784S4 switch-config tool.</p>
+<p>The TI J784S4 switch-config tool sources for J784S4  SoC can be found at:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>git@git.ti.com:switch-config/switch-config.git
+</pre></div>
+</div>
+<p>branch:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>origin/am65x-v1.0
+</pre></div>
+</div>
+<p>Usage:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># switch-config -h
+Switch configuration commands.....
+switch-config -I,--ndev &lt;dev&gt; &lt;command&gt;
+
+commands:
+switch-config -d,--dump-ale :dump ALE table
+switch-config -D,--dump=&lt;0..9&gt; :dump registers (0 - all)
+switch-config -v,--version
+
+dump values:
+ :1 - cpsw-nuss regs
+ :2 - cpsw-nuss-rgmii-status regs
+ :3 - cpsw-nuss-mdio regs
+ :4 - cpsw-nu regs
+ :5 - cpsw-nu-p0 regs
+ :6 - cpsw-nu-p1 regs
+ :7 - cpsw-nu-cpts regs
+ :8 - cpsw-nu-ale regs
+ :9 - cpsw-nu-ale-tbl regs
+</pre></div>
+</div>
+<p>Example, ALE table dump:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># switch-config -d
+K3 cpsw dump version (1) len(6328)
+ALE table dump ents(64):
+0   : type: vlan , vid = 0, untag_force = 0x3, reg_mcast = 0x0, unreg_mcast = 0x0, member_list = 0x3
+1   : type: ucast, addr = f4:84:4c:eb:a0:00, ucast_type = persistant, port_num = 0x0, Secure
+2   : type: mcast, addr = ff:ff:ff:ff:ff:ff, mcast_state = f, no super, port_mask = 0x3
+3   : type: mcast, addr = 01:00:5e:00:00:01, mcast_state = f, no super, port_mask = 0x3
+4   : type: mcast, addr = 01:80:c2:00:00:00, mcast_state = f, no super, port_mask = 0x3
+5   : type: mcast, addr = 01:80:c2:00:00:03, mcast_state = f, no super, port_mask = 0x3
+6   : type: mcast, addr = 01:80:c2:00:00:0e, mcast_state = f, no super, port_mask = 0x3
+8   : type: mcast, addr = 01:00:5e:00:00:fc, mcast_state = f, no super, port_mask = 0x3
+9   : type: ucast, vid = 0, addr = 9c:b6:d0:89:0d:85, ucast_type = touched   , port_num = 0x1
+26  : type: ucast, vid = 0, addr = c4:71:54:a9:6e:b4, ucast_type = touched   , port_num = 0x1
+27  : type: ucast, vid = 0, addr = 00:25:22:a9:4c:b3, ucast_type = touched   , port_num = 0x1
+</pre></div>
+</div>
+<p>Example, CPTS registers dump:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>switch-config -D7
+K3 cpsw dump version (1) len(6328)
+cpsw-nu-cpts regdump: num_regs(38)
+0003d000:reg(4E8A2109)
+0003d004:reg(00000C21)
+0003d008:reg(00000000)
+0003d00c:reg(00000000)
+0003d010:reg(7EA3BA9B)
+0003d014:reg(00000000)
+0003d018:reg(00000000)
+0003d01c:reg(00000000)
+0003d020:reg(00000000)
+0003d024:reg(00000000)
+0003d028:reg(00000001)
+0003d02c:reg(00000000)
+0003d030:reg(00000000)
+0003d034:reg(C7298A99)
+0003d038:reg(03300000)
+0003d03c:reg(00000000)
+0003d040:reg(0000028E)
+0003d044:reg(00000000)
+0003d048:reg(00000000)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="errata-i2329-mdio-interface-corruption-cpsw-and-pruss">
+<h2><a class="toc-backref" href="#id7"><span class="section-number">3.2.2.10.3.1.5. </span>Errata: i2329 MDIO interface corruption (CPSW and PRUSS)</a><a class="headerlink" href="#errata-i2329-mdio-interface-corruption-cpsw-and-pruss" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="description">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">3.2.2.10.3.1.5.1. </span>Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>It is possible that the MDIO interface of all instances of CPSW and PRUSS peripherals (if present) returns corrupt read data on MDIO reads (e.g. returning stale or previous data), or sends incorrect data on MDIO writes.  It is also possible that the MDIO interface becomes unavailable until the next peripheral reset (either by LPSC reset or global device reset with reset isolation disabled in case of CPSW).</p>
+<p>Possible system level manifestations of this issue could be (1) erroneous ethernet PHY link down status (2) inability to properly configure an ethernet PHY over MDIO (3) incorrect PHY detection (e.g. wrong address) (4) read or write timeouts when attempting to configure PHY over MDIO.</p>
+<p>The most common issue with Linux is observation of following prints in the kernel log</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Down
+am65-cpsw-nuss 46000000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off
+</pre></div>
+</div>
+</div>
+<div class="section" id="workaround-for-ti-sdk-version-8-4">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">3.2.2.10.3.1.5.2. </span>Workaround for TI SDK Version &gt; 8.4</a><a class="headerlink" href="#workaround-for-ti-sdk-version-8-4" title="Permalink to this headline">¶</a></h3>
+<p>MDIO protocol can be emulated by reading and writing to the appropriate bits within
+the MDIO_MANUAL_IF_REG register of the MDIO peripheral to directly manipulate the
+MDIO clock and data pins. Refer to TRM for full details of manual mode register
+bits and their function.</p>
+<p>In this case the device pin multiplexing should be configured to allow the IO to be
+controlled by the CPSW or PRUSS peripherals (same as in normal intended operation),
+but the MDIO state machine must be disabled by ensuring MDIO_CONTROL_REG.ENABLE bit
+is 0 in the MDIO_CONTROL_REG and enable manual mode by setting
+MDIO_POLL_REG.MANUALMODE bit to 1.</p>
+<p>The implementation of the above workaround is available from Processor SDK v8.5.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CPSW-Ethernet.html" class="btn btn-neutral float-left" title="3.2.2.10. CPSW Ethernet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CPSWng.html" class="btn btn-neutral float-right" title="3.2.2.10.3.2. CPSWng Ethernet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

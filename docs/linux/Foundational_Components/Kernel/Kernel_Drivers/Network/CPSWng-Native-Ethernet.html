@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.10.3.2.3.2. CPSWng Native Ethernet &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.10.3.3. TSN with CPSW" href="CPSW-TSN.html" />
+    <link rel="prev" title="3.2.2.10.3.2.3.1. CPSW Proxy Client" href="CPSW-Proxy-Client.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+          <li><a href="CPSW-Ethernet.html"><span class="section-number">3.2.2.10. </span>CPSW Ethernet</a> &raquo;</li>
+          <li><a href="CPSWng.html"><span class="section-number">3.2.2.10.3.2. </span>CPSWng Ethernet</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.10.3.2.3.2. </span>CPSWng Native Ethernet</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="cpswng-native-ethernet">
+<span id="id1"></span><h1><span class="section-number">3.2.2.10.3.2.3.2. </span>CPSWng Native Ethernet<a class="headerlink" href="#cpswng-native-ethernet" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#driver-configuration" id="id3">Driver Configuration</a></p></li>
+<li><p><a class="reference internal" href="#enabling-cpswng-native-ethernet-for-linux" id="id4">Enabling CPSWng Native Ethernet for Linux</a></p></li>
+<li><p><a class="reference internal" href="#mac-mode" id="id5">MAC Mode</a></p></li>
+<li><p><a class="reference internal" href="#switch-mode" id="id6">Switch Mode</a></p>
+<ul>
+<li><p><a class="reference internal" href="#bridge-setup" id="id7">Bridge setup</a></p></li>
+<li><p><a class="reference internal" href="#turn-on-off-spanning-tree-protocol-stp" id="id8">Turn On/Off Spanning Tree Protocol (STP)</a></p></li>
+<li><p><a class="reference internal" href="#vlan-configuration" id="id9">VLAN configuration</a></p></li>
+<li><p><a class="reference internal" href="#adding-extra-vlans" id="id10">Adding extra VLANs</a></p></li>
+<li><p><a class="reference internal" href="#forwarding-data-bases-fdbs" id="id11">Forwarding Data Bases (FDBs)</a></p></li>
+<li><p><a class="reference internal" href="#multicast-data-bases-mdbs" id="id12">Multicast Data Bases (MDBs)</a></p></li>
+<li><p><a class="reference internal" href="#multicast-flooding" id="id13">Multicast flooding</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#tsn-features" id="id14">TSN Features</a></p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">3.2.2.10.3.2.3.2.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The CPSWng ethernet subsystem can be controlled by the am65-cpsw-nuss driver in Linux to
+provide standard ethernet features such as MAC mode, Switch mode, VLAN and TSN features.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, the native ethernet is configured to start in MAC mode. Switch mode can be
+enabled on demand. Refer to the “Switch Mode” section of this page for further details
+on switch mode configuration.</p>
+</div>
+</div>
+<div class="section" id="driver-configuration">
+<h2><a class="toc-backref" href="#id3"><span class="section-number">3.2.2.10.3.2.3.2.2. </span>Driver Configuration</a><a class="headerlink" href="#driver-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Enable the following configs for Native Ethernet with CPSWng:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_TI_K3_AM65_CPSW_NUSS
+CONFIG_TI_K3_AM65_CPSW_SWITCHDEV
+CONFIG_TI_K3_AM65_CPTS
+CONFIG_TI_DAVINCI_MDIO
+CONFIG_TI_AM65_CPSW_TAS
+CONFIG_PHY_TI_GMII_SEL
+CONFIG_PHY_J721E_WIZ
+CONFIG_PHY_TI_GMII_SEL
+CONFIG_PHY_CADENCE_TORRENT
+CONFIG_PHY_CADENCE_SIERRA
+</pre></div>
+</div>
+</div>
+<div class="section" id="enabling-cpswng-native-ethernet-for-linux">
+<span id="cpswng-native-eth-overlays"></span><h2><a class="toc-backref" href="#id4"><span class="section-number">3.2.2.10.3.2.3.2.3. </span>Enabling CPSWng Native Ethernet for Linux</a><a class="headerlink" href="#enabling-cpswng-native-ethernet-for-linux" title="Permalink to this headline">¶</a></h2>
+<p>Currently, the following modes are supported in the SDK with the native ethernet driver:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 36%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>SoC</p></th>
+<th class="head"><p>Supported Modes</p></th>
+<th class="head"><p>Overlay file to use</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>J7200</p></td>
+<td><p>QSGMII</p></td>
+<td><p>k3-j7200-evm-quad-port-eth-exp.dtbo</p></td>
+</tr>
+<tr class="row-odd"><td><p>J7200</p></td>
+<td><p>SGMII</p></td>
+<td><p>Overlay not part of SDK</p></td>
+</tr>
+<tr class="row-even"><td><p>J721e</p></td>
+<td><p>RGMII</p></td>
+<td><p>k3-j721e-evm-gesi-exp-board.dtbo</p></td>
+</tr>
+<tr class="row-odd"><td><p>J721e</p></td>
+<td><p>QSGMII</p></td>
+<td><p>k3-j721e-evm-quad-port-eth-exp.dtbo</p></td>
+</tr>
+<tr class="row-even"><td><p>J721e</p></td>
+<td><p>SGMII</p></td>
+<td><p>Overlay not part of SDK</p></td>
+</tr>
+<tr class="row-odd"><td><p>J721S2</p></td>
+<td><p>RGMII</p></td>
+<td><p>k3-j721s2-evm-gesi-exp-board.dtbo</p></td>
+</tr>
+<tr class="row-even"><td><p>J784S4</p></td>
+<td><p>QSGMII</p></td>
+<td><p>k3-j784s4-evm-quad-port-eth1-exp.dtbo</p></td>
+</tr>
+<tr class="row-odd"><td><p>J784S4</p></td>
+<td><p>USXGMII</p></td>
+<td><p>k3-j784s4-evm-usxgmii-exp1-exp2.dtbo</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">For enabling native ethernet, the am65-cpsw-nuss driver has to be included in the kernel build.</div>
+<div class="line">The native ethernet features are enabled by applying device-tree overlays at U-Boot.</div>
+<div class="line">To apply an overlay at U-Boot save the following command in the uEnv.txt file:</div>
+<div class="line-block">
+<div class="line"><strong>name_overlays=”&lt;overlay-file-name&gt;”</strong></div>
+</div>
+<div class="line">where &lt;overlay-file-name&gt; is the corresponding overlay file from the table above.</div>
+</div>
+</div>
+<p>For RGMII mode, the GESI expansion card’s overlay may be used.
+For QSGMII mode, the Quad Port Ethernet Expander daughter card’s overlay may be used.
+While SGMII mode has been verified in the SoCs which mention SGMII mode, no overlay is
+provided with the SDK. USXGMII mode has been verified in a fixed-link configuration.</p>
+</div>
+<div class="section" id="mac-mode">
+<h2><a class="toc-backref" href="#id5"><span class="section-number">3.2.2.10.3.2.3.2.4. </span>MAC Mode</a><a class="headerlink" href="#mac-mode" title="Permalink to this headline">¶</a></h2>
+<p>All the features documented within the “MAC mode” section of <a class="reference internal" href="CPSW2g.html#cpsw2g"><span class="std std-ref">CPSW2g Ethernet</span></a> are applicable
+to CPSWng Native Ethernet as well. The steps documented in that section can be followed
+for utilizing the MAC mode features.</p>
+</div>
+<div class="section" id="switch-mode">
+<h2><a class="toc-backref" href="#id6"><span class="section-number">3.2.2.10.3.2.3.2.5. </span>Switch Mode</a><a class="headerlink" href="#switch-mode" title="Permalink to this headline">¶</a></h2>
+<p>All the SoCs listed above support Switch Mode when configured in QSGMII mode.</p>
+<p>The Switch mode can be enabled by configuring devlink driver parameter
+“switch_mode” to 1/true:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>devlink dev param set platform/c000000.ethernet \
+name switch_mode value true cmode runtime
+</pre></div>
+</div>
+<p>Above setting can be done regardless of the state of Port’s netdev
+devices - UP/DOWN, but Port’s netdev devices have to be in UP state
+before joining the bridge. This is to avoid overwriting of bridge
+configuration as CPSW switch driver completely reloads its configuration
+when first port changes its state to UP.</p>
+<p>When all the interfaces have joined the bridge - CPSW switch driver will
+enable marking packets with offload_fwd_mark flag.</p>
+<p>All configuration is implemented via switchdev API.</p>
+<div class="section" id="bridge-setup">
+<h3><a class="toc-backref" href="#id7"><span class="section-number">3.2.2.10.3.2.3.2.5.1. </span>Bridge setup</a><a class="headerlink" href="#bridge-setup" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>devlink dev param set platform/c000000.ethernet \
+name switch_mode value true cmode runtime
+
+ip link add name br0 type bridge
+ip link set dev br0 type bridge ageing_time 1000
+ip link set dev eth1 up
+ip link set dev eth2 up
+ip link set dev eth3 up
+ip link set dev eth4 up
+ip link set dev eth1 master br0
+ip link set dev eth2 master br0
+ip link set dev eth3 master br0
+ip link set dev eth4 master br0
+
+[*] ip link set dev br0 type bridge vlan_filtering 1
+[*] bridge vlan add dev br0 vid 1 self
+[*] bridge vlan add dev br0 vid 1 pvid untagged self
+
+Note: Steps [*] are mandatory.
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Multicast flooding is on by default when Switch Mode is enabled.</p>
+</div>
+</div>
+<div class="section" id="turn-on-off-spanning-tree-protocol-stp">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">3.2.2.10.3.2.3.2.5.2. </span>Turn On/Off Spanning Tree Protocol (STP)</a><a class="headerlink" href="#turn-on-off-spanning-tree-protocol-stp" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ip link set dev br0 type bridge stp_state 1/0
+</pre></div>
+</div>
+</div>
+<div class="section" id="vlan-configuration">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">3.2.2.10.3.2.3.2.5.3. </span>VLAN configuration</a><a class="headerlink" href="#vlan-configuration" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bridge vlan add dev br0 vid 1 self &lt;---- add VLAN as a Bridge Entry
+bridge vlan add dev br0 vid 1 pvid untagged self &lt;---- add cpu port to VLAN 1
+</pre></div>
+</div>
+<p>This step is mandatory for bridge/default_pvid.</p>
+</div>
+<div class="section" id="adding-extra-vlans">
+<h3><a class="toc-backref" href="#id10"><span class="section-number">3.2.2.10.3.2.3.2.5.4. </span>Adding extra VLANs</a><a class="headerlink" href="#adding-extra-vlans" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Untagged</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bridge vlan add dev eth1 vid 100 pvid untagged master
+bridge vlan add dev sw0p2 vid 100 pvid untagged master
+bridge vlan add dev br0 vid 100 self &lt;---- add VLAN as a Bridge Entry
+bridge vlan add dev br0 vid 100 pvid untagged self &lt;---- Add cpu port to VLAN100
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Tagged</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bridge vlan add dev eth1 vid 100 master
+bridge vlan add dev sw0p2 vid 100 master
+bridge vlan add dev br0 vid 100 self &lt;---- add VLAN as a Bridge Entry
+bridge vlan add dev br0 vid 100 pvid tagged self &lt;---- Add cpu port to VLAN100
+</pre></div>
+</div>
+</div>
+<div class="section" id="forwarding-data-bases-fdbs">
+<h3><a class="toc-backref" href="#id11"><span class="section-number">3.2.2.10.3.2.3.2.5.5. </span>Forwarding Data Bases (FDBs)</a><a class="headerlink" href="#forwarding-data-bases-fdbs" title="Permalink to this headline">¶</a></h3>
+<p>Forwarding entries for MAC addresses are automatically added on the
+appropriate switch port upon detection as default operation as an
+unmanaged bridge. For managed bridge operation manually add FDB entries
+as required.</p>
+<p>Manually adding FDBs:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bridge fdb add aa:bb:cc:dd:ee:ff dev eth1 master vlan 100
+bridge fdb add aa:bb:cc:dd:ee:fe dev sw0p2 master &lt;---- Add on all VLANs
+</pre></div>
+</div>
+</div>
+<div class="section" id="multicast-data-bases-mdbs">
+<h3><a class="toc-backref" href="#id12"><span class="section-number">3.2.2.10.3.2.3.2.5.6. </span>Multicast Data Bases (MDBs)</a><a class="headerlink" href="#multicast-data-bases-mdbs" title="Permalink to this headline">¶</a></h3>
+<p>Multicast entries are automatically added on the appropriate switch port
+upon detection as default operation as an unmanaged bridge. For managed
+bridge operation manually add MDB entries as required.</p>
+<p>Manually adding MDBs:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bridge mdb add dev br0 port eth1 grp 239.1.1.1 permanent vid 100
+bridge mdb add dev br0 port eth1 grp 239.1.1.1 permanent &lt;---- Add on all VLANs
+</pre></div>
+</div>
+</div>
+<div class="section" id="multicast-flooding">
+<h3><a class="toc-backref" href="#id13"><span class="section-number">3.2.2.10.3.2.3.2.5.7. </span>Multicast flooding</a><a class="headerlink" href="#multicast-flooding" title="Permalink to this headline">¶</a></h3>
+<p>CPU port mcast_flooding is always on</p>
+<p>Turning flooding on/off on switch ports:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bridge link set dev eth1 mcast_flood on/off
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tsn-features">
+<h2><a class="toc-backref" href="#id14"><span class="section-number">3.2.2.10.3.2.3.2.6. </span>TSN Features</a><a class="headerlink" href="#tsn-features" title="Permalink to this headline">¶</a></h2>
+<p>The TSN features supported by CPSWng Native Ethernet along with the testing details are documented
+at <a class="reference internal" href="CPSW-TSN.html#tsn-with-cpsw"><span class="std std-ref">TSN with CPSW</span></a>. The steps documented in that page can be followed with appropriate
+modifications.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CPSW-Proxy-Client.html" class="btn btn-neutral float-left" title="3.2.2.10.3.2.3.1. CPSW Proxy Client" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CPSW-TSN.html" class="btn btn-neutral float-right" title="3.2.2.10.3.3. TSN with CPSW" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

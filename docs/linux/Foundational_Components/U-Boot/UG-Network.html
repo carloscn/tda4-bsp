@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.1.3. Network (Wired or USB Client) &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.1.4. NAND" href="UG-NAND.html" />
+    <link rel="prev" title="3.1.1.2. USB Device Firmware Upgrade (DFU)" href="UG-DFU.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="UG-General-Info.html">3.1.1.1. General Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DFU.html">3.1.1.2. USB Device Firmware Upgrade (DFU)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.1.3. Network (Wired or USB Client)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NAND.html">3.1.1.4. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Memory.html">3.1.1.5. SD, eMMC and USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SPI.html">3.1.1.6. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-QSPI.html">3.1.1.7. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NOR.html">3.1.1.8. NOR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UART.html">3.1.1.9. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SATA.html">3.1.1.10. SATA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UFS.html">3.1.1.11. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DDR3.html">3.1.1.12. DDR3 ECC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-HyperBus.html">3.1.1.13. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-RemoteProc.html">3.1.1.14. RemoteProc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Users-Guide.html"><span class="section-number">3.1.1. </span>User’s Guide</a> &raquo;</li>
+      <li><span class="section-number">3.1.1.3. </span>Network (Wired or USB Client)</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="network-wired-or-usb-client">
+<h1><span class="section-number">3.1.1.3. </span>Network (Wired or USB Client)<a class="headerlink" href="#network-wired-or-usb-client" title="Permalink to this headline">¶</a></h1>
+<p>This section documents how to configure the network and use it to load
+files and then boot the Linux Kernel using a root filesystem mounted
+over NFS. At this time, no special builds of U-Boot are required to
+perform these operations on the supported hardware.</p>
+<div class="section" id="booting-u-boot-from-the-network">
+<h2><span class="section-number">3.1.1.3.1. </span>Booting U-Boot from the network<a class="headerlink" href="#booting-u-boot-from-the-network" title="Permalink to this headline">¶</a></h2>
+<p>In some cases we support loading SPL and U-Boot over the network because
+of ROM support. In some cases, a special build of U-Boot may be
+required. In addition, the DHCP server is needed to reply to the target
+with the file to fetch via tftp. In order to facilitate this, the
+<strong>vendor-class-identifier</strong> DHCP field is filled out by the ROM and the
+values are listed in the table below. Finally, you will need to use the
+<strong>spl/u-boot-spl.bin</strong> and <strong>u-boot.img</strong> files to boot.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Booting U-Boot/SPL from network is supported only on the following platforms.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 8%" />
+<col style="width: 21%" />
+<col style="width: 30%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Board</p></th>
+<th class="head"><p>make target</p></th>
+<th class="head"><p>Supported interfaces</p></th>
+<th class="head"><p>ROM vendor-class-identifier value</p></th>
+<th class="head"><p>SPL vendor-class-identifier value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AM335x GP EVM</p></td>
+<td><p>am335x_evm</p></td>
+<td><p>CPSW ethernet</p></td>
+<td><p>DM814x ROM (PG1.0) or AM335x ROM (PG2.0 and later)</p></td>
+<td><p>AM335x U-Boot SPL</p></td>
+</tr>
+<tr class="row-odd"><td><p>AM335x GP EVM (PG2.0 and later)</p></td>
+<td><p>am335x_evm</p></td>
+<td><p>SPL and U-Boot via USB RNDIS</p></td>
+<td><p>AM335x ROM</p></td>
+<td><p>AM335x U-Boot SPL</p></td>
+</tr>
+<tr class="row-even"><td><p>AM335x GP EVM (PG1.0)</p></td>
+<td><p>am335x_evm</p></td>
+<td><p>SPL via UART, U-Boot via USB RNDIS</p></td>
+<td><p>N/A</p></td>
+<td><p>AM335x U-Boot SPL</p></td>
+</tr>
+<tr class="row-odd"><td><p>AM43xx EVM</p></td>
+<td><p>am43xx_evm</p></td>
+<td><p>CPSW ethernet</p></td>
+<td><p>AM43xx ROM</p></td>
+<td><p>AM43xx U-Boot SPL</p></td>
+</tr>
+<tr class="row-even"><td><p>AM43xx EVM (PG1.2 and later)</p></td>
+<td><p>am43xx_evm</p></td>
+<td><p>SPL and U-Boot via USB RNDIS</p></td>
+<td><p>AM43xx ROM</p></td>
+<td><p>AM43xx U-Boot SPL</p></td>
+</tr>
+</tbody>
+</table>
+<p>If using ISC dhcpd an example host entry would look like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>host am335x_evm {
+  hardware ethernet de:ad:be:ee:ee:ef;
+  # Check for PG1.0, typically CPSW
+  if substring (option vendor-class-identifier, 0, 10) = &quot;DM814x ROM&quot; {
+    filename &quot;u-boot-spl.bin&quot;;
+  # Check for PG2.0, CPSW or USB RNDIS
+  } elsif substring (option vendor-class-identifier, 0, 10) = &quot;AM335x ROM&quot; {
+    filename &quot;u-boot-spl.bin&quot;;
+  } elsif substring (option vendor-class-identifier, 0, 17) = &quot;AM335x U-Boot SPL&quot; {
+    filename &quot;u-boot.img&quot;;
+  } else {
+    filename &quot;zImage-am335x-evm.bin&quot;;
+  }
+}
+</pre></div>
+</div>
+<p>Note that in a factory type setting, the substring tests can be done
+inside of the subnet declaration to set the default filename value for
+the subnet, and overriden (if needed) in a host entry.</p>
+<p>If you have removed NetworkManager from your system (which is not the
+default in most distributions) you need to configure your
+/etc/network/interfaces file thusly:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>allow-hotplug usb0
+iface usb0 inet static
+        address 192.168.1.1
+        netmask 255.255.255.0
+        post-up service isc-dhcp-server reload
+</pre></div>
+</div>
+<p>If you are using NetworkManager you need to create two files. First, as
+root create /etc/NetworkManager/system-connections/AM335x USB RNDIS (and
+use \ to escape the space) with the following content:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[802-3-ethernet]
+duplex=full
+mac-address=AA:BB:CC:11:22:33
+
+[connection]
+id=AM335X USB RNDIS
+uuid=INSERT THE CONTENTS OF &#39;uuidgen&#39; HERE
+type=802-3-ethernet
+
+[ipv6]
+method=ignore
+
+[ipv4]
+method=manual
+addresses1=192.168.1.1;16;
+</pre></div>
+</div>
+<p>Seccond as root, and ensuring execute permissions, create
+/etc/NetworkManager/dispatcher.d/99am335x-dhcp-server</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+IF=$1
+STATUS=$2
+
+if [ &quot;$IF&quot; = &quot;usb0&quot; ] &amp;&amp; [ &quot;$STATUS&quot; = &quot;up&quot; ]; then
+    service isc-dhcp-server reload
+fi
+</pre></div>
+</div>
+<p>A walk through of these steps can be seen at <a class="reference external" href="http://processors.wiki.ti.com/index.php/Ubuntu_12.04_Set_Up_to_Network_Boot_an_AM335x_Based_Platform">Ubuntu 12.04 Set Up to
+Network Boot an AM335x Based
+Platform</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="multiple-interfaces">
+<h2><span class="section-number">3.1.1.3.2. </span>Multiple Interfaces<a class="headerlink" href="#multiple-interfaces" title="Permalink to this headline">¶</a></h2>
+<p>On some boards, for example when we have both a wired interface and USB
+RNDIS gadget ethernet, it can be desirable to change from the default
+U-Boot behavior of cycling over each interface it knows to telling
+U-Boot to use a single interface. For example, on start you may see
+lines like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Net:   cpsw, usb_ether
+</pre></div>
+</div>
+<p>So to ensure that we use <strong>usb_ether</strong> first issue the following
+command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U-Boot # setenv ethact usb_ether
+</pre></div>
+</div>
+</div>
+<div class="section" id="network-configuration-via-dhcp">
+<h2><span class="section-number">3.1.1.3.3. </span>Network configuration via DHCP<a class="headerlink" href="#network-configuration-via-dhcp" title="Permalink to this headline">¶</a></h2>
+<p>To configure the network via DHCP, use the following commands:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U-Boot # setenv autoload no
+U-Boot # dhcp
+</pre></div>
+</div>
+<p>And ensure that a DHCP server is configured to serve addresses for the
+network you are connected to.</p>
+</div>
+<div class="section" id="manual-network-configuration">
+<h2><span class="section-number">3.1.1.3.4. </span>Manual network configuration<a class="headerlink" href="#manual-network-configuration" title="Permalink to this headline">¶</a></h2>
+<p>To configure the network manually, the <strong>ipaddr</strong>, <strong>serverip</strong>,
+<strong>gatewayip</strong> and <strong>netmask</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U-Boot # setenv ipaddr 192.168.1.2
+U-Boot # setenv serverip 192.168.1.1
+U-Boot # setenv gatewayip 192.168.1.1
+U-Boot # setenv netmask 255.255.255.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="disabling-gigabit-phy-advertising">
+<h2><span class="section-number">3.1.1.3.5. </span>Disabling Gigabit Phy Advertising<a class="headerlink" href="#disabling-gigabit-phy-advertising" title="Permalink to this headline">¶</a></h2>
+<p>On some boards like DRA72x Rev B or earlier, there is an issue like
+ethernet doesn’t connect to 1Gbps switch. This issue is due to the use
+of an old ti phy with history of bad behaviour, due to this several J6
+EVMs have been marked 100M only. So here is the U-Boot command to
+disable phy’s 1Gbps support and connect as 100Mbps max capable.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=&gt; mii modify 0x3 0x9 0x0 0x300      /* Disable Gigabit advertising */
+=&gt; mii modify 0x3 0x0 0x0 0x1000     /* Disable Auto Negotiation */
+=&gt; mii modify 0x3 0x0 0x1000 0x1000  /* Enable Auto Negotiation */
+</pre></div>
+</div>
+</div>
+<div class="section" id="booting-linux-from-the-network">
+<h2><span class="section-number">3.1.1.3.6. </span>Booting Linux from the network<a class="headerlink" href="#booting-linux-from-the-network" title="Permalink to this headline">¶</a></h2>
+<p>Within the default environment for each board that supports networking
+there is a boot command called <strong>netboot</strong> in AM EVMs and <strong>boot=net</strong>
+in KS2 EVMs that will automatically load the kernel and boot. For the
+exact details of each use <strong>printenv</strong> on the <strong>netboot</strong> variable and
+then in turn <strong>printenv</strong> other sub-sections of the command. The most
+important variables in AM57x/DRA7x are <strong>rootpath</strong> and <strong>nfsopts</strong>,
+and <strong>tftp_root</strong> and <strong>nfs_root</strong> in K2H/K/E/L/G.</p>
+<p>On AM65x GP and IDK boards, Linux kernel can be booted over PRU-ICSSG
+Ethernet port as well. In the release u-boot image, only first port
+(MII port 0)    of ICSSG0, ICSSG1 and ICSSG2 are enabled. To use
+second port (MII port 1), user needs to edit the DTS file to enable
+second port instead of first port and rebuild u-boot images using the
+updated DTS file.  First port is marked as Eth0 on base board (ICSSG2),
+Eth0 (ICSSG0) and Eth2 (ICSSG1) on IDK Application board. User needs
+to load and run pru/rtu firmware on ICSSG using env script as shown
+below before doing network operations such as dhcp, tftp over ICSSG
+ports. The firmware is loaded from the rootfs/lib/firmware/ti-pruss/
+folder for this purpose. For more information on using rproc/RemoteProc
+in Uboot, see section <a class="reference external" href="Foundational_Components_U-Boot.html#remoteproc">here</a>.
+A sample U-Boot env script for AM65x EVM/IDK is shown below for ICSSG0,
+ICSSG1 and ICSSG2. User needs to customize the serverip and bootdir
+env variable to that of the tftp server used in the setup.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently only 100Mbps and 1Gbps Full Duplex (FD) links are supported for ICSSG ports. Linux Kernel boot with NFS rootfs over PRUETH Ethernet interface has not been validated.</p>
+</div>
+</div>
+<div class="section" id="sample-script-for-am65-sr1">
+<h2><span class="section-number">3.1.1.3.7. </span>Sample Script for AM65 SR1<a class="headerlink" href="#sample-script-for-am65-sr1" title="Permalink to this headline">¶</a></h2>
+<p>ICSSG0 port 0</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>setenv start_icssg0 &#39;rproc start 2; rproc start 3&#39;
+setenv stop_icssg0 &#39;rproc stop 2; rproc stop 3&#39;
+setenv firmware_dir &#39;/lib/firmware/ti-pruss&#39;
+setenv get_fdt_net &#39;run start_icssg0; tftp ${fdtaddr} ${serverip}:${bootdir}/${name_fdt}; run stop_icssg0&#39;
+setenv get_kern_net &#39;run start_icssg0; tftp ${loadaddr} ${serverip}:${bootdir}/${name_kern}; run stop_icssg0&#39;
+setenv get_overlay_net &#39;fdt address ${fdtaddr};fdt resize 0x0fffff;for overlay in $overlay_files;do; run start_icssg0; \
+        tftp ${overlayaddr} ${bootdir}/${overlay};fdt apply ${overlayaddr}; run stop_icssg0; done;&#39;
+setenv get_firmware_mmc &#39;load mmc ${bootpart} ${loadaddr} ${firmware_dir}/${firmware_file}&#39;
+setenv serverip 158.218.113.14
+setenv bootdir 06.02.00.58-am6
+setenv name_fdt k3-am654-base-board.dtb
+setenv name_kern Image-am65xx-evm.bin
+setenv overlay_files &#39;k3-am654-idk.dtbo k3-am654-pcie-usb2.dtbo&#39;
+setenv init_icssg0 &#39;setenv ethact pruss0_eth; setenv autoload no; rproc init; setenv loadaddr 0x80000000; \
+        setenv firmware_file &#39;am65x-pru0-prueth-fw.elf&#39;; run get_firmware_mmc;  rproc load 2 0x80000000 13040; rproc start 2; \
+        setenv loadaddr 0x89000000; setenv firmware_file am65x-rtu0-prueth-fw.elf; run get_firmware_mmc; rproc load 3 0x89000000 5676; \
+        rproc start 3; dhcp; run stop_icssg0;&#39;
+setenv bootcmd &#39;run init_mmc; run init_icssg0; run get_kern_net; run get_fdt_net ; run get_overlay_net ; run run_kern&#39;
+saveenv
+boot
+</pre></div>
+</div>
+<p>ICSSG1 port 0</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>setenv start_icssg1 &#39;rproc start 6; rproc start 7&#39;
+setenv stop_icssg1 &#39;rproc stop 6; rproc stop 7&#39;
+setenv firmware_dir &#39;/lib/firmware/ti-pruss&#39;
+setenv get_fdt_net &#39;run start_icssg1; tftp ${fdtaddr} ${serverip}:${bootdir}/${name_fdt}; run stop_icssg1&#39;
+setenv get_kern_net &#39;run start_icssg1; tftp ${loadaddr} ${serverip}:${bootdir}/${name_kern}; run stop_icssg1&#39;
+setenv get_overlay_net &#39;fdt address ${fdtaddr};fdt resize 0x0fffff;for overlay in $overlay_files;do; run start_icssg1; \
+      tftp ${overlayaddr} ${bootdir}/${overlay};fdt apply ${overlayaddr}; run stop_icssg1; done;&#39;
+setenv get_firmware_mmc &#39;load mmc ${bootpart} ${loadaddr} ${firmware_dir}/${firmware_file}&#39;
+setenv serverip 158.218.113.14
+setenv bootdir 06.02.00.58-am6
+setenv name_fdt k3-am654-base-board.dtb
+setenv name_kern Image-am65xx-evm.bin
+setenv overlay_files &#39;k3-am654-idk.dtbo k3-am654-pcie-usb2.dtbo&#39;
+setenv init_icssg1 &#39;setenv ethact pruss1_eth; setenv autoload no; rproc init; setenv loadaddr 0x80000000; \
+      setenv firmware_file &#39;am65x-pru0-prueth-fw.elf&#39;; run get_firmware_mmc;  rproc load 6 0x80000000 13040; rproc start 6; \
+      setenv loadaddr 0x89000000; setenv firmware_file am65x-rtu0-prueth-fw.elf; run get_firmware_mmc; rproc load 7 0x89000000 5676; \
+      rproc start 7; dhcp; run stop_icssg1;&#39;
+setenv bootcmd &#39;run init_mmc; run init_icssg1; run get_kern_net; run get_fdt_net ; run get_overlay_net ; run run_kern&#39;
+saveenv
+boot
+</pre></div>
+</div>
+<p>ICSSG2 port 0</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>setenv start_icssg2 &#39;rproc start 10; rproc start 11&#39;
+setenv stop_icssg2 &#39;rproc stop 10; rproc stop 11&#39;
+setenv firmware_dir &#39;/lib/firmware/ti-pruss&#39;
+setenv get_fdt_net &#39;run start_icssg2; tftp ${fdtaddr} ${serverip}:${bootdir}/${name_fdt}; run stop_icssg2&#39;
+setenv get_kern_net &#39;run start_icssg2; tftp ${loadaddr} ${serverip}:${bootdir}/${name_kern}; run stop_icssg2&#39;
+setenv get_overlay_net &#39;fdt address ${fdtaddr};fdt resize 0x0fffff;for overlay in $overlay_files;do; run start_icssg2; \
+     tftp ${overlayaddr} ${bootdir}/${overlay};fdt apply ${overlayaddr}; run stop_icssg2; done;&#39;
+setenv get_firmware_mmc &#39;load mmc ${bootpart} ${loadaddr} ${firmware_dir}/${firmware_file}&#39;
+setenv serverip 158.218.113.14
+setenv bootdir 06.02.00.58-am6
+setenv name_fdt k3-am654-base-board.dtb
+setenv name_kern Image-am65xx-evm.bin
+setenv overlay_files &#39;k3-am654-idk.dtbo k3-am654-pcie-usb2.dtbo&#39;
+setenv init_icssg2 &#39;setenv ethact pruss2_eth; setenv autoload no; rproc init; setenv loadaddr 0x80000000; \
+     setenv firmware_file &#39;am65x-pru0-prueth-fw.elf&#39;; run get_firmware_mmc;  rproc load 10 0x80000000 13040; rproc start 10; \
+     setenv loadaddr 0x89000000; setenv firmware_file am65x-rtu0-prueth-fw.elf; run get_firmware_mmc; rproc load 11 0x89000000 5676; \
+     rproc start 11; dhcp; run stop_icssg2;&#39;
+setenv bootcmd &#39;run init_mmc; run init_icssg2; run get_kern_net; run get_fdt_net ; run get_overlay_net ; run run_kern&#39;
+saveenv
+boot
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-script-for-am65-sr2">
+<h2><span class="section-number">3.1.1.3.8. </span>Sample Script for AM65 SR2<a class="headerlink" href="#sample-script-for-am65-sr2" title="Permalink to this headline">¶</a></h2>
+<p>ICSSG0 port 0</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>setenv start_icssg0 &#39;rproc start 2; rproc start 3; rproc start 4; rproc start 5; rproc start 6; rproc start 7&#39;
+setenv stop_icssg0 &#39;rproc stop 2; rproc stop 3; rproc stop 4; rproc stop 5; rproc stop 6; rproc stop 7&#39;
+setenv firmware_dir &#39;/lib/firmware/ti-pruss&#39;
+setenv get_fdt_net &#39;run start_icssg0; tftp ${fdtaddr} ${serverip}:${bootdir}/${name_fdt}; run stop_icssg0&#39;
+setenv get_kern_net &#39;run start_icssg0; tftp ${loadaddr} ${serverip}:${bootdir}/${name_kern}; run stop_icssg0&#39;
+setenv get_overlay_net &#39;fdt address ${fdtaddr};fdt resize 0x0fffff;for overlay in $overlay_files;do; run start_icssg0; \
+        tftp ${overlayaddr} ${bootdir}/${overlay};fdt apply ${overlayaddr}; run stop_icssg0; done;&#39;
+setenv get_firmware_mmc &#39;load mmc ${bootpart} ${loadaddr} ${firmware_dir}/${firmware_file}&#39;
+setenv serverip 158.218.113.14
+setenv bootdir 06.02.00.58-am6
+setenv name_fdt k3-am654-base-board.dtb
+setenv name_kern Image-am65xx-evm.bin
+setenv overlay_files &#39;k3-am654-idk.dtbo k3-am654-pcie-usb2.dtbo&#39;
+setenv init_icssg0 &#39;setenv ethact icssg0-eth; setenv autoload no; rproc init; setenv loadaddr 0x80000000; \
+    setenv firmware_file &#39;am65x-sr2-pru0-prueth-fw.elf&#39;; run get_firmware_mmc;  rproc load 2 0x80000000 ${filesize}; \
+    setenv loadaddr 0x89000000; setenv firmware_file am65x-sr2-rtu0-prueth-fw.elf; run get_firmware_mmc; rproc load 3 0x89000000 ${filesize}; \
+    setenv loadaddr 0x90000000; setenv firmware_file am65x-sr2-txpru0-prueth-fw.elf; run get_firmware_mmc; rproc load 4 0x90000000 ${filesize}; \
+    setenv loadaddr 0x80000000; setenv firmware_file am65x-sr2-pru1-prueth-fw.elf; run get_firmware_mmc; rproc load 5 0x80000000 ${filesize}; \
+    setenv loadaddr 0x89000000; setenv firmware_file am65x-sr2-rtu1-prueth-fw.elf; run get_firmware_mmc; rproc load 6 0x89000000 ${filesize}; \
+    setenv loadaddr 0x90000000; setenv firmware_file am65x-sr2-txpru1-prueth-fw.elf; run get_firmware_mmc; rproc load 7 0x90000000 ${filesize}; \
+    run start_icssg0; dhcp; run stop_icssg0;&#39;
+setenv bootcmd &#39;run init_mmc; run init_icssg0; run get_kern_net; run get_fdt_net ; run get_overlay_net ; run run_kern&#39;
+saveenv
+boot
+</pre></div>
+</div>
+<p>ICSSG1 port 0</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>setenv start_icssg1 &#39;rproc start 8; rproc start 9; rproc start 10; rproc start 11; rproc start 12; rproc start 13&#39;
+setenv stop_icssg1 &#39;rproc stop 8; rproc stop 9; rproc stop 10; rproc stop 11; rproc stop 12; rproc stop 13&#39;
+setenv firmware_dir &#39;/lib/firmware/ti-pruss&#39;
+setenv get_fdt_net &#39;run start_icssg1; tftp ${fdtaddr} ${serverip}:${bootdir}/${name_fdt}; run stop_icssg1&#39;
+setenv get_kern_net &#39;run start_icssg1; tftp ${loadaddr} ${serverip}:${bootdir}/${name_kern}; run stop_icssg1&#39;
+setenv get_overlay_net &#39;fdt address ${fdtaddr};fdt resize 0x0fffff;for overlay in $overlay_files;do; run start_icssg1; \
+        tftp ${overlayaddr} ${bootdir}/${overlay};fdt apply ${overlayaddr}; run stop_icssg1; done;&#39;
+setenv get_firmware_mmc &#39;load mmc ${bootpart} ${loadaddr} ${firmware_dir}/${firmware_file}&#39;
+setenv serverip 158.218.113.14
+setenv bootdir 06.02.00.58-am6
+setenv name_fdt k3-am654-base-board.dtb
+setenv name_kern Image-am65xx-evm.bin
+setenv overlay_files &#39;k3-am654-idk.dtbo k3-am654-pcie-usb2.dtbo&#39;
+setenv init_icssg1 &#39;setenv ethact icssg1-eth; setenv autoload no; rproc init; setenv loadaddr 0x80000000; \
+    setenv firmware_file &#39;am65x-sr2-pru0-prueth-fw.elf&#39;; run get_firmware_mmc;  rproc load 8 0x80000000 ${filesize}; \
+    setenv loadaddr 0x89000000; setenv firmware_file am65x-sr2-rtu0-prueth-fw.elf; run get_firmware_mmc; rproc load 9 0x89000000 ${filesize}; \
+    setenv loadaddr 0x90000000; setenv firmware_file am65x-sr2-txpru0-prueth-fw.elf; run get_firmware_mmc; rproc load 10 0x90000000 ${filesize}; \
+    setenv loadaddr 0x80000000; setenv firmware_file am65x-sr2-pru1-prueth-fw.elf; run get_firmware_mmc; rproc load 11 0x80000000 ${filesize}; \
+    setenv loadaddr 0x89000000; setenv firmware_file am65x-sr2-rtu1-prueth-fw.elf; run get_firmware_mmc; rproc load 12 0x89000000 ${filesize}; \
+    setenv loadaddr 0x90000000; setenv firmware_file am65x-sr2-txpru1-prueth-fw.elf; run get_firmware_mmc; rproc load 13 0x90000000 ${filesize}; \
+    run start_icssg1; dhcp; run stop_icssg1;&#39;
+setenv bootcmd &#39;run init_mmc; run init_icssg1; run get_kern_net; run get_fdt_net ; run get_overlay_net ; run run_kern&#39;
+saveenv
+boot
+</pre></div>
+</div>
+<p>ICSSG2 port 0</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>setenv start_icssg2 &#39;rproc start 14; rproc start 15; rproc start 16; rproc start 17; rproc start 18; rproc start 19&#39;
+setenv stop_icssg2 &#39;rproc stop 14; rproc stop 15; rproc stop 16; rproc stop 17; rproc stop 18; rproc stop 19&#39;
+setenv firmware_dir &#39;/lib/firmware/ti-pruss&#39;
+setenv get_fdt_net &#39;run start_icssg2; tftp ${fdtaddr} ${serverip}:${bootdir}/${name_fdt}; run stop_icssg2&#39;
+setenv get_kern_net &#39;run start_icssg2; tftp ${loadaddr} ${serverip}:${bootdir}/${name_kern}; run stop_icssg2&#39;
+setenv get_overlay_net &#39;fdt address ${fdtaddr};fdt resize 0x0fffff;for overlay in $overlay_files;do; run start_icssg2; \
+        tftp ${overlayaddr} ${bootdir}/${overlay};fdt apply ${overlayaddr}; run stop_icssg2; done;&#39;
+setenv get_firmware_mmc &#39;load mmc ${bootpart} ${loadaddr} ${firmware_dir}/${firmware_file}&#39;
+setenv serverip 158.218.113.14
+setenv bootdir 06.02.00.58-am6
+setenv name_fdt k3-am654-base-board.dtb
+setenv name_kern Image-am65xx-evm.bin
+setenv overlay_files &#39;k3-am654-idk.dtbo k3-am654-pcie-usb2.dtbo&#39;
+setenv init_icssg2 &#39;setenv ethact icssg2-eth; setenv autoload no; rproc init; setenv loadaddr 0x80000000; \
+    setenv firmware_file &#39;am65x-sr2-pru0-prueth-fw.elf&#39;; run get_firmware_mmc;  rproc load 14 0x80000000 ${filesize}; \
+    setenv loadaddr 0x89000000; setenv firmware_file am65x-sr2-rtu0-prueth-fw.elf; run get_firmware_mmc; rproc load 15 0x89000000 ${filesize}; \
+    setenv loadaddr 0x90000000; setenv firmware_file am65x-sr2-txpru0-prueth-fw.elf; run get_firmware_mmc; rproc load 16 0x90000000 ${filesize}; \
+    setenv loadaddr 0x80000000; setenv firmware_file am65x-sr2-pru1-prueth-fw.elf; run get_firmware_mmc; rproc load 17 0x80000000 ${filesize}; \
+    setenv loadaddr 0x89000000; setenv firmware_file am65x-sr2-rtu1-prueth-fw.elf; run get_firmware_mmc; rproc load 18 0x89000000 ${filesize}; \
+    setenv loadaddr 0x90000000; setenv firmware_file am65x-sr2-txpru1-prueth-fw.elf; run get_firmware_mmc; rproc load 19 0x90000000 ${filesize}; \
+    run start_icssg2; dhcp; run stop_icssg2;&#39;
+setenv bootcmd &#39;run init_mmc; run init_icssg2; run get_kern_net; run get_fdt_net ; run get_overlay_net ; run run_kern&#39;
+saveenv
+boot
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To boot over second port (MII port 1) of ICSSG2, user needs to edit arch/arm/dts/k3-am654-base-board-u-boot.dtsi in the U-Boot source tree. See DTS file for instruction. For example, user needs to comment pruss2_emac0 DT node and uncomment pruss2_emac1 node. Similarly to enable second port for ICSSG0 and ICSSG1, user needs to edit arch/arm/dts/k3-am654-idk.dtso and enable pruss0_emac1 and pruss1_emac1 nodes respectives. After this rebuild u-boot images and use it. Port 1 is marked as by Eth1 on on base board (ICSSG2), Eth1 (ICSSG0) and Eth3 (ICSSG1) on IDK Application board.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="UG-DFU.html" class="btn btn-neutral float-left" title="3.1.1.2. USB Device Firmware Upgrade (DFU)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="UG-NAND.html" class="btn btn-neutral float-right" title="3.1.1.4. NAND" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

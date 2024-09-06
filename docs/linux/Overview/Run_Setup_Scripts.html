@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.1.2. Run Setup Scripts &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.1.3. Create SD Card" href="Processor_SDK_Linux_create_SD_card.html" />
+    <link rel="prev" title="1.1.1. Download and Install the SDK" href="Download_and_Install_the_SDK.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../Overview.html">1. Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Overview_Getting_Started_Guide.html">1.1. Getting Started Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Download_and_Install_the_SDK.html">1.1.1. Download and Install the SDK</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.1.2. Run Setup Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Processor_SDK_Linux_create_SD_card.html">1.1.3. Create SD Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GCC_ToolChain.html">1.1.4. GCC ToolChain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Building_the_SDK.html">1.2. Building the SDK with Yocto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Top_Level_Makefile.html">1.3. Simplified SDK Build Using Top-Level Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Directory_Structure_Overview.html">1.4. Directory Structure Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_PSDKLA_PSDKRA_Summary.html">1.5. Processor SDK RTOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Technical_Support.html">1.6. Processor SDK Technical Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_GPLv3_Disclaimer.html">1.7. GPLv3 Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Overview.html"><span class="section-number">1. </span>Overview</a> &raquo;</li>
+          <li><a href="../Overview_Getting_Started_Guide.html"><span class="section-number">1.1. </span>Getting Started Guide</a> &raquo;</li>
+      <li><span class="section-number">1.1.2. </span>Run Setup Scripts</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="run-setup-scripts">
+<span id="id1"></span><h1><span class="section-number">1.1.2. </span>Run Setup Scripts<a class="headerlink" href="#run-setup-scripts" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="processor-sdk-linux-setup-script-overview">Overview</p>
+<p>The Processor SDK Linux J784s4 can be installed either on a Linux host or inside a docker Container that is hosted on <a class="reference external" href="https://github.com/TexasInstruments/ti-docker-images/pkgs/container/ubuntu-distro">ghcr.io/texasinstruments</a>. After installation of the SDK, the setup script
+should be run to prepare the host for software development. Some of
+the tasks require administrator privileges. The script will prompt you
+when these administrator privileges are required. The setup script
+does the following things:</p>
+<ul class="simple">
+<li><p>Verification that the Linux host is the recommended Ubuntu LTS
+version</p></li>
+<li><p>Installation of required host packages</p></li>
+<li><p>Target FileSystem installation</p></li>
+<li><p>NFS setup</p></li>
+<li><p>TFTP setup</p></li>
+<li><p>Minicom setup</p></li>
+<li><p>uboot setup</p></li>
+<li><p>Load uboot script</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The host setup is common to all TI platforms.</p>
+</div>
+<img alt="../../_images/Linux_Host_Development_System.png" src="../../_images/Linux_Host_Development_System.png" />
+<p class="rubric" id="how-to-run-the-setup-script">How to run the setup script</p>
+<p>The Setup Script (<strong>setup.sh</strong>) is located in the Processor SDK Linux J784s4 installation
+directory.  By default, this directory has a name that has the form
+ti-processor-sdk-linux-adas-j784s4-evm-&lt;version&gt;.</p>
+<p>Then run the script:</p>
+<p><strong>./setup.sh</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Setup Script will first check to see if the user is running the
+recommended Ubuntu Long Term Support (LTS) distribution, if not it will
+exit. If the user is running on a different Ubuntu version or another
+Linux distribution, they are encouraged to modify the environment setup
+script to match their distribution. Ubuntu version 22.04
+is currently supported.</p>
+</div>
+<p class="rubric" id="detailed-step-by-step-description-through-the-setup-script">Detailed step by step description through the setup script</p>
+<p>The following sections describe in more detail how to run the script and
+what it is doing.</p>
+<p class="rubric" id="installation-of-required-host-packages">Installation of Required Host Packages</p>
+<p>This section will check to make sure you have the proper host support
+packages to allow you do the following tasks:</p>
+<ul class="simple">
+<li><p>telnet</p></li>
+<li><p>bring up menuconfig, the kernel configuration tool</p></li>
+<li><p>mounting filesystem via nfs</p></li>
+<li><p>tftp</p></li>
+<li><p>bring up minicom</p></li>
+<li><p>rebuild u-boot</p></li>
+</ul>
+<p>If your host lacks any of the needed packages, they will automatically
+be installed in this step.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This command requires you to have administrator priviliges (sudo access)
+on your host.</p>
+</div>
+<p>The command below is an example of what this script is doing. The actual
+packages may vary for different releases:</p>
+<p><strong>sudo apt-get install xinetd tftpd nfs-kernel-server minicom build-essential libncurses5-dev autoconf automake dos2unix screen lrzsz lzop u-boot-tools</strong></p>
+<p class="rubric" id="add-to-dialout-group">Add to Dialout Group</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This part requires you to have administrator priviliges (sudo access).</p>
+</div>
+<p>A unique step is required for users using Ubuntu 12.04+. By default the
+user does not have the proper permissions to access a serial device ( ex
+ttyS0, ttyUSB0, etc…). A user must be apart of a “dialout” group to
+access these serial device without root privileges.</p>
+<p>During this step the script will check if the current Linux user is
+apart of the dialout group. If not the current Linux user will
+automatically be added to the dialout group. The Linux user will still
+be required to use sudo when accessing the serial device until the user
+logs out and then logs back in.</p>
+<p class="rubric" id="target-filesystem-installation">Target FileSystem Installation</p>
+<p>This step will extract the target filesystem.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This part requires you to have administrator priviliges (sudo access).</p>
+</div>
+<p>The default location is:
+/home/user/ti-processor-sdk-linux-adas-j784s4-evm-&lt;version&gt;/targetNFS</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>In which directory do you want to install the target filesystem?(if this directory does not exist it will be created)
+[ /home/user/ti-processor-sdk-linux-[platformName]-x.x.x.x/targetNFS ]
+</pre></div>
+</div>
+<p>You can override the default location by typing in another location or
+by hitting &lt;Enter&gt; you can accept the default location. This can take a
+little time to untar and unzip the filesytem.</p>
+<p>If you have run this script more than once and the filesystem already
+exists, you will be asked to either:</p>
+<ul class="simple">
+<li><p>rename the filesystem</p></li>
+<li><p>overwrite the filesystem</p></li>
+<li><p>skip filesystem extraction</p></li>
+</ul>
+<p class="rubric" id="nfs-setup">NFS Setup</p>
+<p>This step will allow you to export your filesystem which was extracted
+in the previous step.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This command requires you to have administrator priviliges (sudo
+access).</p>
+</div>
+<ul class="simple">
+<li><p>This step adds the path to root filesystem from the previous step to
+the file /etc/exports on your host.</p></li>
+<li><p>The NFS kernel daemon is then stopped and then restarted to make sure
+the exported file system is recognized.</p></li>
+</ul>
+<p class="rubric" id="tftp-setup">TFTP Setup</p>
+<p>This section will setup tftp access on your host.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This command requires you to have administrator priviliges (sudo access)
+on your host.</p>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Which directory do you want to be your tftp root directory?(if this directory does not exist it will be created for you)
+[ /tftpboot ]
+</pre></div>
+</div>
+<p>The default location is /tftpboot which is off of the root directory on
+your linux host and requires administrator privileges. You can hit
+&lt;Enter&gt; to select the default location or type in another path to
+override the default. Then the following task occur:</p>
+<ul class="simple">
+<li><p>A tftp config file is created for you on your host at
+/etc/xinetd.d/tftp</p></li>
+<li><p>The tftp server is stopped and then restarted to insure the changes
+are picked up.</p></li>
+</ul>
+<p>If you have run this script more than once or the filename already
+exists, you will be asked to select one of the following options.</p>
+<ul class="simple">
+<li><p>rename the filesystem</p></li>
+<li><p>overwrite the filesystem</p></li>
+<li><p>skip filesystem extraction</p></li>
+</ul>
+<p>Repeat this for any additional prompts about /tftpboot files.</p>
+<p class="rubric" id="minicom-setup">Minicom Setup</p>
+<p>This step will set up minicom (serial communication application) for SDK
+development.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Which serial port do you want to use with minicom?
+[ /dev/ttyUSB0 ]
+</pre></div>
+</div>
+<p>For most boards, the default /dev/ttyUSB0 should be selected.</p>
+<ul class="simple">
+<li><p>A minicom configuration will be saved for you at
+/home/user/.minirc.dfl</p></li>
+<li><p>The old configuration if there was one will be saved at
+/home/user/.minirc.dfl.old</p></li>
+</ul>
+<p>The configuration saved to /home/user/.minirc.dfl can be changed, see
+the Software Development Guide for more information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using a USB-to-Serial converter, your port should be
+configured for /dev/ttyUSBx.</p>
+</div>
+<p class="rubric" id="uboot-setup">uboot Setup</p>
+<p>This section will create the necessary u-boot commands to boot up your
+board.</p>
+<p>The script will detect your ip address and display it. You can override
+the detected value by entering an alternate value.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>This step will set up the u-boot variables for booting the EVM.
+Autodetected the following ip address of your host, correct it if necessary
+[ xxx.xxx.xxx.xxx ]
+</pre></div>
+</div>
+<p>Next, you will be prompted where you prefer your kernel and file system
+to be located.</p>
+<ul class="simple">
+<li><p>Kernel location</p>
+<ul>
+<li><p>TFTP - located on your Host in your designated /tftpboot directory</p></li>
+<li><p>SD card - located in the 1st partition named “boot” of your SD
+card</p></li>
+</ul>
+</li>
+<li><p>Filesystem location</p>
+<ul>
+<li><p>NFS - located on your Host. The location is where the file system
+was extracted in an earlier step.</p></li>
+<li><p>SD card - located on the 2nd partition named “rootfs” of your SD
+card.</p></li>
+</ul>
+</li>
+</ul>
+<p>Next if you have selected TFTP, you will be prompted which uImage you
+want to boot using TFTP. You will be given a list of existing uImages
+and you can type one in from the list or hit &lt;Enter&gt; to select the
+default option. The default option will be the uImage corresponding to
+the SDK installation. This will be used in the next step to create the
+necessary u-boot options to boot up your device.</p>
+<p class="rubric" id="load-uboot-script">Load uboot Script</p>
+<p>This section creates a minicom script which will be
+used by u-boot to provide the necessary commands to boot up in the
+preferred configuration as specified in previous commands.
+The created minicom script is stored at the file bin/setupBoard.minicom in the SDK. Use below minicom command and then power on the board to boot through the specified configuration</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">minicom -S bin/setupBoard.minicom</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Download_and_Install_the_SDK.html" class="btn btn-neutral float-left" title="1.1.1. Download and Install the SDK" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Processor_SDK_Linux_create_SD_card.html" class="btn btn-neutral float-right" title="1.1.3. Create SD Card" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

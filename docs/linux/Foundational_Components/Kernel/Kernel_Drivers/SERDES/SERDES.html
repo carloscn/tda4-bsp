@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.17. SERDES &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.18. SPI" href="../SPI.html" />
+    <link rel="prev" title="3.2.2.16. OSPI/QSPI" href="../QSPI.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.17. </span>SERDES</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="serdes">
+<h1><span class="section-number">3.2.2.17. </span>SERDES<a class="headerlink" href="#serdes" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#types-of-serdes" id="id2">Types of SERDES</a></p></li>
+<li><p><a class="reference internal" href="#serdes-configurations" id="id3">SERDES Configurations</a></p></li>
+<li><p><a class="reference internal" href="#serdes-instances" id="id4">SERDES Instances</a></p></li>
+<li><p><a class="reference internal" href="#serdes-muxing" id="id5">SERDES Muxing</a></p></li>
+<li><p><a class="reference internal" href="#serdes-clocking-options" id="id6">SERDES Clocking Options</a></p>
+<ul>
+<li><p><a class="reference internal" href="#internal-reference-clock" id="id7">Internal Reference Clock</a></p></li>
+<li><p><a class="reference internal" href="#external-reference-clock" id="id8">External Reference Clock</a></p></li>
+<li><p><a class="reference internal" href="#selecting-between-internal-and-external-reference-clock" id="id9">Selecting Between Internal and External Reference Clock</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1"><span class="section-number">3.2.2.17.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>SERDES converts device (SoC) parallel data into serialized data that can be
+output over a high-speed electrical interface. In the opposite direction,
+SerDes converts high-speed serial data into parallel data that can be
+processed by the device.</p>
+<p>SERDES is used for transmitting/receiving data for PCIe, USB3, CPSW
+(QSGMII, SGMII, USXGMII, XFI), eDP in K3 SoC.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following documentation describes the different PHY types (data rates)
+supported by the SERDES. While the SERDES might support a given protocol,
+it does not imply that the peripheral is capable of utilizing it. Please
+refer to the Technical Reference Manual for verifying hardware support for
+the peripheral. Refer to the peripheral driver documentation for verifying
+software support for the peripheral.</p>
+</div>
+</div>
+<div class="section" id="types-of-serdes">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">3.2.2.17.2. </span>Types of SERDES</a><a class="headerlink" href="#types-of-serdes" title="Permalink to this headline">¶</a></h2>
+<p>The TI J784S4 SoC has a 4 Lane SERDES.</p>
+<p class="rubric"><em>4 Lane Serdes</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                  ┌───────────────────┐
+&lt;-&gt; Peripheral IP1│                   │   &lt;-&gt; RX0/TX0
+──────────────────┤                   ├────────────────
+                  │                   │
+                  │                   │
+&lt;-&gt; Peripheral IP2│                   │   &lt;-&gt; RX1/TX1
+──────────────────┤                   ├────────────────
+                  │                   │
+                  │    4L SERDES      │
+&lt;-&gt; Peripheral IP3│                   │   &lt;-&gt; RX2/TX2
+──────────────────┤                   ├────────────────
+                  │                   │
+                  │                   │
+&lt;-&gt; Peripheral IP4│                   │   &lt;-&gt; RX3/TX3
+──────────────────┤                   ├────────────────
+                  │                   │
+                  │                   │
+                  └───────────────────┘
+</pre></div>
+</div>
+</div>
+<div class="section" id="serdes-configurations">
+<h2><a class="toc-backref" href="#id3"><span class="section-number">3.2.2.17.3. </span>SERDES Configurations</a><a class="headerlink" href="#serdes-configurations" title="Permalink to this headline">¶</a></h2>
+<p>This section lists the set of PHY types (data rates) that the SERDES can be
+configured in, from the perspective of the SERDES driver and SERDES hardware
+support. To enable the desired configuration, the SoC device-tree has to be
+modified based on the instructions mentioned in the SERDES Muxing section.</p>
+<p>A single SERDES can support either one protocol (connects to one Peripheral IP)
+or two protocols (connects to multiple Peripheral IP) at the same time.</p>
+<p>If a SERDES supports one protocol, it’s called a single link PHY and
+if a SERDES supports two protocols, it’s called multi-link PHY.
+Note that a single link PHY can comprise multiple lanes. For a
+multi-link PHY, the lanes can be split up in different ways but the
+only constraint is that the SERDES can support up to two protocols
+simultaneously.</p>
+<p>It’s also not always necessary to use all the lanes of a SERDES and
+some lanes can be left unused.</p>
+<p class="rubric"><em>Supported 4 Lane Serdes Configurations</em></p>
+<p>The 4 Lane SERDES instances in J784S4 SoC are configured by the
+Torrent Serdes kernel driver:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>drivers/phy/cadence/phy-cadence-torrent.c
+</pre></div>
+</div>
+<p>The possible Peripheral IP configurations that can be configured on the 4 Lane SERDES are:</p>
+<p>Single Protocol Configurations:</p>
+<ul class="simple">
+<li><p>EDP</p></li>
+<li><p>PCIe</p></li>
+<li><p>QSGMII</p></li>
+<li><p>SGMII</p></li>
+<li><p>USB</p></li>
+<li><p>USXGMII</p></li>
+</ul>
+<p>Multi Protocol Configurations:</p>
+<ul class="simple">
+<li><p>EDP + PCIe</p></li>
+<li><p>EDP + USB</p></li>
+<li><p>PCIe + QSGMII</p></li>
+<li><p>PCIe + SGMII</p></li>
+<li><p>PCIe + USB</p></li>
+<li><p>PCIe + USXGMII</p></li>
+<li><p>QSGMII + USB</p></li>
+<li><p>QSGMII + USXGMII</p></li>
+<li><p>SGMII + USB</p></li>
+<li><p>SGMII + USXGMII</p></li>
+</ul>
+</div>
+<div class="section" id="serdes-instances">
+<h2><a class="toc-backref" href="#id4"><span class="section-number">3.2.2.17.4. </span>SERDES Instances</a><a class="headerlink" href="#serdes-instances" title="Permalink to this headline">¶</a></h2>
+<p>J784S4 SoC has four instances of the 4 Lane Serdes.</p>
+</div>
+<div class="section" id="serdes-muxing">
+<h2><a class="toc-backref" href="#id5"><span class="section-number">3.2.2.17.5. </span>SERDES Muxing</a><a class="headerlink" href="#serdes-muxing" title="Permalink to this headline">¶</a></h2>
+<p>SERDES Muxing refers to the process of selecting the mapping between the Peripheral
+Lanes and the SERDES Lanes. A valid mapping refers to the process of selecting a
+valid combination of Peripheral Lane and SERDES Lane based on the physical connections
+available to choose from. Listed below is the valid set of combinations for the
+SERDES instances.</p>
+<p class="rubric"><em>SERDES 0</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                  ┌───────────────────┐
+                  |                   │
+      PCIE1_LANE0/|                   │
+  HYPERLINK_LANE0 │                   │   &lt;-&gt; RX0/TX0
+──────────────────┤                   ├────────────────
+                  │                   │
+                  │                   │
+      PCIE1_LANE1/|                   │
+  HYPERLINK_LANE1 │                   │   &lt;-&gt; RX1/TX1
+──────────────────┤                   ├────────────────
+                  │                   │
+                  │    4L SERDES      │
+      PCIE3_LANE0/|                   │
+      PCIE1_LANE2/│                   │
+  HYPERLINK_LANE2 │                   │   &lt;-&gt; RX2/TX2
+──────────────────┤                   ├────────────────
+                  │                   │
+                  │                   │
+      PCIE3_LANE1/|                   │
+      PCIE1_LANE3/│                   │
+           USB3_0/│                   │
+  HYPERLINK_LANE3 │                   │   &lt;-&gt; RX3/TX3
+──────────────────┤                   ├────────────────
+                  │                   │
+                  └───────────────────┘
+</pre></div>
+</div>
+<p class="rubric"><em>SERDES 1</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                    ┌───────────────────┐
+                    |                   │
+CPSW0_Q/SGMII_LANE3/|                   │
+        PCIE0_LANE0 │                   │   &lt;-&gt; RX0/TX0
+  ──────────────────┤                   ├────────────────
+                    │                   │
+                    │                   │
+CPSW0_Q/SGMII_LANE4/|                   │
+        PCIE0_LANE1 │                   │   &lt;-&gt; RX1/TX1
+  ──────────────────┤                   ├────────────────
+                    │                   │
+                    │    4L SERDES      │
+CPSW0_Q/SGMII_LANE1/│                   │
+        PCIE0_LANE2/|                   │
+        PCIE2_LANE0 │                   │   &lt;-&gt; RX2/TX2
+  ──────────────────┤                   ├────────────────
+                    │                   │
+                    │                   │
+CPSW0_Q/SGMII_LANE2/│                   │
+        PCIE0_LANE3/|                   │
+        PCIE2_LANE1 │                   │   &lt;-&gt; RX3/TX3
+  ──────────────────┤                   ├────────────────
+                    │                   │
+                    └───────────────────┘
+</pre></div>
+</div>
+<p class="rubric"><em>SERDES 2</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                    ┌───────────────────┐
+                    |                   │
+CPSW0_Q/SGMII_LANE5 │                   │   &lt;-&gt; RX0/TX0
+  ──────────────────┤                   ├────────────────
+                    │                   │
+                    │                   │
+CPSW0_Q/SGMII_LANE6 │                   │   &lt;-&gt; RX1/TX1
+  ──────────────────┤                   ├────────────────
+                    │                   │
+                    │    4L SERDES      │
+CPSW0_Q/SGMII_LANE7/|                   │
+CPSW0_Q/SGMII_LANE1 │                   │   &lt;-&gt; RX2/TX2
+  ──────────────────┤                   ├────────────────
+                    │                   │
+                    │                   │
+CPSW0_Q/SGMII_LANE8/│                   │
+CPSW0_Q/SGMII_LANE2 │                   │   &lt;-&gt; RX3/TX3
+  ──────────────────┤                   ├────────────────
+                    │                   │
+                    └───────────────────┘
+</pre></div>
+</div>
+<p class="rubric"><em>SERDES 4</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                    ┌───────────────────┐
+         EDP1_LANE0/|                   │
+CPSW0_Q/SGMII_LANE5/|                   │
+    HYPERLINK_LANE0 │                   │   &lt;-&gt; RX0/TX0
+  ──────────────────┤                   ├────────────────
+                    │                   │
+         EDP1_LANE1/|                   │
+CPSW0_Q/SGMII_LANE6/|                   │
+    HYPERLINK_LANE1 │                   │   &lt;-&gt; RX1/TX1
+  ──────────────────┤                   ├────────────────
+                    │    4L SERDES      │
+         EDP1_LANE2/|                   │
+CPSW0_Q/SGMII_LANE7/|                   │
+    HYPERLINK_LANE2 │                   │   &lt;-&gt; RX2/TX2
+  ──────────────────┤                   ├────────────────
+                    │                   │
+         EDP1_LANE3/|                   │
+CPSW0_Q/SGMII_LANE8/|                   │
+             USB3_0/|                   │
+    HYPERLINK_LANE0 │                   │   &lt;-&gt; RX3/TX3
+  ──────────────────┤                   ├────────────────
+                    │                   │
+                    └───────────────────┘
+</pre></div>
+</div>
+<p>The Muxing configuration for each of the SERDES lanes can be described using
+device tree. The device tree node labelled serdes_ln_ctrl corresponds to the
+mux used to configure each of the SERDES lanes. The property “idle-states”
+inside the serdes_ln_ctrl mux is used to specify the mapping between the
+SERDES lane and the IP lane.</p>
+<p>A valid mapping can be determined by referring to the SERDES muxing section
+above. To select a mapping, the following format has to be used:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;SoC_SERDESw_LANEx_IPa_LANEb&gt;
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p>SoC is the name of the SoC,</p></li>
+<li><p>‘w’ specifies the SERDES instance: SERDES0 for example,</p></li>
+<li><p>‘x’ specifies the SERDES Lane: LANE0 for example,</p></li>
+<li><p>IP specifies the peripheral IP: PCIE for example,</p></li>
+<li><p>‘a’ specifies the instance of that peripheral IP: PCIE0 for example,</p></li>
+<li><p>‘b’ specifies the peripheral IP’s Lane: LANE0 for example.</p></li>
+</ul>
+<p>The mapping is interpret as follows:</p>
+<p><em>For the SoC named: SoC, SERDESw LANEx should be mapped to IPa LANEb.</em></p>
+<p>For unused Serdes lanes, indicate them using:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;SoC_SERDESw_LANEx_IPa_UNUSED&gt;
+</pre></div>
+</div>
+<p class="rubric"><strong>Serdes Muxing Example</strong></p>
+<p>Consider an SoC named SoCX with one 1L SERDES, one 2L SERDES and one 4L SERDES, with the
+instances being SERDES0, SERDES1 and SERDES2. Additionally, let the SoC have PCIe instance
+PCIE1, EDP instance EDP0 and a CPSW instance using QSGMII.</p>
+<p>Then, to configure:</p>
+<ul class="simple">
+<li><p>SERDES0 Lane0 for PCIE1 Lane0</p></li>
+<li><p>SERDES1 Lane0 for EDP0 Lane2</p></li>
+<li><p>SERDES1 Lane1 for EDP0 Lane3</p></li>
+<li><p>SERDES2 Lane0 for QSGMII Lane3</p></li>
+<li><p>SERDES2 Lane1 for QSGMII Lane4</p></li>
+<li><p>SERDES2 Lane2 for QSGMII Lane1</p></li>
+<li><p>SERDES2 Lane3 for QSGMII Lane2</p></li>
+</ul>
+<p>the device tree serdes_ln_ctrl node has to be defined as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&amp;serdes_ln_ctrl {
+        idle-states = &lt;SoCX_SERDES0_LANE0_PCIE1_LANE0&gt;, &lt;SoCX_SERDES1_LANE0_EDP0_LANE2&gt;,
+                      &lt;SoCX_SERDES1_LANE1_EDP0_LANE3&gt;, &lt;SoCX_SERDES2_LANE0_QSGMII_LANE3&gt;,
+                      &lt;SoCX_SERDES2_LANE1_QSGMII_LANE4&gt;, &lt;SoCX_SERDES2_LANE2_QSGMII_LANE1&gt;
+                      &lt;SoCX_SERDES2_LANE3_QSGMII_LANE2&gt;;
+};
+</pre></div>
+</div>
+<p class="rubric"><strong>Default Device Tree Muxing</strong></p>
+<p>The J784S4 board file k3-j784s4-evm.dts contains the following Serdes Muxing by default:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&amp;serdes_ln_ctrl {
+    idle-states = &lt;J784S4_SERDES0_LANE0_PCIE1_LANE0&gt;, &lt;J784S4_SERDES0_LANE1_PCIE1_LANE1&gt;,
+                  &lt;J784S4_SERDES0_LANE2_IP3_UNUSED&gt;, &lt;J784S4_SERDES0_LANE3_USB&gt;,
+                  &lt;J784S4_SERDES1_LANE0_PCIE0_LANE0&gt;, &lt;J784S4_SERDES1_LANE1_PCIE0_LANE1&gt;,
+                  &lt;J784S4_SERDES1_LANE2_PCIE0_LANE2&gt;, &lt;J784S4_SERDES1_LANE3_PCIE0_LANE3&gt;,
+                  &lt;J784S4_SERDES2_LANE2_QSGMII_LANE1&gt;, &lt;J784S4_SERDES2_LANE3_QSGMII_LANE2&gt;;
+};
+</pre></div>
+</div>
+<p>The exact mux values to be programmed can be obtained from the dt-bindings include directory
+of the kernel repository:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>include/dt-bindings/mux/ti-serdes.h
+</pre></div>
+</div>
+<p>The serdes_ln_ctrl based configuration uses the mux framework of Linux. More information can
+be found in the Documentation of the kernel repository:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Documentation/devicetree/bindings/mux/mux-controller.yaml
+</pre></div>
+</div>
+</div>
+<div class="section" id="serdes-clocking-options">
+<h2><a class="toc-backref" href="#id6"><span class="section-number">3.2.2.17.6. </span>SERDES Clocking Options</a><a class="headerlink" href="#serdes-clocking-options" title="Permalink to this headline">¶</a></h2>
+<p>Each SERDES has PLLs inside it which have to be programmed to operate at different frequencies,
+based on the data rate required by the Peripheral IP connected to the SERDES.</p>
+<p>For example, based on the specification, the data rates for some of the Peripheral IPs are:</p>
+<ol class="arabic simple">
+<li><p>8Gbps for PCIe GEN3</p></li>
+<li><p>5Gbps for PCIe GEN2</p></li>
+<li><p>2.5Gbps for PCIe GEN1</p></li>
+<li><p>5Gbps for USB3 SS</p></li>
+<li><p>5Gbps for QSGMII [CPSW Ethernet]</p></li>
+</ol>
+<p>The input reference clocks connected to each SERDES are used to program the PLLs inside the SERDES.
+The details regarding the PLL frequencies and programming is abstracted from the user. The user
+only has to provide the reference clocks to be used by the SERDES for programming the PLLs, based
+on the data rates required by the Peripheral IPs being used.</p>
+<p class="rubric"><em>4L SERDES Clocking Options</em></p>
+<p>The following illustration shows the clocking options for the 4L SERDES.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                                           /|HFOSC0_CLKOUT
+┌───────────────────────┐                 / ┌◄───────────────
+│                       │                 │ │
+│                       │                 │ │HFOSC1_CLKOUT
+│      ┌─────────┐      │ core_refclk     │ ├◄───────────────
+│      │  PLL0   │      │◄────────────────┤ │
+│      │         │      │                 │ │MAIN_PLL3_HSDIV4_CLKOUT (100/125/156.25 MHz)
+│      └─────────┘      │                 │ ├◄───────────────
+│                       │                 │ │
+│                       │                 │ │MAIN_PLL2_HSDIV4_CLKOUT (100 MHz)
+│                       │                 \ ├◄───────────────
+│      ┌─────────┐      │                  \│
+│      │  PLL1   │      │
+│      │         │      │ cmn_refclk
+│      └─────────┘      │◄─────────────────
+│                       │
+│                       │
+│      4L SERDES        │ refclk_out
+│                       │─────────────────►X Not Used
+│                       │
+│                       │
+└───────────────────────┘
+</pre></div>
+</div>
+<p>As seen in the figure above, 4L SERDES IP supports 2 clock inputs (core_refclk and cmn_refclk).
+The clock core_refclk is the internal reference clock while the clock cmn_refclk is the external
+reference clock. It also has an output reference clock which is not used (refclk_out).</p>
+<p>For the clock IDs corresponding to the 4 Lane SERDES instances, refer:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://software-dl.ti.com/tisci/esd/latest/5_soc_doc/j721e/clocks.html#clocks-for-serdes-10g0-device">4 Lane SERDES0 Clock IDs for J784S4</a></p></li>
+<li><p><a class="reference external" href="https://software-dl.ti.com/tisci/esd/latest/5_soc_doc/j721e/clocks.html#clocks-for-serdes-10g1-device">4 Lane SERDES1 Clock IDs for J784S4</a></p></li>
+<li><p><a class="reference external" href="https://software-dl.ti.com/tisci/esd/latest/5_soc_doc/j721e/clocks.html#clocks-for-serdes-10g2-device">4 Lane SERDES2 Clock IDs for J784S4</a></p></li>
+<li><p><a class="reference external" href="https://software-dl.ti.com/tisci/esd/latest/5_soc_doc/j721e/clocks.html#clocks-for-serdes-10g4-device">4 Lane SERDES4 Clock IDs for J784S4</a></p></li>
+</ul>
+<div class="section" id="internal-reference-clock">
+<h3><a class="toc-backref" href="#id7"><span class="section-number">3.2.2.17.6.1. </span>Internal Reference Clock</a><a class="headerlink" href="#internal-reference-clock" title="Permalink to this headline">¶</a></h3>
+<p>In order to use internal reference clock, core_refclk input to the 4L SERDES should be used.
+core_refclk can use one of the four inputs provided to the input-muxed clock.</p>
+<p>The WIZ wrapper allows selecting the input clock to be used for core_refclk.
+In the device-tree, within the WIZ parent node of the 4 Lane SERDES node, the following
+device-tree properties are used to configure the clocks:</p>
+<ul class="simple">
+<li><p>“assigned-clocks” property is used to indicate the input-muxed clock corresponding to the
+core_refclk internal reference clock.</p></li>
+<li><p>“assigned-clock-parents” property is used to indicate which of the 4 clock inputs to the
+input-muxed clock is to be selected and used for core_refclk.</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>serdes_wiz0: wiz@5060000 {
+        compatible = &quot;ti,j784s4-wiz-10g&quot;;
+        .
+        .
+        assigned-clocks = &lt;&amp;k3_clks 404 6&gt;;
+        assigned-clock-parents = &lt;&amp;k3_clks 404 10&gt;;
+        .
+        .
+};
+</pre></div>
+</div>
+<p>In the above example, the WIZ node corresponding to the 4 Lane SERDES0 instance is shown.
+Within the WIZ node, using the “assigned-clocks” property, we are indicating that
+core_refclk receives its input from the clock identified by:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;k3_clks 404 6&gt;
+</pre></div>
+</div>
+<p>which is the input-muxed clock corresponding to core_refclk. The value 404 corresponds to
+the J784S4_DEV_SERDES_10G0 device, while the value 6 corresponds to DEV_SERDES_10G0_CORE_REF_CLK
+which is the input-muxed clock.</p>
+<p>The value of the “assigned-clock-parents” property corresponding to core_refclk is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;&amp;k3_clks 404 10&gt;
+</pre></div>
+</div>
+<p>which indicates that the clock with clock ID 10 (DEV_SERDES_10G0_CORE_REF_CLK_PARENT_HSDIV4_16FFT_MAIN_2_HSDIVOUT4_CLK)
+which is the MAIN_PLL2_HSDIV4_CLKOUT clock has to be used as the core_refclk, via the input-muxed clock.</p>
+</div>
+<div class="section" id="external-reference-clock">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">3.2.2.17.6.2. </span>External Reference Clock</a><a class="headerlink" href="#external-reference-clock" title="Permalink to this headline">¶</a></h3>
+<p>The 4L SERDES IP supports one external reference clock input cmn_refclk (named as serdes_refclk
+in the device-tree).</p>
+<p>The external reference clock input is represented in the SoC device-tree file (k3-j784s4-main.dtsi)
+as shown below:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/ {
+    serdes_refclk: serdes-refclk {
+            #clock-cells = &lt;0&gt;;
+            compatible = &quot;fixed-clock&quot;;
+  };
+  .
+  .
+  .
+};
+</pre></div>
+</div>
+</div>
+<div class="section" id="selecting-between-internal-and-external-reference-clock">
+<h3><a class="toc-backref" href="#id9"><span class="section-number">3.2.2.17.6.3. </span>Selecting Between Internal and External Reference Clock</a><a class="headerlink" href="#selecting-between-internal-and-external-reference-clock" title="Permalink to this headline">¶</a></h3>
+<p>The WIZ wrapper allows selecting between the internal and external clock to be used as the
+input to PLL0 and PLL1 of the SERDES. Additionally, the reference clock to be used as input
+for the digital logic of the SERDES PHY and PMA can also be selected.</p>
+<p>It is possible to choose between the internal and external reference clocks for PLL0, PLL1 and
+the digital reference clock. By default they are configured to use the internal reference clock
+in the k3-j7200-main.dtsi SoC device-tree file:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>serdes0: serdes@5060000 {
+    compatible = &quot;ti,j7200-serdes-10g&quot;;
+    .
+    .
+    .
+    assigned-clocks = &lt;&amp;serdes_wiz0 TI_WIZ_PLL0_REFCLK&gt;,
+                      &lt;&amp;serdes_wiz0 TI_WIZ_PLL1_REFCLK&gt;,
+                      &lt;&amp;serdes_wiz0 TI_WIZ_REFCLK_DIG&gt;;
+    assigned-clock-parents = &lt;&amp;k3_clks 404 6&gt;,
+                             &lt;&amp;k3_clks 404 6&gt;,
+                             &lt;&amp;k3_clks 404 6&gt;;
+    .
+    .
+    .
+};
+</pre></div>
+</div>
+<p>For the example above corresponding to SERDES0 instance, the “assigned-clocks” property is
+used to indicate the clocks for PLL0, PLL1 and the digital reference clock respectively.</p>
+<p>The “assigned-clock-parents” property is used to indicate which of the clocks shall be used
+for each of PLL0, PLL1 and digital reference clocks as the input. Each of them have two
+reference clock inputs to choose from: internal clock (k3_clks) and external clock
+(serdes_refclk).</p>
+<p>The “assigned-clock-parents” by default sets the clock to internal clocks.</p>
+<p>For using the external reference clock, the “assigned-clock-parents” property has to be
+set to &lt;&amp;serdes_refclk&gt;.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../QSPI.html" class="btn btn-neutral float-left" title="3.2.2.16. OSPI/QSPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../SPI.html" class="btn btn-neutral float-right" title="3.2.2.18. SPI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

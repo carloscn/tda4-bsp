@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.1.7. OSPI/QSPI &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.1.8. NOR" href="UG-NOR.html" />
+    <link rel="prev" title="3.1.1.6. SPI" href="UG-SPI.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="UG-General-Info.html">3.1.1.1. General Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DFU.html">3.1.1.2. USB Device Firmware Upgrade (DFU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Network.html">3.1.1.3. Network (Wired or USB Client)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NAND.html">3.1.1.4. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Memory.html">3.1.1.5. SD, eMMC and USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SPI.html">3.1.1.6. SPI</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.1.7. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NOR.html">3.1.1.8. NOR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UART.html">3.1.1.9. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SATA.html">3.1.1.10. SATA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UFS.html">3.1.1.11. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DDR3.html">3.1.1.12. DDR3 ECC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-HyperBus.html">3.1.1.13. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-RemoteProc.html">3.1.1.14. RemoteProc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Users-Guide.html"><span class="section-number">3.1.1. </span>User’s Guide</a> &raquo;</li>
+      <li><span class="section-number">3.1.1.7. </span>OSPI/QSPI</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ospi-qspi">
+<h1><span class="section-number">3.1.1.7. </span>OSPI/QSPI<a class="headerlink" href="#ospi-qspi" title="Permalink to this headline">¶</a></h1>
+<p>OSPI/QSPI is a serial peripheral interface like SPI the major difference
+being the support for Octal/Quad read, uses 8/4 data lines for read compared to
+2 lines used by the traditional SPI. This section documents how to write
+files to the QSPI device and use it to load and then boot the Linux
+Kernel using a root filesystem also found on QSPI. At this time, no
+special builds of U-Boot are required to perform these operations on the
+supported hardware. For simplicity we assume the files are being loaded
+from an SD card. Using the network interface (if applicable) is
+documented in U-boot SPI section.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all OSPI flashes can be supported. Users are recommended to check
+whether or not the OSPI flash part chosen for custom board designs meets all
+the criteria listed at <a class="reference external" href="https://e2e.ti.com/support/processors/f/791/t/946418">https://e2e.ti.com/support/processors/f/791/t/946418</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The sf command is used to access SPI NOR flash, supporting read/write/erase and
+a few other functions. For more information on sf command in U-boot please
+refer to the u-boot documentation: <a class="reference external" href="https://u-boot.readthedocs.io/en/latest/usage/cmd/sf.html">here</a>.
+And for accessing SPI NAND flash, the mtd command is used, supporting
+read/write/erase and bad block management.</p>
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">|__PART_FAMILY_DEVICE_NAMES__|</span></a> is similar to J721S2, only difference
+being that OSPI0 is muxed externally between a NOR and a NAND flash
+through a physical switch. OSPI NOR and OSPI NAND can’t be used at the
+same time, they need to be selected by changing a physical configuration
+switch on the EVM board before driver probes them. CONFIG SW3.1 should be
+in OFF state to use OSPI NOR, and in ON STATE for OSPI NAND.</p>
+<p><strong>Flashing images to OSPI NOR flash</strong></p>
+<p>Following commands can be used to download tiboot3.bin, tispl.bin and
+u-boot.img over tftp and then flash it to OSPI NOR/NAND at respective
+addresses.</p>
+<ul>
+<li><p>OSPI NOR:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; sf probe</span>
+<span class="go">=&gt; tftp ${loadaddr} tiboot3.bin</span>
+<span class="go">=&gt; sf update $loadaddr 0x0 $filesize</span>
+<span class="go">=&gt; tftp ${loadaddr} tispl.bin</span>
+<span class="go">=&gt; sf update $loadaddr 0x80000 $filesize</span>
+<span class="go">=&gt; tftp ${loadaddr} u-boot.img</span>
+<span class="go">=&gt; sf update $loadaddr 0x280000 $filesize</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>OSPI NAND:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; mtd list</span>
+<span class="go">=&gt; mtd erase spi-nand0</span>
+<span class="go">=&gt; tftp $loadaddr tiboot3.bin</span>
+<span class="go">=&gt; mtd write spi-nand0 $loadaddr 0x0 $filesize</span>
+<span class="go">=&gt; tftp $loadaddr tispl.bin</span>
+<span class="go">=&gt; mtd write spi-nand0 $loadaddr 0x80000 $filesize</span>
+<span class="go">=&gt; tftp $loadaddr u-boot.img</span>
+<span class="go">=&gt; mtd write spi-nand0 $loadaddr 0x280000 $filesize</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>PHY calibration</strong></p>
+<p>PHY calibration allows for higher read performance. To enable PHY, the PHY
+calibration pattern must be flashed to ospi at the start of the last erase
+sector. For the cypress s28hs512t flash, this lies at the address 0x3fc0000.
+Note, PHY calibration is currently supported only for OSPI NOR flash.</p>
+<p>download the binary file containing the phy pattern from <a class="reference download internal" download="" href="../../../_downloads/5e2d8c8e137c403ac785c8bd170b7b87/ospi_phy_pattern"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.
+below commands can be used to flash the phy pattern, with the location of the
+pattern depending on which flash is being used:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; sf probe</span>
+<span class="go">=&gt; tftp ${loadaddr} ospi_phy_pattern</span>
+<span class="go">=&gt; sf update $loadaddr 0x3fc0000 $filesize</span>
+</pre></div>
+</div>
+<p><strong>Flash layout for OSPI NOR</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">      0x0 +----------------------------+</span>
+<span class="go">          |     ospi.tiboot3(1m)       |</span>
+<span class="go">          |                            |</span>
+<span class="go">  0x80000 +----------------------------+</span>
+<span class="go">          |     ospi.tispl(2m)         |</span>
+<span class="go">          |                            |</span>
+<span class="go"> 0x280000 +----------------------------+</span>
+<span class="go">          |     ospi.u-boot(4m)        |</span>
+<span class="go">          |                            |</span>
+<span class="go"> 0x680000 +----------------------------+</span>
+<span class="go">          |     ospi.env(128k)         |</span>
+<span class="go">          |                            |</span>
+<span class="go"> 0x6A0000 +----------------------------+</span>
+<span class="go">          |   ospi.env.backup(128k)    |</span>
+<span class="go">          |                            |</span>
+<span class="go"> 0x6C0000 +----------------------------+</span>
+<span class="go">          |      padding (1280k)       |</span>
+<span class="go"> 0x800000 +----------------------------+</span>
+<span class="go">          |     ospi.rootfs(ubifs)     |</span>
+<span class="go">          |                            |</span>
+<span class="go">0x3fc0000 +----------------------------+</span>
+<span class="go">          |   ospi.phypattern (256k)   |</span>
+<span class="go">          |                            |</span>
+<span class="go">          +----------------------------+</span>
+</pre></div>
+</div>
+<p><strong>Flash layout for OSPI NAND</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">      0x0 +---------------------------------+</span>
+<span class="go">          |      ospi_nand.tiboot3(1m)      |</span>
+<span class="go">          |                                 |</span>
+<span class="go">  0x80000 +---------------------------------+</span>
+<span class="go">          |        ospi_nand.tispl(2m)      |</span>
+<span class="go">          |                                 |</span>
+<span class="go"> 0x280000 +---------------------------------+</span>
+<span class="go">          |       ospi_nand.u-boot(4m)      |</span>
+<span class="go">          |                                 |</span>
+<span class="go"> 0x680000 +---------------------------------+</span>
+<span class="go">          |       ospi_nand.env(128k)       |</span>
+<span class="go">          |                                 |</span>
+<span class="go"> 0x6A0000 +---------------------------------+</span>
+<span class="go">          |    ospi_nand.env.backup(128k)   |</span>
+<span class="go">          |                                 |</span>
+<span class="go"> 0x6C0000 +---------------------------------+</span>
+<span class="go">          |        padding (98048K)         |</span>
+<span class="go">0x2000000 +---------------------------------+</span>
+<span class="go">          |     ospi_nand.rootfs(ubifs)     |</span>
+<span class="go">          |                                 |</span>
+<span class="go">0x7fc0000 +---------------------------------+</span>
+<span class="go">          |   ospi_nand.phypattern (256k)   |</span>
+<span class="go">          |                                 |</span>
+<span class="go">          +---------------------------------+</span>
+</pre></div>
+</div>
+<p><strong>Writing to OSPI using DFU</strong></p>
+<p>Setup: Connect the Type C port (USB0 port) of EVM to ubuntu host PC. Make sure
+dfu-util tool is installed and USB0 port is in UFP/DRP mode: SW3[3:4] = 01 or 1x.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>dfu-util
+</pre></div>
+</div>
+<p>From u-boot(for OSPI flash):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">U-Boot # env default -a</span>
+<span class="go">U-Boot # setenv dfu_alt_info ${dfu_alt_info_ospi}; dfu 0 sf &quot;0:0:25000000:0&quot;</span>
+</pre></div>
+</div>
+<p>From ubuntu PC: Using dfu-util utilities to flash the binares to OSPI/QSPI flash.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>sudo<span class="w"> </span>dfu-util<span class="w"> </span>-l
+<span class="go">Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.</span>
+<span class="go">Copyright 2010-2016 Tormod Volden and Stefan Schmidt</span>
+<span class="go">This program is Free Software and has ABSOLUTELY NO WARRANTY</span>
+
+<span class="go">Found DFU: [0451:6168] ver=0224, devnum=44, cfg=1, intf=0, path=&quot;1-3&quot;, alt=5, name=&quot;rootfs&quot;, serial=&quot;UNKNOWN&quot;</span>
+<span class="go">Found DFU: [0451:6168] ver=0224, devnum=44, cfg=1, intf=0, path=&quot;1-3&quot;, alt=4, name=&quot;sysfw.itb&quot;, serial=&quot;UNKNOWN&quot;</span>
+<span class="go">Found DFU: [0451:6168] ver=0224, devnum=44, cfg=1, intf=0, path=&quot;1-3&quot;, alt=3, name=&quot;u-boot-env&quot;, serial=&quot;UNKNOWN&quot;</span>
+<span class="go">Found DFU: [0451:6168] ver=0224, devnum=44, cfg=1, intf=0, path=&quot;1-3&quot;, alt=2, name=&quot;u-boot.img&quot;, serial=&quot;UNKNOWN&quot;</span>
+<span class="go">Found DFU: [0451:6168] ver=0224, devnum=44, cfg=1, intf=0, path=&quot;1-3&quot;, alt=1, name=&quot;tispl.bin&quot;, serial=&quot;UNKNOWN&quot;</span>
+<span class="go">Found DFU: [0451:6168] ver=0224, devnum=44, cfg=1, intf=0, path=&quot;1-3&quot;, alt=0, name=&quot;tiboot3.bin&quot;, serial=&quot;UNKNOWN&quot;</span>
+</pre></div>
+</div>
+<p>Flash the binaries to the respective regions using alternate interface
+number (alt=&lt;x&gt;).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>sudo<span class="w"> </span>dfu-util<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>-i<span class="w"> </span><span class="m">0</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>-D<span class="w"> </span>tiboot3.bin
+<span class="gp"># </span>sudo<span class="w"> </span>dfu-util<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>-i<span class="w"> </span><span class="m">0</span><span class="w"> </span>-a<span class="w"> </span><span class="m">1</span><span class="w"> </span>-D<span class="w"> </span>tispl.bin
+<span class="gp"># </span>sudo<span class="w"> </span>dfu-util<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>-i<span class="w"> </span><span class="m">0</span><span class="w"> </span>-a<span class="w"> </span><span class="m">2</span><span class="w"> </span>-D<span class="w"> </span>u-boot.img
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="UG-SPI.html" class="btn btn-neutral float-left" title="3.1.1.6. SPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="UG-NOR.html" class="btn btn-neutral float-right" title="3.1.1.8. NOR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

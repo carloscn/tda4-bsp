@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.22. UFS &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.2.2.23. USB" href="USB/CDNS3.html" />
+    <link rel="prev" title="3.2.2.21. UART" href="UART.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.22. </span>UFS</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ufs">
+<h1><span class="section-number">3.2.2.22. </span>UFS<a class="headerlink" href="#ufs" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="introduction-linux-ufs">Introduction</p>
+<p>Universal Flash Storage (UFS) is high performance mass storage device
+with a serial interface. Its primarily used as a high performance data
+storage device for embedded applications. There are JEDEC standards
+governing UFS device and host controller. UFS adapts MIPI MPHY and
+MIPI UniPro standards.</p>
+<p>This user guide applies to kernel v4.19 and higher.</p>
+<p class="rubric" id="supported-devices-ufs">Supported Devices</p>
+<ul class="simple">
+<li><p>J721E EVM</p></li>
+</ul>
+<p class="rubric" id="hardware-features-ufs">Hardware features</p>
+<p>Key Features:</p>
+<ul class="simple">
+<li><p>Supports Universal Flash Storage Host (UFS2.1, JESD220C)</p></li>
+<li><p>Supports Universal Flash Storage Host Controller Interface (UFSHCI, JESD223C)</p></li>
+<li><p>Supports UFS interconnect - MIPI UniPro and MIPI M-PHY</p></li>
+<li><p>Supports Gear 1: 1.46 Gbps, 2-lanes</p></li>
+<li><p>Supports Gear 2: 2.91 Gbps, 2-lanes</p></li>
+<li><p>Supports Gear 3: 5.83 Gbps, 2-lanes</p></li>
+<li><p>Supports 128-bit Advanced Encryption Standard (AES) encryption</p></li>
+<li><p>Supports аll UFS mandatory SCSI commands required by JEDEC specification</p></li>
+</ul>
+<p class="rubric" id="driver-features-ufs">Driver features</p>
+<p class="rubric" id="supported-features-ufs">Supported Features</p>
+<ul class="simple">
+<li><p>Linux as standard UFS Host Controller Interface (UFSHCI) driver at drivers/scsi/ufs/ufshcd.c and platform/SoC specific glue layers are located in the same folder.</p></li>
+<li><p>Supports HS Gear3B, 2-lanes</p></li>
+</ul>
+<p class="rubric" id="unsupported-features-ufs">Unsupported Features</p>
+<ul class="simple">
+<li><p>No support for UFS inline Encryption/Decryption using UFS Crypto Engine</p></li>
+</ul>
+<p class="rubric" id="hardware-architecture-ufs">Hardware Architecture and Software Architecure</p>
+<p>UFS follows SCSI Architecture Model (SAM) and hence falls unders Linux’s
+SCSI stack. User space programs can interact with UFS storage device in
+the same way as any other SCSI devices.
+Hardware architecture is explained in detail in UFS JEDEC specification
+JESD220D
+Host Controller Interface and programming sequence is explained in
+UFSHCI JEDEC specification JESD223C</p>
+<p>UFS storage devices are exposed in Linux as /dev/sdX. Tools such as
+fdisk can be used to format and store data onto them similar to
+traditional Hard Disks.</p>
+<p>Here is the typical enumeration log of UFS devices</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[    4.727525] cdns-ufshcd 4e84000.ufs: ufshcd_print_pwr_info:[RX, TX]: gear=[1, 1], lane[1, 1], pwr[SLOWAUTO_MODE, SLOWAUTO_MODE], rate = 0
+[    4.763158] cdns-ufshcd 4e84000.ufs: ufshcd_print_pwr_info:[RX, TX]: gear=[3, 3], lane[2, 2], pwr[FAST MODE, FAST MODE], rate = 2
+[    4.776497] cdns-ufshcd 4e84000.ufs: ufshcd_find_max_sup_active_icc_level: Regulator capability was not set, actvIccLevel=0
+[    4.787805] scsi 0:0:0:49488: Well-known LUN    TOSHIBA  THGAF8G8T23BAILB 0300 PQ: 0 ANSI: 6
+[    4.807335] scsi 0:0:0:49476: Well-known LUN    TOSHIBA  THGAF8G8T23BAILB 0300 PQ: 0 ANSI: 6
+[    4.816015] cdns-ufshcd 4e84000.ufs: ufshcd_scsi_add_wlus: BOOT WLUN not found
+[    4.828531] scsi 0:0:0:0: Direct-Access     TOSHIBA  THGAF8G8T23BAILB 0300 PQ: 0 ANSI: 6
+[    4.836834] sd 0:0:0:0: Power-on or device reset occurred
+[    4.842379] sd 0:0:0:0: [sda] 8192 4096-byte logical blocks: (33.6 MB/32.0 MiB)
+[    4.842404] scsi 0:0:0:1: Direct-Access     TOSHIBA  THGAF8G8T23BAILB 0300 PQ: 0 ANSI: 6
+[    4.857817] sd 0:0:0:0: [sda] Write Protect is off
+[    4.862629] sd 0:0:0:1: Power-on or device reset occurred
+[    4.862715] sd 0:0:0:0: [sda] Mode Sense: 00 32 00 10
+[    4.868197] sd 0:0:0:1: [sdb] 7808000 4096-byte logical blocks: (32.0 GB/29.8 GiB)
+[    4.880653] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[    4.889170] sd 0:0:0:1: [sdb] Write Protect is off
+[    4.889204] sd 0:0:0:0: [sda] Optimal transfer size 65536 bytes
+[    4.893959] sd 0:0:0:1: [sdb] Mode Sense: 00 32 00 10
+[    4.904957] sd 0:0:0:1: [sdb] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[    4.905701] sd 0:0:0:0: [sda] Attached SCSI disk
+[    4.918093] sd 0:0:0:1: [sdb] Optimal transfer size 65536 bytes
+[    4.924852] sd 0:0:0:1: [sdb] Attached SCSI disk
+</pre></div>
+</div>
+<p class="rubric" id="ufs-logical-units">UFS Logical Units</p>
+<p>UFS flash device is composed of memory blocks that are mapped to
+different Logical Units (LUs). UFS device address space is organized in
+several memory areas configurable by the user. In particular, such
+memory areas are denoted as logical units and characterized by the fact
+that they have independent logical addressable spaces starting from the
+logical address zero. Thus, a logical unit (LU) is an externally
+addressable, independent, processing entity that processes SCSI tasks
+(commands) and performs task management functions. Each logical unit is
+independent of other logical units in a device</p>
+<p>In addition to the logical units, the UFS device supports the following well known logical units for specific purposes: UFS Device, REPORT LUNS, Boot and RPMB. Logical units are addressed by the LUN (logical unit number), while well known logical unit are addressed by the W-LUN (well known logical unit number).
+In particular, the UFS device shall support:
+The number of logical units specified by bMaxNumberLU. Each of them configurable as boot logical units with a maximum of two.
+One RPMB well known logical unit (W-LUN = 44h, LUN field in UPIU = C4h). RPMB well known
+logical unit may be further configured into up to four separate RPMB
+regions (RPMB region 0 - RPMB region 3). Two logical units can be
+configured as boot logical unit, with only one of them active and
+readable through the Boot well known logical unit (W-LUN = 30h) for the
+execution of the system boot (see UFS Boot section of JEDEC Spec). The
+RPMB well known logical unit is accessed by authenticated operations by
+a well defined security algorithm. The other logical units will be used
+to fulfill other use cases.</p>
+<p class="rubric" id="logical-block-provisioning">Logical Block Provisioning</p>
+<p>Logical Block Provisioning is the concept that describes the relationship between the logical block address space and the physical memory resources that supports the logical address space.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, Device comes with no LUs provisioned therefore device must
+be provisioned to be able to store anything in the device.</p>
+</div>
+<p class="rubric" id="interacting-with-ufs-device-from-userspace">Interacting with UFS device from userspace:</p>
+<p>UFS and SCSI layer supports something called Block SCSI Generic (BSG)
+Device which exposes SCSI device such as UFS as generic device to
+Userspace. UFS flash can be accessed at /dev/bsg/ufs-bsg.</p>
+<p><a class="reference external" href="https://github.com/westerndigitalcorporation/ufs-tool">ufs-tool</a>
+(part of SDK) can be used to interact with UFS device from userspace:</p>
+<p class="rubric">UFS descriptors</p>
+<p>A Descriptor is a block or page of parameters that describe something about a Device. For example, there are Device Descriptors, Configuration Descriptors, Unit Descriptors, etc.
+In general, all Descriptors are readable, some may be write once, others
+may have a write protection mechanism. The Configuration Descriptor is
+writeable and allows modification of the device configuration set by the
+manufacturer. More details in JEDEC UFS specification.
+ufs-tool can be used to read any of the descriptor. See tool help for
+more details.</p>
+<p class="rubric">Provisioning UFS device using ufs-tool</p>
+<p>UFS device can be provisioned by writing configuration descriptor to the
+flash. You can read current configuration of UFS device using:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j721e-evm:~# ufs-tool desc -t 1 -p /dev/bsg/ufs-bsg
+Config Device Descriptor: [Byte offset 0x0]: bLength = 0x90
+Config Device Descriptor: [Byte offset 0x1]: bDescriptorType = 0x1
+Config Device Descriptor: [Byte offset 0x2]: bConfDescContinue = 0x0
+Config Device Descriptor: [Byte offset 0x3]: bBootEnable = 0x1
+Config Device Descriptor: [Byte offset 0x4]: bDescrAccessEn = 0x1
+Config Device Descriptor: [Byte offset 0x5]: bInitPowerMode = 0x1
+Config Device Descriptor: [Byte offset 0x6]: bHighPriorityLUN = 0x7f
+Config Device Descriptor: [Byte offset 0x7]: bSecureRemovalType = 0x0
+Config Device Descriptor: [Byte offset 0x8]: bInitActiveICCLevel = 0x0
+Config Device Descriptor: [Byte offset 0x9]: wPeriodicRTCUpdate = 0x0
+Config Device Descriptor: [Byte offset 0xc]: bRPMBRegionEnable = 0x0
+Config Device Descriptor: [Byte offset 0xd]: bRPMBRegion1Size = 0x0
+Config Device Descriptor: [Byte offset 0xe]: bRPMBRegion2Size = 0x0
+Config Device Descriptor: [Byte offset 0xf]: bRPMBRegion3Size = 0x0
+Config 0 Unit Descriptor:
+Config Descriptor: [Byte offset 0x0]: bLUEnable = 0x1
+Config Descriptor: [Byte offset 0x1]: bBootLunID = 0x0
+Config Descriptor: [Byte offset 0x2]: bLUWriteProtect = 0x0
+Config Descriptor: [Byte offset 0x3]: bMemoryType = 0x0
+Config Descriptor: [Byte offset 0x4]: dNumAllocUnits = 0x1900
+Config Descriptor: [Byte offset 0x8]: bDataReliability = 0x0
+Config Descriptor: [Byte offset 0x9]: bLogicalBlockSize = 0xc
+Config Descriptor: [Byte offset 0xa]: bProvisioningType = 0x0
+Config Descriptor: [Byte offset 0xb]: wContextCapabilities = 0x0
+Config 1 Unit Descriptor:
+Config Descriptor: [Byte offset 0x0]: bLUEnable = 0x1
+Config Descriptor: [Byte offset 0x1]: bBootLunID = 0x1
+Config Descriptor: [Byte offset 0x2]: bLUWriteProtect = 0x0
+Config Descriptor: [Byte offset 0x3]: bMemoryType = 0x0
+Config Descriptor: [Byte offset 0x4]: dNumAllocUnits = 0x9
+Config Descriptor: [Byte offset 0x8]: bDataReliability = 0x0
+Config Descriptor: [Byte offset 0x9]: bLogicalBlockSize = 0xc
+Config Descriptor: [Byte offset 0xa]: bProvisioningType = 0x0
+Config Descriptor: [Byte offset 0xb]: wContextCapabilities = 0x0
+Config 2 Unit Descriptor:
+Config Descriptor: [Byte offset 0x0]: bLUEnable = 0x1
+Config Descriptor: [Byte offset 0x1]: bBootLunID = 0x0
+Config Descriptor: [Byte offset 0x2]: bLUWriteProtect = 0x0
+Config Descriptor: [Byte offset 0x3]: bMemoryType = 0x0
+Config Descriptor: [Byte offset 0x4]: dNumAllocUnits = 0x1
+Config Descriptor: [Byte offset 0x8]: bDataReliability = 0x0
+Config Descriptor: [Byte offset 0x9]: bLogicalBlockSize = 0xc
+Config Descriptor: [Byte offset 0xa]: bProvisioningType = 0x0
+Config Descriptor: [Byte offset 0xb]: wContextCapabilities = 0x0
+Config 3 Unit Descriptor:
+Config Descriptor: [Byte offset 0x0]: bLUEnable = 0x0
+Config Descriptor: [Byte offset 0x1]: bBootLunID = 0x0
+Config Descriptor: [Byte offset 0x2]: bLUWriteProtect = 0x0
+Config Descriptor: [Byte offset 0x3]: bMemoryType = 0x0
+Config Descriptor: [Byte offset 0x4]: dNumAllocUnits = 0x0
+Config Descriptor: [Byte offset 0x8]: bDataReliability = 0x0
+Config Descriptor: [Byte offset 0x9]: bLogicalBlockSize = 0xc
+Config Descriptor: [Byte offset 0xa]: bProvisioningType = 0x0
+Config Descriptor: [Byte offset 0xb]: wContextCapabilities = 0x0
+Config 4 Unit Descriptor:
+Config Descriptor: [Byte offset 0x0]: bLUEnable = 0x0
+Config Descriptor: [Byte offset 0x1]: bBootLunID = 0x0
+Config Descriptor: [Byte offset 0x2]: bLUWriteProtect = 0x0
+Config Descriptor: [Byte offset 0x3]: bMemoryType = 0x0
+Config Descriptor: [Byte offset 0x4]: dNumAllocUnits = 0x0
+Config Descriptor: [Byte offset 0x8]: bDataReliability = 0x0
+Config Descriptor: [Byte offset 0x9]: bLogicalBlockSize = 0xc
+Config Descriptor: [Byte offset 0xa]: bProvisioningType = 0x0
+Config Descriptor: [Byte offset 0xb]: wContextCapabilities = 0x0
+Config 5 Unit Descriptor:
+Config Descriptor: [Byte offset 0x0]: bLUEnable = 0x0
+Config Descriptor: [Byte offset 0x1]: bBootLunID = 0x0
+Config Descriptor: [Byte offset 0x2]: bLUWriteProtect = 0x0
+Config Descriptor: [Byte offset 0x3]: bMemoryType = 0x0
+Config Descriptor: [Byte offset 0x4]: dNumAllocUnits = 0x0
+Config Descriptor: [Byte offset 0x8]: bDataReliability = 0x0
+Config Descriptor: [Byte offset 0x9]: bLogicalBlockSize = 0xc
+Config Descriptor: [Byte offset 0xa]: bProvisioningType = 0x0
+Config Descriptor: [Byte offset 0xb]: wContextCapabilities = 0x0
+Config 6 Unit Descriptor:
+Config Descriptor: [Byte offset 0x0]: bLUEnable = 0x0
+Config Descriptor: [Byte offset 0x1]: bBootLunID = 0x0
+Config Descriptor: [Byte offset 0x2]: bLUWriteProtect = 0x0
+Config Descriptor: [Byte offset 0x3]: bMemoryType = 0x0
+Config Descriptor: [Byte offset 0x4]: dNumAllocUnits = 0x0
+Config Descriptor: [Byte offset 0x8]: bDataReliability = 0x0
+Config Descriptor: [Byte offset 0x9]: bLogicalBlockSize = 0xc
+Config Descriptor: [Byte offset 0xa]: bProvisioningType = 0x0
+Config Descriptor: [Byte offset 0xb]: wContextCapabilities = 0x0
+Config 7 Unit Descriptor:
+Config Descriptor: [Byte offset 0x0]: bLUEnable = 0x0
+Config Descriptor: [Byte offset 0x1]: bBootLunID = 0x0
+Config Descriptor: [Byte offset 0x2]: bLUWriteProtect = 0x0
+Config Descriptor: [Byte offset 0x3]: bMemoryType = 0x0
+Config Descriptor: [Byte offset 0x4]: dNumAllocUnits = 0x0
+Config Descriptor: [Byte offset 0x8]: bDataReliability = 0x0
+Config Descriptor: [Byte offset 0x9]: bLogicalBlockSize = 0xc
+Config Descriptor: [Byte offset 0xa]: bProvisioningType = 0x0
+Config Descriptor: [Byte offset 0xb]: wContextCapabilities = 0x0
+Config Descriptor was written into config_desc_data_ind_0 file
+</pre></div>
+</div>
+<p>This also dumps descriptor in binary format into file called
+<em>config_desc_data_ind_0</em>. Edit file as necessary and write file back to
+device using:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ufs-tool desc -t 1 -w config_desc_data_ind_0 -p /dev/bsg/ufs-bsg
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This erases all existing data on flash and creates new partition.
+There is a vendor specific limit on how many times device can be
+re-provisioned or re-partitioned. Also, this setup is non-volatile and
+persists across Power-On-Resets and needs to be done only once.</p>
+</div>
+<p>For J721E EVM, pre populated configuration descriptor binary file can be
+found below. So, to provision UFS flash on J721e EVM:</p>
+<ul class="simple">
+<li><p>Download the <a class="reference download internal" download="" href="../../../../_downloads/6e8912135a99e5a11fff7521ac650e77/config_desc_data_ind_0"><code class="xref download docutils literal notranslate"><span class="pre">file</span></code></a></p></li>
+<li><p>Execute below command to flash descriptor and reboot the board to see
+new partitions</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ufs-tool desc -t 1 -w config_desc_data_ind_0 -p /dev/bsg/ufs-bsg
+</pre></div>
+</div>
+<p>This creates two LUs on device. A Boot LUN of 32MB and rest of the
+flash (~32GB) is formated as general data area (for filesystem etc)
+These two partitions appear as tow SCSI block devices eg /dev/sda and
+/dev/sdb in Linux.</p>
+<p class="rubric">Getting current speed gear and lane count:</p>
+<p>User can dump all UFS UniPro attributes.</p>
+<p>For Active Data lanes:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j721e-evm:~# ufs-tool uic -t 1 -i 0x1560 -p /dev/bsg/ufs-bsg
+[0x1560]PA_ActiveTxDataLanes                          : local = 0x00000002, peer = 0x00000002
+root@j721e-evm:~# ufs-tool uic -t 1 -i 0x1580 -p /dev/bsg/ufs-bsg
+[0x1580]PA_ActiveRxDataLanes                          : local = 0x00000002, peer = 0x00000002
+</pre></div>
+</div>
+<p>Value of 2 indicates 2 lanes are active</p>
+<p>For Gear Speed:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j721e-evm:~# ufs-tool uic -t 1 -i 0x1568 -p /dev/bsg/ufs-bsg
+[0x1568]PA_TxGear                                     : local = 0x00000003, peer = 0x00000003
+root@j721e-evm:~# ufs-tool uic -t 1 -i 0x1583 -p /dev/bsg/ufs-bsg
+[0x1583]PA_RxGear                                     : local = 0x00000003, peer = 0x00000003
+</pre></div>
+</div>
+<p>Value of 3 indicates HS Gear3 is active</p>
+<p>For HS Gear Series</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j721e-evm:~# ufs-tool uic -t 1 -i 0x156a -p /dev/bsg/ufs-bsg
+[0x156a]PA_HSSeries                                   : local = 0x00000002, peer = 0x00000002
+</pre></div>
+</div>
+<p>A value of 2 indicates series B is active</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="UART.html" class="btn btn-neutral float-left" title="3.2.2.21. UART" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="USB/CDNS3.html" class="btn btn-neutral float-right" title="3.2.2.23. USB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

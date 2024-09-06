@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.15. How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4? &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.1.16. How to Build a Ubuntu Linux host under VMware" href="../Host/How_to_Build_a_Ubuntu_Linux_host_under_VMware.html" />
+    <link rel="prev" title="4.1.14. How to check some device tree information from user-space of Linux?" href="How_to_Check_Device_Tree_Info.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../How_to_Guides_Developer_Notes.html">4.1. Developer Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Host/Connect_to_an_EVM_via_Telnet.html">4.1.1. Connect to an EVM via Telnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Setup_a_Samba_Server.html">4.1.2. How to Setup a Samba Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/Boot_Sequence.html">4.1.3. Boot Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/Moving_Files_to_the_Target_System.html">4.1.4. Moving Files to the Target System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Flash_Linux_System_from_U-boot.html">4.1.5. How to Flash from U-boot Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/Processor_SDK_Linux_File_System_Optimization_Customization.html">4.1.6. SDK File System Optimization/Customization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_Change_dtb_File.html">4.1.7. How to change dtb files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_flash_emmc_device.html">4.1.8. How to flash eMMC device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_enable_DT_overlays_in_linux.html">4.1.9. How to enable DT overlays in linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_visualize_statistics_data.html">4.1.10. How to visualize statistics data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_Use_K3Conf_Tool.html">4.1.11. How to Use K3Conf Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Verify_Ipc_Linux_R5.html">4.1.12. How to verify IPC between Linux and MCU R5 in Keystone devices?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Configure_MSMC_memory.html">4.1.13. How to configure K3 MSMC memory for use as SRAM or L3 cache?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Check_Device_Tree_Info.html">4.1.14. How to check some device tree information from user-space of Linux?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.15. How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Build_a_Ubuntu_Linux_host_under_VMware.html">4.1.16. How to Build a Ubuntu Linux host under VMware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/K3_Resource_Partitioning_Tool.html">4.1.17. K3 Resource Partitioning Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tda4_Latest_FAQs.html">4.1.18. Latest FAQs on TDA4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../How_to_Guides_Hardware_Setup_with_CCS.html">4.2. Hardware EVM Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../How_to_Guides.html"><span class="section-number">4. </span>How to Guides</a> &raquo;</li>
+          <li><a href="../../How_to_Guides_Developer_Notes.html"><span class="section-number">4.1. </span>Developer Notes</a> &raquo;</li>
+      <li><span class="section-number">4.1.15. </span>How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4?</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="how-do-i-integrate-a-different-version-of-open-source-software-than-what-is-packaged-in-sdk-full-name">
+<h1><span class="section-number">4.1.15. </span>How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4?<a class="headerlink" href="#how-do-i-integrate-a-different-version-of-open-source-software-than-what-is-packaged-in-sdk-full-name" title="Permalink to this headline">¶</a></h1>
+<p>If users have a need to move to a different component version (older or newer)
+because of an existing bug, feature limitations or other reasons, TI will not
+support the version migration. As a reference, TI provides the list of a few
+recipes that were updated while integrating the components to the
+Processor SDK Linux J784s4.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>├── QT5:
+│    ├──Baseline:
+│    │     └──meta-qt5:recipes-qt/qt5/: recipes and patches from community
+│    │
+│    └──Arago (TI) updates:
+│         ├──meta-arago:
+│         │ ├──meta-arago-distro/recipes-qt/qt5: recipes update and additional patches
+│         │ ├──meta-arago-extra/recipes-qt/examples:local qt5 examples
+│         │ ├──meta-arago-distro/recipes-qt/examples:local qt5 examples recipe update and patches
+│         │ ├──meta-arago-distro/recipes-core/packagegroups: no changes are expected
+│         │ │   ├──packagegroup-arago-qte.bb
+│         │ │   ├──packagegroup-arago-tisdk-qte.bb
+│         │ │   └──packagegroup-arago-tisdk-qte-sdk-host.bb
+│         │ ├──meta-arago-extras\recipes-core\packagegroups: no changes are expected
+│         │ │   └──packagegroup-arago-qte-toolchain-target.bb
+│         │ │
+│         │ ├──meta-arago-distro/conf/layer.conf: No changes needed for QT configurations
+│         │ └──meta-arago-distro/conf/distro/arago.conf
+│         └──meta-processor-sdk:
+│               └──recipes-qt/qt5: additional recipe updates and patches
+├──Wayland/Weston:
+│    ├──Baseline:
+│    │     └──oe-core/meta/recipes-graphics/wayland: recipes and patches from community
+│    │
+│    └──Arago (TI) updates:
+│         ├──meta-arago:
+│         │ ├──meta-arago-distro/recipes-graphics/wayland: recipes update and additional patches
+│         │ ├──meta-arago-extras/recipes-graphics/wayland/wayland-protocols
+│         │ ├──meta-arago-distro/recipes-graphics/wayland/wayland-ivi-extension: wayland-ivi recipes
+│         │ ├──meta-arago-distro/recipes-graphics/wayland/weston-conf: weston configuration
+│         │ └──meta-arago-distro/conf/distro/arago.conf: DISTRO_FEATURES
+
+Note: There are many modules that depend on wayland. For example: chromium-wayland, qt5/qtwayland, gstreamer1.0-plugins-bad(waylandsink), glmark2 and gtk+3
+├──SGX (Not recommended to modify):
+│    ├──Baseline:
+│    │
+│    ├──meta-ti:
+│    │  ├──recipes-graphics/libgles/ti-sgx-ddk-um_&lt;version&gt;
+│    │  └──recipes-bsp/powervr-drivers/ti-sgx-ddk-km_&lt;version&gt;
+│    │
+│    ├──meta-arago:
+│    │  ├──meta-arago-extras/recipes-graphics/img-pvr-sdk
+│    │  ├──meta-arago-distro/recipes-tisdk/ti-tisdk-makefile/ti-tisdk-makefile/Makefile_ti-sgx-ddk-km
+│    │  └──meta-arago-distro/conf/distro/include/arago-prefs.inc: define virtual/egl, virtual/libgles1 and virtual/libgles2
+│    │
+│    │ Note: There are many modules that depend on sgx, but that does not affect sgx update.
+│    │
+│    └──Arago (TI) updates:
+│       └──meta-processor-sdk:
+│           └──recipes-graphics/libgles/ti-sgx-ddk-um_version: for non-sgx build only
+├──Gstreamer:
+│    ├──Baseline:
+│    │
+│    ├──meta-openembedded:
+│    │  └──meta-multimedia/recipes-multimedia/gstreamer-0.10: recipes and patches from community
+│    │
+│    │
+│    ├──oe-core:
+│    │  └──meta/recipes-multimedia/gstreamer: recipes and patches from community
+│    │      ├──gstreamer1.0-plugins-base
+│    │      ├──gstreamer1.0-plugins-bad
+│    │      ├──gstreamer1.0-plugins-good
+│    │      ├──gstreamer1.0-plugins-ugly
+│    │      └──gstreamer1.0-libav
+│    │
+│    └──Arago (TI) updates:
+│       └──meta-arago:
+│       ├──meta-arago-extras/recipes-multimedia/gst-plugins-ti: TI-specific recipes for TI plugins
+│       ├──meta-arago-extras/recipes-multimedia/gstreamer/gstreamer1.0-plugins-bad: recipes update and additional patches
+│       ├──meta-arago-distro/conf/distro/arago.conf: configuration
+│       └──meta-arago-distro/recipes-core/packagegroups/packagegroup-arago-tisdk-multimedia-sdk-target.bb: package
+</pre></div>
+</div>
+<p>If users wish to learn more about Yocto project or Arago build, please refer to the below video link and the documentation on <a class="reference external" href="../../Overview_Building_the_SDK.html">Building Processor SDK Linux through Yocto</a>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://training.ti.com/customizing-yocto-for-production-introduction">https://training.ti.com/customizing-yocto-for-production-introduction</a></p></li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="How_to_Check_Device_Tree_Info.html" class="btn btn-neutral float-left" title="4.1.14. How to check some device tree information from user-space of Linux?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Host/How_to_Build_a_Ubuntu_Linux_host_under_VMware.html" class="btn btn-neutral float-right" title="4.1.16. How to Build a Ubuntu Linux host under VMware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

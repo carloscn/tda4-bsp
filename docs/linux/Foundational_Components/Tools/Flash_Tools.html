@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.4.2. Flash Tools &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.4.3. Code Composer Studio" href="Code_Composer_Studio.html" />
+    <link rel="prev" title="3.4.1. Development Tools" href="Development_Tools.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Development_Tools.html">3.4.1. Development Tools</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.2. Flash Tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#am335x-am437x-flash-programming">3.4.2.1. AM335x/AM437x Flash Programming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sitara-uniflash">3.4.2.2. Sitara Uniflash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Code_Composer_Studio.html">3.4.3. Code Composer Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SysConfig_Tools.html">3.4.4. System configuration tool</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_Tools.html"><span class="section-number">3.4. </span>Tools</a> &raquo;</li>
+      <li><span class="section-number">3.4.2. </span>Flash Tools</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="flash-tools">
+<h1><span class="section-number">3.4.2. </span>Flash Tools<a class="headerlink" href="#flash-tools" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="am335x-am437x-flash-programming">
+<h2><span class="section-number">3.4.2.1. </span>AM335x/AM437x Flash Programming<a class="headerlink" href="#am335x-am437x-flash-programming" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="introduction-linux-am335x-flash-programming">Introduction</p>
+<p>This document describes how to develop a flash imager for the Sitara
+AM335x/AM437x SoCs and how to prepare an image to be flashed. This
+information is focused on the Linux developer that is creating these
+images. The images, once created and tested, can be used to program
+Flash memory (NAND, NOR, SPI, QSPI or eMMC) attached to an AM335x/AM437x
+SoC on a target board. The flasher application and image to be flashed
+are transferred to what is expected to be a blank board (the flash has
+not been programmed before) via Ethernet or USB (using the Remote NDIS
+networking protocol). The flasher application and image can be hosted on
+either Linux or Windows. For Linux, we use standard tools that most
+developers are already familiar with for development, and this setup is
+further documented
+<a class="reference external" href="http://processors.wiki.ti.com/index.php/Ubuntu_12.04_Set_Up_to_Network_Boot_an_AM335x_Based_Platform">here</a>.
+For Windows, we use <a class="reference external" href="http://processors.wiki.ti.com/index.php/Category:CCS_UniFlash">CCS UniFlash</a>.
+For more information on using CCS UniFlash with Sitara Devices, please
+see the <a class="reference external" href="../Tools/Flash_Tools.html#sitara-uniflash">Sitara Uniflash Quick Start
+Guide</a>.</p>
+<p>The overall process of programming the flash is broken into two parts:</p>
+<ol class="arabic simple">
+<li><p>Developing the images to both be programmed and do the programming
+from the AM335x/AM437x SoC. This is usually done by the Linux
+developer responsible for creating the images. This process varies
+somewhat depending on the desires of the Linux developer. There are 2
+options defined below:</p>
+<ol class="arabic simple">
+<li><p>Using U-Boot as the primary source of the flasher image. This
+works well for NAND, NOR, and (Q)SPI. It is the simplest process
+to use. Learn more about it
+<a class="reference external" href="http://processors.wiki.ti.com/index.php/Sitara_Uniflash_Flash_Programming_with_U-Boot">here</a></p></li>
+<li><p>Using a Linux kernel and minimal filesystem. This is recommended
+for eMMC, but may have advantages in other situations as it makes
+the full power of Linux available to the flasher program. This is
+a bit more complex and may require a bit more porting. This
+process is documented
+<a class="reference external" href="http://processors.wiki.ti.com/index.php/Sitara_Uniflash_Flash_Programming_with_Linux">here</a>.</p></li>
+</ol>
+</li>
+<li><p>Actually programming the images using Uniflash v3. This tool runs on
+a Windows PC and serves the images to the target board that is being
+programmed. This process is detailed in the <a class="reference external" href="../Tools/Flash_Tools.html#sitara-uniflash">Sitara Uniflash Quick
+Start Guide</a>.</p></li>
+</ol>
+</div>
+<div class="section" id="sitara-uniflash">
+<h2><span class="section-number">3.4.2.2. </span>Sitara Uniflash<a class="headerlink" href="#sitara-uniflash" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="introduction-linux-uniflash-qsg">Introduction</p>
+<p>This document describes a process to program Flash memory (NAND, NOR,
+SPI, QSPI and eMMC) attached to a TI AM335x or AM437x processor on a
+production target board. This is possible using either the Ethernet
+interface or the USB device interface available on the AMxxxx SoC
+connected to a host PC. This document is intended to guide those that
+want to program the flash memory on new boards for production.</p>
+<p>The overall process is broken into two parts:</p>
+<ol class="arabic simple">
+<li><p>Developing the images to both be programmed and do the programming
+from the AM335x or AM437x SoC. This is usually done by the Linux
+developer responsible for creating the images. This process is
+documented
+<a class="reference external" href="../../Foundational_Components/Tools/Flash_Tools.html#am335x-am437x-flash-programming">here</a>.</p></li>
+<li><p>Actually programming the images using Uniflash v3. This tool runs on
+a Windows PC and serves the images to the target board that is being
+programmed. This process is detailed below.</p></li>
+</ol>
+<p class="rubric" id="overview-uniflash">Overview</p>
+<p>Uniflash is one part of an overall system that includes the Windows PC
+on which Uniflash runs, a target board including an AM335x/AM437x Sitara
+Processor and flash memory to be programmed, and a USB or Ethernet
+connection between the two. It is assumed that the flash on the target
+board is blank, or needs to be overwritten. Therefore, the target board
+has nothing that it can execute except the bootloader stored in the ROM
+on the AM335x/AM437x SoC. So, the ROM bootloader will use either USB or
+Ethernet to request files served by Uniflash on the Host PC and once
+transferred, executed on the target board. The below diagram should
+help.</p>
+<img alt="../../../_images/Flash_programming_block_diagram.png" src="../../../_images/Flash_programming_block_diagram.png" />
+<p>In the above diagram, take notice of the files stored on the PC. There
+are really 2 different images that will be used:</p>
+<ol class="arabic simple">
+<li><p>The image to write the flash on the target board, which is composed
+of the SPL, U-Boot, and debrick or flasher files indicated. These
+will be pulled over by the bootloader in ROM when the target board is
+powered on (assuming the boot settings are set up to boot from USB or
+Ethernet).</p></li>
+<li><p>The image to be written. This is shown as “Image” and is pulled over
+from the Host PC. Once on the target, it will be broken up and
+written to the appropriate places in flash as determined by the
+flasher program above (mainly by the debrick or flasher script). This
+image will also likely contain a SPL and U-Boot, as well as a Kernel
+(zImage) and Root Filesystem. This is the image that will execute out
+of flash once it has been written and will vary depending the needs
+of the target board.</p></li>
+</ol>
+<p class="rubric" id="using-uniflash-to-program-flash-images">Using Uniflash to Program Flash Images</p>
+<p>Once the images to be programmed into perpetual memory have been
+developed, an environment can be set up to program these images. This
+process involves a Client/Server type setup where a host PC serves as
+the server and the target board based on the AM335x/AM437x SoC serves as
+the client. The connection between the two can either be USB or Ethernet
+based. Since the USB protocol supported is Remote NDIS (or RNDIS
+hereafter), which is network (TCP/IP) based similar to Ethernet, both
+processes will be fairly similar.</p>
+<p>In either configuration, the host PC provides the following services to
+the target through the Uniflash tool:</p>
+<ul class="simple">
+<li><p>BOOTP Server – to provide an IP address and image name based on the
+Vendor ID requested by the AM335x/AM437x ROM code</p></li>
+<li><p>DHCP Server – to provide an IP address to the target</p></li>
+<li><p>TFTP Server – to serve up images located on the host PC as they are
+requested by the target board</p></li>
+<li><p>GUI - friendly GUI environment for configuration and status</p></li>
+</ul>
+<p class="rubric" id="host-pc-setup">Host PC Setup</p>
+<p>Here are some step by step instructions to configure a setup to flash
+target boards using a Windows PC. These steps were validated using
+Windows 7, however the steps should be similar for other versions of
+Windows.</p>
+<p class="rubric" id="install-uniflash">Install Uniflash</p>
+<p>Uniflash is a tool provided by Texas Instruments that supports multiple
+platforms and flash configurations. Support for Sitara devices was added
+in Uniflash version 3.0 and beyond.</p>
+<ol class="arabic simple">
+<li><p>Download Uniflash v3 <a class="reference external" href="http://processors.wiki.ti.com/index.php/Category:CCS_UniFlash">here</a>.</p></li>
+<li><p>Extract the downloaded .zip archive to a temporary folder.</p></li>
+<li><p>Execute the Uniflash Setup program, uniflash_setup_3.3.0.00058.</p></li>
+<li><p>Click <strong>Next</strong> to accept the terms of the license agreement.</p></li>
+<li><p>Click <strong>Next</strong> to install into the default directory, c:\ti, or
+<strong>Browse</strong> to install somewhere else.</p></li>
+<li><p>Select <strong>Custom</strong> under type of Setup and click <strong>Next</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Uniflashv3_setup_custom.png" src="../../../_images/Uniflashv3_setup_custom.png" />
+<ol class="arabic simple">
+<li><p>Select <strong>Sitara AMxxxx processors</strong> and click <strong>Next</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Uniflashv3_setup_sitara.png" src="../../../_images/Uniflashv3_setup_sitara.png" />
+<ol class="arabic simple">
+<li><p>Verify that <strong>Sitara Flash Connection Support</strong> is checked.</p></li>
+</ol>
+<img alt="../../../_images/Uniflashv3_setup_sitara_flash_connection.png" src="../../../_images/Uniflashv3_setup_sitara_flash_connection.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>Next</strong> to verify your choices.</p></li>
+<li><p>Wait while Uniflash installs.</p></li>
+<li><p>Choose what options you’d like to have to start Uniflash (place on
+desktop, quick start, etc.)</p></li>
+<li><p>Uniflash is now installed and you should see something like this:</p></li>
+</ol>
+<img alt="../../../_images/Uniflashv3_setup_complete.png" src="../../../_images/Uniflashv3_setup_complete.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="preparing-to-flash-a-target-board">Preparing to Flash a Target Board</p>
+<p>Now that Uniflash is installed, we need to make sure that it knows how
+to serve up the files needed to flash a target board. It needs to know
+where these files are located and how to send them to the target via
+either USB or Ethernet.</p>
+<p>Here are the options for the Flash Servers Configuration that need to be
+properly set up:</p>
+<ul class="simple">
+<li><p>Network Interface IP - IP address that the Host Computer will use.
+Needs to correspond to the values used below to set up the Network
+Interface. The default value, 192.168.2.1, should be fine for most
+environments as it is a local IP Address.</p></li>
+<li><p>IP Lease - Amount of time an IP Address given to a target board is
+held for.</p></li>
+<li><p>DHCP IP Range Low - Low IP address in a range that will be given to a
+target board. Must be on the same subnet as the Network Interface IP
+of the Host Computer.</p></li>
+<li><p>DHCP IP Range High - High IP address in a range that will be given to
+a target board. Must be on the same subnet as the Network Interface
+IP of the Host Computer.</p></li>
+<li><p>TFTP Server IP - Should be the same as the Network Interface IP of
+the Host Computer.</p></li>
+<li><p>TFTP home folder - Folder on the host computer where the files to be
+served to the target board are located.</p></li>
+<li><p>Control Port - Socket used to allow the GUI to interact with servers.
+Should not be changed.</p></li>
+</ul>
+<p>Given these definitions, set the values in Uniflash to match your
+environment. <strong>Note: that in most instances the default values should be
+fine and are recommended.</strong></p>
+<p>You must place the files to be served by the host PC to the target board
+in the TFTP home folder directory above. In most cases, you should have
+been given the below files to serve to the target board by the linux
+development team (these files can vary and are just an example):</p>
+<ul class="simple">
+<li><p>MLO or SPL</p></li>
+<li><p>A U-boot image</p></li>
+<li><p>A kernel image (if using a Linux kernel for flashing) and associated
+Device Tree file</p></li>
+<li><p>debrick.scr or flasher.sh</p></li>
+<li><p>Flash Image files (contains the images to be flashed on the target
+board)</p></li>
+</ul>
+<p class="rubric" id="am437x-additional-setup">AM437x Additional Setup</p>
+<p>If you are using an AM437x device you the target board to be flashed,
+there are a couple of extra steps in order to pair Uniflash with the
+AM437x ROM code.</p>
+<ul class="simple">
+<li><p>After installing Uniflash, open the opendhcp.cfg file under the
+install directory, in the third_party\sitara folder using a text
+editor like Notepad.</p></li>
+<li><p>Add the two lines below to the [VENDOR_ID_TO_BOOTFILE_MAP]
+section toward the top of the file:</p>
+<ul>
+<li><p>AM43xx ROM=u-boot-spl-restore.bin</p></li>
+<li><p>AM43xx U-B=u-boot-restore.img</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:The 10 characters before the “=” must be exact as this is what is
+sent from the ROM code to request the next file in the flash procedure.
+The “x’s” in the AM43xx part are lower-case.</strong></p>
+<p class="rubric" id="flashing-a-board-using-ethernet">Flashing a Board using Ethernet</p>
+<p>To program a board using the Ethernet interface between the Host PC and
+the target board, a private network between the two will be established.
+The HOST PC is set up with a Static IP address on one NIC (Network
+Interface Card) and connected to an ethernet switch or directly to the
+target board. A router that assigns IP addresses should not be used as
+the host PC needs to provide this to boot the target board.</p>
+<p>Here is what you will need:</p>
+<ul class="simple">
+<li><p>Host PC with Uniflash installed and an available ethernet port.</p></li>
+<li><p>The files used to program the board put in the TFTP home folder set
+up in Uniflash.</p></li>
+<li><p>2 ethernet cables if using a switch and one if using a direct
+connection.</p></li>
+<li><p>Ethernet switch (optional). <strong>Note: This should not be a router, as
+the host PC needs to provide IP addresses.</strong></p></li>
+<li><p>Target board(s) to be programmed.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">Here is an example of the different connections in this set up.</div>
+</div>
+<img alt="../../../_images/Ethernet_block_diagram.png" src="../../../_images/Ethernet_block_diagram.png" />
+<ol class="arabic simple">
+<li><p>If Uniflash is not already running on the Host PC, start it.</p></li>
+<li><p><strong>Click</strong> on <strong>New Target Configuration</strong>.</p></li>
+</ol>
+<img alt="../../../_images/UniFlash_new_target_configuration.png" src="../../../_images/UniFlash_new_target_configuration.png" />
+<ol class="arabic simple">
+<li><p>Set <strong>Connection</strong> to <strong>Sitara Flash Connections</strong> and <strong>Board or
+Device</strong> to <strong>Sitara Flash Devices</strong>. Click <strong>OK</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Uniflash_Create_CCXML_File.png" src="../../../_images/Uniflash_Create_CCXML_File.png" />
+<ol class="arabic simple">
+<li><p>Make sure the <strong>Flash Server Configuration</strong> is set up properly.</p></li>
+</ol>
+<img alt="../../../_images/UniFlash_flash_server_configuration.png" src="../../../_images/UniFlash_flash_server_configuration.png" />
+<ol class="arabic simple">
+<li><p>Connect the Host PC to the network switch (or directly to the target
+board if using a direct connection).</p></li>
+<li><p><strong>Click</strong> on the <strong>Open Network and Sharing Center</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Open_network_sharing_center.png" src="../../../_images/Open_network_sharing_center.png" />
+<ol class="arabic simple">
+<li><p><strong>Click</strong> on the Local Area Connection that corresponds to the
+ethernet connection. If you only have one, it should be the only one
+listed.</p></li>
+</ol>
+<img alt="../../../_images/Internet_connection.png" src="../../../_images/Internet_connection.png" />
+<ol class="arabic simple">
+<li><p>In the Connection Dialog, <strong>Click</strong> on <strong>Properties</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Local_Area_Connection_Status.png" src="../../../_images/Local_Area_Connection_Status.png" />
+<ol class="arabic simple">
+<li><p>Select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong> and choose
+<strong>Properties</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Tcpipv4_properties.png" src="../../../_images/Tcpipv4_properties.png" />
+<ol class="arabic simple">
+<li><p>Set the port to use a Static IP Address by selecting <strong>Use the
+following IP Address:</strong> and changing the <strong>IP Address:</strong> to
+192.168.2.1. This setting should correspond to the <strong>Network
+Interface IP</strong> setting in Uniflash.</p></li>
+</ol>
+<img alt="../../../_images/Ip_address.png" src="../../../_images/Ip_address.png" />
+<ol class="arabic simple">
+<li><p>Verify that the <strong>Subnet Mask</strong> is set to 255.255.255.0 and click
+<strong>OK</strong>.</p></li>
+<li><p>Click <strong>Close</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Local_Area_Connection_Properties_close.png" src="../../../_images/Local_Area_Connection_Properties_close.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>Close</strong> one more time to get back to the Network Manager.</p></li>
+</ol>
+<img alt="../../../_images/Local_Area_Connection_Status_close.png" src="../../../_images/Local_Area_Connection_Status_close.png" />
+<ol class="arabic simple">
+<li><p><strong>Close</strong> Network Manager if you’d like as it should no longer be
+needed. The network is now set up.</p></li>
+<li><p>In Uniflash, enable the flashing capability by clicking on <strong>Start
+Flashing</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Uniflash_start_flashing.png" src="../../../_images/Uniflash_start_flashing.png" />
+<ol class="arabic simple">
+<li><p>Depending on your Windows Firewall settings, you may get the below
+two warnings for the servers being used (opendhcp and opentftp). If
+so, please click <strong>Allow access</strong> for both.</p></li>
+</ol>
+<img alt="../../../_images/Windows_Security_Alert_opendhcp.png" src="../../../_images/Windows_Security_Alert_opendhcp.png" />
+<img alt="../../../_images/Windows_Security_Alert_opentftp.png" src="../../../_images/Windows_Security_Alert_opentftp.png" />
+<ol class="arabic simple">
+<li><p>Make sure the target board is powered and connect it via ethernet to
+the network switch (or directly).</p></li>
+<li><p>If everything is working correctly, the flashing process should start
+automatically on the board. You should see status feedback appear in
+Uniflash as the process progresses.</p></li>
+</ol>
+<img alt="../../../_images/UniFlash_status_start.png" src="../../../_images/UniFlash_status_start.png" />
+<div class="line-block">
+<div class="line">Until it completes:</div>
+</div>
+<img alt="../../../_images/UniFlash_status_done.png" src="../../../_images/UniFlash_status_done.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The time the process takes to complete will vary considerably
+depending on a number of factors: the amount of data to be
+transferred to the target, the speed of the interface between the
+host and the target, the amount of data to be flashed, the write
+speed of the memory to be programmed, etc.</p>
+</div>
+<ol class="arabic simple">
+<li><p>To flash another target board, simply make a connection between it
+and the host PC through the switch. The board should start flashing
+automatically if powered and connected properly.</p></li>
+</ol>
+<p class="rubric" id="flashing-a-board-using-usb">Flashing a Board using USB</p>
+<p>To program a board using the USB interface between the host PC and the
+target board, the RNDIS protocol will be used to create a network
+connection over USB. A private network between the two will be
+established. The host PC is set up with a static IP address on one USB
+interface that ends up looking like a dedicated NIC (Network Interface
+Card) and connected directly to the target board.</p>
+<p>Here is what you will need:</p>
+<ul class="simple">
+<li><p>Host PC with Uniflash installed and an available USB port.</p></li>
+<li><p>The files used to program the board put in the TFTP home folder as
+set up in Uniflash.</p></li>
+<li><p>A appropriate USB cable to connect the host PC and target board.</p></li>
+<li><p>Target board to be programmed.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">Here is an example of the different connections in this set up:</div>
+</div>
+<img alt="../../../_images/Usb_block_diagram.png" src="../../../_images/Usb_block_diagram.png" />
+<p>In order to establish a USB based RNDIS connection between the host and
+target, an appropriate driver needs to be installed on the host. A RNDIS
+driver is provided with Windows. This driver needs to be associated with
+2 different steps in the flashing process and may have to be installed
+multiple times. Essentially, as the Sitara Processor on the target board
+moves through different stages of flashing process, it looks like a
+different USB device to Windows and the driver may need to be associated
+for each step. If it is not, that particular stage in the process will
+not be able to communicate over RNDIS and the process will fail.</p>
+<p>This driver association should be handled automatically for AM335x. For
+AM43xx devices, this is a more manual process documented below. Either
+way, these steps could provide helpful information for either devices if
+problems are encountered.</p>
+<ol class="arabic simple">
+<li><p>If Uniflash is not already running on the host PC, start it.</p></li>
+<li><p><strong>Click</strong> on <strong>New Target Configuration</strong>.</p></li>
+</ol>
+<img alt="../../../_images/UniFlash_new_target_configuration.png" src="../../../_images/UniFlash_new_target_configuration.png" />
+<ol class="arabic simple">
+<li><p>Set <strong>Connection</strong> to <strong>Sitara Flash Connections</strong> and <strong>Board or
+Device</strong> to <strong>Sitara Flash Devices</strong>. Click <strong>OK</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Uniflash_Create_CCXML_File.png" src="../../../_images/Uniflash_Create_CCXML_File.png" />
+<ol class="arabic simple">
+<li><p>Make sure the <strong>Flash Server Configuration</strong> is set up properly.</p></li>
+</ol>
+<img alt="../../../_images/UniFlash_flash_server_configuration.png" src="../../../_images/UniFlash_flash_server_configuration.png" />
+<ol class="arabic simple">
+<li><p>Connect the host PC to the powered target board using an appropriate
+USB cable.</p></li>
+<li><p>This will prompt Windows to install a USB driver if a target board
+has never been plugged into that particular PC and that particular
+USB port on that PC. More than likely for the AM437x devices, this
+attempt will fail.</p></li>
+</ol>
+<img alt="../../../_images/Usb_driver_didnt_install.png" src="../../../_images/Usb_driver_didnt_install.png" />
+<ol class="arabic simple">
+<li><p>Use Device Manager to install a USB driver. To open Device Manager,
+click on <strong>Start –&gt; All Programs –&gt; Right Click on Computer and
+Select Properties</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Open_device_manager.png" src="../../../_images/Open_device_manager.png" />
+<ol class="arabic simple">
+<li><p>Click on Device Manager in the window that opens.</p></li>
+</ol>
+<img alt="../../../_images/Device_manager.png" src="../../../_images/Device_manager.png" />
+<ol class="arabic simple">
+<li><p>Find the <strong>AM43xx1.2</strong> Device listed in “Other Devices” per below. It
+will have a little yellow exclamation point on it indicating there is
+currently a problem with the device. <strong>Right click</strong> on it and select
+<strong>Update Driver Software…</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Am43xx_device_properties.png" src="../../../_images/Am43xx_device_properties.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the device is not listed, it is probably because the
+operation has already timed out. Simply power cycle the target board
+to restart the process.</p>
+</div>
+<ol class="arabic simple">
+<li><p>In the Update Driver Software dialog, choose <strong>Browse my computer for
+driver software</strong>.</p></li>
+</ol>
+<img alt="../../../_images/Update_USB_Driver_search.png" src="../../../_images/Update_USB_Driver_search.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>Let me pick from a list</strong> in the next window:</p></li>
+</ol>
+<img alt="../../../_images/Update_Driver_Software_pick.png" src="../../../_images/Update_Driver_Software_pick.png" />
+<ol class="arabic simple">
+<li><p>Choose <strong>Network Adapter</strong> and click <strong>Next</strong>:</p></li>
+</ol>
+<img alt="../../../_images/RNDIS_network_adapter.png" src="../../../_images/RNDIS_network_adapter.png" />
+<ol class="arabic simple">
+<li><p>Choose <strong>Microsoft Corporation</strong> as the Manufacturer and <strong>Remote
+NDIS6 based Device</strong> under adapter. Click <strong>Next</strong>:</p></li>
+</ol>
+<img alt="../../../_images/RNDIS_network_adapter_RNDIS.png" src="../../../_images/RNDIS_network_adapter_RNDIS.png" />
+<ol class="arabic simple">
+<li><p>If you see the following warning, click <strong>Yes</strong>:</p></li>
+</ol>
+<img alt="../../../_images/RNDIS_network_adapter_warning.png" src="../../../_images/RNDIS_network_adapter_warning.png" />
+<ol class="arabic simple">
+<li><p>You should receive a confirmation like below when the driver is
+successfully installed. Finally click <strong>Close</strong>.:</p></li>
+</ol>
+<img alt="../../../_images/RNDIS_network_adapter_success.png" src="../../../_images/RNDIS_network_adapter_success.png" />
+<ol class="arabic">
+<li><p>When the USB Driver for RNDIS is properly installed, it will create a
+new network interface. This can typically be seen in the lower
+right-hand corner of the toolbar:</p>
+<img alt="../../../_images/New_network_connection.png" src="../../../_images/New_network_connection.png" />
+</li>
+<li><p>This new interface needs to be configured with a static IP address.
+<strong>Click</strong> on the Networking icon in the toolbar, and then click on
+the <strong>Open Network and Sharing Center</strong> link.</p>
+<img alt="../../../_images/Open_network_sharing_center.png" src="../../../_images/Open_network_sharing_center.png" />
+</li>
+<li><p>Inside the Network and Sharing Center, click on the new Internet
+Connection:</p>
+<img alt="../../../_images/Internet_connection_2.png" src="../../../_images/Internet_connection_2.png" />
+<p><strong>Note: The number next to the “Local Area Connection” will depend on
+the number of network connections the computer has. If this is the
+only network connection (i.e. the computer does not have an Ethernet
+or wireless networking connection), then this would be “1”. In most
+cases, computers have either a wired or wireless connection that will
+take up spot #1. Therefore, the new USB RNDIS Network Connection will
+be #2. However, if the computer has multiple connections already,
+then this number could be higher.</strong></p>
+</li>
+<li><p>In the Connection Dialog, <strong>Click</strong> on <strong>Properties</strong>.</p>
+<img alt="../../../_images/Local_area_connection_2_properties.png" src="../../../_images/Local_area_connection_2_properties.png" />
+</li>
+<li><p>Select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong> and choose
+<strong>Properties</strong>.</p>
+<img alt="../../../_images/Tcpipv4_properties.png" src="../../../_images/Tcpipv4_properties.png" />
+</li>
+<li><p>Set the port to use a Static IP Address by selecting <strong>Use the
+following IP Address:</strong> and changing the <strong>IP Address:</strong> to
+192.168.2.1. This setting should correspond to the <strong>Network
+Interface IP</strong> setting in Uniflash. Verify that the <strong>Subnet Mask</strong>
+is set to 255.255.255.0 and click <strong>OK</strong>.</p>
+<img alt="../../../_images/Ip_address.png" src="../../../_images/Ip_address.png" />
+<p><strong>Note: It is possible to use other IP addresses. However, the IP
+address used needs to match the Uniflash configuration. If you prefer
+to use another address, you will need to change those configurations
+as well.</strong></p>
+</li>
+<li><p>Click <strong>Close</strong>.</p>
+<img alt="../../../_images/Local_Area_Connection_Properties_close.png" src="../../../_images/Local_Area_Connection_Properties_close.png" />
+</li>
+<li><p>Click <strong>Close</strong> one more time to get back to the Network Manager.
+Let’s leave Network Manager open for now.</p>
+<img alt="../../../_images/Local_Area_Connection_Status_close.png" src="../../../_images/Local_Area_Connection_Status_close.png" />
+</li>
+<li><p>In Uniflash, enable the flashing capability by clicking on <strong>Start
+Flashing</strong>.</p>
+<img alt="../../../_images/Uniflash_start_flashing.png" src="../../../_images/Uniflash_start_flashing.png" />
+</li>
+<li><p>Depending on your Windows Firewall settings, you may get the below
+two warnings for the servers being used (opendhcp and opentftp). If
+so, please click <strong>Allow access</strong>.</p>
+<img alt="../../../_images/Windows_Security_Alert_opendhcp.png" src="../../../_images/Windows_Security_Alert_opendhcp.png" />
+<img alt="../../../_images/Windows_Security_Alert_opentftp.png" src="../../../_images/Windows_Security_Alert_opentftp.png" />
+</li>
+<li><p>Now that the IP connection has been configured, the target board
+should request the first file from the Uniflash via TFTP over
+USB/RNDIS. This is typically the SPL or MLO file for the first stage
+of the AM335x bootloader. If you do not see a new Flash process start
+in Uniflash, you may need to power cycle the target board. This
+restart is only necessary because the driver and network set up did
+not complete quickly enough. Now that it is configured, you should be
+able to progress to the next steps.</p></li>
+</ol>
+<img alt="../../../_images/UniFlash_status_start.png" src="../../../_images/UniFlash_status_start.png" />
+<ol class="arabic">
+<li><p>Once the first file is transferred from Host to Target, it will take
+over execution on the target board from the ROM on the Sitara device.
+This will cause another instance of the USB RNDIS driver to get
+created. Windows should use the previous steps to associate the
+driver to the device and create another instance. It is easy to watch
+this process in Device Manager by watching the Network Adapters
+section. If this does not happen, and the device driver fails to
+associate properly, you’ll need to use the steps above to install the
+USB driver for the new device.</p></li>
+<li><p>When the second instance of the driver comes up, the new network
+interface will need to be configured like we did above. <strong>Open the
+Network Connection and Sharing Center, if it is not already open.</strong></p>
+<img alt="../../../_images/Open_network_sharing_center.png" src="../../../_images/Open_network_sharing_center.png" />
+</li>
+<li><p>Inside the Network and Sharing Center, click on the new Internet
+Connection:</p>
+<img alt="../../../_images/Local_area_connection_3.png" src="../../../_images/Local_area_connection_3.png" />
+<p><strong>Note: The number next to the “Local Area Connection” will depend on
+the number of network connections the computer has. If this is the
+only network connection (i.e. the computer does not have an Ethernet
+or wireless networking connection), then this would be “1”. In most
+cases, computers have either a wired or wireless connection that will
+take up spot #1. Therefore, the new USB RNDIS Network Connection will
+be #3. However, if the computer has multiple connections already,
+then this number could be higher. Each new USB connection can
+increment this number.</strong></p>
+</li>
+<li><p>In the Connection Dialog, <strong>Click</strong> on <strong>Properties</strong>.</p>
+<img alt="../../../_images/Local_Area_Connection_3_Properties.png" src="../../../_images/Local_Area_Connection_3_Properties.png" />
+</li>
+<li><p>Select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong> and choose
+<strong>Properties</strong>.</p>
+<img alt="../../../_images/Tcpipv4_properties.png" src="../../../_images/Tcpipv4_properties.png" />
+</li>
+<li><p>Set the port to use a Static IP Address by selecting <strong>Use the
+following IP Address:</strong> and changing the <strong>IP Address:</strong> to
+192.168.2.1. This setting should correspond to the <strong>Network
+Interface IP</strong> setting in Uniflash. Verify that the <strong>Subnet Mask</strong>
+is set to 255.255.255.0 and click <strong>OK</strong>.</p>
+<img alt="../../../_images/Ip_address.png" src="../../../_images/Ip_address.png" />
+<p><strong>Note: It is possible to use other IP addresses. However, the IP
+address used needs to match the Uniflash configuration. If you prefer
+to use another address, you will need to change those configurations
+as well.</strong></p>
+</li>
+<li><p>Click “No” if asked to remove other static configurations. Since we
+are using the same IP address for both RNDIS connections, Windows is
+trying to let us know that this is generally not a good idea.
+However, in this situation, the configuration ensures that both
+interfaces won’t be used at the same time.</p>
+<img alt="../../../_images/Microsoft_TCP_IP.png" src="../../../_images/Microsoft_TCP_IP.png" />
+</li>
+<li><p>Click <strong>Close</strong>.</p>
+<img alt="../../../_images/Local_Area_Connection_Properties_close.png" src="../../../_images/Local_Area_Connection_Properties_close.png" />
+</li>
+<li><p>Click <strong>Close</strong> one more time to get back to the Network Manager.</p>
+<img alt="../../../_images/Local_Area_Connection_Status_close.png" src="../../../_images/Local_Area_Connection_Status_close.png" />
+</li>
+<li><p>Now that everything is configured, the process should be able to
+complete. Take a look at Uniflash and you should see the process
+progressing forward. If not, it might be necessary to start the
+process fresh by power cycling the Target Board. With everything set
+up correctly on the Host PC at this point, the process should be able
+to proceed without issue.</p></li>
+</ol>
+<img alt="../../../_images/UniFlash_status_start.png" src="../../../_images/UniFlash_status_start.png" />
+<div class="line-block">
+<div class="line">Until it completes:</div>
+</div>
+<img alt="../../../_images/UniFlash_status_done.png" src="../../../_images/UniFlash_status_done.png" />
+<ol class="arabic simple">
+<li><p>When the flash process is complete, simply disconnect the target
+board. It should be flashed and ready for further testing.</p></li>
+<li><p>To flash another target board, simply make a connection between it
+and the Host PC by plugging a new powered target board into the USB
+cable. The board should start flashing automatically if powered and
+connected properly.
+<strong>Note: This process is tedious to set up the first time. However,
+once the Host PC is configured properly, programming new boards is as
+simple as plugging them in and flashing them.</strong></p></li>
+</ol>
+<p class="rubric" id="usb-flash-programming-notes">USB Flash Programming Notes</p>
+<ul class="simple">
+<li><p>The USB/RNDIS set up is specific to each port on a given computer. If
+you follow the process above using one specific port, only that port
+is set up. If you plug a target board into a different port, the
+above process will need to be completed for that new port. Therefore,
+it is best to use the same USB port to avoid having to duplicate set
+ups.</p></li>
+<li><p>Uniflash v3.0 only supports programming one board at a time using
+USB.</p></li>
+<li><p>If you have trouble with RNDIS reporting problems in Device Manager,
+it mihgt be necessary to delete the RNDIS Driver and follow the above
+steps again to re-install it.</p></li>
+<li><p>For this entire process to work, there has to be two USB devices
+associated and each of them need to have their network addresses set
+up correctly. Essentially, at different steps in the process, the USB
+connected target board looks differently to Windows and it needs to
+have a driver and network set up for each. You can check this using
+Device Manager for USB and Network Manager for networking.</p></li>
+</ul>
+<p class="rubric" id="useful-links">Useful Links</p>
+<ul class="simple">
+<li><p><a class="reference external" href="../../Foundational_Components/Tools/Flash_Tools.html#am335x-am437x-flash-programming">Sitara Flash Programming Linux Development for
+AM335x/AM437x</a>
+to learn more about developing images to be flashed using this
+process.</p></li>
+<li><p><a class="reference external" href="http://processors.wiki.ti.com/index.php/Sitara_Linux_Program_SPI_Flash_on_AM335x_EVM">Sitara Linux Program SPI Flash on AM335x
+EVM</a> to
+see a specific example of how to program the SPI Flash an a AM335x
+EVM.</p></li>
+<li><p>More Uniflash information is available
+<a class="reference external" href="http://processors.wiki.ti.com/index.php/Category:CCS_UniFlash">here</a>.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Development_Tools.html" class="btn btn-neutral float-left" title="3.4.1. Development Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Code_Composer_Studio.html" class="btn btn-neutral float-right" title="3.4.3. Code Composer Studio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

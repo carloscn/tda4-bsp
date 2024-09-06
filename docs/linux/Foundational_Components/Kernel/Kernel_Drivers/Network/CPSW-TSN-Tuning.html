@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.10.3.3.3.1. TSN Switch Tuning Guide &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.11. PCIe End Point" href="../PCIe/PCIe_End_Point.html" />
+    <link rel="prev" title="3.2.2.10.3.3.2.4. IET" href="CPSW-IET.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+          <li><a href="CPSW-Ethernet.html"><span class="section-number">3.2.2.10. </span>CPSW Ethernet</a> &raquo;</li>
+          <li><a href="CPSW-TSN.html"><span class="section-number">3.2.2.10.3.3. </span>TSN with CPSW</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.10.3.3.3.1. </span>TSN Switch Tuning Guide</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="tsn-switch-tuning-guide">
+<span id="tsn-tuning"></span><h1><span class="section-number">3.2.2.10.3.3.3.1. </span>TSN Switch Tuning Guide<a class="headerlink" href="#tsn-switch-tuning-guide" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#background" id="id1">Background</a></p></li>
+<li><p><a class="reference internal" href="#est-enhanced-scheduler-for-traffic" id="id2">EST (Enhanced Scheduler for Traffic)</a></p></li>
+<li><p><a class="reference internal" href="#cbs-credit-based-shaper" id="id3">CBS (Credit Based Shaper)</a></p></li>
+<li><p><a class="reference internal" href="#iet-interspersing-express-traffic" id="id4">IET (Interspersing Express Traffic)</a></p></li>
+</ul>
+</div>
+<p>The size of each FIFO TX queue in CPSW is 2K Bytes by default and packets
+might have to be queued in the switch temporarily depending on the TSN
+feature being used. Tuning the TSN feature appropriately ensures that there
+is no packet loss.</p>
+<p>The following TSN features in switch mode can be tuned for optimizing the
+performance:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>EST (Enhanced Scheduler for Traffic)</p></li>
+<li><p>CBS (Credit Based Shaper)</p></li>
+<li><p>IET (Interspersing Express Traffic)</p></li>
+</ol>
+</div></blockquote>
+<div class="section" id="background">
+<h2><a class="toc-backref" href="#id1"><span class="section-number">3.2.2.10.3.3.3.1.1. </span>Background</a><a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>The total memory pool available for each port for TX and RX queues is 20K
+Bytes on both J7xxx and AM6xx devices. This memory of 20K Bytes has to be
+shared between the 8 TX and 1 RX queues in the form of 1K or 4K Byte blocks.
+The existing allocation is in the form of 17 - 1K Byte blocks to be shared
+between the 8 TX queues and 3 - 1K Byte blocks for the RX queue. This implies
+that the memory available per TX queue is roughly 2K Bytes. Thus, if the packet
+size is 1K Bytes, then at most 2 packets can be in a queue before the queue is
+full and the incoming packets get dropped.
+The impact of the queue size on various TSN features in switch mode is
+described in detail in the following sections. This serves the purpose of
+providing suggestions for tuning the performance.</p>
+</div>
+<div class="section" id="est-enhanced-scheduler-for-traffic">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">3.2.2.10.3.3.3.1.2. </span>EST (Enhanced Scheduler for Traffic)</a><a class="headerlink" href="#est-enhanced-scheduler-for-traffic" title="Permalink to this headline">¶</a></h2>
+<p>EST involves stopping and releasing packets only at specific time intervals as
+specified by the schedule. Thus, if the cycle-time is not low enough, or if the
+packet transmission rate is high, in both these cases, the queue will overflow
+resulting in packet drops.
+Consider an EST schedule where the maximum wait time for one of the priorities
+is X microseconds, with the packets arriving at Y Bytes per second for this
+priority which has the longest wait time of X microseconds. Also, the TX queue
+size is 2K Bytes = 2048 Bytes.
+The EST schedule would be as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Priority 0          X0 microseconds
+Priority 1          X1 microseconds
+Priority 2          X2 microseconds
+Priority .          .  microseconds
+Priority .          .  microseconds
+Priority n-1        Xn-1 microseconds
+</pre></div>
+</div>
+<p>Here, the Cycle-Time is X0+X1+…+Xn-1
+And, X is the maximum of (Cycle-Time - Xj) over all j from 0 to n-1,
+which corresponds to the maximum time that one of all the n priorities has to
+wait for its turn.
+Then, to prevent packet drops, we require:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(Maximum-Wait-Time)*(Throughput) &lt; Queue-Size
+
+Or,
+    (X microseconds)*(Y Bytes/Second) &lt; 2048 Bytes
+    (X*10^-6 Seconds)*(Y Bytes/Second) &lt; 2048 Bytes
+Thus, numerically,
+    X*Y &lt; 2048000000
+</pre></div>
+</div>
+<p>Using the above condition, we can find out the maximum wait-time for different
+throughput as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. Throughput of 10 Mbps (Y = 10*1024*1024/8 Bytes/Second)
+    =&gt; X*(10*1024*1024/8) &lt; 2048000000
+    =&gt; X &lt; 2048000000*8/(10*1024*1024)
+    Thus, X &lt; 1562.5 microseconds
+    If X is greater than this value, then there will be packet drops
+    for 10 Mbps throughput.
+2. Similarly, for 100 Mbps throughput,
+    =&gt; X &lt; 156.25 microseconds
+3. And for 1000 Mbps throughput,
+    =&gt; X &lt; 15.625 microseconds.
+</pre></div>
+</div>
+<p>We can also use the condition to derive the maximum throughput allowed for a
+given EST as follows:
+For example, consider an EST schedule as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Priority-0 200 microseconds
+Priority-1 300 microseconds
+Here, Cycle-Time is 500 microseconds and X = 300
+Thus,
+    300*Y &lt; 2048000000
+Or,
+    =&gt; Y &lt; 6826666 Bytes per second
+    =&gt; Y &lt; 52 Mbps is the throughput limit to prevent packet drops.
+</pre></div>
+</div>
+<p>Also, if Y has to increase, then X, and therefore Cycle-Time have
+to decrease for preventing packet drops.</p>
+</div>
+<div class="section" id="cbs-credit-based-shaper">
+<h2><a class="toc-backref" href="#id3"><span class="section-number">3.2.2.10.3.3.3.1.3. </span>CBS (Credit Based Shaper)</a><a class="headerlink" href="#cbs-credit-based-shaper" title="Permalink to this headline">¶</a></h2>
+<p>CBS involves rate-limiting the throughput on different queues. Thus, when the
+traffic on a queue exceeds the allotted throughput, then the queue gate is
+closed, preventing packet flow from that queue. This will result in the queue
+being filled quickly, again resulting in packet drops.
+For a CBS schedule where there are N priorities with the rate-limiting on each
+of these priorities being:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>X0, X1, .... XN-1 Bytes per second.
+</pre></div>
+</div>
+<p>If the actual throughput of each of these priorities is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Y0, Y1, .... YN-1 Bytes per second,
+</pre></div>
+</div>
+<p>and they are all greater than the rate-limits, then, the queues will fill up in:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2048/(Y0-X0), 2048/(Y1-X1), .... seconds.
+</pre></div>
+</div>
+<p>In general, queue ‘i’ will fill up in:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2048/(Yi-Xi) seconds
+</pre></div>
+</div>
+<p>For example, consider N=2, with X0=300 Mbps, X1=400 Mbps, Y0=301 Mbps and Y1=410
+Mbps. Y0 and Y1 are higher than X0 and X1 , thereby causing the switch to
+implement rate-limiting.
+Thus, traffic accumulates at a rate of (Y0-X0) and (Y1-X1) on queues 0 and 1 and
+starts filling them up.
+For the example above, it would take:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>15.625 milliseconds to fill up queue 0, and
+1.5625 milliseconds to fill up queue 1,
+</pre></div>
+</div>
+<p>resulting in packet drops after that time on those queues if the existing
+throughput continues on those queues.</p>
+</div>
+<div class="section" id="iet-interspersing-express-traffic">
+<h2><a class="toc-backref" href="#id4"><span class="section-number">3.2.2.10.3.3.3.1.4. </span>IET (Interspersing Express Traffic)</a><a class="headerlink" href="#iet-interspersing-express-traffic" title="Permalink to this headline">¶</a></h2>
+<p>IET involves frame preemption whereby high priority traffic overrides the low
+priority traffic. Thus, when packets being sent on a low priority queue are
+preempted for allowing packets on higher priority queue to pass, first the frame
+being transmitted on low priority queue is fragmented. Then, the high priority
+traffic is allowed to pass. In the meanwhile, traffic on the low priority queue
+starts filling up the queue, resulting in packet drops.
+If the low priority traffic is arriving at Y Bytes per second, it would fill up
+the queue in:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>2048/Y seconds.
+</pre></div>
+</div>
+<p>For example, if low priority traffic is arriving at 100 Mbps, it would fill up
+the queue in:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>156.25 microseconds.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CPSW-IET.html" class="btn btn-neutral float-left" title="3.2.2.10.3.3.2.4. IET" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../PCIe/PCIe_End_Point.html" class="btn btn-neutral float-right" title="3.2.2.11. PCIe End Point" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

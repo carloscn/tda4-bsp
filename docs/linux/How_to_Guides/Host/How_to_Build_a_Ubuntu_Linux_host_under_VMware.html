@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.16. How to Build a Ubuntu Linux host under VMware &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.1.17. K3 Resource Partitioning Tool" href="K3_Resource_Partitioning_Tool.html" />
+    <link rel="prev" title="4.1.15. How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4?" href="../FAQ/How_to_Integrate_Open_Source_Software.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../How_to_Guides_Developer_Notes.html">4.1. Developer Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Connect_to_an_EVM_via_Telnet.html">4.1.1. Connect to an EVM via Telnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Setup_a_Samba_Server.html">4.1.2. How to Setup a Samba Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Boot_Sequence.html">4.1.3. Boot Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Moving_Files_to_the_Target_System.html">4.1.4. Moving Files to the Target System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Flash_Linux_System_from_U-boot.html">4.1.5. How to Flash from U-boot Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/Processor_SDK_Linux_File_System_Optimization_Customization.html">4.1.6. SDK File System Optimization/Customization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_Change_dtb_File.html">4.1.7. How to change dtb files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_flash_emmc_device.html">4.1.8. How to flash eMMC device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_enable_DT_overlays_in_linux.html">4.1.9. How to enable DT overlays in linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_visualize_statistics_data.html">4.1.10. How to visualize statistics data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Target/How_to_Use_K3Conf_Tool.html">4.1.11. How to Use K3Conf Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Verify_Ipc_Linux_R5.html">4.1.12. How to verify IPC between Linux and MCU R5 in Keystone devices?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Configure_MSMC_memory.html">4.1.13. How to configure K3 MSMC memory for use as SRAM or L3 cache?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Check_Device_Tree_Info.html">4.1.14. How to check some device tree information from user-space of Linux?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Integrate_Open_Source_Software.html">4.1.15. How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.16. How to Build a Ubuntu Linux host under VMware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="K3_Resource_Partitioning_Tool.html">4.1.17. K3 Resource Partitioning Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/Tda4_Latest_FAQs.html">4.1.18. Latest FAQs on TDA4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../How_to_Guides_Hardware_Setup_with_CCS.html">4.2. Hardware EVM Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../How_to_Guides.html"><span class="section-number">4. </span>How to Guides</a> &raquo;</li>
+          <li><a href="../../How_to_Guides_Developer_Notes.html"><span class="section-number">4.1. </span>Developer Notes</a> &raquo;</li>
+      <li><span class="section-number">4.1.16. </span>How to Build a Ubuntu Linux host under VMware</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="how-to-build-a-ubuntu-linux-host-under-vmware">
+<span id="id1"></span><h1><span class="section-number">4.1.16. </span>How to Build a Ubuntu Linux host under VMware<a class="headerlink" href="#how-to-build-a-ubuntu-linux-host-under-vmware" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="warning">Warning</p>
+<p><strong>This content is no longer maintained. It has been left here in case it
+can help someone, but it will not be maintained and will eventually move
+out of date. If you choose to use a Virtual Machine to host your
+development version of Linux on a PC, the VM provider will provide up to
+date information that is better and more complete than what we’ve
+provided here.</strong></p>
+<p class="rubric" id="introduction-build-ubuntu-linux-host-under-vmware">Introduction</p>
+<p>This guide demonstrates how to get a virtual Ubuntu Linux machine
+running with VMware under Windows 7.  Please use only the 32-bit Ubuntu
+14.04 release as this is what is called an LTS (Long Term Support).
+There are SDK scripts that will be checking for this release identity.</p>
+<p><strong>Requirements</strong>:</p>
+<ul class="simple">
+<li><p>Windows 7 host with internet connection, at least 1G of RAM and 40G
+of free hard drive space.</p></li>
+</ul>
+<p>The instructions here are for setting up a 40G virtual machine.  The
+entire 40G is not taken at once, but as the machine is used and software
+is installed, the machine can grow and take up as much as 40G.</p>
+<p class="rubric" id="download-the-ubuntu-14-04-ltsiso-image">Download the Ubuntu 14.04 LTS ISO image</p>
+<p>Get the Ubuntu 14.04 LTS CD ISO image from:
+<a class="reference external" href="http://releases.ubuntu.com/14.04/">http://releases.ubuntu.com/14.04/</a>. Select PC (Intel x86) desktop CD
+under the Desktop CD section.</p>
+<p>Click download and the follow instructions to download and save the ISO
+image somewhere. Remember where you save this - you will need the ISO
+soon!(CD image).</p>
+<p class="rubric" id="download-vmware-and-install">Download VMware and install</p>
+<p>Get VMware from: <a class="reference external" href="http://www.vmware.com">http://www.vmware.com</a></p>
+<p>Vmware Player is a free download from the website and enables the user
+to create an entire virtual machine from scratch using just the ISO
+image downloaded from Ubuntu.  It is necessary to sign up for an account
+at VMware in order to get to the download areas.  The general steps to
+getting VMware are as follows:</p>
+<ul class="simple">
+<li><p>Login to the vmware website</p></li>
+<li><p>Select VMware Player from the products menu</p></li>
+<li><p>Follow the steps to download VMware Player</p></li>
+</ul>
+<p><strong>NOTE - We have tested with v7.0.0 with no known issues.  As of
+Feburary, 2015, v7.0.0 is the latest version.</strong></p>
+<ul class="simple">
+<li><p>Run the executable to install VMware</p></li>
+<li><p>Accept license and all default settings.</p></li>
+</ul>
+<p class="rubric" id="create-a-new-virtual-machine-with-vmware">Create a New Virtual Machine with VMware</p>
+<p>Before starting a new installation it is assumed that the Windows host
+has a proper internet connection to a DHCP server and that the Windows
+host has enough hard drive space for the new virtual machine.</p>
+<p>The following steps are performed with VMware 7.0.0.  The exact steps
+with other versions may vary slightly</p>
+<ul class="simple">
+<li><p>Start VMware.</p></li>
+<li><p>From the File menu select “Create a New Virtual Machine…”</p></li>
+<li><p>Choose to install the operating system later.  Click “Next”.</p></li>
+<li><p>Select Linux as the “Guest Operating System” and then choose Ubuntu
+as the “Version”.  Click “next”.</p></li>
+<li><p>Provide a “Virtual machine name” and “Location” where the machine
+will be stored on the Windows host.  The defaults are fine here.
+Click “Next”.</p></li>
+<li><p>For “Maximum disk size (GB)” it is good to start with 40G if
+possible.  This means that it will take up 40G on the Windows host.
+Make sure that the Windows host has at least this much before
+proceeding. It is also a good practice to tell VMware to split the
+virtual disk into 2G files. This will makes the image easier to copy
+and transport if necessary. Click “Next”.</p></li>
+<li><p>Click “Finish” to complete the creation of the virtual machine.</p></li>
+</ul>
+<p>The machine name will now be listed under the home page of VMware. It is
+necessary to modify some machine settings before playing the machine for
+the first time. Select the machine in the home page and then click on
+“Edit virtual machine settings” on the right.</p>
+<img alt="../../../_images/Virtual_machine_setting.PNG" src="../../../_images/Virtual_machine_setting.PNG" />
+<p>Click on CD/DVD and change the connection to “Use ISO image file”. Click
+on “Browse…” and select the Ubuntu ISO image file that was previously
+downloaded. Click on Network Adapter and change the Network connection
+to “Bridged” and then check the box to “Replicate physical network
+connection state”.</p>
+<p class="rubric" id="adding-a-serial-port-to-the-virtual-machine">Adding a serial port to the virtual machine</p>
+<p>If you plan to use a serial terminal application, a serial port must be
+added to the virtual machine.  This port must be a physical serial port
+which exists on the host PC.  Click on “Add…” and select “Serial
+Port”.  Click “Next”.  Choose “Use physical serial port on host”.  Click
+“Next”.  Click Finish.  Click “Ok”.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Since this is a physical port on the host PC, it cannot be used by the
+host PC and the virtual machine at the same time.  When the virtual
+machine is started, the serial port will be unavailable for use by the
+host PC.  If the serial port is being used at the time that the virtual
+machine is started, the virtual machine will not be able to access the
+serial port after it is booted up.  So if you want the virtual machine
+to gain control of the physical serial port of the host PC, there can
+not be any application like hyperterminal or teraterm running on the
+host PC at the time that the virtual machine is started.</p>
+<p>Further instructions for using the serial port with minicom inside of
+Ubuntu are
+<a class="reference external" href="http://processors.wiki.ti.com/index.php/Setting_up_Minicom_in_Ubuntu">here</a>.</p>
+<div class="line-block">
+<div class="line">Minicom is the preferred application for use with the Sitara SDK.  And
+the installation and setup of minicom is done automattically by the
+Sitara SDK installer.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now click on “Play virtual machine”.  Since this is the first time
+starting the machine and the Ubuntu ISO image is in the virtual CD
+drive, the Ubuntu OS will install itself in the virtual machine.</p>
+<p>Click through the Ubuntu installation, making the appropriate choices as
+you go.  This will help with SDK installation scripts.</p>
+<img alt="../../../_images/Vmware-player.PNG" src="../../../_images/Vmware-player.PNG" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">The full installation will take 20-30 minutes.  When it completes the
+machine will reboot.  The machine will now prompt for the username and
+password that you created during the installation.</div>
+</div>
+<p>After the machine reboots into Ubuntu it is helpful to take the Ubuntu
+ISO out of the virtual CD drive.  Click on the VM menu and select
+“Settings…”.  Click on CD/DVD and change the connection from “Use
+ISO image file” to “Use physical drive”.  The actual drive letter can be
+selected from the drop down list.  If there is no physical drive on the
+host machine, the CD/DVD device can be simply removed from the machine.</p>
+<p class="rubric" id="install-vmware-tools">Install VMware Tools</p>
+<p>VMware tools is a very useful addition to VMware.  It allows you to
+resize the VMware screen ,cut-and-paste of text and drag and drop files
+from the Ubuntu machine to and from the Windows host.</p>
+<p>Within the virtual machine window click the Player -&gt; Manage -&gt;
+Install VMware Tools</p>
+<img alt="../../../_images/Install_vmware_tools.png" src="../../../_images/Install_vmware_tools.png" />
+<p>The VMware tools are contained in an ISO image that VMware
+will automatically mount.  This drive will show up on the Ubuntu
+desktop as if it were a disk in a DVD drive.</p>
+<img alt="../../../_images/Vmware-tools-cd.png" src="../../../_images/Vmware-tools-cd.png" />
+<p>There will be a single tarball on the drive named
+VMwareTools-9.9.0-2304977.tar.gz (or with a slightly different version
+number). Extract the tarball somewhere in your /home/&lt;user&gt;
+directory.  You will see that a vmware-tools-distrib folder was
+created and a file name vmware-install.pl inside. Execute
+vmware-install.pl to install VMware Tools.  The Perl script must be
+executed as a super-user.  This is done in Ubuntu by pre-pending the
+command with “sudo”.  When prompted for a password, enter the
+password for the user account.  In Ubuntu, there is no “root”
+account.  However, the first user account created when Ubuntu is
+installed can become a super-user with the “sudo” command. Select all
+of defaults during installation of VMware Tools.</p>
+<p>An example is shown below.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sitara@sitara-virtual-machine:~$ cd
+sitara@sitara-virtual-machine:~$ tar -xzvf /media/sitara/VMware\ Tools/VMwareTools-9.9.0-2304977.tar.gz
+sitara@sitara-virtual-machine:~$ sudo ./vmware-tools-distrib/vmware-install.pl
+</pre></div>
+</div>
+<p class="rubric" id="confirming-a-valid-network-connection">Confirming a Valid Network Connection</p>
+<p>After logging into the machine for the first time, bring up a terminal
+window.  This can be found under the Applications menu in Ubuntu.
+Applications –&gt; Accessories –&gt; Terminal.  Type <strong>pwd</strong> in this
+terminal.  This should return <strong>/home/&lt;user&gt;</strong>.  Now type <strong>ifconfig</strong>.
+This should return information about the network connection.  Under
+<strong>eth0</strong> the IP address should be similar (but not the same) as the IP
+address owned by the Windows host.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sitara@sitara-virtual-machine:~$ ifconfig
+eth0 Link encap:Ethernet HWaddr 00:0c:29:da:a8:6e
+inet addr:128.247.107.65 Bcast:128.247.107.255 Mask:255.255.254.0
+inet6 addr: fe80::20c:29ff:feda:a86e/64 Scope:Link
+UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1
+RX packets:759 errors:0 dropped:0 overruns:0 frame:0
+TX packets:32 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:1000
+RX bytes:62873 (62.8 KB) TX bytes:4937 (4.9 KB)
+Interrupt:19 Base address:0x2024
+
+lo Link encap:Local Loopback
+inet addr:127.0.0.1 Mask:255.0.0.0
+inet6 addr: ::1/128 Scope:Host
+UP LOOPBACK RUNNING MTU:16436 Metric:1
+RX packets:12 errors:0 dropped:0 overruns:0 frame:0
+TX packets:12 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:0
+RX bytes:720 (720.0 B) TX bytes:720 (720.0 B)
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="how-to-read-a-usbsdcard-reader-in-vmware">How to Read a USB SD Card Reader in VMware</p>
+<div class="line-block">
+<div class="line">Sometimes there will be a need to connect a SD Card to the Virtual
+Machine (for example, to run the create SD card script provided with
+the SDK that partitions, formats, and populates a SD card that can be
+used with a target board). When a USB card reader with an SD card is
+inserted into the USB slot of the host machine, the virtual machine
+will automatically detect the drive and mount partitions from the SD
+card, making the card available to Linux running in the virtual
+machine.</div>
+<div class="line">If this does not happen automatically (i.e. the SD card cannot be
+accessed from the Linux VM), it can be done manually by clicking the
+Player menu -&gt; Removable Devices and then selecting the card reader.
+From this sub-menu it is possible to connect or disconnect the USB
+card reader.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../_images/Sd_card_reader.png" src="../../../_images/Sd_card_reader.png" />
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../FAQ/How_to_Integrate_Open_Source_Software.html" class="btn btn-neutral float-left" title="4.1.15. How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="K3_Resource_Partitioning_Tool.html" class="btn btn-neutral float-right" title="4.1.17. K3 Resource Partitioning Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

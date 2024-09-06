@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.4.3. Code Composer Studio &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.4.4. System configuration tool" href="SysConfig_Tools.html" />
+    <link rel="prev" title="3.4.2. Flash Tools" href="Flash_Tools.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Development_Tools.html">3.4.1. Development Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flash_Tools.html">3.4.2. Flash Tools</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.3. Code Composer Studio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ccs-installation">3.4.3.1. CCS Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ccs-compiling">3.4.3.2. CCS Compiling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remote-explorer-setup-with-ccs">3.4.3.3. Remote Explorer Setup with CCS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gdb-setup-with-ccs">3.4.3.4. GDB Setup with CCS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kernel-debugging-with-ccs">3.4.3.5. Kernel Debugging with CCS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SysConfig_Tools.html">3.4.4. System configuration tool</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_Tools.html"><span class="section-number">3.4. </span>Tools</a> &raquo;</li>
+      <li><span class="section-number">3.4.3. </span>Code Composer Studio</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="code-composer-studio">
+<h1><span class="section-number">3.4.3. </span>Code Composer Studio<a class="headerlink" href="#code-composer-studio" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ccs-installation">
+<h2><span class="section-number">3.4.3.1. </span>CCS Installation<a class="headerlink" href="#ccs-installation" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="overview-linux-ccs-installation">Overview</p>
+<p>Code Composer Studio (CCS) is the IDE integrated with the Processor
+Linux SDK and resides on your host Ubuntu machine. This wiki article
+covers the CCS basics including installation, importing/creating
+projects and building projects. It also provides links to other CCS wiki
+pages including debugging through GDB and JTAG and accessing your target
+device remotely through Remote System Explorer.</p>
+<p>CCS is an optional tool for the SDK, and may be downloaded and installed
+at the same time that the SDK is installed or at a later date. For
+instructions on how to download the Processor Linux SDK, please see
+<a class="reference external" href="../../Overview/Download_and_Install_the_SDK.html">Processor SDK Linux
+Installer</a>.</p>
+<p>CCS uses the Eclipse backend and includes the following plugins:</p>
+<ul class="simple">
+<li><p>Remote System Explorer - provides tools which allow easy access to
+the remote target board</p></li>
+<li><p>Cross-compile for GCC- allows easy access to the ARM GCC-based
+compiler included in the Processor Linux SDK</p></li>
+</ul>
+<div
+style="margin: 5px; padding: 2px 10px; background-color: #ecffff; border-left: 5px solid #3399ff;"><p><strong>NOTE</strong>
+You should download CCS from the Processor Linux SDK Download page
+because it comes with the above plug-ins already installed. Otherwise,
+you will have to install the plug-ins yourself in order to take
+advantage of all the features covered in the wiki help pages and wiki
+training pages.</p>
+</div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="prerequisites-ccs-install">Prerequisites</p>
+<p>If you wish to use CCS along with the Processor Linux SDK, there are
+requirements to consider before you attempt to install and run CCS. To
+be prepared for development, you should have already setup your host
+Linux machine and you should already have your target board up and
+running. Additionally, you should be able to communicate from the host
+to the target with serial and Ethernet communication.</p>
+<p>For more information on setting up your development environment, see the
+<a class="reference external" href="../../Overview/Processor_SDK_Linux_Getting_Started_Guide.html#start-your-linux-development">Processor SDK Linux Getting Started
+Guide</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="toolchain">Toolchain</p>
+<p>The Processor Linux SDK comes with an integrated ARM GCC toolchain
+located on your Ubuntu host. CCS is integated with the SDK allowing you
+to build, load, run and debug code on the target device. In more recent
+SDK versions (v06.00, v08.00, v01.00.00.00, v02.00.00.00, etc) for
+non-ARM 9 devices, a new ARM based toolchain is used and the location
+of the toolchain has changed. For more information on the GCC toolchain,
+please see <a class="reference external" href="../../Overview/GCC_ToolChain.html">Processor Linux SDK GCC
+Toolchain</a>.</p>
+<p>Latest SDK toolchains use a prefix of <strong>arm-linux-gnueabihf-</strong>. Versions
+older than Processor Linux SDK 06.00 and AM18x users may still use the
+prefix <strong>arm-arago-linux-gnueabi-</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="locating-the-ccs-installer">Locating the CCS Installer</p>
+<p class="rubric" id="using-the-sd-card-provided-with-the-evm">Using the SD Card Provided with the EVM</p>
+<p>When the SD card provided in the box with the EVM is inserted into an SD
+card reader attached to a Linux system three partitions will be mounted.
+The third partition, labeled START_HERE, will contain the CCS installer
+along with the Processor Linux SDK installer. The CCS installer is
+located inside of the CCS directory and there is a helper script called
+ccs_install.sh available to help call the installer.</p>
+<p class="rubric" id="downloading-from-the-web">Downloading from the Web</p>
+<p>The CCS installer is available for download for Linux as a compressed
+tarball (tar.gz) file. It is also available for Windows. The installer
+can be located by browsing to <a class="reference external" href="http://www.ti.com/tool/linuxezsdk-sitara">SDK for Sitara
+Processors</a> and selecting
+the device being used. The CCS installer can be found on the device’s
+SDK installer page under the Optional Addons or directly from the
+<a class="reference external" href="http://processors.wiki.ti.com/index.php/Download_CCS">Download CCS</a> wiki page.</p>
+<img alt="../../../_images/SDK_download_page.png" src="../../../_images/SDK_download_page.png" />
+<p>Clicking this link will prompt you to fill out an export restriction
+form. After filling out the form, you will be given a download button to
+download the file and you will receive an e-mail with the download link.
+Download the tarball and save it to your Linux host development system.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="starting-the-ccs-installer">Starting the CCS Installer</p>
+<p class="rubric" id="installing-ccs-from-the-linux-command-line">Installing CCS from the Linux Command Line</p>
+<p>If you want to install CCS apart from the Processor Linux SDK installer,
+or if you decided not to install it as part of the SDK install and want
+to install it now, you can install CCS using the following commands:</p>
+<ol class="arabic simple">
+<li><p>Open a Linux terminal and change directory to the location where the
+CCS tarball is located. This may be the START_HERE partition of the
+SD card or the location where you downloaded the file from ti.com or
+the wiki page.</p></li>
+<li><p>If the CCS files are still in a compressed tarball, extract them.
+&lt;version&gt; is the version string of the CCS installer.
+<strong>tar -xzf CCS&lt;version&gt;_web_linux.tar.gz</strong></p></li>
+<li><p>Begin the installer by executing the binary (.bin) file extracted.
+<strong>./ccs_setup_&lt;version&gt;.bin</strong></p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="ccs-installation-steps">CCS Installation Steps</p>
+<div
+style="margin: 5px; padding: 2px 10px; background-color: #ecffff; border-left: 5px solid #3399ff;"><p><strong>NOTE</strong>
+The “Limited 90-day period” language in the CCS installer license
+agreement applies only for the case of using high-speed JTAG emulators
+(does not apply to use of the XDS100v2 JTAG emulator or an on-board
+emulator). If a debug configuration is used that requires a high-speed
+JTAG emulator, you will be prompted to register your software for a fee.
+All use of CCS (excluding use of high-speed JTAG emulators) is free and
+has no 90-day time limit.</p>
+</div><p>When the CCS installer runs, you can greatly reduced the install time
+and installed disk space usage by taking the defaults as they appear in
+this CCS installer. The screen captures below show the default
+installation options and the recommended settings when installing CCS.</p>
+<ol class="arabic simple">
+<li><p>The <em>License Agreement</em> screen will prompt you to accept the terms of
+the license agreement. Please read these terms and if you agree,
+select <strong>I accept the terms of the license agreement</strong>. If not, then
+please exit the installation.</p></li>
+<li><p>At the <em>Choose Installation Location</em> just hit “Next” to install at
+the default location. If you want the SDK installed at a different
+location then select “Browse” and pick another location.</p></li>
+</ol>
+<img alt="../../../_images/Sitara_Linux_CCS_Install_Directory.png" src="../../../_images/Sitara_Linux_CCS_Install_Directory.png" />
+<ol class="arabic simple">
+<li><p>At the <em>Processor Support</em> screen make sure to select the <strong>Sitara
+ARM 32-bit processors</strong> option. You should not select “GCC ARM
+Compiler” or “TI ARM Compiler”, because you will be using the ARM
+toolchain that comes with the Processor Linux SDK installation.</p></li>
+</ol>
+<img alt="../../../_images/Sitara_Linux_CCS_Choose_Sitara.png" src="../../../_images/Sitara_Linux_CCS_Choose_Sitara.png" />
+<ol class="arabic simple">
+<li><p>At the <em>Select Emulators</em> screen, select any emulators that you have
+and want to use. This is an optional feature you can use for
+debugging via JTAG.</p></li>
+</ol>
+<img alt="../../../_images/Sitara_Linux_CCS_emulator.png" src="../../../_images/Sitara_Linux_CCS_emulator.png" />
+<ol class="arabic simple">
+<li><p>At the <em>APP Center</em> screen none of the options should be selected,
+click <strong>Finish</strong> to begin installation.</p></li>
+</ol>
+<img alt="../../../_images/Sitara_Linux_CCS_Finish_and_install.png" src="../../../_images/Sitara_Linux_CCS_Finish_and_install.png" />
+<ol class="arabic simple">
+<li><p>Now the installation process starts and this can take some time.</p></li>
+</ol>
+<img alt="../../../_images/Sitara_Linux_SDK_CCS_installing.png" src="../../../_images/Sitara_Linux_SDK_CCS_installing.png" />
+<ol class="arabic simple">
+<li><p>After installation is complete, you should see the following screen,
+hit finish and installation is complete.</p></li>
+</ol>
+<img alt="../../../_images/Sitara_Linux_SDK_finished.png" src="../../../_images/Sitara_Linux_SDK_finished.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="installing-emulator-support">Installing Emulator Support</p>
+<p>If during the CCS installation you selected to install drivers for the
+Blackhawk or Spectrum Digital JTAG emulators, a script must be run with
+administrator privileges to allow the Linux Host PC to recognize the
+JTAG emulator. The script must be run as “sudo” with the following
+command:</p>
+<p><strong>sudo &lt;CCS_INSTALL_PATH&gt;/ccsv6/install_scripts/install_drivers.sh</strong>
+where &lt;CCS_INSTALL_PATH&gt; is the path that was chosen when the CCS
+installer was run.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="launching-ccs">Launching CCS</p>
+<ol class="arabic simple">
+<li><p><strong>Double-Click the Code Composer Studio v6 icon on the desktop</strong>. You
+will see a splash screen appear while CCS loads.</p></li>
+</ol>
+<img alt="../../../_images/CCSv6_splash.png" src="../../../_images/CCSv6_splash.png" />
+<ol class="arabic simple">
+<li><p>The next window will be the <em>Workspace Launcher</em> window which will
+ask you where you want to locate your CCSv6 workspace. Use the
+<strong>default</strong> value.</p></li>
+</ol>
+<img alt="../../../_images/CCS_workspace_launcher.png" src="../../../_images/CCS_workspace_launcher.png" />
+<ol class="arabic simple">
+<li><p>CCS will load the workspace and then launch to the default <em>TI
+Resource Explorer</em> screen.</p></li>
+</ol>
+<img alt="../../../_images/CCS_getting_started.png" src="../../../_images/CCS_getting_started.png" />
+<ol class="arabic simple">
+<li><p><strong>Close the TI Resource Explorer screen</strong>. This screen is useful when
+making TI CCS projects which use TI tools. The Processor Linux SDK
+uses open source tools with the standard Eclipse features and
+therefore does not use the TI Resource Explorer. You will be left in
+the Project Explorer default view.</p></li>
+</ol>
+<img alt="../../../_images/CCS_project_explorer.png" src="../../../_images/CCS_project_explorer.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="enabling-ccs-capabilities">Enabling CCS Capabilities</p>
+<p>Each time CCS is started using a new workspace, perspectives for
+additional capabilities will need to be enabled. These are selectable in
+the <strong>Window -&gt; Open Perspectives</strong> list.</p>
+<p>After opening CCS with a new workspace:</p>
+<ol class="arabic simple">
+<li><p>Open the <strong>Window -&gt; Preferences</strong> menu.</p></li>
+</ol>
+<img alt="../../../_images/Sitara-Linux-CCS-window-preferences.png" src="../../../_images/Sitara-Linux-CCS-window-preferences.png" />
+<ol class="arabic simple">
+<li><p>Go to the <strong>General -&gt; Capabilities</strong> menu.</p></li>
+</ol>
+<img alt="../../../_images/Sitara-Linux-CCS-general-capabilities.png" src="../../../_images/Sitara-Linux-CCS-general-capabilities.png" />
+<ol class="arabic simple">
+<li><p>Select the <strong>RSE Project</strong> Capability.</p></li>
+</ol>
+<img alt="../../../_images/Sitara-Linux-CCS-enable-rse.png" src="../../../_images/Sitara-Linux-CCS-enable-rse.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>Apply</strong> and then <strong>OK</strong>. This enables the perspectives in the
+<strong>Window -&gt; Open Perspective -&gt; Other</strong> menu, as shown below, and is
+needed to make the Remote System Explorer plug-ins selectable.</p></li>
+</ol>
+<img alt="../../../_images/Sitara-Linux-CCS-open-perspective.png" src="../../../_images/Sitara-Linux-CCS-open-perspective.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="importing-cc-projects">Importing C/C++ Projects</p>
+<p class="rubric" id="importing-the-projects">Importing the Projects</p>
+<ol class="arabic simple">
+<li><p>Launch CCSv6 and load the default workspace.</p></li>
+<li><p>From the main CCSv6 window, select <strong>File -&gt; Import…</strong> menu item to
+open the import dialog.</p></li>
+<li><p>Select the <strong>General -&gt; Existing Projects into Workspace</strong> option.</p></li>
+</ol>
+<img alt="../../../_images/CCS_import.png" src="../../../_images/CCS_import.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>Next</strong>.</p></li>
+<li><p>On the <em>Import Projects</em> page click <strong>Browse</strong>.</p></li>
+</ol>
+<img alt="../../../_images/CCS_import_browse.png" src="../../../_images/CCS_import_browse.png" />
+<ol class="arabic simple">
+<li><p>In the file browser window that is opened navigate to the <strong>&lt;SDK
+INSTALL DIR&gt;/example-applications</strong> directory and click <strong>OK</strong>.</p></li>
+</ol>
+<img alt="../../../_images/CCS_example_apps.png" src="../../../_images/CCS_example_apps.png" />
+<ol class="arabic simple">
+<li><p>The <em>Projects:</em> list will now be populated with the projects found.</p></li>
+<li><p>Uncheck the following projects. They are Qt projects and are imported
+using a different method. For more information, see the <a class="reference external" href="Examples_and_Demos_Sub-system_Demos.html#hands-on-with-qt">Hands on
+with QT</a>
+training.</p>
+<ul class="simple">
+<li><p>matrix_browser</p></li>
+<li><p>refresh_screen</p></li>
+</ul>
+</li>
+<li><p>Select the projects you want to import. The following screen capture
+shows importing all of the example projects for an ARM-Cortex device,
+excluding the matrix_browser project.</p></li>
+</ol>
+<img alt="../../../_images/CCS_example_uncheck.png" src="../../../_images/CCS_example_uncheck.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>Finish</strong> to import all of the selected projects.</p></li>
+<li><p>You can now see all of the projects listed in the <em>Project Explorer</em>
+tab.</p></li>
+</ol>
+<img alt="../../../_images/CCS_projects_added.png" src="../../../_images/CCS_projects_added.png" />
+<p class="rubric" id="building-the-cc-projects">Building the C/C++ Projects</p>
+<p>In order to build one of the projects, use the following steps. For this
+example we will use the <em>mem-util</em> project.</p>
+<ol class="arabic">
+<li><p>Right-Click on the <strong>mem-util project</strong> in the <em>Project Explorer</em>.</p></li>
+<li><p>Select the build configuration you want to use.</p>
+<ul class="simple">
+<li><p>For Release builds: <strong>Build Configurations -&gt; Set Active -&gt;
+Release</strong></p></li>
+<li><p>For Debug builds: <strong>Build Configurations -&gt; Set Active -&gt; Debug</strong></p></li>
+</ul>
+</li>
+<li><p>Select <strong>Project -&gt; Build Project</strong> to build the highlighted project.</p></li>
+<li><p>Expand the mem-util project and look at the mem_util.elf file in the
+Debug or Release directory (depending on which build configuration
+you used). You should see the file marked as an [arm/le] file which
+means it was compiled for the ARM.</p>
+<img alt="../../../_images/CCS_build_memutil.png" src="../../../_images/CCS_build_memutil.png" />
+<div
+style="margin: 5px; padding: 2px 10px; background-color: #ecffff; border-left: 5px solid #3399ff;"><p><strong>NOTE</strong>
+You can use <strong>Project -&gt; Build All</strong> to build all of the projects in
+the <em>Project Explorer</em>.</p>
+</div></li>
+</ol>
+<p class="rubric" id="installing-cc-projects">Installing C/C++ Projects</p>
+<p>There are several methods for copying the executable files to the target
+file system:</p>
+<ol class="arabic">
+<li><p>Use the top-level Makefile in the SDK install directory. See
+<a class="reference external" href="../../Overview/Top_Level_Makefile.html">Processor Linux SDK Top-Level
+Makefile</a> for
+details of using the top-level Makefile to install files to a target
+file system. This target file system can be moved via an SD card
+connected to the host machine and then to the target board,
+transferred via TFTP, or some other method. For more information on
+setting up a target filesystem, see <a class="reference external" href="../../Overview/Run_Setup_Scripts.html">Processor SDK Linux Setup
+Script</a>.</p>
+<div
+style="margin: 5px; padding: 2px 10px; background-color: #ecffff; border-left: 5px solid #3399ff;"><p><strong>NOTE</strong>
+The top-level Makefile uses the install commands in the component
+Makefiles and can be used as a reference for how to invoke the
+install commands.</p>
+</div></li>
+<li><p>For all file system types, you can also transfer the file using the
+drag-and-drop method of Remote System Explorer. See the <a class="reference external" href="#remote-system-explorer-ccs-install">Remote
+System Explorer</a> section below for more
+details.</p></li>
+<li><p>Files can also be moved from the Linux command line. Typically,
+executable files are stored in the project’s Debug folder in the
+workspace.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="creating-a-new-project-ccs-install">Creating a New Project</p>
+<p>This section will cover how to create a new cross-compile project to
+build a simple <em>Hello World</em> application for the target.</p>
+<p class="rubric" id="configuring-the-project-ccs-install">Configuring the Project</p>
+<ol class="arabic">
+<li><p>From the main CCSv6 window, select <strong>File -&gt; New -&gt; Project…</strong> menu
+item.</p></li>
+<li><p>In the <em>Select a wizard</em> window, select the <strong>C/C++ -&gt; C Project</strong>
+wizard.</p>
+<img alt="../../../_images/CCS_new_project.png" src="../../../_images/CCS_new_project.png" />
+</li>
+<li><p>Click <strong>Next</strong>.</p></li>
+<li><p>In the <em>C Project</em> dialog set the following values:
+Project Name: <strong>helloworld</strong>
+Project type: <strong>Executable -&gt; Empty Project</strong>
+Toolchains: <strong>Cross GCC</strong></p>
+<img alt="../../../_images/CCS_C_project.png" src="../../../_images/CCS_C_project.png" />
+</li>
+<li><p>Click <strong>Next</strong>.</p></li>
+<li><p>In the <em>Select Configurations</em> dialog, you can take the default
+<em>Debug</em> and <em>Release</em> configurations or add/remove more if you want.</p>
+<img alt="../../../_images/CCS_config.png" src="../../../_images/CCS_config.png" />
+</li>
+<li><p>Click <strong>Next</strong>.</p></li>
+<li><p>In the <em>Command</em> dialog, set the following values:
+Tool command prefix: <strong>arm-linux-gnueabihf-</strong>.</p>
+<div
+style="margin: 5px; padding: 2px 10px; background-color: #ecffff; border-left: 5px solid #3399ff;"><p><strong>NOTE</strong>
+The prefix ends with a “-“. This is the prefix of the cross-compiler
+tools as will be seen when setting the <em>Tool command path</em>.</p>
+</div><p>Tool command path:
+<strong>/home/sitara/ti-sdk-&lt;machine&gt;-&lt;version&gt;/linux-devkit/sysroots/&lt;Arago
+Linux&gt;/usr/bin</strong></p>
+</li>
+<li><p>Use the <em>Browse..</em> button to browse to the Sitra Linux SDK
+installation directory and then to the <strong>linux-devkit/sysroots/&lt;Arago
+Linux&gt;/usr/bin</strong> directory. You should see a list of tools such as
+<em>gcc</em> with the prefix you entered above.</p>
+<img alt="../../../_images/CCS_gcc_command.png" src="../../../_images/CCS_gcc_command.png" />
+</li>
+<li><p>Click <strong>Finish</strong>.</p></li>
+<li><p>After completing the steps above you should now have a <em>helloworld</em>
+project in your CCS <em>Project Explorer</em> window, but the project has no
+sources.</p>
+<img alt="../../../_images/CCS_pe_helloworld.png" src="../../../_images/CCS_pe_helloworld.png" />
+</li>
+</ol>
+<p class="rubric" id="adding-sources-to-the-project-ccs-install">Adding Sources to the Project</p>
+<ol class="arabic">
+<li><p>From the main CCS window select <strong>File -&gt; New&gt; Source File</strong> menu
+item.</p></li>
+<li><p>In the <em>Source File</em> dialog set the <em>Source file:</em> setting to
+<strong>helloworld.c</strong></p>
+<img alt="../../../_images/CCS_new_source.png" src="../../../_images/CCS_new_source.png" />
+</li>
+<li><p>Click <strong>Finish</strong>.</p></li>
+<li><p>After completing the steps above you will have a template
+<strong>helloworld.c</strong> file. Add your code to this file like the image below:</p>
+<img alt="../../../_images/CCS_helloworld.png" src="../../../_images/CCS_helloworld.png" />
+</li>
+<li><p>Compile the <strong>helloworld</strong> project by selecting <strong>Project -&gt; Build
+Project</strong></p></li>
+<li><p>The resulting executable can be found in the <em>Debug</em> directory.</p>
+<img alt="../../../_images/CCS_helloworld_build.png" src="../../../_images/CCS_helloworld_build.png" />
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="remote-system-explorer-ccs-install">Remote System Explorer</p>
+<p>CCS as installed with this SDK includes the Remote System Explorer (RSE)
+plugin. RSE provides drag-and-drop access to the target file system as
+well as remote shell and remote terminal views within CCS. Refer to
+<a class="reference external" href="../../Foundational_Components/Tools/Code_Composer_Studio.html#remote-explorer-setup-with-ccs">Processor Linux SDK CCS Remote System Explorer
+Setup</a>
+to establish a connection to your target EVM and start using RSE. There
+is also a more detailed training using RSE with the SDK at <a class="reference external" href="http://processors.wiki.ti.com/index.php/Processor_SDK_Linux_Training:_Hands_on_with_the_Linux_SDK">Processor
+SDK Linux Training: Hands on with the Linux
+SDK</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="using-gdb-server-in-ccs-for-linux-debugging">Using GDB Server in CCS for Linux Debugging</p>
+<p>In order to debug Linux code using Code Composer Studio, you first need
+to configure the GDB server on both the host and target EVM side.</p>
+<p>Please refer to <a class="reference external" href="../../Foundational_Components/Tools/Code_Composer_Studio.html#gdb-setup-with-ccs">Processor Linux SDK CCS GDB
+Setup</a> for more
+information.</p>
+</div>
+<div class="section" id="ccs-compiling">
+<h2><span class="section-number">3.4.3.2. </span>CCS Compiling<a class="headerlink" href="#ccs-compiling" title="Permalink to this headline">¶</a></h2>
+<p class="rubric">Overview</p>
+<p>Code Composer Studio (CCS) v6.0 is the IDE integrated with the Sitara
+SDK and resides on your host Ubuntu machine. This wiki article covers
+the CCS basics including installation, importing/creating projects and
+building projects. It also provides links to other CCS wiki pages
+including debugging through both GDB and JTAG and accessing your target
+device remotely through remote system explorer.</p>
+<p class="rubric" id="prerequisites-ccs-compiling">Prerequisites</p>
+<p>If you wish to use CCS along with the Sitara Linux SDK, there are some
+setup steps required before you attempt to install and run CCS.</p>
+<ol class="arabic simple">
+<li><p>You need to be prepared for development. This means you should have
+already setup your host linux machine and you should already have
+your target up and running. Additionally you should be able to
+communicate from host to target with both the following:</p>
+<ol class="arabic simple">
+<li><p>Serial communication for linux boot and linux debug</p></li>
+<li><p>Ethernet communication for utilizing some of the CCS debug file
+sharing capabilities</p></li>
+</ol>
+</li>
+</ol>
+<p>See this link to meet the above requirements:
+<a class="reference external" href="../../Overview/Processor_SDK_Linux_Getting_Started_Guide.html#start-your-linux-development">Sitara_Linux_SDK_Getting_Started_Guide#Start_your_Linux_Development</a></p>
+<p class="rubric" id="building-qt-applications">Building Qt Applications</p>
+<p>Although the Processor Linux SDK includes several Qt example
+applications using Code Composer Studio to build or debug these
+applications isn’t recommended. QT Creator is the official IDE designed
+to be used when developing or debugging Qt applications.Please reference
+to the following link for further information on all the basic to
+download, install, run, and debug QT applications: <a class="reference external" href="Examples_and_Demos_Sub-system_Demos.html#hands-on-with-qt">Hands on with
+Qt</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="importing-existing-cc-projects">Importing Existing C/C++ Projects</p>
+<p>The Processor Linux SDK includes several example applications that
+already includes the appropriate CCS Project files. The following
+instructions will help you to import the example C/C++ application
+projects into CCS.</p>
+<p class="rubric" id="importing-the-project">Importing the Project</p>
+<ol class="arabic">
+<li><p>From the main CCS window, select <strong>File -&gt; Import…</strong> menu item to
+open the import dialog</p></li>
+<li><p>Select the <strong>General -&gt; Existing Projects into Workspace</strong> option</p>
+<img alt="../../../_images/Import_C_projects-1.png" src="../../../_images/Import_C_projects-1.png" />
+</li>
+<li><p>Click <strong>Next</strong></p></li>
+<li><p>On the <strong>Import Projects</strong> page click <strong>Browse</strong></p>
+<img alt="../../../_images/Sitara-Linux-CCS-import-c.png" src="../../../_images/Sitara-Linux-CCS-import-c.png" />
+</li>
+<li><p>In the file browser window that is opened navigate to the <strong>&lt;SDK
+INSTALL DIR&gt;/example-applications</strong> directory and click <strong>OK</strong></p>
+<img alt="../../../_images/Example-applications.png" src="../../../_images/Example-applications.png" />
+</li>
+</ol>
+<p>Select the projects you want to import. The following screen capture
+shows importing all of the example projects for an ARM-Cortex device,
+excluding the Qt projects.</p>
+<blockquote>
+<div><img alt="../../../_images/Import-Qt.png" src="../../../_images/Import-Qt.png" />
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Click <strong>Finish</strong> to import all of the selected projects.</p></li>
+<li><p>You can now see all of the projects listed in the <strong>Project Explorer</strong>
+tab.</p></li>
+</ol>
+<img alt="../../../_images/Projects-imported.png" src="../../../_images/Projects-imported.png" />
+<p class="rubric" id="creating-a-new-project-ccs-compiling">Creating a New Project</p>
+<p>This section will cover how to create a new cross-compile project to
+build a simple <strong>Hello World</strong> application for the target.</p>
+<p class="rubric" id="configuring-the-project-ccs-compiling">Configuring the Project</p>
+<ol class="arabic">
+<li><p>From the main CCS window, select <strong>File -&gt; New -&gt; Project…</strong> menu
+item</p></li>
+<li><p>in the <strong>Select a wizard</strong> window select the <strong>C/C++ -&gt; C Project</strong>
+wizard</p>
+<img alt="../../../_images/Sitara-Linux-CCS-new-c-project.png" src="../../../_images/Sitara-Linux-CCS-new-c-project.png" />
+</li>
+<li><p>Click <strong>Next</strong></p></li>
+<li><p>In the <strong>C Project</strong> dialog set the following values:
+Project Name: <strong>helloworld</strong>
+Project type: <strong>Cross-Compile Project</strong></p>
+<img alt="../../../_images/Sitara-Linux-CCS-cross-compile.png" src="../../../_images/Sitara-Linux-CCS-cross-compile.png" />
+</li>
+<li><p>Click <strong>Next</strong></p></li>
+<li><p>In the <strong>Command</strong> dialog set the following values:
+Tool command prefix: <strong>arm-linux-gnueabihf-</strong>. Note the the prefix
+ends with a “-“. This is the prefix of the cross-compiler tools as
+will be seen when setting the <strong>Tool command path</strong>
+Tool command path: <strong>&lt;SDK INSTALL
+DIR&gt;/linux-devkit/sysroot/i686-arago-linux/usr/bin</strong>. Use the
+<strong>Browse..</strong> button to browse to the Sitra Linux SDK installation
+directory and then to the <strong>linux-devkit/bin</strong> directory. You should
+see a list of tools such as <strong>gcc</strong> with the prefix you entered above.</p>
+<img alt="../../../_images/Sitara-Linux-CCS-command-setup.png" src="../../../_images/Sitara-Linux-CCS-command-setup.png" />
+</li>
+<li><p>Click <strong>Next</strong></p></li>
+<li><p>In the <strong>Select Configurations</strong> dialog you can take the default
+<strong>Debug</strong> and <strong>Release</strong> configurations or add/remove more if you want.</p>
+<img alt="../../../_images/Sitara-Linux-CCS-select-configurations.png" src="../../../_images/Sitara-Linux-CCS-select-configurations.png" />
+</li>
+<li><p>Click <strong>Finish</strong></p></li>
+</ol>
+<p class="rubric" id="adding-sources-to-the-project-ccs-compiling">Adding Sources to the Project</p>
+<ol class="arabic">
+<li><p>After completing the steps above you should now have a <strong>helloworld</strong>
+project in your CCS <em>Project Explorer</em> window, but the project has no
+sources.</p>
+<img alt="../../../_images/Sitara-Linux-CCS-empty-helloworld.png" src="../../../_images/Sitara-Linux-CCS-empty-helloworld.png" />
+</li>
+<li><p>From the main CCS window select <strong>File -&gt; New -&gt; Source File</strong> menu
+item</p></li>
+<li><p>In the <strong>Source File</strong> dialog set the <em>Source file:</em> setting to
+<strong>helloworld.c</strong></p>
+<img alt="../../../_images/Sitara-Linux-CCS-helloworld-c-file.png" src="../../../_images/Sitara-Linux-CCS-helloworld-c-file.png" />
+</li>
+<li><p>Click <strong>Finish</strong></p></li>
+<li><p>After completing the steps above you will have a template
+<strong>helloworld.c</strong> file. Add your code to this file like the image
+below:</p>
+<img alt="../../../_images/Sitara-Linux-CCS-helloworld.png" src="../../../_images/Sitara-Linux-CCS-helloworld.png" />
+</li>
+</ol>
+<p class="rubric" id="compiling-cc-projects">Compiling C/C++ Projects</p>
+<ol class="arabic">
+<li><p>Right-Click on the project in the <em>Project Explorer</em></p></li>
+<li><p>Select the build configuration you want to use</p>
+<ul class="simple">
+<li><p>For Release builds: <strong>Build Configurations -&gt; Set Active -&gt;
+Release</strong></p></li>
+<li><p>For Debug builds: <strong>Build Configurations -&gt; Set Active -&gt; Debug</strong></p></li>
+</ul>
+<img alt="../../../_images/Code_Composer_Studio_Changing_Build_Configuration.png" src="../../../_images/Code_Composer_Studio_Changing_Build_Configuration.png" />
+</li>
+<li><p>Select <strong>Project -&gt; Build Project</strong> to build the highlighted project</p>
+<img alt="../../../_images/Code_Composer_Studio_Compiling_Project.png" src="../../../_images/Code_Composer_Studio_Compiling_Project.png" />
+</li>
+<li><ul class="simple">
+<li><p><strong>NOTE:</strong> You can use <strong>Project -&gt; Build All</strong> to build all of the
+projects in the <em>Project Explorer</em></p></li>
+</ul>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">Now that you have built your application you are ready to run and or
+debug the executable.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="next-steps-ccs-compiling">Next Steps</p>
+<p class="rubric" id="copying-binaries-to-the-file-system">Copying Binaries to the File system</p>
+<p>There are several methods for copying the executable files to the target
+file system:</p>
+<ul class="simple">
+<li><p>Copying files manually to the SD card root file system</p></li>
+<li><p>If NFS is being used, copying the files manually to the NFS file
+system</p></li>
+<li><p>Using Code Composer Studio to automatically copy the executable to
+the target evm using <a class="reference external" href="../../Foundational_Components/Tools/Code_Composer_Studio.html#remote-explorer-setup-with-ccs">Remote System
+Explorer</a></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="remote-system-explorer-ccs-compiling">Remote System Explorer</p>
+<p>CCS v6 by default includes the Remote System Explorer (RSE) plug-in. RSE
+provides drag-and-drop access to the target file system as well as
+remote shell and remote terminal views within CCS. It also provides a
+way for Code Composer Studio to automatically copy and run or debug an
+executable using a single button. Refer to <a class="reference external" href="../../Foundational_Components/Tools/Code_Composer_Studio.html#remote-explorer-setup-with-ccs">How to Setup and Use Remote
+System
+Explorer</a> to
+learn how to use this feature.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="debugging-source-code-using-code-composer-studio-ccs-compiling">Debugging Source Code using Code Composer Studio</p>
+<p>In order to debug user-space Linux code using Code Composer Studio v6,
+you first need to configure your project to use gdb and gdbserver
+included within the SDK.</p>
+<p>Please refer to <a class="reference external" href="../../Foundational_Components/Tools/Code_Composer_Studio.html#gdb-setup-with-ccs">Debugging using GDB with Code Composer
+Studio</a> for more
+information.</p>
+</div>
+<div class="section" id="remote-explorer-setup-with-ccs">
+<h2><span class="section-number">3.4.3.3. </span>Remote Explorer Setup with CCS<a class="headerlink" href="#remote-explorer-setup-with-ccs" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="overview-ccs-remote-explorer">Overview</p>
+<p>Remote System Explorer (RSE) is an Eclipse plug-in that provides:</p>
+<ul class="simple">
+<li><p>Drag-and-drop access to the remote file system</p></li>
+<li><p>Remote shell execution</p></li>
+<li><p>Remote terminal</p></li>
+<li><p>Remote process monitor</p></li>
+</ul>
+<p class="rubric" id="prerequisites-ccs-remote-setup">Prerequisites</p>
+<p>Before you configure RSE you should make sure the following
+prerequisites are met:</p>
+<ol class="arabic simple">
+<li><p>Installed the Processor Linux SDK</p></li>
+<li><p>Installed Code Composer Studio</p></li>
+<li><p>Created or imported a C/C++ Project. This project should be already
+open.</p></li>
+<li><p>Connected your host PC and evm to the same network. Your PC and EVM
+should be on the same subnet.</p></li>
+<li><p>Know the IP of your evm.</p>
+<ul class="simple">
+<li><p>You can obtain the IP address of the EVM using matrix and
+selecting <strong>Settings -&gt; Network Settings</strong> or by connecting over
+the serial console and using the <strong>ifconfig</strong> command.</p></li>
+</ul>
+</li>
+</ol>
+<p class="rubric" id="opening-the-remote-system-explorer-perspective">Opening the Remote System Explorer Perspective</p>
+<ol class="arabic simple">
+<li><p>Go to <strong>Window -&gt; Open Perspective -&gt; Other…</strong></p></li>
+<li><p>In the menu window select <strong>Remote System Explorer</strong> to open this
+perspective.</p></li>
+</ol>
+<img alt="../../../_images/Sitara-Linux-CCS-rse-perspective.png" src="../../../_images/Sitara-Linux-CCS-rse-perspective.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>OK</strong></p></li>
+<li><p>You will now have the RSE view opened</p></li>
+</ol>
+<img alt="../../../_images/Sitara-Linux-CCS-rse-view.png" src="../../../_images/Sitara-Linux-CCS-rse-view.png" />
+<p class="rubric" id="creating-a-new-connection">Creating a New Connection</p>
+<p>To establish a new connection with the target EVM you must run the New
+Connection Wizard.</p>
+<ol class="arabic simple">
+<li><p>Click <strong>File -&gt; New -&gt; Other…</strong></p></li>
+<li><p>In the <strong>Select a wizard</strong> window select <strong>Remote System Explorer -&gt;
+Connection</strong></p></li>
+</ol>
+<img alt="../../../_images/New-connection.png" src="../../../_images/New-connection.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>Next</strong></p></li>
+<li><p>In the <strong>Select Remote System Type</strong> window select the <strong>Linux</strong>
+system type</p></li>
+</ol>
+<img alt="../../../_images/Remote-system-type.png" src="../../../_images/Remote-system-type.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>Next</strong></p></li>
+<li><p>In the <strong>Remote Linux System Connection</strong> window enter
+<strong>Host name:</strong> Enter the IP address of your target EVM. This can be
+determined as detailed in the <a class="reference external" href="#prerequisites-ccs-remote-setup">**Prerequisites**</a>
+section above
+<strong>Connection name:</strong> The default value is the same as the host name,
+but this can be changed to a more human readable value like <em>Target
+EVM</em>
+You can un-check <strong>Verify host name</strong> or leave it checked depending
+on whether you want to verify the IP address you entered for the
+<em>Host name</em> field.</p></li>
+</ol>
+<img alt="../../../_images/X-New_Connection.png" src="../../../_images/X-New_Connection.png" />
+<ol class="arabic simple">
+<li><p>Do NOT click the Finish button.  Click <strong>Next</strong></p></li>
+<li><p>Check <strong>ssh.files</strong> to use the <em>Secure Shell</em> protocol for
+communication</p></li>
+</ol>
+<img alt="../../../_images/Ssh-files.png" src="../../../_images/Ssh-files.png" />
+<ol class="arabic simple">
+<li><p>Do NOT click the Finish button.  Click <strong>Next</strong></p></li>
+<li><p>Check <strong>processes.shell.linux</strong> to use a shell to work with processes
+on the remote system</p></li>
+</ol>
+<img alt="../../../_images/Processes_.png" src="../../../_images/Processes_.png" />
+<ol class="arabic simple">
+<li><p>Do NOT click the Finish button.  Click <strong>Next</strong></p></li>
+<li><p>Check <strong>ssh.shells</strong> to use <em>Secure Shell</em> to work will shell
+commands</p></li>
+</ol>
+<img alt="../../../_images/Shells.png" src="../../../_images/Shells.png" />
+<ol class="arabic simple">
+<li><p>Do NOT click the Finish button.  Click <strong>Next</strong></p></li>
+<li><p>Check <strong>ssh.terminals</strong> to use <em>Secure Shell</em> to work with terminals</p></li>
+</ol>
+<img alt="../../../_images/Terminals.png" src="../../../_images/Terminals.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>Finish</strong></p></li>
+<li><p>You will now see your EVM configuration in the RSE view</p></li>
+</ol>
+<img alt="../../../_images/Sitara-Linux-CCS-target-view.png" src="../../../_images/Sitara-Linux-CCS-target-view.png" />
+<p class="rubric" id="re-opening-the-cc-view">Re-Opening the C/C++ View</p>
+<p>If when you enabled RSE and opened the RSE perspective your C/C++ view
+disappeared you can re-open it using the following commands. This is
+useful to get back to your projects list to enable copying and pasting
+files to transfer to the remote system.</p>
+<ol class="arabic simple">
+<li><p>Select <strong>Window -&gt; Show View -&gt; Other…</strong></p></li>
+<li><p>In the <strong>Show View</strong> dialog select <strong>C/C++ -&gt; C/C++ Projects</strong></p></li>
+</ol>
+<img alt="../../../_images/Sitara-Linux-CCS-c-view.png" src="../../../_images/Sitara-Linux-CCS-c-view.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>OK</strong></p>
+<ul class="simple">
+<li><p><strong>NOTE:</strong> If you do not like the location of the C/C++ Projects
+view you can drag it to another location in CCS my dragging and
+dropping the Tab.</p></li>
+</ul>
+</li>
+</ol>
+<p class="rubric" id="re-opening-the-remote-system-explorer-view">Re-Opening the Remote System Explorer View</p>
+<p>If you have closed the RSE view and wish to re-open it you can use these
+steps:</p>
+<ol class="arabic simple">
+<li><p>Select <strong>Window -&gt; Show View -&gt; Other…</strong></p></li>
+<li><p>In the <strong>Show View</strong> dialog select <strong>Remote Systems -&gt; Remote
+Systems</strong></p></li>
+</ol>
+<img alt="../../../_images/Show-view-remote-systems.png" src="../../../_images/Show-view-remote-systems.png" />
+<ol class="arabic simple">
+<li><p>Click <strong>OK</strong></p>
+<ul class="simple">
+<li><p><strong>NOTE:</strong> If you do not like the location of the Remote Systems
+view you can drag it to another location in CCS my dragging and
+dropping the Tab.</p></li>
+</ul>
+</li>
+<li><p>A Remote Systems tab appears in the CCS perspective. The target
+connection named Target EVM is shown in a tree structure with
+branches for the various Remote System functions which communicate
+with the target EVM using a secure SSH connection.
+Sftp Files - Provides a drag and drop GUI interface to the target
+file system.
+Shell Processes - Provides a listing of processes running on the
+remote system and allows processes to be remotely killed.
+Ssh Shells - Provides a Linux shell window for the remote system
+within CCS.
+Ssh Terminals - Provides a terminal window for the remote system
+within CCS.</p></li>
+</ol>
+<img alt="../../../_images/Sitara-Linux-CCS-target-view.png" src="../../../_images/Sitara-Linux-CCS-target-view.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="configuring-with-a-proxy">Configuring with a Proxy</p>
+<p>In the case that you are behind a proxy (most corporate networks) you
+may need to configure CCS to bypass all proxies. You want to make sure
+you also bypass the proxy for your target devices so that your
+connection does not attempt to go out the proxy and then come back in
+through the proxy.</p>
+<p>To bypass your proxy follow the below steps:</p>
+<ol class="arabic simple">
+<li><p>Click the <strong>Window -&gt; Preferences</strong> menu item</p></li>
+<li><p>Go to <strong>General -&gt; Network Connections</strong></p></li>
+<li><p>Change the <strong>Active Provider</strong> from <strong>Native</strong> to <strong>Manual</strong></p></li>
+<li><p>Highlight the <strong>HTTP</strong> item and click the <strong>Edit</strong> button</p></li>
+<li><p>enter your company’s <em>host proxy URL</em> and <em>port number</em></p></li>
+<li><p>Do the same for the <strong>HTTPS</strong> item. Both items should be checked as
+shown below.</p></li>
+</ol>
+<img alt="../../../_images/X-network-Connections-top.jpeg" src="../../../_images/X-network-Connections-top.jpeg" />
+<ol class="arabic simple">
+<li><p>In the <strong>Proxy Bypass</strong> section click <strong>Add Host…</strong></p></li>
+<li><p>Add the <strong>IP address</strong> of target board (in place of xx.xx.xx.xx)</p></li>
+<li><p>Click OK.</p></li>
+</ol>
+<img alt="../../../_images/X-network-Connections-bottom.jpeg" src="../../../_images/X-network-Connections-bottom.jpeg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="connecting-to-the-target">Connecting to the Target</p>
+<p>After the New Connection Wizard has been completed and the Remote System
+Explorer view has been opened, the new connection must be configured to
+communicate with the target EVM.</p>
+<ol class="arabic simple">
+<li><p>Right-Click the <strong>Target EVM</strong> node and select <strong>Connect</strong></p></li>
+<li><p>A dialog like the one shown below will appear</p></li>
+</ol>
+<img alt="../../../_images/X-login.png" src="../../../_images/X-login.png" />
+<p>The Arago distribution that is used for our SDK is configured to use
+root as the usernamr and no password.</p>
+<p>When prompted for a login use <strong>root</strong> for the <em>user ID</em> and leave the
+<em>password</em> blank. <strong>NOTE:</strong> you can save the user ID and password values
+to bypass this prompt in the future</p>
+<p>The first time the target EVM file system is booted a private key and a
+public key is created in the target file system. Before connecting to
+the target EVM the first time, the public key must be exported from the
+target EVM to the Linux host system. To configure the key do</p>
+<img alt="../../../_images/Setup-ssh-editted-1.png" src="../../../_images/Setup-ssh-editted-1.png" />
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Click Yes to accept the key
+</pre></div>
+</div>
+<p>Under certain circumstances a warning message can appear when the
+initial SSH connection is made as shown below. This could happen if the
+user deletes the target file system and replaces it with another target
+file system that has a different private RSA SSH key established (and
+the target board IP address remains the same). This is normal. In this
+case, click Yes and the public key from the target board will be
+exported to the Ubuntu host overwriting the existing public key.</p>
+<img alt="../../../_images/Nasty-Warning-2.PNG" src="../../../_images/Nasty-Warning-2.PNG" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>At this point, all Remote System Explorer functions will be functional.</p>
+<p class="rubric" id="target-file-system-access">Target File System Access</p>
+<p>Expand the <strong>Sftp Files -&gt; Root</strong> node. The remote system file tree
+should now show the root directory. You can navigate anywhere in the
+remote file system down to the file level. Files can be dragged and
+dropped into the remote file tree. A context menu allows you to create,
+rename or delete files and folders.</p>
+<img alt="../../../_images/Expand-root-small.jpeg" src="../../../_images/Expand-root-small.jpeg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="ssh-terminals">SSH Terminals</p>
+<p>To open an SSH Terminal view</p>
+<ol class="arabic simple">
+<li><p>Right-Click the <strong>Ssh Terminals</strong> node under the target EVM
+connection</p></li>
+<li><p>Select <strong>Launch Terminal</strong> from the context menu</p></li>
+<li><p>Type shell commands at the prompt in the terminal window. Below is a
+sample command to list the contents of the remote /usr folder.</p></li>
+</ol>
+<img alt="../../../_images/MyTerminalView-small.jpeg" src="../../../_images/MyTerminalView-small.jpeg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="next-steps-ccs-remote-setup">Next Steps</p>
+<p class="rubric" id="debugging-source-code-using-code-composer-studio-ccs-remote-setup">Debugging Source Code using Code Composer Studio</p>
+<p>In order to debug user-space Linux code using Code Composer Studio v6,
+you first need to configure your project to use gdb and gdbserver
+included within the SDK.</p>
+<p>Please refer to <a class="reference external" href="../../Foundational_Components/Tools/Code_Composer_Studio.html#gdb-setup-with-ccs">Debugging using GDB with Code Composer
+Studio</a> for more
+information.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="gdb-setup-with-ccs">
+<h2><span class="section-number">3.4.3.4. </span>GDB Setup with CCS<a class="headerlink" href="#gdb-setup-with-ccs" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="prerequisites-ccs-gdb-setup">Prerequisites</p>
+<p>Before you configure RSE you should make sure the following
+prerequisites are met:</p>
+<ol class="arabic simple">
+<li><p>Installed the Processor Linux SDK</p></li>
+<li><p>You have ran the <a class="reference external" href="../../Overview/Run_Setup_Scripts.html">SDK’s Setup
+Scripts</a></p></li>
+<li><p>Installed Code Composer Studio</p></li>
+<li><p>Created or imported a C/C++ Project. This project should be already
+open. For this guide a helloworld project will be used as an example.</p></li>
+<li><p>Connected your host PC and evm to the same network. Your PC and EVM
+should be on the same subnet.</p></li>
+<li><p><a class="reference external" href="../../Foundational_Components/Tools/Code_Composer_Studio.html#remote-explorer-setup-with-ccs">Remote System
+Explorer</a>
+has already been setup and your
+<a class="reference external" href="../../Foundational_Components/Tools/Code_Composer_Studio.html#connecting-to-the-target">connected</a>
+to the board.</p></li>
+<li><p>The project you want to debug is already opened. Its important that
+the debug version of the executable is built.</p></li>
+</ol>
+<p class="rubric" id="debugging-using-gdb-and-gdb-server">Debugging using GDB and GDB Server</p>
+<p class="rubric" id="creating-the-debug-configuration-for-the-project">Creating the Debug Configuration for the Project</p>
+<ol class="arabic">
+<li><p>In CCS, select the project you wish to work with by clicking on it
+and highlighting it.</p></li>
+<li><p>Select the Run -&gt; Debug Configurations menu item.  This opens a
+dialog box as shown below.</p>
+<img alt="../../../_images/Initial-debug-configurations.png" src="../../../_images/Initial-debug-configurations.png" />
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p>Double click C/C++ Remote Application.  You should then see a new
+debug configuration named “helloworld Debug” as shown below.</p>
+<p>Select your target connection from the Connection drop-down
+box.  In the example the target connection is called My Target EVM.</p>
+<img alt="../../../_images/Hello_World_Debug_Configuration.png" src="../../../_images/Hello_World_Debug_Configuration.png" />
+</li>
+<li><p>Click the Search Project button to open the Program Selection dialog
+box below.  Click on the “armle - /helloworld/Debug/helloworld” item and
+click OK.</p>
+<img alt="../../../_images/Debug-config-2.png" src="../../../_images/Debug-config-2.png" />
+</li>
+<li><p>Click the “Browse…” button for “Remote Absolute File Path for C/C++
+Application”.  Navgate to the executable file on the remote file system.
+For this example, the executable file is found at ”/usr/bin/helloworld”.</p>
+<img alt="../../../_images/Auto-debug-config-main-tab.png" src="../../../_images/Auto-debug-config-main-tab.png" />
+</li>
+<li><p>Click the Debugger tab.  On the Debugger page, the Main tab should
+be selected.</p></li>
+</ol>
+<p>Click Browse next to “GDB debugger” and browse to the GDB executable.
+GDB should be located at:
+&lt;sdk-path&gt;/linux-devkit/sysroot/i686-arago-linux/usr/bin/arm-linux-gnueabihf-gdb</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">Click browse next to “GDB command file” and browse to the .gdbinit
+file in the SDK install directory.</div>
+<div class="line">GDB init file should be located at : &lt;sdk-path&gt;/.gdbinit</div>
+</div>
+<div class="line-block">
+<div class="line">When you try to browse to the .gdbinit file, you will need to right
+click and select Show Hidden Files to see the file.</div>
+</div>
+<blockquote>
+<div><img alt="../../../_images/Show_Hidden_Files.png" src="../../../_images/Show_Hidden_Files.png" />
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The .gdbinit file is used by GDB to locate source files and library
+files on the target. The .gdbinit file is created when the SDK
+environment script runs. Here is an example of a .gdbinit file.</p>
+<img alt="../../../_images/Gdbinit.png" src="../../../_images/Gdbinit.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click Ok button in the browse window and then click the Close button in
+the Debug Configuration window.</p>
+<p>You are now ready to debug the application!</p>
+<p class="rubric" id="running-thedebug-session">Running the Debug Session</p>
+<ol class="arabic simple">
+<li><p>Make sure that you are setup for the debug build configuration which
+contains symbol information.  In the C/C++ perspective, click on the
+helloworld project to select it and</p></li>
+</ol>
+<p>   Project -&gt; Build Configurations -&gt; Set Active -&gt; Debug.</p>
+<dl>
+<dt>2. Click the green “bug” icon to build the executable, transfer the</dt><dd><p>executable to the target, start gdbserver and and start debugging.</p>
+</dd>
+<dt>   CCS will change to the CCS Debug perspective. The debug tab will</dt><dd><p>show the running threads and their status. The source code window will
+show the program halted at the first executable source code line in the
+main() function. The Variables window will show the local variables and
+their current values.</p>
+<img alt="../../../_images/Auto-debugging.png" src="../../../_images/Auto-debugging.png" />
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>To toggle a breakpoint, highlight the line of code in the source code
+window. Then click the Run -&gt; Toggle Breakpoint menu item.</p></li>
+</ol>
+<ol class="arabic simple" start="6">
+<li><p>Use the debugger “Step Over” and “Step Into” icons to step through
+the source code.</p></li>
+<li><p>To resume program execution, click the Run -&gt; Resume menu item.</p></li>
+</ol>
+<dl class="simple">
+<dt>   NOTE: Do not click the Run -&gt; Debug menu item, as that will attempt</dt><dd><p>to start a new debug session.</p>
+</dd>
+<dt>   From here, you can make changes to the C source files, save the</dt><dd><p>changes and then just click the green “Bug” icon again and you will be
+debugging the new executable on the target.</p>
+</dd>
+<dt>   (Each time you start the debugger the executable is built,</dt><dd><p>automatically transferred to the target board and the gdbserver
+program is started for you.)</p>
+</dd>
+</dl>
+<p class="rubric" id="stopping-the-debug-session">Stopping the Debug Session</p>
+<p>When finished debugging the helloworld application, click the Run -&gt;
+Resume menu item.   To terminate the program,  click the Terminate icon
+in CCS (this icon is a red square).</p>
+<p class="rubric" id="manually-terminating-gdbserver">Manually Terminating Gdbserver</p>
+<p>If the program being debugged ends abnormally or crashes CCS may be
+unable to automatically stop the application and or kill gdbserver. If
+this happens you may need to manually terminate gdbserver.</p>
+<p>Note: These steps should only be followed if stop the application and
+gdbserver has failed when hitting the stop button discussed above.</p>
+<p>Once setup, you can follow these steps to terminate gdbserver:</p>
+<ol class="arabic">
+<li><p>Change to the Remote System Explorer perspective. Right click on
+Shell Processes in the target connection tree and select Show in Table
+to open a Remote System Details window.</p></li>
+<li><p>Double-click on “All Processes” in the table to display the list of
+processes runnning on the target system.</p></li>
+<li><p>Click on “Executable Name” in the table headers to sort the list by
+executable name.</p></li>
+<li><p>Find the gdbserver process.  Right click on it and select Kill.  This
+will open a “Send a Kill Signal” dialog box.  Click the Kill button.</p>
+<img alt="../../../_images/Shell-processes.png" src="../../../_images/Shell-processes.png" />
+<img alt="../../../_images/Kill-gdbserver.png" src="../../../_images/Kill-gdbserver.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="kernel-debugging-with-ccs">
+<h2><span class="section-number">3.4.3.5. </span>Kernel Debugging with CCS<a class="headerlink" href="#kernel-debugging-with-ccs" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="updated-toolchain">Updated Toolchain</p>
+<p>Starting with Sitara Linux SDK 6.0 the location of the toolchain has
+changed and for non ARM 9 devices a new Linaro based toolchain will be
+used. Details about the change in toolchain location can be found
+<a class="reference external" href="http://processors.wiki.ti.com/index.php/Sitara_Linux_SDK_GCC_Toolchain#Updated.C2.A0Linux-Devkit_Structure">here</a>.
+Also details about the switch to Linaro can be found
+<a class="reference external" href="http://processors.wiki.ti.com/index.php/Sitara_Linux_SDK_GCC_Toolchain#Switch_to_Linaro">here</a>.</p>
+<p>AM18x users are not affected by the switch to Linaro. Therefore, any
+references to the Linaro toolchain prefix “<strong>arm-linux-gnueabihf</strong>-”
+should be replaced with “<strong>arm-arago-linux-gnueabi-</strong>“.</p>
+<p class="rubric" id="background">Background</p>
+<p class="rubric" id="linux-debug-overview">Linux Debug Overview</p>
+<p>CCSv5 supports run mode debug (a.k.a. remote GDB debug, agent-based
+debug, application debug)and stop mode debug (a.k.a. JTAG debug,
+low-level debug). For Linux aware debug support (an extension of the
+stop mode debug), please read the section <a class="reference external" href="http://processors.wiki.ti.com/index.php/Linux_Debug_in_CCSv5#Linux_Aware_Debug">Linux Aware
+Debug</a> below.</p>
+<ul class="simple">
+<li><p>In run mode debug, the user can debug one or more Linux processes. On
+the host side, CCSv5 launches a cross platform GDB debugger to
+control the target side agent (a GDB server process). The GDB server
+launches or attaches to the process to be debugged and accepts
+instructions from the host side over a serial or TCP/IP connection.
+The Linux kernel remains active during the debug session. The user
+can only examine the state of the processes being debugged.</p></li>
+<li><p>In the stop mode debug, CCSv5 halts the target using a <a class="reference external" href="http://processors.wiki.ti.com/index.php/Emulation">JTAG
+emulator</a>. The Linux kernel and all
+processes are suspended completely. The user can examine the state of
+the target and the execution state of the current process.</p></li>
+</ul>
+<p><strong>IMPORTANT!</strong> This page refers to CCS version 6.0.0 and newer.</p>
+<ul class="simple">
+<li><p>For CCSv5.1.x - CCSv5.5.x check <a class="reference external" href="http://processors.wiki.ti.com/index.php/Linux_Debug_in_CCSv5">this
+page</a></p></li>
+<li><p>For CCSv5.0.x check <a class="reference external" href="http://processors.wiki.ti.com/index.php/Linux_Debug_in_CCSv5_0">this
+page</a>.</p></li>
+</ul>
+<p class="rubric" id="run-mode-debug">Run Mode Debug</p>
+<p class="rubric" id="dependencies">Dependencies</p>
+<p>The following dependencies apply to Run Mode Debug:</p>
+<ul>
+<li><p>CCS versions: CCSv5.3 or greater</p></li>
+<li><p>Devices: any core that is capable of running Linux: Cortex-A, ARM9,
+C66x.</p></li>
+<li><p>Host requirement: a cross platform GDB debugger (typically part of a
+GCC package like CodeSourcery or Arago)</p></li>
+<li><p>Target requirement: a GDB server that is compatible with the GDB
+debugger located on the host (typically part of a SDK package like
+EZSDK, DVSDK, etc.)</p></li>
+<li><p>A GCC project (see <a class="reference external" href="http://processors.wiki.ti.com/index.php/How_to_create_GCC_projects_in_CCSv5">How to create GCC projects in
+CCSv5</a>).</p>
+<p>The run mode debug requires two connections to the target system:
+<strong>1.</strong> One connection to the target console is used to execute Linux
+commands.</p>
+</li>
+<li><p>If using a serial port (common in all TI’s EVMs and low-cost boards
+like Beagleboard and Pandaboard), this connection can be done using a
+simple terminal program like Hyperterminal, Putty, TeraTerm or even a
+<a class="reference external" href="http://processors.wiki.ti.com/index.php/How_to_install_the_terminal_plugin_in_CCSv5">CCSv5 terminal
+plug-in</a>.</p></li>
+<li><p>If using Ethernet, this connection must be done using one of the
+programs above and configuring it for telnet or SSH. Keep in mind
+that the linux running on the target board requires a telnet or SSH
+server running on it.</p>
+<p><strong>2.</strong> The other connection is used by the gdb debugger to communicate
+with the gdb server running on the target.</p>
+</li>
+<li><p>This connection can be done either via Ethernet or serial port. Keep
+in mind the speed of a serial connection can be a lot slower and
+timeouts may occur.</p></li>
+</ul>
+<p class="rubric" id="procedure">Procedure</p>
+<p><strong>IMPORTANT!</strong> In certain versions CCSv5 does not enable “CDT GDB
+Debugging” configurations. You need to enable them from the
+Capabilities tab in the Preference dialog (select <strong>Window</strong> –&gt;
+<strong>Preferences</strong> –&gt; <strong>General</strong> –&gt; <strong>Capabilities</strong>).</p>
+<ol class="arabic">
+<li><p>Bring up the Debug Configurations dialog by selecting menu
+<strong>Run</strong> –&gt; <strong>Debug Configurations</strong></p></li>
+<li><p>Select <strong>C/C++ Remote Application</strong></p></li>
+<li><p>Click on the icon <strong>New launch configuration</strong> (Top left of the pane)</p></li>
+<li><p>Set the fields  <strong>C/C++ Application:</strong> and<strong>Project:</strong>
+respectively to the existing project in the workspace and the binary
+executable file</p>
+<p>Note: If the project is already in focus (Active or highlighted) in
+the <strong>Project Explorer</strong> view, these fields will be already populated.</p>
+</li>
+<li><p>In tab <strong>Main</strong>, click on the link <strong>Select Other</strong> at the bottom
+where it says <strong>Using GDB (ASF) Automatic Remote Debugging Launcher</strong>.
+Check <strong>Use configuration specific settings</strong> and select <strong>GDB (DSF)
+Manual Remote Degugging Launcher</strong>. Click <strong>OK</strong>.</p>
+<img alt="../../../_images/Linux_debug_v5_GDB_config.png" src="../../../_images/Linux_debug_v5_GDB_config.png" />
+<p>Note: It is possible to set up CCSv5 to automatically connect and
+launch the debugger in the target by leaving the settings above
+untouched. Check section 8 of the <a class="reference external" href="http://wiki.eclipse.org/index.php/CDT/User/FAQ">Eclipse CDT
+FAQ</a>.</p>
+<p><strong>Note:</strong> Other options like <em>Enable auto build</em>, <em>arguments</em> and others
+can be modified at this time.</p>
+<img alt="../../../_images/Linux_debug_v5_tab_main.png" src="../../../_images/Linux_debug_v5_tab_main.png" />
+</li>
+<li><p>Select the <strong>Debugger</strong> tab and specify the GDB debugger as well
+as the GDB command file. In this case the GDB debugger from Arago is
+being used, but it is possible to use also CodeSourcery or other
+toolchain.</p></li>
+</ol>
+<dl>
+<dt>   Click browse next to “GDB command file” and browse to the .gdbinit</dt><dd><p>file in the SDK install directory.  When you try to browse to the
+.gdbinit file, you will need</p>
+</dd>
+<dt>   to R-Click -&gt; Show Hidden Files to see the file.   Click the Close</dt><dd><p>button and you are now ready to debug the application!</p>
+<ul class="simple">
+<li><p>In this example of the 06.00.00.00 SDK, the path is:
+/home/user/AM335X/SDK/ti-sdk-am335x-evm-06.00.00.00/linux-devkit/sysroot/i686-arago-linux/usr/bin/arm-linux-gnueabihf-gdb</p></li>
+<li><p>The GDB init file is located:
+/home/user/AM335X/SDK/ti-sdk-am335x-evm-06.00.00.00/.gdbinit</p></li>
+</ul>
+<img alt="../../../_images/Linux_debug_v5_tab_dbg_main.png" src="../../../_images/Linux_debug_v5_tab_dbg_main.png" />
+</dd>
+</dl>
+<ol class="arabic" start="7">
+<li><p>On the Debugger <strong>Connection</strong> tab, specify the IP address and
+port of the GDB server running on the target.</p>
+<p><strong>Note:</strong> the port number is arbitrary and is specified when the
+gdbserver is launched - unless you have a strong reason to change it,
+the value of 10000 is just fine.</p>
+<p><strong>Note:</strong> the IP address of the target can be determined from the target
+linux console.</p>
+<p><strong>IMPORTANT!</strong> Some SDKs do not have gdbserver installed by default in
+the supplied filesystem. Check the SDK documentation for details on how
+to install it.</p>
+<img alt="../../../_images/Linux_debug_v5_ifconfig.png" src="../../../_images/Linux_debug_v5_ifconfig.png" />
+<img alt="../../../_images/Linux_debug_v5_tab_dbg_connection.png" src="../../../_images/Linux_debug_v5_tab_dbg_connection.png" />
+</li>
+<li><p>On the target console, start the GDB server specifying the
+application file and the port number.</p>
+<p><strong>Note:</strong> make sure the port number matches the one specified in the
+Debugger Connection tab (10000 by default).</p>
+<p><strong>Note:</strong> the application under debug must be located on the target
+filesystem. This can be done in multiple ways: either copying it to the
+shared NFS directory, to the SD card being used to boot linux, etc.</p>
+<img alt="../../../_images/Linux_debug_v5_gdbserver.png" src="../../../_images/Linux_debug_v5_gdbserver.png" />
+</li>
+<li><p>Launch the debug configuration by clicking the Debug button.</p>
+<ul class="simple">
+<li><p>CCSv5 will launch the GDB debugger to connect to the GDB server.</p></li>
+<li><p>After the connection is established, you can step, set breakpoints
+and view the memory, registers and variables of the application
+process running on the target.</p></li>
+</ul>
+<img alt="../../../_images/Linux_debug_v5_debugger.png" src="../../../_images/Linux_debug_v5_debugger.png" />
+</li>
+<li><p>You may need to set the shared library (object) search path in a
+cross compile debug enviroment.</p>
+<ul class="simple">
+<li><p>Under <strong>Debug Configuration</strong> -&gt; <strong>Debugger</strong> tab -&gt; <strong>Shared Libraries</strong>
+tab enter the path to the target filesystem lib directory</p></li>
+<li><p>You may need a copy of the target filesystem on the local debug host</p></li>
+</ul>
+</li>
+</ol>
+<p class="rubric" id="stop-mode-debug">Stop Mode Debug</p>
+<p class="rubric" id="dependencies-1">Dependencies</p>
+<div class="line-block">
+<div class="line">The following dependencies apply to Stop Mode Debug:</div>
+</div>
+<ul class="simple">
+<li><p>CCS version 5.3.0 or greater. This facilitates working on either a
+Windows host, or a Linux host.</p></li>
+</ul>
+<p>In addition to the procedure below, a short video clip is located
+<a class="reference external" href="http://software-dl.ti.com/sdo/sdo_apps_public_sw/CCSv5/Demos/Linux_kernel_debugging/Linux_kernel_debugging.html">here</a>.</p>
+<ul class="simple">
+<li><p>Devices: any core that is capable of running Linux: Cortex-A, ARM9,
+C66x.</p></li>
+<li><p>Host system requirements:</p></li>
+<li><p>Target system requirements: a Linux distribution running on the
+target. Kernel releases 2.6.x and 3.1.x were tested.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">The stop mode debug requires a JTAG connection to the target system.
+It supports either a standalone JTAG emulator (XDS100, XDS510, XDS560)
+or an embedded emulator on the development board (OMAPL137EVM,
+Beaglebone, etc.)</div>
+<div class="line">An additional connection to the target console is helpful to monitor
+the Linux boot procedure and the integrity during the debug session.</div>
+</div>
+<p class="rubric" id="procedure-1">Procedure</p>
+<div class="line-block">
+<div class="line">Although it is possible to connect to the device using the JTAG
+emulator without any reference to the source code, this makes the
+debugging process very difficult as the information in the debugger
+will consist in pure assembly code. In order to perform low-level
+debugging with complete visibility of the Linux kernel source code, a
+few steps are necessary:</div>
+<div class="line"><strong>1.</strong> Compile the kernel with the appropriate debug symbols (EABI
+executable file <code class="docutils literal notranslate"><span class="pre">vmlinux</span></code>).</div>
+<div class="line"><strong>2.</strong> Create a project in the CCS workspace that contains all Linux
+kernel source code.</div>
+<div class="line"><strong>3.</strong> Create a debug configuration that loads the debug symbols to
+the debugger and references the source code in the Linux kernel tree.</div>
+</div>
+<p class="rubric" id="compiling-the-linux-kernel-with-debug-information">Compiling the Linux kernel with debug information</p>
+<div class="line-block">
+<div class="line">The Linux kernel must be built with debugging information, otherwise
+no source code correlation can be made by the debugger.</div>
+<div class="line">In order to add or verify if the debug symbols are properly added to
+the configuration, the step <em>make menuconfig</em> must be performed before
+the kernel is built, and the options below must be enabled:</div>
+</div>
+<ul class="simple">
+<li><p>Enable <em>Kernel hacking</em> –&gt; <em>Compile the kernel with debug info</em></p></li>
+</ul>
+<p>Also, if the kernel is in experimental mode, you should enable the
+option below:</p>
+<ul class="simple">
+<li><p><em>Kernel hacking</em> —&gt; <em>Enable stack unwinding support</em></p></li>
+</ul>
+<p>To check if the kernel is in this mode, check if the option below is
+enabled.</p>
+<ul class="simple">
+<li><p><em>General Setup</em> —&gt; <em>Prompt for development and/or incomplete
+code/drivers</em></p></li>
+</ul>
+<p><strong>Note:</strong> for kernel 3.1.0 and above, there is an additional option that
+must be set:</p>
+<ul class="simple">
+<li><p><em>Kernel Hacking</em> —&gt; <em>Enable JTAG clock for debugger connectivity</em></p></li>
+</ul>
+<p><strong>Note:</strong> for kernel 3.2.0, the option <em>Enable stack unwinding support</em>
+shown above is only available if the kernel is built with ARM EABI
+support. To enable it, go to:</p>
+<ul class="simple">
+<li><p><em>Kernel Features</em> —&gt; <em>Use the ARM EABI to compile the kernel</em></p></li>
+</ul>
+<p><strong>Note:</strong> for kernel 3.2.0, the option <em>Compile the kernel with debug
+info</em> shown above is only available if the option <em>Kernel Debugging</em> is
+enabled. To do it, go to:</p>
+<ul class="simple">
+<li><p><em>Kernel hacking</em> —&gt; <em>Kernel Debugging</em></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><strong>Note:</strong> the building process depends on the Linux distribution being
+used, therefore it is recommended to read the SDK documentation
+regarding this step.</div>
+</div>
+<p class="rubric" id="creating-a-source-code-project-for-the-kernel">Creating a source code project for the kernel</p>
+<ol class="arabic">
+<li><p>Create a new C/C++ project by selecting <em>File</em> –&gt; <em>New</em> –&gt;
+<em>Project</em> and select <em>Makefile Project with Existing Code</em>. Click
+<em>Next</em>.</p>
+<img alt="../../../_images/Linux_debug_v5_kernel_pjt_wizard.png" src="../../../_images/Linux_debug_v5_kernel_pjt_wizard.png" />
+</li>
+<li><p>In the section <em>Existing Code Location</em>, click on <em>Browse…</em> and
+point to the root directory of the Linux kernel source tree. Leave the
+toolchain as <em>&lt;none&gt;</em> and click <em>Finish</em>.</p>
+<img alt="../../../_images/Linux_debug_v5_kernel_pjt_new.png" src="../../../_images/Linux_debug_v5_kernel_pjt_new.png" />
+<img alt="../../../_images/Linux_debug_v5_kernel_pjt_tree.png" src="../../../_images/Linux_debug_v5_kernel_pjt_tree.png" />
+</li>
+<li><p>To prevent CCS from building the Linux kernel automatically
+before launching the debugger, this option must be disabled. Highlight
+the Linux kernel project in the <em>Project Explorer</em> view, right click and
+select <em>Build Options…</em>, then select <em>C/C++ Build</em> in the left tree
+and the tab <em>Behaviour</em>. Uncheck all the build rules boxes and click
+<em>OK</em>.</p>
+<img alt="../../../_images/Linux_debug_v5_kernel_build_set.png" src="../../../_images/Linux_debug_v5_kernel_build_set.png" />
+</li>
+</ol>
+<p><strong>Note:</strong> it is possible the C-syntax error checker built into Eclipse
+is also activated, which may throw errors while launching the debugger.
+It can be configured by right-clicking on the project –&gt; <em>Build
+Options…</em> –&gt; click on <em>Show Advanced Settings</em> –&gt; <em>C/C++ General</em>
+–&gt; <em>Code Analysis</em>. It can also be completely disabled by going to the
+submenu Launching and then unchecking the box <em>Run as you type (selected
+checkers)</em>.
+|</p>
+<p class="rubric" id="associating-the-kernel-project-with-the-target">Associating the Kernel Project with the Target</p>
+<p>At this point, a target configuration file (.ccxml) that corresponds to
+your emulator and board must be ready.</p>
+<p>In this example a Beaglebone (AM3359) was used, together with the Sitara
+support package available at the <a class="reference external" href="http://processors.wiki.ti.com/index.php/Download_CCS">CCS download
+page</a>.
+<strong>Note:</strong> check the <a class="reference external" href="http://processors.wiki.ti.com/index.php/GSG:Debugging_projects_v5#Creating_a_Target_Configuration_File">Getting Started
+Guide</a>
+to learn how to create one.
+<strong>Important!</strong> When debugging a target running any High-level OS (Linux,
+WinCE, Android, etc.) or its support/initialization routines (u-boot,
+WinCE bootloader, etc.) you should not rely on GEL files in the target
+configuration (.ccxml) for device and peripheral initializations that
+will disrupt your environment. Details on how to add/remove GEL files
+are shown in the section <em>Advanced target configurations</em> –&gt; <em>Adding
+GEL files to a target configuration</em> of the <a class="reference external" href="http://processors.wiki.ti.com/index.php/CCSv5_Getting_Started_Guide">CCSv5 Getting Started
+Guide</a>.</p>
+<ol class="arabic">
+<li><p>Select menu <em>Run</em> –&gt; <em>Debug Configurations</em></p></li>
+<li><p>Select <em>Code Composer Studio - Device Debugging</em> and click on the
+button <em>New Launch configuration</em> at the top left.</p>
+<img alt="../../../_images/Linux_debug_v5_jtag_tab_main.png" src="../../../_images/Linux_debug_v5_jtag_tab_main.png" />
+</li>
+<li><p>Click on the button <strong>File System…</strong> near the box <strong>Target
+Configuration</strong> to select the target configuration file (.ccxml) for your
+hardware.</p>
+<p><strong>Optional:</strong> give a meaningful name for the Debug Configuration at the
+box <em>Name:</em></p>
+<p><strong>Optional:</strong> depending on the target configuration, at this point a
+list of cores will be shown and can be disabled to improve the debugger
+performance.</p>
+<img alt="../../../_images/Linux_debug_v5_jtag_target_assign.png" src="../../../_images/Linux_debug_v5_jtag_target_assign.png" />
+</li>
+<li><p>Select the tab <em>Program</em> to assign the Linux kernel source code
+to the Debug configuration.</p></li>
+<li><p>On the drop-down menu <em>Device</em> select the core where the Linux is
+running. In this example the core <strong>Texas Instruments XDS100v2 USB
+Emulator_0/CortxA8</strong> was selected</p></li>
+<li><p>Click on the button <em>Workspace…</em> near the box <em>Project</em> to
+select the Linux kernel project</p>
+<ul class="simple">
+<li><p>In this example it was used the project <code class="docutils literal notranslate"><span class="pre">linux-3.1.0-psp04.06.00.03.sdk</span></code></p></li>
+<li><p>For the latest version, use <code class="docutils literal notranslate"><span class="pre">/home/user/AM335X/SDK/ti-sdk-am335x-evm-06.00.00.00/board-support/linux-3.2.0-psp04.06.00.11</span></code></p></li>
+</ul>
+</li>
+<li><p>Click on the button <em>File System…</em> near the box <em>Program</em> to
+select the EABI executable <code class="docutils literal notranslate"><span class="pre">vmlinux</span></code> that contains the debug symbols</p>
+<p><strong>Note:</strong>If the Linux kernel was rebuilt, the location of this file is
+usually in the main directory of the Linux kernel source tree.
+/home/nick/AM335X/SDK/ti-sdk-am335x-evm-06.00.00.00/board-support/linux-3.2.0-<em>psp04.06.00.11</em></p>
+<p><strong>Important!</strong> It is common that a file <code class="docutils literal notranslate"><span class="pre">vmlinux</span></code> is also provided in
+the boot partition of the SD card shipped with the development board
+(where the file <code class="docutils literal notranslate"><span class="pre">uImage</span></code> is also located). However, check its size; if
+it is relatively small when compared to uImage (3, 4 times larger) it is
+possible it does not carry debug information. A typical size for the
+<code class="docutils literal notranslate"><span class="pre">vmlinux</span></code> file usually starts at 30~40MB.</p>
+</li>
+<li><p>At last, check the box <em>Load symbols only</em>. Click <em>Apply</em>.</p>
+<img alt="../../../_images/Linux_debug_v5_jtag_vmlinux.png" src="../../../_images/Linux_debug_v5_jtag_vmlinux.png" />
+</li>
+<li><p>Now the debug session is ready to be launched. At this point, the
+emulator must be connected, the target board powered up and Linux
+running (typically in the command prompt). Click on the <em>Debug</em> button.</p>
+<img alt="../../../_images/Linux_debug_v5_jtag_debugger_launching.png" src="../../../_images/Linux_debug_v5_jtag_debugger_launching.png" />
+<img alt="../../../_images/Linux_debug_v5_jtag_debugger.png" src="../../../_images/Linux_debug_v5_jtag_debugger.png" />
+</li>
+</ol>
+<p class="rubric" id="mixed-mode-debug">Mixed Mode Debug</p>
+<p>The stop mode debug can be used concurrently with the run mode debug.
+The user can set breakpoints in the user process using the run mode
+debug and breakpoints in the kernel using the stop mode debug.
+To demonstrate this, a call to the function <code class="docutils literal notranslate"><span class="pre">sleep()</span></code> is added to the
+Linux application used earlier in the Run mode debug and a breakpoint is
+added to the function <code class="docutils literal notranslate"><span class="pre">sys_nanosleep()</span></code> (file &lt;kernel/hrtimer.c&gt;).
+This will provoke a halt on the breakpoint set in the Stop Mode debug
+caused by a function call from the Linux application in the Run mode.
+<strong>1.</strong> Search for the function call <code class="docutils literal notranslate"><span class="pre">hrtimer_nanosleep()</span></code> on the file
+&lt;kernel/hrtimer.c&gt; that belongs to the Linux kernel project.
+<strong>2.</strong> With the Stop mode debug session still running, halt the target.
+Right-click on the line of the call, select <em>Breakpoint (Code Composer
+Studio)</em> then <em>Hardware Breakpoint</em>. Resume the target execution.
+<strong>3.</strong> Start a Run mode debug session with the application that has the
+<code class="docutils literal notranslate"><span class="pre">sleep()</span></code> function call. After launching, the <em>Debug</em> view should show
+two debug sessions as in the screen below:</p>
+<img alt="../../../_images/Linux_debug_v5_mixed_app_startup.png" src="../../../_images/Linux_debug_v5_mixed_app_startup.png" />
+<p><strong>4.</strong> Put the target to run. When the application calls <code class="docutils literal notranslate"><span class="pre">sleep()</span></code> the
+Stop mode debug session should halt at the breakpoint, as shown in the
+screen below:</p>
+<img alt="../../../_images/Linux_debug_v5_mixed_kernel_halted.png" src="../../../_images/Linux_debug_v5_mixed_kernel_halted.png" />
+<p><strong>Important!</strong> Keep in mind that halting the Linux kernel while
+GDB/GDBserver are running may cause communication timeouts, clock skews
+or other glitches inherent from the fact that the host system and other
+peripherals are still running.
+|</p>
+<p class="rubric" id="linux-aware-debug">Linux Aware Debug</p>
+<div class="line-block">
+<div class="line">This feature was not ported to CCSv5.1 due to compatibility break with
+the standard Eclipse (required significant changes that would penalize
+other debug features), lack of popularity and overall performance
+(speed and memory usage to refresh and store all processes at every
+breakpoint).</div>
+<div class="line">To date there is not estimate to implement an “add-on” tool to
+CCSv5.1. Please check back regularly for updates.</div>
+</div>
+<p class="rubric" id="limitations-and-known-issues">Limitations and Known Issues</p>
+<p><strong>1.</strong> When performing Run Mode debug, by default Eclipse looks in the
+host PC root directory for runtime shared libraries, thus failing to
+load these when debugging the application in the target hardware. The
+error messages are something like:</p>
+<p>warning: .dynamic section for “/usr/lib/libstdc++.so.6” is not at the
+expected address (wrong library or version mismatch?)
+warning: .dynamic section for “/lib/libm.so.6” is not at the expected
+address (wrong library or version mismatch?)
+warning: .dynamic section for “/lib/libgcc_s.so.1” is not at the
+expected address (wrong library or version mismatch?)
+warning: .dynamic section for “/lib/libc.so.6” is not at the expected
+address (wrong library or version mismatch?)
+When SDKs setup.sh script, it should automatically generate a .gdbinit
+file for you in the base directory of the SDK.</p>
+<p>The file will contain the line: set sysroot &lt;SDK-PATH&gt;/targetNFS.</p>
+<p>An example would be</p>
+<div class="line-block">
+<div class="line"><em>set sysroot
+/home/user/AM335X/SDK/ti-sdk-am335x-evm-06.00.00.00/targetNFS</em></div>
+</div>
+<p>I</p>
+<div class="line-block">
+<div class="line">Close any GDB debugging sessions. Open the <em>Debug Configurations</em> as
+shown in the Run Time debugging and then browse to this file in the
+<em>Debugger</em> tab –&gt; box <em>GDB command file</em>.</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Flash_Tools.html" class="btn btn-neutral float-left" title="3.4.2. Flash Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SysConfig_Tools.html" class="btn btn-neutral float-right" title="3.4.4. System configuration tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

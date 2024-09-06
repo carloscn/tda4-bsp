@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.2.3. Loading Uboot through CCS &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.2. Kernel" href="../../Foundational_Components_Kernel.html" />
+    <link rel="prev" title="3.1.2.2. Debugging SPL in CCS" href="Apps-SPL-Debug.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Apps-TroubleShooting.html">3.1.2.1. U-Boot Debug Tips</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Apps-SPL-Debug.html">3.1.2.2. Debugging SPL in CCS</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.2.3. Loading Uboot through CCS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Applications.html"><span class="section-number">3.1.2. </span>Troubleshooting</a> &raquo;</li>
+      <li><span class="section-number">3.1.2.3. </span>Loading Uboot through CCS</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="loading-uboot-through-ccs">
+<h1><span class="section-number">3.1.2.3. </span>Loading Uboot through CCS<a class="headerlink" href="#loading-uboot-through-ccs" title="Permalink to this headline">¶</a></h1>
+<p>The below lab is going to walk you through the process of using CCS to load SPL/U-Boot images on the <a class="reference external" href="http://www.ti.com/tool/TMDSEVM437X">AM437x EVM</a>. The same process applies to other boards as well.</p>
+<div class="section" id="step-1-software-downloads">
+<h2><span class="section-number">3.1.2.3.1. </span>Step 1: Software Downloads<a class="headerlink" href="#step-1-software-downloads" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A Linux host system configured in accordance with the <a class="reference external" href="http://software-dl.ti.com/processor-sdk-linux/esd/docs/latest/linux/Overview_Getting_Started_Guide.html">Processor SDK Linux Getting Started Guide</a>, with the latest Processor Software Development Kit (PSDK) and Code Composer Studios (CCS) installed. Please refer to the release notes. This document was written using Ubuntu 18.04, Processor SDK Linux 06.03, and CCS 10.0.</p></li>
+</ul>
+</div>
+<div class="section" id="step-2-testing-hardware-connection">
+<h2><span class="section-number">3.1.2.3.2. </span>Step 2: Testing Hardware Connection<a class="headerlink" href="#step-2-testing-hardware-connection" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Remove the SD card from board and setup USB cable connection between the board and your Linux Host</p></li>
+<li><p>Power on the board</p></li>
+<li><p>Open a terminal and run the following command to find the USB serial adapters available on the system : “dmesg | grep tty”</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[    0.000000] console [tty0] enabled
+[    0.554632] 00:06: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[   29.566576] usb 2-1.6.1.1: pl2303 converter now attached to ttyUSB0
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> The ttyUSB&lt;x&gt; will be different based on the host machine connections.</p>
+<ul>
+<li><p>Launch a serial terminal (the terminal displayed below is created with $minicom -w -s) and configure it as below:</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS1.png" src="../../../_images/Uboot_CCS1.png" />
+</div></blockquote>
+</li>
+<li><p>You should now see a minicom window with “ccccc” being printed. Go ahead and leave this console RUNNING in the background.</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS2.jpg" src="../../../_images/Uboot_CCS2.jpg" />
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="step-3-building-the-spl-uboot-images">
+<h2><span class="section-number">3.1.2.3.3. </span>Step 3: Building the SPL/Uboot images<a class="headerlink" href="#step-3-building-the-spl-uboot-images" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Open another console terminal and navigate to the latest PSDK that was installed</p></li>
+<li><p>Change directories to the Uboot source code and open the defconfig file associated with your board: <strong>“&lt;psdk_dir&gt;/board-support/u-boot-xxx+yyyy/configs/am43xx_evm_defconfig”</strong></p></li>
+<li><p>Before we compile the Uboot, please add the following flag “CONFIG_OF_EMBED=y” in the am43xx_evm_defconfig file. If you refer to the &lt;u-boot_dir&gt;/README file, it mentions “If this variable is defined, U-Boot will embed a device tree binary in its image.” Please keep in mind that this is suitable for debugging and development only and is not recommended for production.</p></li>
+<li><p>There are two methods of compiling Uboot: <a class="reference external" href="Overview/Top_Level_Makefile.html#top-level-makefile">method1</a> and <a class="reference external" href="Foundational_Components_U-Boot.html#build-and-boot-flow-on-32-bit-platforms">method2</a>. Both methods will generate the necessary files required for Uboot debugging</p></li>
+<li><p>Upon successful compilation, there are a total of 3 images that we are interested:</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 11%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Location</p></th>
+<th class="head"><p>Image Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt;psdk_dir&gt;/board-support/u-boot-u-boot-xxx+yyyy/spl</p></td>
+<td><p>u-boot-spl</p></td>
+<td><p>Full SPL image containing all debug symbols</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;psdk_dir&gt;/board-support/u-boot-u-boot-xxx+yyyy/spl</p></td>
+<td><p>u-boot-spl.bin</p></td>
+<td><p>Stripped binary SPL image that can fit into the internal memory</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;psdk_dir&gt;/board-support/u-boot-u-boot-xxx+yyyy</p></td>
+<td><p>u-boot</p></td>
+<td><p>ELF image that contains debug symbols and the device tree files</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-4-ccs-configuration">
+<h2><span class="section-number">3.1.2.3.4. </span>Step 4: CCS Configuration<a class="headerlink" href="#step-4-ccs-configuration" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Launch CCS and select <strong>File -&gt; New -&gt; Target Configuration File</strong></p></li>
+<li><p>In the <strong>New Target Configuration</strong> dialog box give the configuration a name. For this lab, we will use the name AM437x</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS3.png" src="../../../_images/Uboot_CCS3.png" />
+</div></blockquote>
+</li>
+<li><p>Click <strong>Use shared location</strong>, then Click <strong>Finish</strong></p></li>
+<li><p>The <em>AM437x</em> configuration you created will now be opened for editing. Perform the following steps to finish the target configuration:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>In the <strong>Connection</strong> drop-down box select <strong>Texas Instruments XDS100v2 USB Emulator</strong>. If you are using a different emulator please select that one instead</p></li>
+<li><p>In the <strong>Board or Device</strong> selection list check the <strong>AM4378</strong> device. Please do not select any “IDK” or “EVM” option because it will load the GEL files and we do not want that</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS4.png" src="../../../_images/Uboot_CCS4.png" />
+</div></blockquote>
+</li>
+<li><p>Click the <strong>Save</strong> button at the right of the screen</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>You can now test your target connection by pressing the <strong>Test Connection</strong> button at the right of the screen.</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS5.png" src="../../../_images/Uboot_CCS5.png" />
+</div></blockquote>
+</li>
+<li><p>Close the <em>Test Connection</em> dialog box</p></li>
+</ul>
+</div>
+<div class="section" id="step-5-change-arm-mode">
+<h2><span class="section-number">3.1.2.3.5. </span>Step 5: Change ARM mode<a class="headerlink" href="#step-5-change-arm-mode" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Launch the target configuration we created in the previous step</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Click <strong>View -&gt; Target Configurations</strong>. This should open a tab on the right side of your screen called <strong>Target Configurations</strong></p></li>
+<li><p>Expand the <strong>User Defined</strong> list</p></li>
+<li><p>Right-Click the <strong>AM437x</strong> configuration and select <strong>Launch Selected Configuration</strong></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>The view should have changed to a <strong>Debug</strong> tab (may take a few minutes to launch)</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS6.png" src="../../../_images/Uboot_CCS6.png" />
+</div></blockquote>
+</li>
+<li><p>Right-Click the <strong>CortxA9</strong> line item and select <strong>Connect Target</strong></p></li>
+<li><p>To set the processor in ARM Mode (not THUMB mode) with CCS use the following steps:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Select the <strong>Registers</strong> tab</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS7.png" src="../../../_images/Uboot_CCS7.png" />
+</div></blockquote>
+</li>
+<li><p>Expand the <strong>Core Registers</strong> and inside of <strong>Core Registers</strong> expand the <strong>CPSR</strong> list</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS8.png" src="../../../_images/Uboot_CCS8.png" />
+</div></blockquote>
+</li>
+<li><p>Scroll down in the CPSR register list and change the <strong>T</strong> register from <strong>1</strong> to <strong>0</strong>.</p></li>
+<li><p>You should see the CPSR value change to reflect the new value</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS9.png" src="../../../_images/Uboot_CCS9.png" />
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>The above steps need to be performed every time the board is powered completely off or reset</p></li>
+</ul>
+</div>
+<div class="section" id="step-6-loading-spl">
+<h2><span class="section-number">3.1.2.3.6. </span>Step 6: Loading SPL<a class="headerlink" href="#step-6-loading-spl" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>To load the SPL binary into the internal chip memory, please use the following steps:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Click <strong>Tools -&gt; Load Memory</strong>. The <em>Load Memory</em> tool is used here because we are loading the SPL binary and not and ELF image. The reason for this is that the binary is sized to be able to fit into the internal RAM of the SoC</p></li>
+<li><p>Click the <strong>Browse</strong> button and navigate to the u-boot-spl.bin file (Refer to Step3 for binary location)</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS10.png" src="../../../_images/Uboot_CCS10.png" />
+</div></blockquote>
+</li>
+<li><p>Select the <strong>u-boot-spl.bin</strong> file and click <strong>OK</strong>. For the file type, leave it as “TI Raw Data”</p></li>
+<li><p><strong>Start Address: 0x402F4000</strong>. This is the start address of the SPL binary as defined in the u-boot sources. To confirm the start address, please navigate to the file “&lt;psdk_dir&gt;/board-support/u-boot-u-boot-xxx+yyyy/spl/u-boot-spl.map” and search for “__start”</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS11.png" src="../../../_images/Uboot_CCS11.png" />
+</div></blockquote>
+</li>
+<li><p>Click <strong>Finish</strong> and you should see a box pop up showing the memory load operation</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS12.png" src="../../../_images/Uboot_CCS12.png" />
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>To load the symbols for the binary to allow source level debugging</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Click <strong>Run -&gt; Load -&gt; Load Symbols…</strong></p></li>
+<li><p>In the dialog box, click the <strong>Browse</strong> button</p></li>
+<li><p>Like before browse to the <strong>spl</strong> directory and change the filter to <strong>All</strong></p></li>
+<li><p>Select the <strong>u-boot-spl</strong> file which is the ELF executable that also contains the symbols and click <strong>OK</strong></p></li>
+<li><p>Ensure the Code Offset and Data Offset are blank</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Now that the binary and symbols are loaded, we need to set the program counter to the beginning of the SPL code. Click on the <strong>Registers</strong> Tab and in the <strong>Core Registers</strong> list, change the PC value to the start address you entered before (<strong>0x402F4000</strong>)</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS13.png" src="../../../_images/Uboot_CCS13.png" />
+</div></blockquote>
+</li>
+<li><p>Open the Disassembly view by clicking <strong>View -&gt; Disassembly</strong>, ensure that the PC equals <em>0x402F4000</em></p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS14.png" src="../../../_images/Uboot_CCS14.png" />
+</div></blockquote>
+</li>
+<li><p>At this point, feel free to step through the SPL code</p></li>
+<li><p>Go ahead and click the green run button to let SPL finish running to completion</p></li>
+<li><p>After a second or two, press the yellow <strong>pause</strong> symbol to suspend execution</p></li>
+<li><p>You should either see output on the console window of <strong>### ERROR ### Please RESET the board ###</strong></p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS15.png" src="../../../_images/Uboot_CCS15.png" />
+</div></blockquote>
+</li>
+<li><p>This means that SPL has ran and tried to read the U-Boot image from the SD card, the default boot setting for the EVM. The processor now has the SPL context which means means the board is ready for U-Boot.</p></li>
+</ul>
+<p><strong>IMPORTANT</strong>: DO NOT RESET YOUR BOARD. If you reset your board at this point you will need to re-run these steps and re-load SPL to go on to the debugging U-Boot</p>
+</div>
+<div class="section" id="step-7-loading-uboot-image">
+<h2><span class="section-number">3.1.2.3.7. </span>Step 7: Loading Uboot Image<a class="headerlink" href="#step-7-loading-uboot-image" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Assuming that you have executed SPL, please use the following steps to the load the U-Boot ELF image:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Before loading the image, please make sure THUMB mode is not set in the CPSR Register</p></li>
+<li><p>Click <strong>Run -&gt; Load -&gt; Load Program…</strong></p></li>
+<li><p>Click the <strong>Browse</strong> button and this time select the <strong>u-boot</strong> image (Refer to Step3 for binary location)</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS16.png" src="../../../_images/Uboot_CCS16.png" />
+</div></blockquote>
+</li>
+<li><p>Click <strong>OK</strong> to load the program</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Since an ELF image was loaded, the <strong>PC</strong> was automatically set. Also, make sure THUMB mode is set to 0</p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS17.png" src="../../../_images/Uboot_CCS17.png" />
+</div></blockquote>
+</li>
+<li><p>Determine the U-Boot relocation offset. U-boot initially loads into low memory and later, relocates itself into high memory to make room for the Linux Kernel.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Now that U-Boot is loaded, go ahead and run the executable by clicking the <strong>green run arrow</strong>. In the minicom window, you should see U-Boot start running and press enter on the Uboot prompt</p></li>
+<li><p>In your minicom terminal, use the command <strong>bdinfo</strong> to find the <strong>relocaddr</strong>. You should see output like the following which shows the relocation address to be <strong>0xfff42000 - this value changes with different SDKs</strong></p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS18.png" src="../../../_images/Uboot_CCS18.png" />
+</div></blockquote>
+<p><strong>IMPORTANT</strong>: You want to get the <strong>relocaddr</strong> value, NOT the ‘reloc off <strong>value.</strong></p>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Re-load U-Boot</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Before re-loading the image, please make sure THUMB mode is set to 0 in the CPSR Register</p></li>
+<li><p>Click <strong>Run -&gt; Load -&gt; Reload Program</strong> and allow the load to finish</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Now the U-Boot is loaded again, we need to reload the symbols based on the relocation offset we determined before.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Click <strong>Run -&gt; Load -&gt; Load Symbols…</strong></p></li>
+<li><p>Make sure that the <strong>Program file</strong> entry is still set to your <strong>u-boot</strong> file. If not, browse to the proper file.</p></li>
+<li><p>In the <strong>Code offset</strong> field enter the offset value you found before. i.e. <strong>0xfff42000</strong></p></li>
+<li><p>In the <strong>Data offset</strong> field enter the offset value you found before. i.e. <strong>0xfff42000</strong></p>
+<blockquote>
+<div><img alt="../../../_images/Uboot_CCS19.png" src="../../../_images/Uboot_CCS19.png" />
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>You can now do single step and step over operations in the same way you did for SPL</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Apps-SPL-Debug.html" class="btn btn-neutral float-left" title="3.1.2.2. Debugging SPL in CCS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../Foundational_Components_Kernel.html" class="btn btn-neutral float-right" title="3.2. Kernel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

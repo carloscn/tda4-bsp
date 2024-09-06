@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.1.13. HyperBus and HyperFlash &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.1.14. RemoteProc" href="UG-RemoteProc.html" />
+    <link rel="prev" title="3.1.1.12. DDR3 ECC" href="UG-DDR3.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="UG-General-Info.html">3.1.1.1. General Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DFU.html">3.1.1.2. USB Device Firmware Upgrade (DFU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Network.html">3.1.1.3. Network (Wired or USB Client)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NAND.html">3.1.1.4. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Memory.html">3.1.1.5. SD, eMMC and USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SPI.html">3.1.1.6. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-QSPI.html">3.1.1.7. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NOR.html">3.1.1.8. NOR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UART.html">3.1.1.9. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SATA.html">3.1.1.10. SATA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UFS.html">3.1.1.11. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DDR3.html">3.1.1.12. DDR3 ECC</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.1.13. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-RemoteProc.html">3.1.1.14. RemoteProc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Users-Guide.html"><span class="section-number">3.1.1. </span>User’s Guide</a> &raquo;</li>
+      <li><span class="section-number">3.1.1.13. </span>HyperBus and HyperFlash</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="hyperbus-and-hyperflash">
+<h1><span class="section-number">3.1.1.13. </span>HyperBus and HyperFlash<a class="headerlink" href="#hyperbus-and-hyperflash" title="Permalink to this headline">¶</a></h1>
+<p>HyperBus is Low Signal Count, High Performance Double Data Rate (DDR) Bus interface between a host system master and one or more slave interfaces. Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS) signal and either Single-ended clock(3.0V parts) or Differential clock (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves. At bus level, it follows a separate protocol described in HyperBus specification.</p>
+<p>HyperFlash is a NOR flash based device storage over HyperBus.  HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar to that of existing parallel NORs. Since Hyperbus is x8 DDR bus, its equivalent to x16 parallel NOR flash wrt bits per clk. But Hyperbus operates at very high frequencies.</p>
+<p>HyperFlash on TI’s J721E EVM is connected to HyperBus Memory Controller that supports memory mapped IO access to flash. HyperFlash is supported under MTD framework and U-Boot’s standard MTD commands can be used to access HyperFlash</p>
+<p><strong>Supported Devices</strong>
+- J721E EVM</p>
+<p>To list detected HyperFlash devices:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=&gt; mtd list
+List of MTD devices:
+* nor0
+ - type: NOR flash
+ - block size: 0x40000 bytes /* Each erase sector size is of 256KB */
+ - min I/O: 0x1 bytes
+ - 0x000000000000-0x000004000000 : &quot;nor0&quot; /* Detected 64MB devices labeled as &quot;nor0&quot; */
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On J721E EVM, SW3.1 should be set to ON position to select HyperFlash.</p>
+</div>
+<p>Below Example shows how to erase and write different boot images to HyperFlash from U-Boot prompt.
+Erase has to be a multiple of erase sector size.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=&gt; mtd erase nor0 0 0x40000 /* Erase from offset 0 to 256KB of HyperFlash labeled nor0 */
+Erasing 0x00000000 ... 0x0003ffff (1 eraseblock(s))
+=&gt; fatload mmc 1 0x82000000 tiboot3.bin /* Load an img from SD into DDR to flash into HyperFlash */
+180932 bytes read in 10 ms (17.3 MiB/s)
+=&gt; mtd write nor0  0x82000000 0x0 $filesize /* Write the loaded image into HyperFlash labeled nor0 */
+Writing 180932 byte(s) at offset 0x00000000
+=&gt;
+</pre></div>
+</div>
+<p>Below Example shows how to read back the data</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=&gt; mtd read nor0 0x82000000 0x0 0x40000 /* Read from offset 0 to 0x4000 to DDR address 0x82000000 from nor0 */
+Reading 262144 byte(s) at offset 0x00000000
+</pre></div>
+</div>
+<p><strong>Flashing Images to HyperFlash</strong></p>
+<p>Below commands can be used to download tiboot3.bin, tispl.bin and
+u-boot.img over tftp and then flash it to HyperFlash at respective addresses.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; mtd erase nor0 0 0x800000</span>
+<span class="go">=&gt; tftp ${loadaddr} tiboot3.bin</span>
+<span class="go">=&gt; mtd write nor0 $loadaddr 0x0 $filesize</span>
+<span class="go">=&gt; tftp ${loadaddr} tispl.bin</span>
+<span class="go">=&gt; mtd write nor0 $loadaddr 0x80000 $filesize</span>
+<span class="go">=&gt; tftp ${loadaddr} u-boot.img</span>
+<span class="go">=&gt; mtd write nor0 $loadaddr 0x280000 $filesize</span>
+<span class="go">=&gt; tftp ${loadaddr} sysfw.itb</span>
+<span class="go">=&gt; mtd write nor0 $loadaddr 0x6C0000 $filesize</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt><strong>Flash Layout for HyperFlash</strong></dt><dd><p>Below is the layout for HyperFlash in order to boot from HyperFlash:</p>
+</dd>
+</dl>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">     0x0 +----------------------------+</span>
+<span class="go">         |     hbmc.tiboot3(512K)     |</span>
+<span class="go">         |                            |</span>
+<span class="go"> 0x80000 +----------------------------+</span>
+<span class="go">         |     hbmc.tispl(2M)         |</span>
+<span class="go">         |                            |</span>
+<span class="go">0x280000 +----------------------------+</span>
+<span class="go">         |     hbmc.u-boot(4M)        |</span>
+<span class="go">         |                            |</span>
+<span class="go">0x680000 +----------------------------+</span>
+<span class="go">         |     hbmc.env(128K)         |</span>
+<span class="go">         |                            |</span>
+<span class="go">0x6C0000 +----------------------------+</span>
+<span class="go">         |      hbmc.sysfw(1M)        |</span>
+<span class="go">         |                            |</span>
+<span class="go">0x7C0000 +----------------------------+</span>
+<span class="go">         |      padding (256k)        |</span>
+<span class="go">0x800000 +----------------------------+</span>
+<span class="go">         |     hbmc.rootfs(UBIFS)     |</span>
+<span class="go">         |                            |</span>
+<span class="go">         +----------------------------+</span>
+</pre></div>
+</div>
+<p><strong>Bootmode Switch Settings for J721E EVM</strong></p>
+<p>After writing the images, change the bootmode switches on the EVM to the
+following in order to boot from HyperFlash at 83MHz:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Switch No.</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>SW8</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+</tr>
+<tr class="row-odd"><td><p>SW9</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+</tr>
+<tr class="row-even"><td><p>SW3</p></td>
+<td><p>ON</p></td>
+<td><p>ON</p></td>
+<td><p>ON</p></td>
+<td><p>ON</p></td>
+<td><p>OFF</p></td>
+<td><p>OFF</p></td>
+<td><p>ON</p></td>
+<td><p>OFF</p></td>
+<td><p>ON</p></td>
+<td><p>OFF</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="UG-DDR3.html" class="btn btn-neutral float-left" title="3.1.1.12. DDR3 ECC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="UG-RemoteProc.html" class="btn btn-neutral float-right" title="3.1.1.14. RemoteProc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

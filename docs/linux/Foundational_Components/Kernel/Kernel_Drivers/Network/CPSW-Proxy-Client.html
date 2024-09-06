@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.10.3.2.3.1. CPSW Proxy Client &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.10.3.2.3.2. CPSWng Native Ethernet" href="CPSWng-Native-Ethernet.html" />
+    <link rel="prev" title="3.2.2.10.3.2. CPSWng Ethernet" href="CPSWng.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+          <li><a href="CPSW-Ethernet.html"><span class="section-number">3.2.2.10. </span>CPSW Ethernet</a> &raquo;</li>
+          <li><a href="CPSWng.html"><span class="section-number">3.2.2.10.3.2. </span>CPSWng Ethernet</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.10.3.2.3.1. </span>CPSW Proxy Client</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="cpsw-proxy-client">
+<span id="id1"></span><h1><span class="section-number">3.2.2.10.3.2.3.1. </span>CPSW Proxy Client<a class="headerlink" href="#cpsw-proxy-client" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p>
+<ul>
+<li><p><a class="reference internal" href="#terminology" id="id3">Terminology</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id4">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#enabling-cpsw-proxy-client-driver-for-linux" id="id5">Enabling CPSW Proxy Client Driver for Linux</a></p></li>
+<li><p><a class="reference internal" href="#execution-flow" id="id6">Execution Flow</a></p></li>
+<li><p><a class="reference internal" href="#interpreting-the-boot-logs" id="id7">Interpreting the boot logs</a></p></li>
+<li><p><a class="reference internal" href="#features" id="id8">Features</a></p>
+<ul>
+<li><p><a class="reference internal" href="#fetching-setting-ip-address" id="id9">Fetching/Setting IP Address</a></p></li>
+<li><p><a class="reference internal" href="#setting-mac-address" id="id10">Setting MAC Address</a></p></li>
+<li><p><a class="reference internal" href="#multicast-filtering" id="id11">Multicast Filtering</a></p></li>
+<li><p><a class="reference internal" href="#tx-qos" id="id12">TX QoS</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">3.2.2.10.3.2.3.1.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The CPSW Proxy Client driver in Linux interfaces with Ethernet Switch Firmware (EthFw)
+via RPMsg using the Linux Remoteproc framework. The CPSW Ethernet Switch on the SoC
+is configured by EthFw which acts as the Server and provides services to Clients on
+remote cores with the Linux Client on A72 core being the CPSW Proxy Client and the
+driver corresponding to it located at:
+drivers/net/ethernet/ti/cpsw-proxy-client.c
+in the SDK’s Linux Source.</p>
+<p>The CPSW Proxy Client driver registers itself with the RPMsg framework and is probed
+when EthFw announces the endpoint name “ti.ethfw.ethdevice” over the RPMsg-bus.
+On being probed, the CPSW Proxy Client driver begins querying EthFw for the resources
+available for its use. All the ABIs used for RPMsg communication between EthFw and the
+CPSW Proxy Client driver are defined in:
+drivers/net/ethernet/ti/eth_remote_msg.h
+in the SDK’s Linux Source.</p>
+<p>The network data is sent/received over DMA Channels allocated for the Linux Client’s use.
+The allocated channels are communicated to the Client over RPMsg.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More details about EthFw can be found at:
+<a class="reference external" href="https://software-dl.ti.com/jacinto7/esd/processor-sdk-rtos-jacinto7/latest/exports/docs/ethfw/docs/user_guide/ethfw_c_ug_top.html">Ethernet Firmware User Guide</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With the migration of EthFw to the standard RPMsg framework, the RPMsg-Kdrv framework is no longer required.
+The cpsw-proxy-client.c driver is the new Linux Client driver for the now deprecated j721e-cpsw-virt-mac.c driver.
+Any logs corresponding to the older “j721e-cpsw-virt-mac.c” driver may be safely ignored.</p>
+</div>
+<div class="section" id="terminology">
+<h3><a class="toc-backref" href="#id3"><span class="section-number">3.2.2.10.3.2.3.1.1.1. </span>Terminology</a><a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>Virtual Port</dt><dd><p>A virtual port refers to the Software View of an Ethernet port.</p>
+</dd>
+<dt>Virtual MAC Only Port</dt><dd><p>A virtual MAC only port refers to a dedicated physical port for Linux’s use.
+This corresponds to MAC Mode of operation in Ethernet Terminology where there
+is no broadcast traffic from other Physical Ports being forwarded to Linux and
+at the same time there is no broadcast traffic from Linux being sent out of other
+Physical ports.</p>
+</dd>
+<dt>Virtual Switch Port</dt><dd><p>A virtual Switch Port refers to a group of physical ports with Switching enabled across
+them implying that any traffic sent from Linux using the Network interface
+corresponding to the Virtual Switch Port could potentially exit out of any of
+the group of physical ports based on the ALE’s (Address Lookup Engine) decision.</p>
+</dd>
+<dt>Network Interface</dt><dd><p>The user-visible interface in Linux userspace exposed to applications which serves as
+the entry/exit point for traffic to/from the Virtual Ports. A single network interface
+maps to either a Virtual MAC Only Port (implying a single physical port) or a Virtual
+Switch Port (implying a group of physical ports enabling the Switching functionality).</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="configuration">
+<h3><a class="toc-backref" href="#id4"><span class="section-number">3.2.2.10.3.2.3.1.1.2. </span>Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<p>All resources are allocated by EthFw to the Linux Client. Therefore all configuration has
+to be performed only in EthFw and no changes are necessary in the Linux Client. It is possible
+to configure the number of MAC Only Ports and Switch Ports allocated to Linux Client providing
+flexibility based on the use-case.</p>
+</div>
+<div class="section" id="enabling-cpsw-proxy-client-driver-for-linux">
+<span id="cpsw-proxy-client-enable"></span><h3><a class="toc-backref" href="#id5"><span class="section-number">3.2.2.10.3.2.3.1.1.3. </span>Enabling CPSW Proxy Client Driver for Linux</a><a class="headerlink" href="#enabling-cpsw-proxy-client-driver-for-linux" title="Permalink to this headline">¶</a></h3>
+<p>The following Linux build config need to be enabled for availing the CPSW Proxy Client
+functionality:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_TI_CPSW_PROXY_CLIENT
+</pre></div>
+</div>
+<p>The CPSW Proxy Client functionality is enabled by applying the corresponding Linux device-tree
+overlay at U-Boot prompt.</p>
+<p>To enable Linux CPSW Proxy Client functionality, save the following command in uEnv.txt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>name_overlays=&quot;k3-j784s4-evm-virt-mac-client.dtbo&quot;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The overlays have to be applied to ensure that Linux doesn’t override the Serdes configuration
+and also to reserve Shared Memory for EthFw.</p>
+</div>
+</div>
+<div class="section" id="execution-flow">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">3.2.2.10.3.2.3.1.1.4. </span>Execution Flow</a><a class="headerlink" href="#execution-flow" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>The CPSW Proxy Client driver registers itself with the Linux RPMsg Framework as an RPMsg Endpoint.</p></li>
+<li><p>EthFw announces the endpoint name “ti.ethfw.ethdevice” over the RPMsg-bus resulting in the CPSW Proxy
+Client driver getting probed.</p></li>
+<li><p>On being probed, the CPSW Proxy Client driver requests EthFw for details regarding the number of Virtual
+Ports as well as their types.</p></li>
+<li><p>In response to the request, EthFw replies with details regarding the allocated Virtual Ports and their
+types.</p></li>
+<li><p>With the knowledge of the available Virtual Ports, the Client driver requests details of the allocated
+DMA Channels and MAC Addresses corresponding to each of the Virtual Ports.</p></li>
+<li><p>The Client driver receives the details from EthFw and proceeds to request the creation of the DMA Channels
+using the Linux DMA APIs for requesting the DMA driver correspondig to the SoC.</p></li>
+<li><p>The Client driver proceeds with the creation of one Network Interface per Virtual Port and registers the MAC
+Address corresponding to the Virtual Port with the Linux Network Subsystem.</p></li>
+<li><p>In the case of Virtual Ports that are Switch Ports, the Client driver registers the IP Address allocated to
+the Network Interface with EthFw. The Network Interface could obtain an IP Address either through DHCP protocol
+or could be assigned a static IP Address from userspace as well.</p></li>
+<li><p>At this point all Network Interfaces corresponding to the Virtual Ports are up and functional and can transmit
+and receive Network Traffic from the Ethernet Ports corresponding to the CPSW Ethernet Switch that is managed
+by EthFw.</p></li>
+</ol>
+</div>
+<div class="section" id="interpreting-the-boot-logs">
+<h3><a class="toc-backref" href="#id7"><span class="section-number">3.2.2.10.3.2.3.1.1.5. </span>Interpreting the boot logs</a><a class="headerlink" href="#interpreting-the-boot-logs" title="Permalink to this headline">¶</a></h3>
+<p>The CPSW Proxy Client driver logs can be filtered using the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ti_cpsw_proxy_client
+</pre></div>
+</div>
+<p>If the driver is probed successfully, something similar to the following content will show up in the filtered logs
+based on the configuration performed on EthFw for the allocation of Virtual Ports to the Linux Client:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ti_cpsw_proxy_client<span class="w"> </span>virtio2.ti.ethfw.ethdevice.-1.101:<span class="w"> </span><span class="m">1</span><span class="w"> </span>Virtual<span class="w"> </span>Switch<span class="w"> </span>Port<span class="o">(</span>s<span class="o">)</span>,<span class="w"> </span><span class="m">1</span><span class="w"> </span>Virtual<span class="w"> </span>MAC<span class="w"> </span>Only<span class="w"> </span>P
+ti_cpsw_proxy_client<span class="w"> </span>virtio2.ti.ethfw.ethdevice.-1.101:<span class="w"> </span>Virt<span class="w"> </span>Port:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>Type:<span class="w"> </span>Switch<span class="w"> </span>Port,<span class="w"> </span>Iface:<span class="w"> </span>eth1,<span class="w"> </span>Num<span class="w"> </span>TX:<span class="w"> </span><span class="m">2</span>,<span class="w"> </span>Num<span class="w"> </span>RX:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>Token:<span class="w"> </span><span class="m">0</span>
+ti_cpsw_proxy_client<span class="w"> </span>virtio2.ti.ethfw.ethdevice.-1.101:<span class="w"> </span>Virt<span class="w"> </span>Port:<span class="w"> </span><span class="m">4</span>,<span class="w"> </span>Type:<span class="w"> </span>MAC<span class="w"> </span>Port,<span class="w"> </span>Iface:<span class="w"> </span>eth2,<span class="w"> </span>Num<span class="w"> </span>TX:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>Num<span class="w"> </span>RX:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>Token:<span class="w"> </span><span class="m">400</span>
+</pre></div>
+</div>
+<p>The logs indicate that 1 Virtual Switch Port and 1 Virtual MAC Only Port have been allocated to the Linux Client.
+Therefore the CPSW Proxy Client driver shall create two interfaces corresponding to each of the Virtual Ports.
+The logs indicate that the network interface “eth1” corresponds to the “Switch Port” as indicated in the “Type” field.
+Similarly, the network interface “eth2” corresponds to the “MAC Port” (MAC Only Port). Additionally, the interface eth1
+has been allocated “2” TX DMA Channels and “1” RX DMA Flow, while the interface eth2 has been allocated “1” TX DMA Channel
+and “1” RX DMA Flow.</p>
+</div>
+<div class="section" id="features">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">3.2.2.10.3.2.3.1.1.6. </span>Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fetching-setting-ip-address">
+<h4><a class="toc-backref" href="#id9"><span class="section-number">3.2.2.10.3.2.3.1.1.6.1. </span>Fetching/Setting IP Address</a><a class="headerlink" href="#fetching-setting-ip-address" title="Permalink to this headline">¶</a></h4>
+<p>Each interface can either get an IP address dynamically allocated to it by a DHCP server using the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>udhcpc<span class="w"> </span>-i<span class="w"> </span>&lt;ethX&gt;
+</pre></div>
+</div>
+<p>Or it can be assigned a Static IP address manually using the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifconfig<span class="w"> </span>&lt;ethX&gt;<span class="w"> </span>&lt;IP-Address&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-mac-address">
+<h4><a class="toc-backref" href="#id10"><span class="section-number">3.2.2.10.3.2.3.1.1.6.2. </span>Setting MAC Address</a><a class="headerlink" href="#setting-mac-address" title="Permalink to this headline">¶</a></h4>
+<p>MAC Address can be assigned to interfaces using the commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifconfig<span class="w"> </span>&lt;ethX&gt;<span class="w"> </span>down
+ifconfig<span class="w"> </span>&lt;ethX&gt;<span class="w"> </span>hw<span class="w"> </span>ether<span class="w"> </span>&lt;MAC-Address&gt;
+ifconfig<span class="w"> </span>&lt;ethX&gt;<span class="w"> </span>up
+</pre></div>
+</div>
+</div>
+<div class="section" id="multicast-filtering">
+<h4><a class="toc-backref" href="#id11"><span class="section-number">3.2.2.10.3.2.3.1.1.6.3. </span>Multicast Filtering</a><a class="headerlink" href="#multicast-filtering" title="Permalink to this headline">¶</a></h4>
+<p>EthFW supports Multicast Filtering which allows offloading Multicast addresses to CPSW Ethernet Switch thereby allowing Multicast
+addresses to be forwarded to Linux.</p>
+<p>EthFW supports the following logical types of Multicast addresses:</p>
+<dl class="simple">
+<dt><em>Exclusive Multicast Addresses</em></dt><dd><p>Traffic with such multicast addresses will be directed exclusively to
+Linux via the Linux Client driver.</p>
+</dd>
+<dt><em>Shared Multicast Addresses</em></dt><dd><p>Traffic with such multicast addresses will be delivered to Linux host
+by other means (i.e. shared memory based TAP interface). Shared multicast
+addresses are used to deliver traffic to more than one core on the
+J784S4 SoC. The TAP interface is not implemented by the
+CPSW Proxy Client driver. The TAP interface has to be present and enabled
+in order to receive the traffic corresponding to the Shared Multicast
+Addresses. For more details on the TAP interface, please refer to:
+<a class="reference external" href="https://software-dl.ti.com/jacinto7/esd/processor-sdk-rtos-jacinto7/latest/exports/docs/ethfw/docs/user_guide/ethfw_c_ug_top.html#ethfw_intercore_a72client">TAP interface for intercore traffic</a></p>
+</dd>
+<dt><em>Reserved Multicast Addresses</em></dt><dd><p>Traffic with such multicast addresses is reserved and intended to be
+consumed by EthFW only.</p>
+</dd>
+</dl>
+<p>The CPSW Proxy Client driver offloads all requested multicast addresses irrespective
+of their type. Reserved multicast addresses which are offloaded are treated as NOP
+by EthFw.</p>
+<p>Multicast MAC addresses can be added/deleted using the <em>ip maddr</em> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add Multicast address &lt;Multicast-Address&gt;</span>
+ip<span class="w"> </span>maddr<span class="w"> </span>add<span class="w"> </span>&lt;Multicast-Address&gt;<span class="w"> </span>dev<span class="w"> </span>&lt;ethX&gt;
+
+<span class="c1"># Check if entry has been added successfully</span>
+ip<span class="w"> </span>maddr<span class="w"> </span>show<span class="w"> </span>dev<span class="w"> </span>&lt;ethX&gt;
+
+<span class="c1"># Delete Multicast address &lt;Multicast-Address&gt;</span>
+ip<span class="w"> </span>maddr<span class="w"> </span>del<span class="w"> </span>&lt;Multicast-Address&gt;<span class="w"> </span>dev<span class="w"> </span>&lt;ethX&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="tx-qos">
+<h4><a class="toc-backref" href="#id12"><span class="section-number">3.2.2.10.3.2.3.1.1.6.4. </span>TX QoS</a><a class="headerlink" href="#tx-qos" title="Permalink to this headline">¶</a></h4>
+<p>QoS on the transmit path from the Client to the external network consists of two stages:</p>
+<ol class="arabic simple">
+<li><p>TX DMA Channel QoS</p></li>
+<li><p>CPSW MAC Port FIFO QoS</p></li>
+</ol>
+<div class="section" id="stage-1-tx-dma-channel-qos">
+<h5><span class="section-number">3.2.2.10.3.2.3.1.1.6.4.1. </span>Stage-1: TX DMA Channel QoS<a class="headerlink" href="#stage-1-tx-dma-channel-qos" title="Permalink to this headline">¶</a></h5>
+<p>EthFw supports allocating multiple TX DMA Channels to a Virtual Port used by the Linux Client.
+The presence of multiple TX DMA Channels allows the client to enable QoS functionality by
+distributing the traffic across the DMA Channels on the transmit path by using the mapping between
+the traffic priority and the DMA Channel. The “tc” framework in Linux is used to specify this mapping
+between the traffic priority (DSCP to SKB priority) and the traffic class (DMA Channel).
+There are as many traffic classes as the TX DMA Channels available for the interface.
+Traffic classes range from 0 to N-1 where N is the number of TX DMA Channels.</p>
+<p>Consider the example of the interface eth1 having 2 TX DMA Channels. For the mapping defined as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Priorities 0, 1, 2 and 3 belong to TC 0 (Traffic Class 0 =&gt; TX DMA Channel 0)
+Priorities 4, 5, 6 and 7 belong to TC 1 (Traffic Class 1 =&gt; TX DMA Channel 1)
+</pre></div>
+</div>
+<p>the corresponding “tc” command to be run in userspace is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tc<span class="w"> </span>qdisc<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>eth1<span class="w"> </span>handle<span class="w"> </span><span class="m">100</span>:<span class="w"> </span>parent<span class="w"> </span>root<span class="w"> </span>mqprio<span class="w"> </span>num_tc<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+map<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>queues<span class="w"> </span><span class="m">1</span>@0<span class="w"> </span><span class="m">1</span>@1<span class="w"> </span>hw<span class="w"> </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>For more details on the above command, please refer: <a class="reference external" href="https://man7.org/linux/man-pages/man8/tc-mqprio.8.html">tc-mqprio</a></p>
+<p>With the above command executed, all traffic transmitted on the eth1 interface from the Client
+having SKB priorities 0,1,2 and 3 will be sent using TX DMA Channel 0 of the eth1 interface while
+traffic having SKB priorities 4,5,6 and 7 will be sent using TX DMA Channel 1 of the eth1 interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">Bits 3 to 5 of the DSCP value are used to determine the SKB priority in Linux.</div>
+<div class="line">The DSCP value can be chosen accordingly to achieve the desired SKB priority and TX QoS functionality.</div>
+<div class="line">SKB priority = ((DSCP &gt;&gt; 3) &amp; 0x7)</div>
+</div>
+</div>
+</div>
+<div class="section" id="stage-2-cpsw-mac-port-fifo-qos">
+<h5><span class="section-number">3.2.2.10.3.2.3.1.1.6.4.2. </span>Stage-2: CPSW MAC Port FIFO QoS<a class="headerlink" href="#stage-2-cpsw-mac-port-fifo-qos" title="Permalink to this headline">¶</a></h5>
+<p>When the DSCP tagged traffic sent from the Client over the TX DMA Channels is received by the
+CPSW Host Port, the DSCP priority of the traffic is used to determine the FIFO in the Egress MAC Port
+that the traffic has to be queued into. Each MAC Port has 8 TX FIFOs corresponding to 8 priorities.
+Traffic from different Clients having the same DSCP priority and egressing on the same MAC Port
+will be queued in the same TX FIFO of the MAC Port, thereby providing uniform QoS across clients.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CPSWng.html" class="btn btn-neutral float-left" title="3.2.2.10.3.2. CPSWng Ethernet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CPSWng-Native-Ethernet.html" class="btn btn-neutral float-right" title="3.2.2.10.3.2.3.2. CPSWng Native Ethernet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

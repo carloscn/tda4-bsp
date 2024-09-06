@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.1.4. NAND &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.1.5. SD, eMMC and USB" href="UG-Memory.html" />
+    <link rel="prev" title="3.1.1.3. Network (Wired or USB Client)" href="UG-Network.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="UG-General-Info.html">3.1.1.1. General Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DFU.html">3.1.1.2. USB Device Firmware Upgrade (DFU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Network.html">3.1.1.3. Network (Wired or USB Client)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.1.4. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Memory.html">3.1.1.5. SD, eMMC and USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SPI.html">3.1.1.6. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-QSPI.html">3.1.1.7. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NOR.html">3.1.1.8. NOR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UART.html">3.1.1.9. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SATA.html">3.1.1.10. SATA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UFS.html">3.1.1.11. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DDR3.html">3.1.1.12. DDR3 ECC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-HyperBus.html">3.1.1.13. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-RemoteProc.html">3.1.1.14. RemoteProc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Users-Guide.html"><span class="section-number">3.1.1. </span>User’s Guide</a> &raquo;</li>
+      <li><span class="section-number">3.1.1.4. </span>NAND</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="nand">
+<h1><span class="section-number">3.1.1.4. </span>NAND<a class="headerlink" href="#nand" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NAND is not supported on J721E platform.</p>
+</div>
+<p>This section documents how to write files to the NAND device and use it
+to load and then boot the Linux Kernel using a root filesystem also
+found on NAND.</p>
+<div class="section" id="erasing-reading-and-writing-to-from-nand-partitions">
+<h2><span class="section-number">3.1.1.4.1. </span>Erasing, Reading and Writing to/from NAND partitions<a class="headerlink" href="#erasing-reading-and-writing-to-from-nand-partitions" title="Permalink to this headline">¶</a></h2>
+<p class="rubric" id="listing-nand-partitions">Listing NAND partitions</p>
+<p>Below command is used to see the list of mtd devices enabled in U-boot</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mtdparts
+</pre></div>
+</div>
+<p>Example output on DRA71x EVM:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>device nand0 &lt;nand.0&gt;, # parts = 10
+ #: name                size            offset          mask_flags
+ 0: NAND.SPL            0x00020000      0x00000000      0
+ 1: NAND.SPL.backup1    0x00020000      0x00020000      0
+ 2: NAND.SPL.backup2    0x00020000      0x00040000      0
+ 3: NAND.SPL.backup3    0x00020000      0x00060000      0
+ 4: NAND.u-boot-spl-os  0x00040000      0x00080000      0
+ 5: NAND.u-boot         0x00100000      0x000c0000      0
+ 6: NAND.u-boot-env     0x00020000      0x001c0000      0
+ 7: NAND.u-boot-env.backup10x00020000   0x001e0000      0
+ 8: NAND.kernel         0x00800000      0x00200000      0
+ 9: NAND.file-system    0x0f600000      0x00a00000      0
+</pre></div>
+</div>
+<p>Note: In later sections the &lt;partition name&gt; symbol should be replaced
+with the partition name seen when executing the mtdparts command.</p>
+<p class="rubric" id="erasing-partition">Erasing Partition</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nand erase.part &lt;partition name&gt;
+</pre></div>
+</div>
+<p class="rubric" id="writing-to-partition">Writing to Partition</p>
+<p>When writing to NAND partition the file to be written must have
+previously been copied to memory.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nand write &lt;ddr address&gt; &lt;partition name&gt; &lt;file size&gt;
+</pre></div>
+</div>
+<p>The symbol &lt;ddr address&gt; refers to the location in memory that a file
+was read into DDR memory. The symbol &lt;file size&gt; represents the amount
+of bytes (in hex) of the file to write into the NAND partition. Note:
+When reading a file into DDR, U-boot by default sets the value of
+environment variable “filesize” to the number of bytes (in hex) that was
+read via the last read/load command.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">As an example below shows the process of writing a kernel (zImage)
+into the NAND’s kernel partition. The zImage to be written is loaded
+from the SD card’s rootfs (2nd) partition. Loading zImage from MMC to
+DDR memory</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U-Boot # mmc dev 0;
+U-Boot # setenv devnum 0
+U-Boot # setenv devtype mmc
+U-Boot # mmc rescan
+U-Boot # load ${devtype} 1:2 ${loadaddr} /boot/zImage
+</pre></div>
+</div>
+<p>Now that zImage is loaded into memory time to write it into the NAND
+partition</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U-Boot # nand erase.part NAND.kernel
+U-Boot # nand write ${loadaddr} NAND.kernel ${filesize}
+</pre></div>
+</div>
+<p class="rubric" id="reading-from-partition">Reading from Partition</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nand read &lt;ddr address&gt; &lt;partition name&gt;
+</pre></div>
+</div>
+<p>The symbol &lt;ddr address&gt; should be replaced with the location in DDR
+that you want the contents of the NAND partition to be copied to. The
+symbol &lt;partition name&gt; contains the NAND partition name you want to
+read from.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="writing-to-nand-via-dfu">
+<h2><span class="section-number">3.1.1.4.2. </span>Writing to NAND via DFU<a class="headerlink" href="#writing-to-nand-via-dfu" title="Permalink to this headline">¶</a></h2>
+<p>If the board supports NAND and USB then flashing NAND via DFU is
+most likely supported (Not supported in AM64 on 8.2).</p>
+<p>Before dfu commands can be used, <strong>mtdparts</strong> and <strong>dfu_alt_info</strong>
+must be correctly set.</p>
+<p>Check if NAND partitions are visible in <strong>mtdparts</strong> command</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U-Boot # mtdparts
+
+device nand0 &lt;omap2-nand.0&gt;, # parts = 7
+ #: name                size            offset          mask_flags
+ 0: NAND.tiboot3        0x00200000      0x00000000      0
+ 1: NAND.tispl          0x00200000      0x00200000      0
+ 2: NAND.tiboot3.backup 0x00200000      0x00400000      0
+ 3: NAND.u-boot         0x00400000      0x00600000      0
+ 4: NAND.u-boot-env     0x00040000      0x00a00000      0
+ 5: NAND.u-boot-env.backup0x00040000    0x00a40000      0
+ 6: NAND.filesystem     0x3f580000      0x00a80000      0
+
+active partition: nand0,0 - (NAND.tiboot3) 0x00200000 @ 0x00000000
+</pre></div>
+</div>
+<p>Check that DFU can correctly see the NAND partition layout</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dfu 0 nand list
+
+DFU alt settings list:
+dev: NAND alt: 0 name: NAND.tiboot3 layout: RAW_ADDR
+dev: NAND alt: 1 name: NAND.tispl layout: RAW_ADDR
+dev: NAND alt: 2 name: NAND.tiboot3.backup layout: RAW_ADDR
+dev: NAND alt: 3 name: NAND.u-boot layout: RAW_ADDR
+dev: NAND alt: 4 name: NAND.u-boot-env layout: RAW_ADDR
+dev: NAND alt: 5 name: NAND.u-boot-env.backup layout: RAW_ADDR
+dev: NAND alt: 6 name: NAND.file-system layout: RAW_ADDR
+</pre></div>
+</div>
+<p>In case you see an error like ‘Device nor0 not found!’ then you need to
+ensure that all mtd devices specified in mtdids variable are available.</p>
+<p>e.g. To probe nor device you will have to do</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sf probe
+</pre></div>
+</div>
+<p>Before writing we must erase at least the area to be written to.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U-Boot # nand erase.part NAND.file-system
+--OR erase entire chip--
+U-Boot # nand erase.chip
+</pre></div>
+</div>
+<p>Start DFU on the EVM. Plug the EVM to a PC via USB cable. At uboot prompt,
+run the following commands:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U-Boot # env default -a -f
+</pre></div>
+</div>
+<p>Set the <strong>dfu_alt_info</strong> environment variable for DFU to NAND.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>U-Boot # dfu 0 nand 0
+</pre></div>
+</div>
+<p>Use the the correct DFU USB port on the EVM. On the PC, check that you can see the DFU USB interface</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ sudo dfu-util -l
+
+Found DFU: [0451:6165] ver=0224, devnum=8, cfg=1, intf=0, path=&quot;3-13.1&quot;, alt=6, name=&quot;NAND.file-system&quot;, serial=&quot;0000000000000280&quot;
+Found DFU: [0451:6165] ver=0224, devnum=8, cfg=1, intf=0, path=&quot;3-13.1&quot;, alt=5, name=&quot;NAND.u-boot-env.backup&quot;, serial=&quot;0000000000000280&quot;
+Found DFU: [0451:6165] ver=0224, devnum=8, cfg=1, intf=0, path=&quot;3-13.1&quot;, alt=4, name=&quot;NAND.u-boot-env&quot;, serial=&quot;0000000000000280&quot;
+Found DFU: [0451:6165] ver=0224, devnum=8, cfg=1, intf=0, path=&quot;3-13.1&quot;, alt=3, name=&quot;NAND.u-boot&quot;, serial=&quot;0000000000000280&quot;
+Found DFU: [0451:6165] ver=0224, devnum=8, cfg=1, intf=0, path=&quot;3-13.1&quot;, alt=2, name=&quot;NAND.tiboot3.backup&quot;, serial=&quot;0000000000000280&quot;
+Found DFU: [0451:6165] ver=0224, devnum=8, cfg=1, intf=0, path=&quot;3-13.1&quot;, alt=1, name=&quot;NAND.tispl&quot;, serial=&quot;0000000000000280&quot;
+Found DFU: [0451:6165] ver=0224, devnum=8, cfg=1, intf=0, path=&quot;3-13.1&quot;, alt=0, name=&quot;NAND.tiboot3&quot;, serial=&quot;0000000000000280&quot;
+</pre></div>
+</div>
+<p>On the PC, write the bootloader to the first NAND partition:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ sudo dfu-util -D tiboot3.bin -a NAND.tiboot3
+</pre></div>
+</div>
+<p>Similarly for Other bootloader binaries:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ sudo dfu-util -D tispl.bin -a NAND.tispl
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ sudo dfu-util -D u-boot.img -a NAND.u-boot
+</pre></div>
+</div>
+</div>
+<div class="section" id="nand-boot">
+<h2><span class="section-number">3.1.1.4.3. </span>NAND Boot<a class="headerlink" href="#nand-boot" title="Permalink to this headline">¶</a></h2>
+<p>If you want to load and run U-Boot from NAND, you need to ensure
+that the appropriate U-boot files are loaded in the correct partition.
+For AM335x, AM437x, DRA7x devices this means writing the file MLO to the
+NAND’s SPL partition. For OMAP-L138 device, write the .ais image to the
+NAND’s partition. For K3 devices you need to write tiboot3.bin to the
+NAND.tiboot3 and tispl.bin to the NAND.tispl partition.</p>
+<p>For all devices you will have to write u-boot.img to the NAND.u-boot partition.</p>
+<p>Example of flashing u-boot over network (tftp)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=&gt; setenv ipaddr &lt;EVM_IPADDR&gt;
+=&gt; setenv serverip &lt;TFTP_SERVER_IPADDR&gt;
+=&gt; tftpboot ${loadaddr} tiboot3.bin
+=&gt; print filesize
+    filesize=8b3fa
+=&gt; nand erase.part NAND.tiboot3
+=&gt; nand write ${loadaddr} NAND.tiboot3 8b3fa
+</pre></div>
+</div>
+<p>Repeat the process for all files required for u-boot. (e.g. tispl.bin and u-boot.img)</p>
+<p>Once the file(s) have been written to NAND the board should then be
+powered off. Next evm’s boot switches need to be configured for NAND
+booting. To understand the appropriate boot switches settings please see
+the EVM’s hardware setup guide.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="booting-kernel-and-filesystem-from-nand">
+<h2><span class="section-number">3.1.1.4.4. </span>Booting Kernel and Filesystem from NAND<a class="headerlink" href="#booting-kernel-and-filesystem-from-nand" title="Permalink to this headline">¶</a></h2>
+<p>If a user wants to use NAND as their primary storage then the NAND flash
+must have individual partitions for all the critical software needed to
+boot the kernel. At a minimum this includes kernel, dtb, file system.
+Some SoCs require additional files and firmware which also need to be
+stored in different NAND partitions.</p>
+<p>Similar to booting the kernel from any interface the user must ensure
+that all required files needed for booting are loaded in DDR memory. The
+only exception is the filesystem which will be loaded by the kernel via
+the bootargs parameters. Bootargs contains information passed to the
+kernel including where and how to mount the file system.</p>
+<p>The below contains example bootargs used by DRA7x evm for using a ubifs
+filesystem</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>setenv bootargs console=${console} ${optargs} root=ubi0:rootfs rw ubi.mtd=NAND.file-system,2048 rootfstype=ubifs rootwait=1
+</pre></div>
+</div>
+<p>In the above example bootargs, “rootfs” stands for the value specified
+by in the “vol_name” parameter defined in the ubinize.cfg file. In
+ubi.mtd “NAND.file-system” represents the name of the partition that
+contains the UBI volumes and “2048” is page size. Rootfstype simply tells
+the kernel what type of file system to use.</p>
+<p>By default for our evms properly loading, setting bootargs and booting
+the kernel is handled by running “run nandboot” in U-boot.</p>
+<p>Below is an example of u-boot environment settings for NAND booting on K3
+platforms. The kernel, device tree blobs and root filesystem are fetched from
+the rootfs UBIFS volume.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bootdir=/boot
+
+ubi_init=ubi part NAND.file-system; ubifsmount ubi0:rootfs;
+args_nand=setenv bootargs console=${console} ${mtdparts} ubi.mtd=NAND.file-system root=ubi0:rootfs rootfstype=ubifs rootwait=1
+init_nand=run args_all args_nand ubi_init findfdt
+
+overlayaddr=0x89000000
+
+get_fdt_nand=ubifsload ${fdtaddr} ${bootdir}/${fdtfile}; fdt address ${fdtaddr}; fdt resize 0x100000; echo &quot;loading overlays&quot;; for overlay in $name_overlays; do; echo ${overlay}; ubifsload ${overlayaddr} ${bootdir}/${overlay}; fdt apply ${overlayaddr}; done;
+get_kern_nand=ubifsload ${loadaddr} ${bootdir}/${name_kern}
+
+boot=nand
+</pre></div>
+</div>
+</div>
+<div class="section" id="u-boot-environment-in-nand">
+<h2><span class="section-number">3.1.1.4.5. </span>U-Boot Environment in NAND<a class="headerlink" href="#u-boot-environment-in-nand" title="Permalink to this headline">¶</a></h2>
+<p>By default, U-Boot environment is saved in a FAT partition on the SD-card.
+For saving/restoring U-Boot environment from a NAND partition, the following
+changes need to be done to U-Boot configuation at build time.</p>
+<p>Run menuconfig and set the U-Boot configuration as below</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Environment  ---&gt;
+    [ ] Environment in an MMC device
+    [*] Environment in a NAND device
+    [*] Enable redundant environment support
+    (0x00a00000) Environment offset
+    (0x00a40000) Redundant environment offset
+    (0x40000) Environment Size
+</pre></div>
+</div>
+<p>The ‘Environment offset’, ‘Redundant environment offset’ and ‘Environment Size’
+represent the ‘NAND.u-boot’ and ‘NAND.u-boot-env’ partition offsets and size
+respectively. They can be obtained from the NAND device node specification in
+the board’s device tree file.</p>
+<p>Information on creating a UBIFS image and NAND flashing can be found
+<a class="reference external" href="../Kernel/Kernel_Drivers/Storage/NAND.html#nand-based-file-system">here</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="UG-Network.html" class="btn btn-neutral float-left" title="3.1.1.3. Network (Wired or USB Client)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="UG-Memory.html" class="btn btn-neutral float-right" title="3.1.1.5. SD, eMMC and USB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

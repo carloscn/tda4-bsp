@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.7. How to change dtb files &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.1.8. How to flash eMMC device" href="How_to_flash_emmc_device.html" />
+    <link rel="prev" title="4.1.6. SDK File System Optimization/Customization" href="Processor_SDK_Linux_File_System_Optimization_Customization.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../How_to_Guides_Developer_Notes.html">4.1. Developer Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Host/Connect_to_an_EVM_via_Telnet.html">4.1.1. Connect to an EVM via Telnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Setup_a_Samba_Server.html">4.1.2. How to Setup a Samba Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/Boot_Sequence.html">4.1.3. Boot Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/Moving_Files_to_the_Target_System.html">4.1.4. Moving Files to the Target System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Flash_Linux_System_from_U-boot.html">4.1.5. How to Flash from U-boot Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Processor_SDK_Linux_File_System_Optimization_Customization.html">4.1.6. SDK File System Optimization/Customization</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.7. How to change dtb files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_flash_emmc_device.html">4.1.8. How to flash eMMC device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_enable_DT_overlays_in_linux.html">4.1.9. How to enable DT overlays in linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_visualize_statistics_data.html">4.1.10. How to visualize statistics data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How_to_Use_K3Conf_Tool.html">4.1.11. How to Use K3Conf Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Verify_Ipc_Linux_R5.html">4.1.12. How to verify IPC between Linux and MCU R5 in Keystone devices?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Configure_MSMC_memory.html">4.1.13. How to configure K3 MSMC memory for use as SRAM or L3 cache?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Check_Device_Tree_Info.html">4.1.14. How to check some device tree information from user-space of Linux?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/How_to_Integrate_Open_Source_Software.html">4.1.15. How do I integrate a different version of open source software than what is packaged in Processor SDK Linux J784s4?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/How_to_Build_a_Ubuntu_Linux_host_under_VMware.html">4.1.16. How to Build a Ubuntu Linux host under VMware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Host/K3_Resource_Partitioning_Tool.html">4.1.17. K3 Resource Partitioning Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../FAQ/Tda4_Latest_FAQs.html">4.1.18. Latest FAQs on TDA4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../How_to_Guides_Hardware_Setup_with_CCS.html">4.2. Hardware EVM Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../How_to_Guides.html"><span class="section-number">4. </span>How to Guides</a> &raquo;</li>
+          <li><a href="../../How_to_Guides_Developer_Notes.html"><span class="section-number">4.1. </span>Developer Notes</a> &raquo;</li>
+      <li><span class="section-number">4.1.7. </span>How to change dtb files</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="how-to-change-dtb-files">
+<h1><span class="section-number">4.1.7. </span>How to change dtb files<a class="headerlink" href="#how-to-change-dtb-files" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="introduction-change-dtb-file">Introduction</p>
+<p>In some scenarios, it is required to manually change the dtb file used
+by the target. For example, J721E GP EVM uses HDMI and Display port displays.
+In order to use these displays, user needs to use desired device tree overlay (dtbo)</p>
+<p class="rubric" id="specify-dtb-file">Specify dtb File</p>
+<p>The dtb and dtbo files are located on the target filesystem under “/boot”
+directory. First, identify the dtb file to be used, e.g.,
+k3-j721e-common-proc-board.dtb for J721E GP EVM. Then identify a list of
+dtbo to be used e.g. k3-j721e-common-proc-board-infotainment.dtbo for
+infotainment daughter card.</p>
+<p>Then, modify “uEnv.txt” on the boot partition to specify fdtfile
+with the desired dtb file name, and overlay_files with list of dtbo files.</p>
+<p>After the dtb file is changed, reboot the EVM so that the new dtb file
+will be used for booting the EVM.</p>
+<p class="rubric" id="device-tree-options">Device tree options</p>
+<p>Depending on the use case, user would want to pass different device trees to
+the kernel. Starting with 4.19 kernel, device tree overlay support has been
+added. This allows supplying additional device tree fragments (aka overlays)
+to be applied on top of the base device tree.</p>
+<p>Typically, base dtb describes the base board on which the kernel is supposed
+to run. It contains the hardware description of the SoC, i.e. embedded interconnect,
+all peripherals,registers, memories, interrupts, etc. Also, it contains any
+board specific hardware description like pinmux, board mux, PHYs, PMIC, etc.</p>
+<p>All the additional daughter cards are modelled as separate device tree overlay.
+It contains the hardware description of all the peripherals available on the
+adapter card. Bootloader does not support auto loading of these overlays, so
+user has to specify the list of overlays, i.e. dtbo files to be applied before
+passing the final device tree to kernel.</p>
+<p>Typical usage for device tree has been to describe the hardware using standard
+bindings. However, for the application use cases, you may want to pass additional
+data to the kernel drivers. e.g. In a virtualized environment, you may want
+to describe which display pipelines are to be used by the display driver.
+Device nodes is a good way to to this. Processor SDK has few use case specific
+dtbo files which describe these additional properties.</p>
+<p>Following table describes list of device tree blob (dtb) and device tree overlay(dtbo)
+files available for different platforms and any associated dependencies.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 35%" />
+<col style="width: 33%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>Name of file</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>dependencies</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>k3-j721e-common-proc-board.dtb</p></td>
+<td><p>Base DTB for J721e EVM beta version</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>k3-j721e-proc-board-tps65917.dtb</p></td>
+<td><p>Base DTB for J721e EVM alpha version</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>k3-j721e-common-proc-board-infotainment.dtbo</p></td>
+<td><p>Overlay for IVI adapter card</p></td>
+<td><p>IVI card needs to be connected</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>k3-j721e-common-proc-board-infotainment-display-sharing.dtbo</p></td>
+<td><p>Overlay for sharing DSS with Linux and RTOS</p></td>
+<td><p>#3 DTBO should be applied before this</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>k3-j721e-vision-apps.dtbo</p></td>
+<td><p>Overlay for running Processor SDK RTOS demos</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>k3-j721e-pcie-backplane.dtbo</p></td>
+<td><p>Overlay for running PCIe Backplane demo</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>k3-j7200-common-proc-board.dtb</p></td>
+<td><p>Base DTB for J7200 EVM</p></td>
+<td><p>N/A</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric" id="uenv-txt-options">uEnv.txt options</p>
+<p>uEnv.txt file from the boot partition of SD card describes the base DTB to
+be used and any other overlay DTBOs to be applied additionally. Processor SDK
+comes with few ready made uEnv.txt files for quick consumption to run certain
+application demos.</p>
+<p>Following table describes usage of uenv.txt and associated dependencies
+for booting the board in different scenarios. Note that the u-boot supports
+detecting the right version of the board (alpha/beta) and can load the required
+base dtb file correctly. There is no need to specify the fdtfile in the uenv.txt.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 47%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name of file</p></th>
+<th class="head"><p>Usage scenario</p></th>
+<th class="head"><p>Dependencies</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>uenv.txt.base</p></td>
+<td><p>Use for booting the common processor board without support for daugter cards.
+Even if you have daughter cards connected, you can boot using this,
+kernel will not use the extra device functionality.</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>uenv.txt.disp_sharing</p></td>
+<td><p>Use for running shared display use cases with Linux and RTOS</p></td>
+<td><p>HDMI monitor connected via infotainment daughter card.</p></td>
+</tr>
+<tr class="row-even"><td><p>uenv.txt.jailhouse</p></td>
+<td><p>Use for running hypervisor use cases.</p></td>
+<td><p>HDMI monitor connected via infotainment daughter card.
+DP monitor connected to DISPLAY0 Display Port.</p></td>
+</tr>
+<tr class="row-odd"><td><p>uenv.psdkra</p></td>
+<td><p>Use for running Processor SDK RTOS demos.</p></td>
+<td><p>All the R5 and C6x firmware symlinks updated in filesystem</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Processor_SDK_Linux_File_System_Optimization_Customization.html" class="btn btn-neutral float-left" title="4.1.6. SDK File System Optimization/Customization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="How_to_flash_emmc_device.html" class="btn btn-neutral float-right" title="4.1.8. How to flash eMMC device" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

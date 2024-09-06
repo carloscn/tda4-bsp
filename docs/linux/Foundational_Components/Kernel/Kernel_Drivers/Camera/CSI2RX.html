@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.3. CSI2RX &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.4. Crypto" href="../Crypto.html" />
+    <link rel="prev" title="3.2.2.2. Audio" href="../Audio.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.3. </span>CSI2RX</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="csi2rx">
+<h1><span class="section-number">3.2.2.3. </span>CSI2RX<a class="headerlink" href="#csi2rx" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.2.2.3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The CSI2RX subsystem is present on some TI SoCs which facilitates the capture of
+camera frames over a MIPI CSI-2 bus. The driver is based on the Video for Linux
+2 (V4L2) API. It implements V4L2’s Media Controller (MC) API.</p>
+</div>
+<div class="section" id="hardware-architecture">
+<h2><span class="section-number">3.2.2.3.2. </span>Hardware Architecture<a class="headerlink" href="#hardware-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The CSI2RX subsystem is composed of 3 IPs: Cadence DPHY, Cadence CSI2RX bridge,
+TI CSI2RX DMA wrapper (aka the SHIM layer).</p>
+<img alt="../../../../../_images/csi2rx-single-camera.png" src="../../../../../_images/csi2rx-single-camera.png" />
+<p>The CSI2RX subsystem supports the following features:</p>
+<ul class="simple">
+<li><p>Compliant to MIPI CSI v1.3</p></li>
+<li><p>Supports up to 16 virtual channels per input (partial MIPI CSI v2.0 feature).</p></li>
+<li><p>Data rate up to 2.5 Gbps per lane (wire rate).</p></li>
+<li><p>Supports 1, 2, 3, or 4 data lane connection to DPHY_RX.</p></li>
+<li><p>Programmable formats including YUV420, YUV422, RGB, Raw, etc.</p></li>
+</ul>
+<p>See the the technical reference manual (TRM) for the SoC in question for more
+detailed information.</p>
+</div>
+<div class="section" id="driver-architecture">
+<h2><span class="section-number">3.2.2.3.3. </span>Driver Architecture<a class="headerlink" href="#driver-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The driver is based on the Video 4 Linux 2 (V4L2) API. It is implemented
+according to the V4L2 standard for capture devices. The driver is only
+responsible for programming the SoC components for capture like the DPHY, CSI
+bridge, DMA. For external devices like camera sensors separate V4L2 subdevice
+drivers are needed.</p>
+<div class="section" id="the-media-controller-api">
+<h3><span class="section-number">3.2.2.3.3.1. </span>The Media Controller API<a class="headerlink" href="#the-media-controller-api" title="Permalink to this headline">¶</a></h3>
+<p>The driver is implemented using V4L2’s Media Controller (MC) API. In the MC API,
+each element in the media pipeline is configured individually by the user-space
+application. In comparison, in the legacy or non-MC API drivers, only the
+/dev/videoX node needs to be configured, and it propagates the configuration up
+the chain. With this model, the MC API allows for more flexible pipeline
+configurations which can all be controlled from user-space without having to
+change the driver or the device tree.</p>
+<p>For example, with the legacy API the format is set on /dev/videoX and that will
+set it for the entire pipeline (sensor, bridge, DMA engine, etc). With the MC
+API, the format needs to be set on each individual element in the pipeline. So
+with a single camera setup, for capturing 1920x1080 &#64; 60fps UYVY, the camera
+(/dev/v4l-subdevX) should first be configured to use that format via the V4L2
+subdev ioctls. Then the /dev/videoX node (which represents the DMA context)
+should be configured to use matching configuration. The Media Controller
+framework checks for mismatches and reports errors if something is not right.</p>
+<p>In similar fashion, the DMA context does not care about frame rate. It can
+capture at any rate, so the driver does not implement the G_PARM or S_PARM
+ioctls. Instead, the frame rate should be set on the sensor using
+VIDIOC_SUBDEV_S_FRAME_INTERVAL.</p>
+<p>Quick links for relevant Linux Kernel documentation:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kernel.org/doc/html/latest/userspace-api/media/v4l/v4l2.html">Video for Linux API</a></p></li>
+<li><p><a class="reference external" href="https://www.kernel.org/doc/html/latest/userspace-api/media/mediactl/media-controller.html">Media Controller API</a></p></li>
+</ul>
+</div>
+<div class="section" id="utilities-to-interact-with-the-driver">
+<h3><span class="section-number">3.2.2.3.3.2. </span>Utilities to interact with the driver<a class="headerlink" href="#utilities-to-interact-with-the-driver" title="Permalink to this headline">¶</a></h3>
+<p>Standard V4L2 utilities can be used to set these formats and frame rates. One
+such tool is media-ctl.</p>
+<p>To see the media pipeline to understand how all the components are connected in
+software, the pipeline can be printed to the console using “media-ctl -p”. This
+would list all the elements in the pipeline, what they are connected to, and
+their names. This information can then be used to set formats and frame rates on
+various elements for the pipeline. For example, below command can be used to set
+1920x1080 &#64; 30fps UYVY format on the sensor node:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>media-ctl --set-v4l2 &#39;&quot;sensor-name 9-0012&quot;:0 [fmt:UYVY8_2X8/1920x1080@1/30]&#39;
+</pre></div>
+</div>
+<p>This just sets the formats on the sensor and bridge. The format on the DMA
+context (/dev/videoX) needs to be set separately. This can be done while
+starting the capture with yavta for example. The below command can be run next
+to start capturing the video stream to a file called “capture”:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>yavta -c -Fcapture -s 1920x1080 -f UYVY /dev/video0
+</pre></div>
+</div>
+<p>This command first sets the 1920x1080 UYVY format on the DMA context (which must
+match the format on the sensor), and then starts capturing frames to a file
+called “capture”.</p>
+<p>It is often useful to see the pipeline visually. media-ctl can print the
+pipeline as a dot graph which can then be converted to an image for viewing. The
+below set of commands can achieve this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>media-ctl --print-dot | dot -Tpng &gt; graph.png
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-the-driver">
+<h3><span class="section-number">3.2.2.3.3.3. </span>Building the driver<a class="headerlink" href="#building-the-driver" title="Permalink to this headline">¶</a></h3>
+<p>First, enable the DPHY using CONFIG_PHY_CADENCE_DPHY. Then enable the CSI2RX
+bridge using CONFIG_VIDEO_CADENCE and CONFIG_VIDEO_CADENCE_CSI2RX. Finally,
+enable CONFIG_VIDEO_TI_J721E_CSI2RX. The config for the sensor should also
+be enabled.</p>
+<p>The driver can be built-in or it can be a loadable module. If the driver is
+built as a module, the module will be called j721e-csi2rx. Along with that, the
+Cadence bridge and DPHY modules must also be loaded, which are called
+cdns-csi2rx and cdns-dphy respectively.</p>
+</div>
+</div>
+<div class="section" id="creating-device-tree-nodes-for-sensor">
+<h2><span class="section-number">3.2.2.3.4. </span>Creating device tree nodes for sensor<a class="headerlink" href="#creating-device-tree-nodes-for-sensor" title="Permalink to this headline">¶</a></h2>
+<p>Since the sensor is a separate module and any sensor can be plugged in to the
+board, the sensor device tree nodes are not included in the base dtb. Instead,
+it should be added in as an overlay.</p>
+<p>Below overlay is an example for adding the overlay nodes:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>// SPDX-License-Identifier: GPL-2.0
+/*
+ * Copyright (C) 2021 Texas Instruments Incorporated - http://www.ti.com/
+ */
+
+/dts-v1/;
+/plugin/;
+
+#include &lt;dt-bindings/gpio/gpio.h&gt;
+
+&amp;main_i2c6 {
+    #address-cells = &lt;1&gt;;
+    #size-cells = &lt;0&gt;;
+
+    camera_sensor: camera@12 {
+            compatible = &quot;manufacturer,sensor-compatible&quot;;
+            reg = &lt;0x12&gt;;
+
+                    /* Other sensor properties go here... */
+
+            port {
+                    csi2_cam0: endpoint {
+                            remote-endpoint = &lt;&amp;csi2rx0_in_sensor&gt;;
+                            clock-lanes = &lt;0&gt;;
+                            /*
+                             * This example sensor uses 2 lanes. Other sensors might use
+                             * 1, 2, 3, or 4 lanes. Populate this property accordingly.
+                             * See Documentation/devicetree/bindings/media/video-interfaces.yaml
+                             * for more info.
+                             */
+                            data-lanes = &lt;1 2&gt;;
+                    };
+            };
+    };
+};
+
+&amp;csi0_port0 {
+    status = &quot;okay&quot;;
+
+    csi2rx0_in_sensor: endpoint {
+            remote-endpoint = &lt;&amp;csi2_cam0&gt;;
+            bus-type = &lt;4&gt;; /* CSI2 DPHY. */
+            clock-lanes = &lt;0&gt;;
+            data-lanes = &lt;1 2&gt;;
+    };
+};
+</pre></div>
+</div>
+</div>
+<div class="section" id="enabling-camera-sensors">
+<h2><span class="section-number">3.2.2.3.5. </span>Enabling camera sensors<a class="headerlink" href="#enabling-camera-sensors" title="Permalink to this headline">¶</a></h2>
+<p>J784S4 has three instances of CSI2RX capture subsystem and can support upto
+twelve <strong>IMX390</strong> cameras using FPDLink fusion EVM, J784S4 EVM and AM69A SK also
+supports <strong>OV5640</strong> module connected to MIPI connector. AM69A SK has two
+instances of 22-pin FFC camera connector to which <strong>IMX219</strong> based RPi camera
+modules can be interfaced.</p>
+<div class="section" id="id5">
+<h3><span class="section-number">3.2.2.3. </span>Applying sensor overlays<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>To enable FPDLink cameras you will need to apply the device tree overlays
+for both the fusion board and the sensor at U-boot prompt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># For single RCM IMX390 connected to RX port 0 on Fusion board EVM on J721S2 CPB:
+# FPDLink IMX390 camera overlays are named according to the port connected in the following
+# format : k3-j721e-fpdlink-imx390-rcm-&lt;csi_port&gt;-&lt;fusion_rx_port&gt;.dtbo
+=&gt; setenv name_overlays k3-j784s4-fpdlink-fusion.dtbo k3-j721e-fpdlink-imx390-rcm-0-0.dtbo
+=&gt; boot
+
+# For single RCM IMX390 connected to RX port 0 on Fusion board EVM on AM69A SK:
+=&gt; setenv name_overlays k3-am69-sk-fpdlink-fusion.dtbo k3-j721e-fpdlink-imx390-rcm-0-0.dtbo
+=&gt; boot
+</pre></div>
+</div>
+<p>To enable IMX219 camera connected to the 22-pin FFC connectoron AM69A SK,
+enable the sensor overlay at U-boot prompt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># For IMX219 connected to 22-pin FFC connector
+=&gt; setenv name_overlays k3-am69-sk-rpi-cam-imx219.dtbo
+=&gt; boot
+</pre></div>
+</div>
+<p>For more details on building or applying overlays permanently, refer to the
+<a class="reference external" href="../../../../How_to_Guides/Target/How_to_enable_DT_overlays_in_linux.html">How to enable DT overlays in linux</a>
+guide.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Audio.html" class="btn btn-neutral float-left" title="3.2.2.2. Audio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Crypto.html" class="btn btn-neutral float-right" title="3.2.2.4. Crypto" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

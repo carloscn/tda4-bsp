@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.1.3. Create SD Card &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.1.4. GCC ToolChain" href="GCC_ToolChain.html" />
+    <link rel="prev" title="1.1.2. Run Setup Scripts" href="Run_Setup_Scripts.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../Overview.html">1. Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Overview_Getting_Started_Guide.html">1.1. Getting Started Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Download_and_Install_the_SDK.html">1.1.1. Download and Install the SDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Run_Setup_Scripts.html">1.1.2. Run Setup Scripts</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.1.3. Create SD Card</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">1.1.3.1. Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-sd-card-using-balenaetcher">1.1.3.2. Create SD Card using balenaEtcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-sd-card-using-bmap-tools">1.1.3.3. Create SD Card using bmap-tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-sd-card-with-custom-images">1.1.3.4. Create SD Card with custom images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-sd-card-with-default-images-using-script">1.1.3.5. Create SD Card with Default Images using script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="GCC_ToolChain.html">1.1.4. GCC ToolChain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Building_the_SDK.html">1.2. Building the SDK with Yocto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Top_Level_Makefile.html">1.3. Simplified SDK Build Using Top-Level Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Directory_Structure_Overview.html">1.4. Directory Structure Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_PSDKLA_PSDKRA_Summary.html">1.5. Processor SDK RTOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_Technical_Support.html">1.6. Processor SDK Technical Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview_GPLv3_Disclaimer.html">1.7. GPLv3 Disclaimer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Foundational_Components.html">3. Foundational Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Overview.html"><span class="section-number">1. </span>Overview</a> &raquo;</li>
+          <li><a href="../Overview_Getting_Started_Guide.html"><span class="section-number">1.1. </span>Getting Started Guide</a> &raquo;</li>
+      <li><span class="section-number">1.1.3. </span>Create SD Card</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="create-sd-card">
+<span id="processor-sdk-linux-create-sd-card"></span><h1><span class="section-number">1.1.3. </span>Create SD Card<a class="headerlink" href="#create-sd-card" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2><span class="section-number">1.1.3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This section provides guides to create SD cards for the following use cases:</p>
+<ol class="arabic simple">
+<li><p>Create SD cards with default images:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#processor-sdk-linux-create-sd-card-using-balena"><span class="std std-ref">Create SD cards with default images using balenaEtcher</span></a></p></li>
+<li><p><a class="reference internal" href="#processor-sdk-linux-create-sd-card-using-bmap"><span class="std std-ref">Create SD cards with default images using bmap-tools</span></a></p></li>
+<li><p><a class="reference internal" href="#processor-sdk-linux-sd-card-with-default-images"><span class="std std-ref">Create SD cards with default images using script packaged in installer</span></a></p></li>
+</ul>
+</li>
+<li><p>Create SD cards with custom images:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#processor-sdk-linux-create-sd-card-with-custom-images"><span class="std std-ref">Create SD cards with custom images</span></a></p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="create-sd-card-using-balenaetcher">
+<span id="processor-sdk-linux-create-sd-card-using-balena"></span><h2><span class="section-number">1.1.3.2. </span>Create SD Card using balenaEtcher<a class="headerlink" href="#create-sd-card-using-balenaetcher" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Download the default bootable SD card image (WIC file) available on the release page as
+tisdk-adas-image-&lt;machine&gt;.wic.xz.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Download and install the balenaEtcher tool:</p>
+<blockquote>
+<div><p>Balena Etcher is an open-source utility that can be installed on both Linux and Windows.
+Download the tool from <a class="reference external" href="https://www.balena.io/etcher/">this link</a> and install it.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Flash the WIC image to the SD card:</p>
+<blockquote>
+<div><p>Insert a micro SD card into the USB SD card reader and start Etcher.Choose the default WIC
+image to be flashed, choose the USB SD card reader as the target, and then click “Flash”.
+Etcher will decompress the image and write it to the SD card, as shown below:</p>
+</div></blockquote>
+<img alt="../../_images/balena_etcher.png" src="../../_images/balena_etcher.png" />
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="create-sd-card-using-bmap-tools">
+<span id="processor-sdk-linux-create-sd-card-using-bmap"></span><h2><span class="section-number">1.1.3.3. </span>Create SD Card using bmap-tools<a class="headerlink" href="#create-sd-card-using-bmap-tools" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Download the default bootable SD card image (WIC file) available on the release page as
+tisdk-adas-image-&lt;machine&gt;.wic.xz. The  Processor SDK Linux J784s4 installer also contains other
+WIC images that can be flashed to the SD card similarly.</p>
+<p>The Processor SDK Linux J784s4 can be installed either on host or inside a Docker container that is hosted on <a class="reference external" href="https://github.com/TexasInstruments/ti-docker-images/pkgs/container/ubuntu-distro">ghcr.io/texasinstruments</a>. Assuming the SDK is installed at &lt;PSDK_PATH&gt;, you can find other available WIC images at &lt;PSDK_PATH&gt;/filesystem/</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Decompress the tisdk-adas-image-&lt;machine&gt;.wic.xz to tisdk-adas-image-&lt;machine&gt;.wic</p>
+<ul class="simple">
+<li><p>For Linux:</p></li>
+</ul>
+<pre class="literal-block">cd &lt;PSDK_PATH&gt;/filesystem
+unxz tisdk-adas-image-&lt;machine&gt;.wic.xz</pre>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Flash the WIC image to SD card</p>
+<ul>
+<li><p>For Linux:</p>
+<ol class="loweralpha">
+<li><p>First, make sure that the SD card is unmounted. You can use lsblk to
+inspect whether the SD card partitions have a MOUNTPOINT. If the SD
+card is mounted, use umount to unmount the partitions.</p>
+<p>For example, if lsblk returned this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+:
+:
+sdc      8:32   1    15G  0 disk
+├─sdc1   8:33   1 131.8M  0 part /media/localUser/boot
+└─sdc2   8:34   1 765.9M  0 part /media/localUser/root
+</pre></div>
+</div>
+<p>Then we would want to unmount sdc1 and sdc2:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ sudo umount /media/localUser/boot
+$ sudo umount /media/localUser/root
+$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+:
+:
+sdc      8:32   1    15G  0 disk
+├─sdc1   8:33   1 131.8M  0 part
+└─sdc2   8:34   1 765.9M  0 part
+</pre></div>
+</div>
+</li>
+<li><p>Next, install bmap-tools using the following command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sudo apt-get install bmap-tools
+</pre></div>
+</div>
+<p>Then generate a bmap file from the decompressed WIC image with the following command.
+This step can be skipped but the bmap file significantly reduces the time taken to flash the SD card.</p>
+<pre class="literal-block">bmaptool create -o tisdk-adas-image.bmap tisdk-adas-image-&lt;machine&gt;.wic</pre>
+</li>
+<li><p>Then write the WIC image to the SD card with the following command:</p>
+<pre class="literal-block">sudo bmaptool copy --bmap tisdk-adas-image.bmap tisdk-adas-image-&lt;machine&gt;.wic /dev/sdx</pre>
+<p>In the above example, the SD card is at /dev/sdc. In that case, the
+image write command would look like this:</p>
+<pre class="literal-block">sudo bmaptool copy --bmap tisdk-adas-image.bmap tisdk-adas-image-&lt;machine&gt;.wic /dev/sdc</pre>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="create-sd-card-with-custom-images">
+<span id="processor-sdk-linux-create-sd-card-with-custom-images"></span><h2><span class="section-number">1.1.3.4. </span>Create SD Card with custom images<a class="headerlink" href="#create-sd-card-with-custom-images" title="Permalink to this headline">¶</a></h2>
+<p>Often times you will use TFTP and NFS during development to transfer your
+kernel images and boot your root file systems respectively. Once you are
+done with your development you may want to place these images onto an SD
+card so that they can be used stand-alone without requiring a network
+connection to a server.</p>
+<p>For this purpose, the Processor SDK Linux J784s4 package includes a script in the
+<strong>&lt;PSDK_PATH&gt;/bin</strong> directory named <strong>create-sdcard.sh</strong>.</p>
+<p>The Processor SDK Linux J784s4 can be installed either on Host or Inside a Docker Container that is hosted on <a class="reference external" href="https://github.com/TexasInstruments/ti-docker-images/pkgs/container/ubuntu-distro">ghcr.io/texasinstruments</a>.</p>
+<p>The script will give you information about each step, but the following
+section will go over the details for the use cases above and walk you
+through how to use the script as well.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="invoking-the-script">1. Invoking the Script:</p>
+<p>The <strong>create-sdcard.sh</strong> script can be run from any location but must be
+run with <strong>root</strong> permissions. This usually means using the <strong>sudo</strong>
+command to start execution of the script. For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sudo &lt;PSDK\_PATH&gt;/bin/create-sdcard.sh
+</pre></div>
+</div>
+<p>If you fail to execute the script without root permissions you will
+receive a message that root permissions are required and the script will
+exit.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="select-the-sd-card-device">2. Select the SD Card Device:</p>
+<p>The first step of the script will ask you to select the drive
+representing the SD card that you want to format. In most cases your
+host root file system drive has been masked off to prevent damage to the
+host system. When prompted enter the device number corresponding to the
+SD card. For example if the output looks like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Availible Drives to write images to:
+
+#  major   minor    size   name
+1:   8       16    7761920 sdb
+
+Enter Device Number:
+</pre></div>
+</div>
+<p>You would enter <strong>1</strong> to select the <strong>sdb</strong> device.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For most common installations, this script works fine.
+However, if you are using more advanced disk slicing and volume
+management, the presented list of device nodes are off by one; in the
+best case (picking the last item) it will flag a range error, and in the
+worst case (anything in the middle) the wrong DASD can be destroyed. The
+problem originates when it attempts to determine the $ROOTDRIVE to
+“mask” the volume where “/” is mounted from the selection list using a
+“grep -v $ROOTDRIVE” For the naive partitioning case, its heuristic is
+fine, yielding something like “sda” — but for LVM, it grabs some chunk
+of the device name, e.g. “mapp” (out of “/dev/mapper/kubuntu–vg-root on
+/ type …”).</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="partitioning-the-sd-card">3. Partitioning the SD Card</p>
+<p>Any partitions of the device that are already mounted will be un-mounted
+so that the device is ready for partitioning.</p>
+<p>If the SD Card already has partition you will see a prompt like the
+following asking you if you would like to repartition the card. If the
+card was not already partitioned then this step will be skipped and you
+can move on to the next step.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Would you like to re-partition the drive anyways [y/n] :
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Options:</p>
+<ul>
+<li><p><strong>n</strong> - If the SD card already has the desired number of
+partitions then this will leave the partitioning alone. If you
+select <strong>n</strong> here skip on to step 4.</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>y</strong> - This will allow you to change the partitioning of the SD
+card. For example if you have a 3 partition card and want to
+create a 2 partition card to give additional storage space to the
+root file system you would select <strong>y</strong> here.</p></li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This operation <strong>WILL ERASE</strong> the contents of your SD card.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="select-number-of-partitions">4. Select Number of Partitions</p>
+<p>You should now see a prompt like the following which will ask you how
+many partitions you want to create for the SD card.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Number of partitions needed [2/3] :
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Options:</p>
+<ul>
+<li><p><strong>2</strong> - This is the most common use case and will give the most
+space to the root file system.</p></li>
+</ul>
+</li>
+</ul>
+<p>After selecting the number of partitions, move on to the next section.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="installing-content-onto-sd-card">5. Installing Content onto the SD Card:</p>
+<p>After the SD card is partitioned, you will be prompted whether you want
+to continue installing the file system or safely exit the script.</p>
+<ul class="simple">
+<li><p>Options:</p>
+<ul>
+<li><p><strong>y</strong> - Selecting yes here will begin the process of installing
+the SD card contents. This operation <strong>WILL ERASE</strong> any existing
+data on the SD card.</p></li>
+<li><p><strong>n</strong> - Selecting no here will allow you to have partitioned your
+card but will leave the partitions empty.</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="installing-custom-images">6. Installing Custom Images</p>
+<p>You should now see a prompt like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>################################################################################
+
+    Choose file path to install from
+
+    1 ) Install pre-built images from SDK
+    2 ) Enter in custom boot and rootfs file paths
+
+################################################################################
+
+Choose now [1/2] :
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Options:</p>
+<ul>
+<li><p><strong>1</strong> - Refer to <a class="reference internal" href="#processor-sdk-linux-sd-card-with-default-images"><span class="std std-ref">this section</span></a> to install the default images.</p></li>
+<li><p><strong>2</strong> - Select option <strong>2</strong> to create an SD card with your custom images.</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="select-boot-partition">7. Select Boot Partition</p>
+<p>You will now be prompted to provide a path to the location of the boot
+partition files. The prompt will explain the requirements of the files
+to be placed at the path, but the basic options are:</p>
+<ol class="arabic simple">
+<li><p>Point to a tarball containing all of the files you want placed on the
+boot partition. This would include the boot loaders and the kernel
+image as well as any optional files like uEnv.txt.</p></li>
+<li><p>Point to a directory containing the files for the boot partition like
+those in the first option.</p></li>
+</ol>
+<p>The script is intelligent enough to recognize whether you provided a
+tarball or a directory path and will copy the files accordingly. You
+will be given a list of the files that are going to be copied and given
+the option to change the path if the list of files is not correct.</p>
+<p class="rubric" id="select-root-partition">8. Select Root Partition</p>
+<p>You will now be prompted to provide a path to the location of the root
+file sysetm partition files. The prompt will explain the requirements of
+the files to be placed at the path, but the basic options are:</p>
+<ol class="arabic simple">
+<li><p>Point to a tarball of the root file system you want to use.</p></li>
+<li><p>Point to a directory containing the root file sysetm such as an NFS
+share directory.</p></li>
+</ol>
+<p>The script is intelligent enough to recognize whether you provided a
+tarball or a directory path and will copy the files accordingly. You
+will be given a list of the files that are going to be copied and given
+the option to change the path if the list of files is not correct.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="create-sd-card-with-default-images-using-script">
+<span id="processor-sdk-linux-sd-card-with-default-images"></span><h2><span class="section-number">1.1.3.5. </span>Create SD Card with Default Images using script<a class="headerlink" href="#create-sd-card-with-default-images-using-script" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this section is to cover how to use the
+<strong>create-sdcard.sh</strong> script to populate an SD card that can be used to
+boot the device using the default images that ship with the Processor SDK Linux J784s4 package.</p>
+<p>The Processor SDK Linux J784s4 can be installed either on host or inside a Docker container that is hosted on <a class="reference external" href="https://github.com/TexasInstruments/ti-docker-images/pkgs/container/ubuntu-distro">ghcr.io/texasinstruments</a>.</p>
+<p><strong>Steps to follow inside a Docker Container</strong></p>
+<ul class="simple">
+<li><p>The SD card you wish to create is inserted into the host system and has a size sufficiently large (16GB or larger) to hold at least the bootloaders, kernel and root file system.</p></li>
+<li><p>Refer <a class="reference external" href="https://github.com/TexasInstruments/ti-docker-images?tab=readme-ov-file#steps-to-run-sdk-installer-inside-container">Steps to Run SDK Installer inside a Container</a></p></li>
+<li><p>Start running the script as mentioned in steps 1-4 of <a class="reference internal" href="#processor-sdk-linux-create-sd-card-with-custom-images"><span class="std std-ref">Create SD card with custom images</span></a> section above.</p></li>
+<li><p>Refer <a class="reference internal" href="#choose-install-pre-built-images"><span class="std std-ref">Install the Pre-built Images from SDK</span></a></p></li>
+</ul>
+<p><strong>Steps to follow on Host</strong></p>
+<p class="rubric" id="sd-default-image-prerequisites">1. Prerequisites</p>
+<ol class="arabic simple">
+<li><p>The Processor SDK Linux J784s4 package is installed on your host system.</p></li>
+<li><p>The SD card you wish to create is inserted into the host system and
+has a size sufficiently large (16GB or larger) to hold at least the bootloaders,
+kernel, and root file system.</p></li>
+<li><p>You have started running the script as detailed in steps 1-4 of
+<a class="reference internal" href="#processor-sdk-linux-create-sd-card-with-custom-images"><span class="std std-ref">Create SD card with custom images</span></a>
+section above.</p></li>
+</ol>
+<p class="rubric" id="choose-install-pre-built-images">2. Choose Install Pre-built Images</p>
+<p>You should now see a prompt like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>################################################################################
+
+    Choose file path to install from
+
+    1 ) Install pre-built images from SDK
+    2 ) Enter in custom boot and rootfs file paths
+
+################################################################################
+
+Choose now [1/2] :
+</pre></div>
+</div>
+<p>You should choose option <strong>1</strong> to create an SD card using the pre-built
+images from the SDK.</p>
+<p>If you executed this script from within the SDK then the script can
+determine the SDK path automatically and will start copying the contents
+to the SD card. Once the files are copied the script will exit.</p>
+<p>If you executed the script from outside of the SDK (i.e. you copied it
+to some other directory and executed it there) please see the next
+section.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Option 1 will only work with the format of the default SDK
+directory name, which makes the Hands on with the SDK training easiest.
+If you have to change the directory name, use option 2 to enter the
+custom file paths.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="enter-sdk-path">3. Enter SDK Path</p>
+<p>In the case that the script was invoked from a directory without the SDK
+installation in the path, i.e. the script was copied to your home
+directory and executed there, you may see a prompt like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>no SDK PATH found
+Enter path to SDK :
+</pre></div>
+</div>
+<p>Enter the path to the SDK installation directory here. For example, if
+the SDK was installed into the home directory of “<strong>USER</strong>”, the
+path to enter would be <strong>/home/USER/ti-processor-sdk-linux-&lt;machine&gt;-&lt;version&gt;</strong>.
+You will be prompted to confirm the installation directory. The SD card will then
+be created using the default images and the script will exit when finished.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Run_Setup_Scripts.html" class="btn btn-neutral float-left" title="1.1.2. Run Setup Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="GCC_ToolChain.html" class="btn btn-neutral float-right" title="1.1.4. GCC ToolChain" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1.1.14. RemoteProc &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1.2. Troubleshooting" href="Applications.html" />
+    <link rel="prev" title="3.1.1.13. HyperBus and HyperFlash" href="UG-HyperBus.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Foundational_Components_U-Boot.html">3.1. U-Boot</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Users-Guide.html">3.1.1. User’s Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="UG-General-Info.html">3.1.1.1. General Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DFU.html">3.1.1.2. USB Device Firmware Upgrade (DFU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Network.html">3.1.1.3. Network (Wired or USB Client)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NAND.html">3.1.1.4. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-Memory.html">3.1.1.5. SD, eMMC and USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SPI.html">3.1.1.6. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-QSPI.html">3.1.1.7. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-NOR.html">3.1.1.8. NOR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UART.html">3.1.1.9. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-SATA.html">3.1.1.10. SATA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-UFS.html">3.1.1.11. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-DDR3.html">3.1.1.12. DDR3 ECC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UG-HyperBus.html">3.1.1.13. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.1.1.14. RemoteProc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">3.1.2. Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Kernel.html">3.2. Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../Foundational_Components_U-Boot.html"><span class="section-number">3.1. </span>U-Boot</a> &raquo;</li>
+          <li><a href="Users-Guide.html"><span class="section-number">3.1.1. </span>User’s Guide</a> &raquo;</li>
+      <li><span class="section-number">3.1.1.14. </span>RemoteProc</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="remoteproc">
+<h1><span class="section-number">3.1.1.14. </span>RemoteProc<a class="headerlink" href="#remoteproc" title="Permalink to this headline">¶</a></h1>
+<p>This section documents how to initialize, load, start and stop remote cores from U-Boot prompt.
+Following remotecores support is available in U-boot for K3 devices. However the actual remote
+cores deployed depends on the specific SoC used:</p>
+<ul class="simple">
+<li><p>Cortex-R5F in Lockstep more</p></li>
+<li><p>Cortex-R5F in split mode</p></li>
+<li><p>Cortex-M4F</p></li>
+<li><p>C66x DSP</p></li>
+<li><p>C71x DSP</p></li>
+</ul>
+<div class="section" id="initialization">
+<h2><span class="section-number">3.1.1.14.1. </span>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
+<p>U-Boot supports for initializing all the available remotecores in one go or
+initialize individual core based on the DT alias id.</p>
+<p>The below command will initialize all the available remote cores:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; rproc init</span>
+</pre></div>
+</div>
+<p>The below command will initialize just the given remote core</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; rproc init &lt;id&gt;</span>
+</pre></div>
+</div>
+<p>The below command lists all the available/initialized remotecores in a system.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; rproc list</span>
+<span class="go">0 - Name:&#39;r5f@41000000&#39; type:&#39;internal memory mapped&#39; supports: load start stop reset</span>
+<span class="go">1 - Name:&#39;r5f@41400000&#39; type:&#39;internal memory mapped&#39; supports: load start stop reset</span>
+<span class="go">2 - Name:&#39;r5f@5c00000&#39; type:&#39;internal memory mapped&#39; supports: load start stop reset</span>
+<span class="go">3 - Name:&#39;r5f@5d00000&#39; type:&#39;internal memory mapped&#39; supports: load start stop reset</span>
+<span class="go">4 - Name:&#39;r5f@5e00000&#39; type:&#39;internal memory mapped&#39; supports: load start stop reset</span>
+<span class="go">5 - Name:&#39;r5f@5f00000&#39; type:&#39;internal memory mapped&#39; supports: load start stop reset</span>
+<span class="go">6 - Name:&#39;dsp@4d80800000&#39; type:&#39;internal memory mapped&#39; supports: load start stop reset</span>
+<span class="go">7 - Name:&#39;dsp@4d81800000&#39; type:&#39;internal memory mapped&#39; supports: load start stop reset</span>
+<span class="go">8 - Name:&#39;dsp@64800000&#39; type:&#39;internal memory mapped&#39; supports: load start stop reset</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading">
+<h2><span class="section-number">3.1.1.14.2. </span>Loading<a class="headerlink" href="#loading" title="Permalink to this headline">¶</a></h2>
+<p>Once Initialized, remotecores can be loaded with a relevant image. Make sure
+image is loaded only after initializing the core.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; load mmc 1:2 0x90000000 /lib/firmware/j7-main-r5f0_0-fw</span>
+<span class="go">2536540 bytes read in 112 ms (21.6 MiB/s)</span>
+<span class="go">=&gt; rproc load 2 0x90000000 0x${filesize}</span>
+<span class="go">Load Remote Processor 2 with data@addr=0x90000000 2536540 bytes: Success!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="starting">
+<h2><span class="section-number">3.1.1.14.3. </span>Starting<a class="headerlink" href="#starting" title="Permalink to this headline">¶</a></h2>
+<p>Successfully loaded remotecore can be started using the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; rproc start 2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stop">
+<h2><span class="section-number">3.1.1.14.4. </span>Stop<a class="headerlink" href="#stop" title="Permalink to this headline">¶</a></h2>
+<p>A running remotecore can be stopped using the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; rproc stop 2</span>
+</pre></div>
+</div>
+<p>Make sure all the commands are run in the above given sequence. Currently IPC
+is not supported in U-boot.</p>
+</div>
+<div class="section" id="lockstep-and-split-mode">
+<h2><span class="section-number">3.1.1.14.5. </span>Lockstep and Split mode<a class="headerlink" href="#lockstep-and-split-mode" title="Permalink to this headline">¶</a></h2>
+<p>Cortex-R5F can be used in both lockstep (both cores run same code) and split
+mode (each core runs independently).</p>
+<p>To set lockstep/split mode for R5 remote cores, use <code class="code docutils literal notranslate"><span class="pre">ti,cluster-mode</span></code>
+property in the u-boot SoC device tree source. <code class="code docutils literal notranslate"><span class="pre">ti,cluster-mode</span></code> value
+should be set to 1 for lockstep and 0 for split mode.</p>
+<p>Furthermore, for setting lockstep/split mode for boot cores (which is MCU R5
+in Jacinto platforms), an additional property named <code class="code docutils literal notranslate"><span class="pre">core-opts</span></code> in binman
+dtsi needs to be updated. This is because the lockstep/split mode for boot
+MCU R5 on Jacinto platforms is set by the ROM code itself, based on core-opts
+value in the x509 certificate. <code class="code docutils literal notranslate"><span class="pre">core-opts</span></code> value in binman dtsi should be
+set to 2 for split-mode, and 0 for lockstep mode for boot MCU R5 on Jacinto
+platforms.</p>
+<p>Refer to the below example on K3 J784S4 SoC.</p>
+<p class="rubric">Lockstep configuration</p>
+<ul>
+<li><p>MAIN R5F:</p>
+<blockquote>
+<div><p>arch/arm/dts/k3-j784s4-main.dtsi</p>
+<div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="nl">main_r5fss0</span><span class="p">:</span><span class="w"> </span><span class="nf">r5fss</span><span class="o">@</span><span class="mi">5c00000</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ti,j721s2-r5fss&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ti</span><span class="p">,</span><span class="n">cluster-mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="na">set</span><span class="w"> </span><span class="na">to</span><span class="w"> </span><span class="na">lockstep</span><span class="o">-</span><span class="na">mode</span>
+<span class="w">    </span><span class="kr">#address-cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">#size-cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">ranges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x5c00000</span><span class="w"> </span><span class="mh">0x00</span><span class="w"> </span><span class="mh">0x5c00000</span><span class="w"> </span><span class="mh">0x20000</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="mh">0x5d00000</span><span class="w"> </span><span class="mh">0x00</span><span class="w"> </span><span class="mh">0x5d00000</span><span class="w"> </span><span class="mh">0x20000</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">power-domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">k3_pds</span><span class="w"> </span><span class="mi">336</span><span class="w"> </span><span class="na">TI_SCI_PD_EXCLUSIVE</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Boot MCU R5F:</p>
+<blockquote>
+<div><p>arch/arm/dts/k3-j784s4-mcu-wakeup.dtsi</p>
+<div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="nl">mcu_r5fss0</span><span class="p">:</span><span class="w"> </span><span class="nf">r5fss</span><span class="o">@</span><span class="mi">41000000</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ti,j721s2-r5fss&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ti</span><span class="p">,</span><span class="n">cluster-mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="na">set</span><span class="w"> </span><span class="na">to</span><span class="w"> </span><span class="na">lockstep</span><span class="o">-</span><span class="na">mode</span>
+<span class="w">    </span><span class="kr">#address-cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">#size-cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">ranges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x41000000</span><span class="w"> </span><span class="mh">0x00</span><span class="w"> </span><span class="mh">0x41000000</span><span class="w"> </span><span class="mh">0x20000</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">...</span>
+</pre></div>
+</div>
+<p>arch/arm/dts/k3-j784s4-binman.dtsi</p>
+<div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="na">binman</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">tiboot3</span><span class="o">-</span><span class="na">j784s4</span><span class="o">-</span><span class="na">gp</span><span class="o">-</span><span class="na">evm</span><span class="p">.</span><span class="na">bin</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="na">In</span><span class="w"> </span><span class="na">the</span><span class="w"> </span><span class="na">case</span><span class="w"> </span><span class="na">of</span><span class="w"> </span><span class="na">GP</span><span class="w"> </span><span class="na">boards</span>
+<span class="w">        </span><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tiboot3-j784s4-gp-evm.bin&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">symlink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tiboot3.bin&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nf">ti-secure-rom</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">u_boot_spl_unsigned</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">ti_fs_gp</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">                </span><span class="o">&lt;&amp;</span><span class="na">combined_tifs_cfg_gp</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">combined_dm_cfg_gp</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">combined</span><span class="p">;</span>
+<span class="w">            </span><span class="n">dm-data</span><span class="p">;</span>
+<span class="w">            </span><span class="n">core-opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="na">core</span><span class="o">-</span><span class="na">opts</span><span class="w"> </span><span class="na">value</span><span class="w"> </span><span class="na">should</span><span class="w"> </span><span class="na">be</span><span class="w"> </span><span class="na">set</span><span class="w"> </span><span class="na">to</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="na">for</span><span class="w"> </span><span class="na">lockstep</span><span class="o">-</span><span class="na">mode</span><span class="w"> </span><span class="na">on</span><span class="w"> </span><span class="na">boot</span><span class="w"> </span><span class="na">core</span>
+<span class="w">            </span><span class="n">content-sbl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">u_boot_spl_unsigned</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">load</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x41c00000</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">            </span><span class="p">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p class="rubric">Split-mode configuration</p>
+<ul>
+<li><p>MAIN R5F:</p>
+<blockquote>
+<div><p>arch/arm/dts/k3-j784s4-main.dtsi</p>
+<div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="nl">main_r5fss0</span><span class="p">:</span><span class="w"> </span><span class="nf">r5fss</span><span class="o">@</span><span class="mi">5c00000</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ti,j721s2-r5fss&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ti</span><span class="p">,</span><span class="n">cluster-mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="na">set</span><span class="w"> </span><span class="na">to</span><span class="w"> </span><span class="na">split</span><span class="o">-</span><span class="na">mode</span>
+<span class="w">    </span><span class="kr">#address-cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">#size-cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">ranges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x5c00000</span><span class="w"> </span><span class="mh">0x00</span><span class="w"> </span><span class="mh">0x5c00000</span><span class="w"> </span><span class="mh">0x20000</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="mh">0x5d00000</span><span class="w"> </span><span class="mh">0x00</span><span class="w"> </span><span class="mh">0x5d00000</span><span class="w"> </span><span class="mh">0x20000</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">power-domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">k3_pds</span><span class="w"> </span><span class="mi">336</span><span class="w"> </span><span class="na">TI_SCI_PD_EXCLUSIVE</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Boot MCU R5:</p>
+<blockquote>
+<div><p>arch/arm/dts/k3-j784s4-mcu-wakeup.dtsi</p>
+<div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="nl">mcu_r5fss0</span><span class="p">:</span><span class="w"> </span><span class="nf">r5fss</span><span class="o">@</span><span class="mi">41000000</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ti,j721s2-r5fss&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ti</span><span class="p">,</span><span class="n">cluster-mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="na">set</span><span class="w"> </span><span class="na">to</span><span class="w"> </span><span class="na">split</span><span class="o">-</span><span class="na">mode</span>
+<span class="w">    </span><span class="kr">#address-cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">#size-cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">ranges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x41000000</span><span class="w"> </span><span class="mh">0x00</span><span class="w"> </span><span class="mh">0x41000000</span><span class="w"> </span><span class="mh">0x20000</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">...</span>
+</pre></div>
+</div>
+<p>arch/arm/dts/k3-j784s4-binman.dtsi</p>
+<div class="highlight-dts notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="na">binman</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">tiboot3</span><span class="o">-</span><span class="na">j784s4</span><span class="o">-</span><span class="na">gp</span><span class="o">-</span><span class="na">evm</span><span class="p">.</span><span class="na">bin</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="na">In</span><span class="w"> </span><span class="na">the</span><span class="w"> </span><span class="na">case</span><span class="w"> </span><span class="na">of</span><span class="w"> </span><span class="na">GP</span><span class="w"> </span><span class="na">boards</span>
+<span class="w">        </span><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tiboot3-j784s4-gp-evm.bin&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">symlink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tiboot3.bin&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nf">ti-secure-rom</span><span class="cm"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">u_boot_spl_unsigned</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">ti_fs_gp</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">                </span><span class="o">&lt;&amp;</span><span class="na">combined_tifs_cfg_gp</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">combined_dm_cfg_gp</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">combined</span><span class="p">;</span>
+<span class="w">            </span><span class="n">dm-data</span><span class="p">;</span>
+<span class="w">            </span><span class="n">core-opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="o">#</span><span class="w"> </span><span class="na">core</span><span class="o">-</span><span class="na">opts</span><span class="w"> </span><span class="na">value</span><span class="w"> </span><span class="na">should</span><span class="w"> </span><span class="na">be</span><span class="w"> </span><span class="na">set</span><span class="w"> </span><span class="na">to</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="na">for</span><span class="w"> </span><span class="na">split</span><span class="o">-</span><span class="na">mode</span><span class="w"> </span><span class="na">on</span><span class="w"> </span><span class="na">boot</span><span class="w"> </span><span class="na">core</span>
+<span class="w">            </span><span class="n">content-sbl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&amp;</span><span class="na">u_boot_spl_unsigned</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">load</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x41c00000</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">            </span><span class="p">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From SDK 9.1 onward, default mode is split mode for boot cores.</p>
+</div>
+</div>
+<div class="section" id="hs-devices">
+<h2><span class="section-number">3.1.1.14.6. </span>HS Devices<a class="headerlink" href="#hs-devices" title="Permalink to this headline">¶</a></h2>
+<p>HS Devices by default use the secure firmware images present in the filesystem
+for booting the remoteproc cores. Symlinks to these secure firmware images have
+a suffix of <cite>-sec</cite> on them.</p>
+<p>All the firmware images are authenticated while loading from U-boot.</p>
+<p>Steps for signing and updating firmware images in filesystem.</p>
+<ul>
+<li><p>Getting Security Dev Tool</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://git.ti.com/git/security-development-tools/core-secdev-k3.git<span class="w"> </span>-b<span class="w"> </span>master
+<span class="gp">$ </span><span class="nb">export</span><span class="w"> </span><span class="nv">TI_SECURE_DEV_PKG</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/core-secdev-k3
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Export the path for secdev</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="si">${</span><span class="nv">TI_SECURE_DEV_PKG</span><span class="si">}</span>/scripts/secure-binary-image.sh<span class="w"> </span><span class="nv">$FIRMWARE</span><span class="w"> </span><span class="nv">$FIRMWARE</span>.signed
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Updating firmware image</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ln<span class="w"> </span>-vfs<span class="w"> </span><span class="nv">$FIRMWARE</span>.signed<span class="w"> </span>/lib/firmware/j7-main-r5f0_0-fw-sec
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="UG-HyperBus.html" class="btn btn-neutral float-left" title="3.1.1.13. HyperBus and HyperFlash" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Applications.html" class="btn btn-neutral float-right" title="3.1.2. Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

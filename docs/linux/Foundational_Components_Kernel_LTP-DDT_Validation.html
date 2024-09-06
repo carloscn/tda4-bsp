@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.3. LTP-DDT Validation &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.2.4. FAQs" href="Foundational_Components_Kernel_FAQs.html" />
+    <link rel="prev" title="3.2.2.24. Voltage &amp; Thermal Management (VTM)" href="Foundational_Components/Kernel/Kernel_Drivers/VTM.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+      <li><span class="section-number">3.2.3. </span>LTP-DDT Validation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ltp-ddt-validation">
+<h1><span class="section-number">3.2.3. </span>LTP-DDT Validation<a class="headerlink" href="#ltp-ddt-validation" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="document-license">Document License</p>
+<p>This work is licensed under the Creative Commons Attribution-Share Alike
+3.0 United States License. To view a copy of this license, visit
+<a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/us/">http://creativecommons.org/licenses/by-sa/3.0/us/</a> or send a letter to
+Creative Commons, 171 Second Street, Suite 300, San Francisco,
+California, 94105, USA.</p>
+<p class="rubric" id="ltp-ddt-overview">LTP-DDT Overview</p>
+<p>LTP-DDT is a test application used by Texas Instruments to validate
+Linux releases.</p>
+<div class="line-block">
+<div class="line">It is based on <a class="reference external" href="https://github.com/linux-test-project/ltp">LTP</a>.</div>
+<div class="line">LTP validates many kernel areas, such as memory management, scheduler
+and system calls. LTP-DDT extends LTP’s core Kernel tests with tests
+to validate Kernel drivers developed by Texas Instruments. LTP-DDT
+focuses on embedded device driver tests. It contains hundreds of tests
+that validate functionality and performance of device drivers. LTP-DDT
+also contains tests to validate System’s use cases and overall
+System’s stability.</div>
+</div>
+<p>LTP-DDT uses LTP’s test infrastructure, such as:</p>
+<ul class="simple">
+<li><p>Test execution drivers (PAN)</p></li>
+<li><p>Top-level test scripts (i.e. runltp)</p></li>
+<li><p>Same Folder Hierarchy and test case definition format</p></li>
+</ul>
+<p>LTP-DDT test cases are LTP test cases and vice-versa.</p>
+<p>The main additions or ‘enhacements’ of LTP-DDT compared to LTP are:</p>
+<ul class="simple">
+<li><p>PLATFORM files. LTP-DDT uses PLATFORM files to identify platform
+hardware and software features.</p></li>
+<li><p>OVERRIDE mechanism. Default test case parameters are automatically
+overridden based on PLATFORM features.</p></li>
+<li><p>ATOMIC scripts. Code reuse is foster by writing scripts that
+implement small well-defined actions. Test scripts rely on these
+atomic scripts to execute their actions.</p></li>
+<li><p>AUTOMATIC FILTERING. Test cases are filtered based on the test
+requirements and the PLATFORM features.</p></li>
+<li><p>TESTCASE ANNOTATIONS. Test scenario files are annotated with
+following annotations &#64;name, &#64;desc, &#64;requires and &#64;setup_requires.
+The &#64;requires and &#64;setup_requires are used to select test cases at
+run time based on the PLATFORM features.</p></li>
+<li><p>All LTP-DDT test cases and test code reside in &lt;testcases-root&gt;/ddt/
+and &lt;testcode-root&gt;/ddt/ folders respectively.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="ltp-ddt-highlights">LTP-DDT Highlights</p>
+<ul class="simple">
+<li><p>Easy to use (automatically filter test cases not applicable for
+platform)</p></li>
+<li><p>Easy to support new platforms (just define the platform file)</p></li>
+<li><p>Test cases can be easily wrap or imported to Test Management Systems
+(Use of testcase annotations facilitates this)</p></li>
+<li><p>High Code Reuse (atomic scripts and test scripts are reused and
+parameters are adjusted on the fly)</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="test-suites">Test Suites</p>
+<div class="line-block">
+<div class="line">LTP-DDT contains tests cases that uses other open source tools such as
+iperf, evtest, rt-tests (cyclictest), lmbench and others.</div>
+<div class="line">Test suites currently available include among others:</div>
+</div>
+<ul class="simple">
+<li><p>alsa</p></li>
+<li><p>cpu hotplug</p></li>
+<li><p>crypto</p></li>
+<li><p>timers</p></li>
+<li><p>emmc</p></li>
+<li><p>mmc/sd</p></li>
+<li><p>ethernet</p></li>
+<li><p>fbdev</p></li>
+<li><p>gpio</p></li>
+<li><p>gstreamer (multimedia)</p></li>
+<li><p>hdmi</p></li>
+<li><p>i2c</p></li>
+<li><p>ipc</p></li>
+<li><p>latency under different use cases (important for RT kernel)</p></li>
+<li><p>lmbench</p></li>
+<li><p>memory tests</p></li>
+<li><p>mm (ltp’s memory management)</p></li>
+<li><p>msata</p></li>
+<li><p>nand</p></li>
+<li><p>nor</p></li>
+<li><p>pci</p></li>
+<li><p>pipes (ltp)</p></li>
+<li><p>power management</p></li>
+<li><p>programmable real-time unit (PRU)</p></li>
+<li><p>pwm</p></li>
+<li><p>qspi</p></li>
+<li><p>realtime (ltp)</p></li>
+<li><p>rng</p></li>
+<li><p>rtc</p></li>
+<li><p>sata</p></li>
+<li><p>scheduler (ltp)</p></li>
+<li><p>sgx (graphics)</p></li>
+<li><p>smp</p></li>
+<li><p>spi</p></li>
+<li><p>syscalls (ltp)</p></li>
+<li><p>system (use-cases, e.g. multiple tests running in parallel)</p></li>
+<li><p>thermal</p></li>
+<li><p>timers (ltp)</p></li>
+<li><p>touchscreen</p></li>
+<li><p>uart</p></li>
+<li><p>usb host (multiple tests with different classes)</p></li>
+<li><p>usb device</p></li>
+<li><p>v4l2</p></li>
+<li><p>vlan</p></li>
+<li><p>dwt</p></li>
+<li><p>wlan</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="device-under-tests-supported">Device Under Tests Supported</p>
+<p>Supported platforms with LTP-DDT
+- can be found <a class="reference external" href="https://git.ti.com/cgit/test-automation/ltp-ddt/tree/platforms">here</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="host-platform-requirements">Host Platform Requirements</p>
+<p>Linux host is required :</p>
+<ul class="simple">
+<li><p>for compiling LTP-DDT.</p></li>
+<li><p>to host the NFS server to boot the EVM with NFS as root filesystem</p></li>
+<li><p>to run host utilities - e.g.iperf</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="host-software-requirements">Host Software Requirements</p>
+<ul class="simple">
+<li><p>GCC Tool chain for ARM</p></li>
+<li><p>Serial console terminal application</p></li>
+<li><p>TFTP and NFS servers. NFS server is required only in case of NFS
+boot.</p></li>
+<li><p>iperf utility on the host.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="filesystem-requirements">Filesystem Requirements</p>
+<p>LTP-DDT relies on other open source test tools. The following test tools
+must be available in the target filesystem to run ltp-ddt:</p>
+<ul class="simple">
+<li><p>alsa utilities</p></li>
+<li><p>evtest</p></li>
+<li><p>hdparm</p></li>
+<li><p>iperf</p></li>
+<li><p>lmbench</p></li>
+<li><p>rt-tests (cyclictest)</p></li>
+</ul>
+<p>There is an Arago/OE recipe
+<a class="reference external" href="https://git.ti.com/cgit/arago-project/meta-arago/tree/meta-arago-distro/recipes-core/packagegroups/ti-world.bb">here</a>
+that builds a filesystem image w/ the above tools plus:</p>
+<ul class="simple">
+<li><p>bonnie++</p></li>
+<li><p>iozone3</p></li>
+<li><p>ltp-ddt</p></li>
+</ul>
+<p class="rubric" id="installation-ltp-ddt">Installation</p>
+<p>Clone the project</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>git clone https://git.ti.com/git/test-automation/ltp-ddt.git
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Installation instructions are in the README-DDT file. Check sections
+6) and 7)</div>
+<div class="line">There is also an Arago/OE recipe to build ltp-ddt
+<a class="reference external" href="https://git.ti.com/cgit/arago-project/meta-arago/tree/meta-arago-test/recipes-devtools/ltp-ddt">here</a></div>
+</div>
+<p class="rubric" id="running-tests">Running Tests</p>
+<ul class="simple">
+<li><p>Run DDT tests the same way you run LTP tests. Use ltprun program and
+pass to</p></li>
+</ul>
+<p>it the test scenario file in the runtest directory (option -f) to run
+and the platform (option -P) to use. For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>./runltp -P am180x-evm -f ddt/lmbench
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">The platform name specified with -P option must exist in the
+platforms/ dir.</div>
+<div class="line">It is also possible to run tests without -P option, in such case the
+ltprun script won’t filter test cases and it is possible that tests
+cases not supported by the platform you are running on will be called.</div>
+</div>
+<ul class="simple">
+<li><p>In addition to selecting test scenarios using -f option, users can
+also</p></li>
+</ul>
+<div class="line-block">
+<div class="line">filter test cases using -s PATTERN option. These option select test
+cases based on the test case TAG specified in the test scenario file.</div>
+</div>
+<ul class="simple">
+<li><p>The runltp script have lot of options. Some useful ones for stress
+tests are:</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-t DURATION: Define duration of the test in s,m,h,d.
+-x INSTANCES: Run multiple test instances in parallel.
+-c &lt;options&gt;: Run test under additional background CPU load
+-D &lt;options&gt;: Run test under additional background load on Secondary storage
+-m &lt;options&gt;: Run test under additional background load on Main memory
+-i &lt;options&gt;: Run test under additional background load on IO Bus
+-n          : Run test with network traffic in background.
+</pre></div>
+</div>
+<p>Please refer to README-DDT file section 8) for more details.</p>
+<ul class="simple">
+<li><p>Running NAND Sanity Tests</p></li>
+</ul>
+<p>– Run all NAND sanity tests</p>
+<p>Using below command to run NAND sanity tests.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>./runltp -P &lt;platform&gt; -s &quot;NAND_S_&quot; -S skiplist
+</pre></div>
+</div>
+<p>If there are more than one flash filesystem supported, say, jffs2 and
+ubifs and you don’t run jffs2 test cases. You need create a file called
+‘skiplist’ (this filename could be anything) and put to-be-skipped test
+case tag in this file. Here is the content of skiplist to skip jffs2
+test cases.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>@ cat skiplist
+_JFFS2
+</pre></div>
+</div>
+<p>– Run NAND performance test</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>./runltp -P &lt;platform&gt; -s &quot;NAND_L_PERF&quot; -S skiplist
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="join">Join</p>
+<div class="line-block">
+<div class="line">LTP-DDT is an open source project.</div>
+<div class="line">The LTP-DDT sources are hosted here
+<a class="reference external" href="https://git.ti.com/git/test-automation/ltp-ddt.git">https://git.ti.com/git/test-automation/ltp-ddt.git</a></div>
+<div class="line">Developers are encouraged to join the Arago mailing list at
+<a class="reference external" href="mailto:meta-arago&#37;&#52;&#48;lists&#46;yoctoproject&#46;org">meta-arago<span>&#64;</span>lists<span>&#46;</span>yoctoproject<span>&#46;</span>org</a></div>
+<div class="line">Of course patches and comments are welcome, please send them to
+<a class="reference external" href="mailto:meta-arago&#37;&#52;&#48;lists&#46;yoctoproject&#46;org">meta-arago<span>&#64;</span>lists<span>&#46;</span>yoctoproject<span>&#46;</span>org</a> mailing list.</div>
+<div class="line">Developers are encouraged to read sections 3) and 4) in the README-DDT
+file before submitting patches.</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Foundational_Components/Kernel/Kernel_Drivers/VTM.html" class="btn btn-neutral float-left" title="3.2.2.24. Voltage &amp; Thermal Management (VTM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Foundational_Components_Kernel_FAQs.html" class="btn btn-neutral float-right" title="3.2.4. FAQs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

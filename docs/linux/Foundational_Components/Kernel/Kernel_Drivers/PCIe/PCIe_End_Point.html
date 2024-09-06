@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.11. PCIe End Point &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.12. PCIe Backplane" href="PCIe_Backplane.html" />
+    <link rel="prev" title="3.2.2.10.3.3.3.1. TSN Switch Tuning Guide" href="../Network/CPSW-TSN-Tuning.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.11. </span>PCIe End Point</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="pcie-end-point">
+<h1><span class="section-number">3.2.2.11. </span>PCIe End Point<a class="headerlink" href="#pcie-end-point" title="Permalink to this headline">¶</a></h1>
+<p class="rubric"><strong>Introduction</strong></p>
+<p>PCIe controller IPs integrated in J784S4 are capable
+of operating either in Root Complex mode (host) or End Point mode
+(device). When operating in End Point (EP) mode, the controller can be
+configured to be used as any function depending on the use case (‘Test
+endpoint’ and ‘NTB’ are the only PCIe EP functions supported in Linux kernel
+right now).</p>
+<p class="rubric"><strong>Block Diagram</strong></p>
+<p>Following is the block diagram of framework for endpoint mode:</p>
+<img alt="../../../../../_images/ep_framework.png" src="../../../../../_images/ep_framework.png" />
+<p class="rubric"><strong>Features of J7ES</strong></p>
+<p>There are four instances of the PCIe subsystem. Following are some of the
+main features:</p>
+<ul class="simple">
+<li><p>Each instance can be configured to operate in Root Complex mode or
+End Point mode</p></li>
+<li><p>One or two lane configuration, capable up to 8.0 Gbps/lane (Gen3)</p></li>
+<li><p>Single-root I/O Virtualization in End Point(EP) mode</p>
+<ul>
+<li><p>6 Physical Functions (PF)</p></li>
+<li><p>16 Virtual Functions (4 VF each for PF0, PF1, PF2 and PF3; 0 VF for PF4 and PF5)</p></li>
+</ul>
+</li>
+<li><p>Support for Legacy, MSI and MSI-X Interrupt</p></li>
+<li><p>There can be 32 different address mappings in outbound address translation
+unit. The mappings can be from regions reserved for each PCIe instance.</p>
+<ul>
+<li><p>For instance PCIE0 and PCIE1, there are two regions in SoC Memory Map:</p>
+<ul>
+<li><p>128 MB region with address in lower 32 bits</p></li>
+<li><p>4 GB region with address above 32 bits</p></li>
+</ul>
+</li>
+<li><p>For instance PCIE2 and PCIE3, there are two regions in SoC Memory Map:</p>
+<ul>
+<li><p>128 MB region with address above 32 bits</p></li>
+<li><p>4 GB region with address above 32 bits</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="rubric"><strong>Capabilities of J721E EVM</strong></p>
+<p>There are three instances of the PCIe subsystem on the EVM. Following are
+some of the details for each instance:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 24%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Instance</p></th>
+<th class="head"><p>Supported lanes</p></th>
+<th class="head"><p>Supported Connector</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PCIE0</p></td>
+<td><p>1 lane</p></td>
+<td><p>Standard female connector</p></td>
+</tr>
+<tr class="row-odd"><td><p>PCIE1</p></td>
+<td><p>2 lane</p></td>
+<td><p>Standard female connector</p></td>
+</tr>
+<tr class="row-even"><td><p>PCIE2</p></td>
+<td><p>2 lane</p></td>
+<td><p>m.2 connector keyed for SSD (M key)</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric"><strong>Hardware Setup Details</strong></p>
+<p>J784S4 is, by default, intended to be operated in
+Root Complex mode. So in order to connect two boards, a specialized cable
+like below is required.</p>
+<img alt="../../../../../_images/Pcie_ep_cable.jpg" src="../../../../../_images/Pcie_ep_cable.jpg" />
+<p>This cable can be obtained from Adex Electronics (<a class="reference external" href="https://www.adexelec.com">https://www.adexelec.com</a>).</p>
+<p>Modify the cable to remove resistors in CK+ and CK- in order to avoid
+ground loops (power) and smoking clock drivers (clk+/-).</p>
+<p>Remove the RST resistors to avoid reset (PERST) being propagated from Root
+Complex to End Point. Also in Root Complex to End Point loopback connection,
+End Point running Linux should be initialized before Root Complex comes up.
+Propagating reset from Root Complex to End Point will do POR<sub>Z</sub> of
+End Point, which should be avoided.</p>
+<p>The ends of the modified cable should look like below:</p>
+<ul>
+<li><p>A side</p>
+<blockquote>
+<div><img alt="../../../../../_images/PCIE_A_both_sides.jpg" src="../../../../../_images/PCIE_A_both_sides.jpg" />
+</div></blockquote>
+</li>
+<li><p>B side</p>
+<blockquote>
+<div><img alt="../../../../../_images/PCIE_B_both_sides.jpg" src="../../../../../_images/PCIE_B_both_sides.jpg" />
+</div></blockquote>
+</li>
+</ul>
+<p>Following is an image of two J721E EVMs connected back to back. There is no
+restriction on which end of the cable should be connected to host and device.</p>
+<img alt="../../../../../_images/j721e-evm-back-to-back.jpg" src="../../../../../_images/j721e-evm-back-to-back.jpg" />
+<p>For End Point mode, PCIE_1L_MODE_SEL (switch 5) and PCIE_2L_MODE_SEL (switch 6)
+in sw2 should be set to ‘1’.</p>
+<img alt="../../../../../_images/dip-switch-J7AHP.png" src="../../../../../_images/dip-switch-J7AHP.png" />
+<p class="rubric" id="ep-device-configuration"><strong>End Point (EP) Device Configuration</strong></p>
+<p class="rubric"><em>DTS Modification</em></p>
+<p>The default dts is configured to be used in root complex mode. In order
+to use it in endpoint mode, the following changes have to be made in dts
+file.</p>
+<p class="rubric"><strong>6.x SDK (4.19 Kernel)</strong></p>
+<p>To configure Beta J721E EVM in EP mode, apply the following patch:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>diff --git a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
+index 57d72aa945b7..3384dd6063c2 100644
+--- a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
++++ b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
+@@ -734,7 +734,7 @@
+};
+
+&amp;pcie0 {
+-       pci-mode = &lt;PCI_MODE_RC&gt;;
++       pci-mode = &lt;PCI_MODE_EP&gt;;
+        num-lanes = &lt;1&gt;;
+};
+
+@@ -754,6 +754,11 @@
+        phy-names = &quot;pcie_phy&quot;;
+};
+
++&amp;pcie0_ep {
++       phys = &lt;&amp;serdes0_pcie_link&gt;;
++       phy-names = &quot;pcie_phy&quot;;
++};
++
+&amp;pcie1_rc {
+        reset-gpios = &lt;&amp;exp1 2 GPIO_ACTIVE_HIGH&gt;;
+        phys = &lt;&amp;serdes1_pcie_link&gt;;
+</pre></div>
+</div>
+<p>To configure Alpha J721E EVM in EP mode, apply the following patch:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>diff --git a/arch/arm64/boot/dts/ti/k3-j721e-proc-board-tps65917.dts b/arch/arm64/boot/dts/ti/k3-j721e-proc-board-tps65917.dts
+index b9fece8d267c..d50f764c6642 100644
+--- a/arch/arm64/boot/dts/ti/k3-j721e-proc-board-tps65917.dts
++++ b/arch/arm64/boot/dts/ti/k3-j721e-proc-board-tps65917.dts
+@@ -769,7 +769,7 @@
+};
+
+&amp;pcie0 {
+-       pci-mode = &lt;PCI_MODE_RC&gt;;
++       pci-mode = &lt;PCI_MODE_EP&gt;;
+        num-lanes = &lt;1&gt;;
+};
+
+@@ -789,6 +789,11 @@
+        phy-names = &quot;pcie_phy&quot;;
+};
+
++&amp;pcie0_ep {
++       phys = &lt;&amp;serdes0_pcie_link&gt;;
++       phy-names = &quot;pcie_phy&quot;;
++};
++
+&amp;pcie1_rc {
+        reset-gpios = &lt;&amp;exp1 2 GPIO_ACTIVE_HIGH&gt;;
+        phys = &lt;&amp;serdes1_pcie_link&gt;;
+</pre></div>
+</div>
+<p class="rubric"><strong>7.x SDK (5.4 Kernel)</strong></p>
+<p>To configure J721E EVM in EP mode, apply the following patch:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>diff --git a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
+index 6788a3611..b7cd6c7b6 100644
+--- a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
++++ b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
+@@ -813,6 +813,7 @@
+        phys = &lt;&amp;serdes0_pcie_link&gt;;
+        phy-names = &quot;pcie_phy&quot;;
+        num-lanes = &lt;1&gt;;
++       status = &quot;disabled&quot;;
+ }; &amp;pcie1_rc {
+@@ -833,7 +834,6 @@
+        phys = &lt;&amp;serdes0_pcie_link&gt;;
+        phy-names = &quot;pcie_phy&quot;;
+        num-lanes = &lt;1&gt;;
+-       status = &quot;disabled&quot;;
+ }; &amp;pcie1_ep {
+</pre></div>
+</div>
+<p class="rubric"><em>Linux Driver Configuration</em></p>
+<p>The following config options have to be enabled in order to configure the
+PCI controller to be used as a “Endpoint Test” function driver.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_PCI_ENDPOINT=y
+CONFIG_PCI_ENDPOINT_CONFIGFS=y
+CONFIG_PCI_EPF_TEST=y
+CONFIG_PCI_J721E=y
+CONFIG_PCIE_CADENCE_EP=y
+</pre></div>
+</div>
+<p class="rubric"><em>Endpoint Controller devices and Function drivers</em></p>
+<p>To find the list of endpoint controller devices in the system:</p>
+<pre class="literal-block"><a class="reference external" href="mailto:root&#37;&#52;&#48;evm">root<span>&#64;</span>evm</a>:~# ls /sys/class/pci_epc/
+2900000.pcie-ep</pre>
+<p>To find the list of endpoint function drivers in the system:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@evm:~# ls /sys/bus/pci-epf/drivers
+pci_epf_test  pci_epf_ntb
+</pre></div>
+</div>
+<p class="rubric"><em>Using the pci-epf-test function driver</em></p>
+<p>The pci-epf-test function driver can be used to test the endpoint
+functionality of the PCI controller. Some of the tests that are currently
+supported are:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Test</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BAR</p></td>
+<td><p>A known pattern is written and read back from BAR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interrupt (legacy/MSI/MSI-X)</p></td>
+<td><p>Raise an interrupt (legacy/MSI/MSI-X) from EP</p></td>
+</tr>
+<tr class="row-even"><td><p>Read</p></td>
+<td><p>Read data from a buffer in RC, and perform a
+cyclic redundancy check (CRC) for that data</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write</p></td>
+<td><p>Write data to a buffer in RC, and perform a
+cyclic redundancy check (CRC) for that data</p></td>
+</tr>
+<tr class="row-even"><td><p>Copy</p></td>
+<td><p>Copy data from one RC buffer to another RC buffer,
+and perform a cyclic redundancy check (CRC) for
+that data</p></td>
+</tr>
+</tbody>
+</table>
+<img alt="../../../../../_images/pci-epf-test.png" src="../../../../../_images/pci-epf-test.png" />
+<p class="rubric">Creating pci-epf-test device</p>
+<p>PCI endpoint function device can be created using the configfs. To
+create pci-epf-test function, the following commands can be used:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mount -t configfs none /sys/kernel/config
+cd /sys/kernel/config/pci_ep/
+mkdir functions/pci_epf_test/func1
+</pre></div>
+</div>
+<p>The above commands create the pci-epf-test function
+device.</p>
+<p>The PCI endpoint framework populates the directory with configurable
+fields.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@evm:/sys/kernel/config/pci_ep# ls functions/pci_epf_test/func1
+baseclass_code  cache_line_size  deviceid  interrupt_pin  msi_interrupts  msix_interrupts  progif_code  revid  subclass_code  subsys_id  subsys_vendor_id  vendorid
+</pre></div>
+</div>
+<p>The driver populates these entries with default values when the device
+is bound to the driver. The pci-epf-test driver populates vendorid with
+0xffff and interrupt_pin with 0x0001.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@evm:/sys/kernel/config/pci_ep# cat functions/pci_epf_test/func1/vendorid
+0xffff
+root@evm:/sys/kernel/config/pci_ep# cat functions/pci_epf_test/func1/interrupt_pin
+0x0001
+</pre></div>
+</div>
+<p class="rubric">Configuring pci-epf-test device</p>
+<p>The user can configure the pci-epf-test device using the configfs. In
+order to change the vendorid and the number of MSI interrupts used by
+the function device, the following commands can be used:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@evm:/sys/kernel/config/pci_ep# echo 0x104c &gt; functions/pci_epf_test/func1/vendorid
+</pre></div>
+</div>
+<p>The above command configures Texas Instruments as the vendor.</p>
+<pre class="literal-block"><a class="reference external" href="mailto:root&#37;&#52;&#48;evm">root<span>&#64;</span>evm</a>:/sys/kernel/config/pci_ep# echo 0xb00d &gt; functions/pci_epf_test/func1/deviceid</pre>
+<p>The above command configures the deviceid.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@evm:/sys/kernel/config/pci_ep# echo 2 &gt; functions/pci_epf_test/func1/msi_interrupts
+root@evm:/sys/kernel/config/pci_ep# echo 2 &gt; functions/pci_epf_test/func1/msix_interrupts
+</pre></div>
+</div>
+<p>The above command configures the number of interrupts. 2 is the number of
+MSI and MSI-X interrupts being configured. The number of interrupts
+configured should be between 1 to 32 for MSI and 1 to 2048 for MSI-X.</p>
+<p class="rubric">Binding pci-epf-test device to a EP controller</p>
+<p>In order for the endpoint function device to be useful, it has to be
+bound to a PCI endpoint controller driver. Use the configfs to bind the
+function device to one of the controller drivers present in the system.</p>
+<pre class="literal-block"><a class="reference external" href="mailto:root&#37;&#52;&#48;evm">root<span>&#64;</span>evm</a>:/sys/kernel/config/pci_ep# ln -s functions/pci_epf_test/func1 controllers/2900000.pcie-ep/</pre>
+<p class="rubric">Starting the EP device</p>
+<p>In order for the EP device to be ready to establish the link, the
+following command should be given:</p>
+<pre class="literal-block"><a class="reference external" href="mailto:root&#37;&#52;&#48;evm">root<span>&#64;</span>evm</a>:/sys/kernel/config/pci_ep# echo 1 &gt; controllers/2900000.pcie-ep/start</pre>
+<p>The complete sequence when using six physical functions, will look like the
+following:</p>
+<pre class="literal-block">mount -t configfs none /sys/kernel/config
+cd /sys/kernel/config/pci_ep/
+mkdir functions/pci_epf_test/func1
+echo 0x104c &gt; functions/pci_epf_test/func1/vendorid
+echo 0xb00d &gt; functions/pci_epf_test/func1/deviceid
+echo 2 &gt; functions/pci_epf_test/func1/msi_interrupts
+echo 2 &gt; functions/pci_epf_test/func1/msix_interrupts
+ln -s functions/pci_epf_test/func1 controllers/2900000.pcie-ep/
+
+mkdir functions/pci_epf_test/func2
+echo 0x104c &gt; functions/pci_epf_test/func2/vendorid
+echo 0xb00d &gt; functions/pci_epf_test/func2/deviceid
+echo 2 &gt; functions/pci_epf_test/func2/msi_interrupts
+echo 2 &gt; functions/pci_epf_test/func2/msix_interrupts
+ln -s functions/pci_epf_test/func2 controllers/2900000.pcie-ep/
+
+mkdir functions/pci_epf_test/func3
+echo 0x104c &gt; functions/pci_epf_test/func3/vendorid
+echo 0xb00d &gt; functions/pci_epf_test/func3/deviceid
+echo 2 &gt; functions/pci_epf_test/func3/msi_interrupts
+echo 2 &gt; functions/pci_epf_test/func3/msix_interrupts
+ln -s functions/pci_epf_test/func3 controllers/2900000.pcie-ep/
+
+mkdir functions/pci_epf_test/func4
+echo 0x104c &gt; functions/pci_epf_test/func4/vendorid
+echo 0xb00d &gt; functions/pci_epf_test/func4/deviceid
+echo 2 &gt; functions/pci_epf_test/func4/msi_interrupts
+echo 2 &gt; functions/pci_epf_test/func4/msix_interrupts
+ln -s functions/pci_epf_test/func4 controllers/2900000.pcie-ep/
+
+mkdir functions/pci_epf_test/func5
+echo 0x104c &gt; functions/pci_epf_test/func5/vendorid
+echo 0xb00d &gt; functions/pci_epf_test/func5/deviceid
+echo 2 &gt; functions/pci_epf_test/func5/msi_interrupts
+echo 2 &gt; functions/pci_epf_test/func5/msix_interrupts
+ln -s functions/pci_epf_test/func5 controllers/2900000.pcie-ep/
+
+mkdir functions/pci_epf_test/func6
+echo 0x104c &gt; functions/pci_epf_test/func6/vendorid
+echo 0xb00d &gt; functions/pci_epf_test/func6/deviceid
+echo 2 &gt; functions/pci_epf_test/func6/msi_interrupts
+echo 2 &gt; functions/pci_epf_test/func6/msix_interrupts
+ln -s functions/pci_epf_test/func6 controllers/2900000.pcie-ep/
+echo 1 &gt; controllers/2900000.pcie-ep/start</pre>
+<p>If you want to use the virtual functions, you need to bind it to a physical
+function. And the physical function needs to be bound to a controller.</p>
+<p>A sample sequence of commands for using the virtual functions is as follows:</p>
+<pre class="literal-block">mount -t configfs none /sys/kernel/config
+cd /sys/kernel/config/pci_ep/
+mkdir functions/pci_epf_test/vf1
+echo 0x104c &gt; functions/pci_epf_test/vf1/vendorid
+echo 0xb00d &gt; functions/pci_epf_test/vf1/deviceid
+echo 4 &gt; functions/pci_epf_test/vf1/msi_interrupts
+echo 8 &gt; functions/pci_epf_test/vf1/msix_interrupts
+
+mkdir functions/pci_epf_test/vf2
+echo 0x104c &gt; functions/pci_epf_test/vf2/vendorid
+echo 0xb00d &gt; functions/pci_epf_test/vf2/deviceid
+echo 4 &gt; functions/pci_epf_test/vf2/msi_interrupts
+echo 8 &gt; functions/pci_epf_test/vf2/msix_interrupts
+
+mkdir functions/pci_epf_test/pf1
+echo 0x104c &gt; functions/pci_epf_test/pf1/vendorid
+echo 0xb00d &gt; functions/pci_epf_test/pf1/deviceid
+echo 16 &gt; functions/pci_epf_test/pf1/msi_interrupts
+echo 16 &gt; functions/pci_epf_test/pf1/msix_interrupts
+
+ln -s functions/pci_epf_test/vf1 functions/pci_epf_test/pf1
+ln -s functions/pci_epf_test/vf2 functions/pci_epf_test/pf1
+ln -s functions/pci_epf_test/pf1 controllers/2900000.pcie-ep
+
+echo 1 &gt; controllers/2900000.pcie-ep/start</pre>
+<p class="rubric" id="host-device-configuration"><strong>HOST Device Configuration</strong></p>
+<p>The PCI EP device must be powered-on and configured before the PCI HOST
+device. This restriction is because the PCI HOST doesn’t have hot plug
+support.</p>
+<p class="rubric"><em>Linux Driver Configuration</em></p>
+<p>The following config options have to be enabled in order to use the
+“Endpoint Test” PCI device.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CONFIG_PCI=y
+CONFIG_PCI_ENDPOINT_TEST=y
+CONFIG_PCIE_CADENCE_HOST=y
+</pre></div>
+</div>
+<p class="rubric"><em>lspci output</em></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0000:00:00.0 PCI bridge: Texas Instruments Device b00d
+0000:01:00.0 Unassigned class [ff00]: Texas Instruments Device b00d
+0000:01:00.1 Unassigned class [ff00]: Texas Instruments Device b00d
+0000:01:00.2 Unassigned class [ff00]: Texas Instruments Device b00d
+0000:01:00.3 Unassigned class [ff00]: Texas Instruments Device b00d
+0000:01:00.4 Unassigned class [ff00]: Texas Instruments Device b00d
+0000:01:00.5 Unassigned class [ff00]: Texas Instruments Device b00d
+0001:00:00.0 PCI bridge: Texas Instruments Device b00d
+0002:00:00.0 PCI bridge: Texas Instruments Device b00d
+</pre></div>
+</div>
+<p class="rubric"><em>Using the Endpoint Test function device</em></p>
+<p>pci_endpoint_test driver creates the Endpoint Test function device which
+will be used by the following pcitest utility. pci_endpoint_test can
+either be built-in to the kernel or built as a module. For testing legacy
+interrupt, MSI interrupt has to be disabled in the host.</p>
+<p>pcitest.sh added in tools/pci/ can be used to run all the default PCI
+endpoint tests. Before pcitest.sh can be used, pcitest.c should be compiled
+using following steps:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd &lt;kernel-dir&gt;
+make headers_install ARCH=arm64
+aarch64-linux-gnu-gcc -Iusr/include tools/pci/pcitest.c -o pcitest
+cp pcitest  &lt;rootfs&gt;/usr/sbin/
+cp tools/pci/pcitest.sh &lt;rootfs&gt;
+</pre></div>
+</div>
+<p class="rubric">pcitest output</p>
+<p>pcitest can be used as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@evm:~# ./pcitest -h
+usage:  -h                      Print this help message
+[options]
+Options:
+        -D &lt;dev&gt;                PCI endpoint test device {default: /dev/pci-endpoint-test.0}
+        -b &lt;bar num&gt;            BAR test (bar number between 0..5)
+        -m &lt;msi num&gt;            MSI test (msi number between 1..32)
+        -x &lt;msix num&gt;           MSI-X test (msix number between 1..2048)
+        -i &lt;irq type&gt;           Set IRQ type (0 - Legacy, 1 - MSI, 2 - MSI-X)
+        -e                      Clear IRQ
+        -I                      Get current IRQ type configured
+        -l                      Legacy IRQ test
+        -r                      Read buffer test
+        -w                      Write buffer test
+        -c                      Copy buffer test
+        -s &lt;size&gt;               Size of buffer {default: 100KB}
+</pre></div>
+</div>
+<p>Sample usage</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@evm:~# ./pcitest -i 1 -D /dev/pci-endpoint-test.0
+SET IRQ TYPE TO MSI:            OKAY
+root@evm:~# ./pcitest -m 1 -D /dev/pci-endpoint-test.0
+MSI1:           OKAY
+root@evm:~# ./pcitest -e -D /dev/pci-endpoint-test.0
+CLEAR IRQ:              OKAY
+root@evm:~# ./pcitest -i 2 -D /dev/pci-endpoint-test.0
+SET IRQ TYPE TO MSI-X:          OKAY
+root@evm:~# ./pcitest -x 1 -D /dev/pci-endpoint-test.0
+MSI-X1:         OKAY
+root@evm:~# ./pcitest -e -D /dev/pci-endpoint-test.0
+CLEAR IRQ:              OKAY
+</pre></div>
+</div>
+<p>The script pcitest.sh runs all the bar tests, interrupt tests, read tests,
+write tests and copy tests.</p>
+<p class="rubric"><strong>Files</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 53%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Serial No</p></th>
+<th class="head"><p>Location</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="4"><p>1</p></td>
+<td><p>drivers/pci/endpoint/pci-epc-core.c</p></td>
+<td rowspan="4"><p>PCI Endpoint Framework</p></td>
+</tr>
+<tr class="row-odd"><td><p>drivers/pci/endpoint/pci-ep-cfs.c</p></td>
+</tr>
+<tr class="row-even"><td><p>drivers/pci/endpoint/pci-epc-mem.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>drivers/pci/endpoint/pci-epf-core.c</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>drivers/pci/endpoint/functions/pci-epf-test.c</p></td>
+<td><p>PCI Endpoint Function Driver</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>drivers/misc/pci_endpoint_test.c</p></td>
+<td><p>PCI Driver</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>4</p></td>
+<td><p>tools/pci/pcitest.c</p></td>
+<td rowspan="2"><p>PCI Userspace Tools</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools/pci/pcitest.sh</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><p>5</p></td>
+<td><p>drivers/pci/controller/pci-j721e.c</p></td>
+<td rowspan="4"><p>PCI Controller Driver</p></td>
+</tr>
+<tr class="row-odd"><td><p>drivers/pci/controller/pcie-cadence.c</p></td>
+</tr>
+<tr class="row-even"><td><p>drivers/pci/controller/pcie-cadence-ep.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>drivers/pci/endpoint/pcie-cadence-host.c</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric"><strong>J7200 Testing Details</strong></p>
+<p>PCIe and QSGMII uses the same SERDES in J7200. The default SDK is enabled for QSGMII. In order to
+test PCIe, Ethfw firmware shouldn’t be loaded and PCIe overlay file should be applied.</p>
+<p>The simplest way to avoid ethfw from being loaded is to link j7200-main-r5f0_0-fw to IPC firmware.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@j7200-evm:~# rm /lib/firmware/j7200-main-r5f0_0-fw
+root@j7200-evm:~# ln -s /lib/firmware/pdk-ipc/ipc_echo_test_mcu2_0_release_strip.xer5f /lib/firmware/j7200-main-r5f0_0-fw
+</pre></div>
+</div>
+<p>The following two Device Tree Overlay should be applied for testing J7200 EP.</p>
+<p><a class="reference external" href="https://git.ti.com/cgit/ti-linux-kernel/ti-upstream-tools/tree/arch/arm64/boot/dts/ti/system_test/pcie/pcie_ep/k3-j7200-common-proc-board-pcie.dtso?h=ti-linux-5.4.y">https://git.ti.com/cgit/ti-linux-kernel/ti-upstream-tools/tree/arch/arm64/boot/dts/ti/system_test/pcie/pcie_ep/k3-j7200-common-proc-board-pcie.dtso?h=ti-linux-5.4.y</a></p>
+<p><a class="reference external" href="https://git.ti.com/cgit/ti-linux-kernel/ti-upstream-tools/tree/arch/arm64/boot/dts/ti/system_test/pcie/pcie_ep/k3-j7200-common-proc-board-pcie-ep.dtso?h=ti-linux-5.4.y">https://git.ti.com/cgit/ti-linux-kernel/ti-upstream-tools/tree/arch/arm64/boot/dts/ti/system_test/pcie/pcie_ep/k3-j7200-common-proc-board-pcie-ep.dtso?h=ti-linux-5.4.y</a></p>
+<p>The following command should be given in u-boot to apply overlay</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>=&gt; setenv name_overlays k3-j7200-common-proc-board-pcie.dtbo k3-j7200-common-proc-board-pcie-ep.dtso
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Network/CPSW-TSN-Tuning.html" class="btn btn-neutral float-left" title="3.2.2.10.3.3.3.1. TSN Switch Tuning Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PCIe_Backplane.html" class="btn btn-neutral float-right" title="3.2.2.12. PCIe Backplane" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

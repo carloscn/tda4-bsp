@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.1. ADC &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3.2.2.2. Audio" href="Audio.html" />
+    <link rel="prev" title="3.2.2. Kernel Drivers" href="../../../Foundational_Components_Kernel_Drivers.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Display/DSS7.html">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.1. </span>ADC</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="adc">
+<h1><span class="section-number">3.2.2.1. </span>ADC<a class="headerlink" href="#adc" title="Permalink to this headline">¶</a></h1>
+<p class="rubric" id="introduction-core-adc"><strong>Introduction</strong></p>
+<p>An analog-to-digital converter (abbreviated ADC) is a device that uses
+sampling to convert a continuous quantity to a discrete time
+representation in digital form.</p>
+<p>The ADC is a 12-bit, 8-channel, general purpose ADC with a sample rate
+of 4 MSPS (Megasamples per second or millions of samples per second).
+The ADC sits idle until a Start of Conversion (SOC) pulse allows the
+it to start conversion. The ADC samples the analog signal when “start
+of conversion” signal is high and continues sampling 1 clock cycle after
+the falling edge. It captures the signal at the end of sampling period
+and starts conversion. It uses 13 clock cycles to digitize the sampled
+input; then an “end of conversion” signal is enabled high indicating
+that the digital data ADCOUT&lt;11:0&gt; is ready for SW to consume. A new
+conversion cycle can be initiated after the previous data is read.
+Please note that the ADC output is positive binary weighted data.</p>
+<p class="rubric" id="convert-analog-voltage-to-digital"><strong>Convert Analog voltage to Digital</strong></p>
+<p>To cross verify the digital values read use,</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>D = Vin * (2^n - 1) / Vref
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Where:
+D = Digital value
+Vin = Input voltage
+n = No of bits
+Vref = reference voltage
+</pre></div>
+</div>
+<p>Ex: Read value on channel AIN4 for input voltage supplied 1.01:</p>
+<p>Formula:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>D = 1.01 * (2^12 -1 )/ 1.8
+D = 2297.75
+</pre></div>
+</div>
+<p class="rubric" id="accessing-adc-pins-on-ti-evms"><strong>Accessing ADC Pins on TI EVMs</strong></p>
+<p class="rubric" id="am335x-evm-adc"><strong>AM335x EVM</strong></p>
+<p>On top of EVM, on LCD daughter board, J8 connector can be used, where
+ADC channel input AIN0-AN7 pins are brought out. For further information
+of J8 connector layout please refer to EVM schematics
+<a class="reference external" href="http://www.ti.com/tool/tmdxevm3358#technicaldocuments">here</a></p>
+<p class="rubric" id="beaglebonebeaglebone-black"><strong>Beaglebone/Beaglebone Black</strong></p>
+<p>On BeagleBone platform, P9 expansion header can be used. For further
+information on expansion header layout please refer to the Beaglebone
+schematics
+<a class="reference external" href="http://circuitco.com/support/index.php?title=BeagleBone#Rev_A6">here</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="driver-configuration-adc"><strong>Driver Configuration</strong></p>
+<p>You can enable ADC driver in the kernel as follows.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers  ---&gt;
+         [*]  Industrial I/O support  ---&gt;
+                  [*]  Enable buffer support within IIO
+                       Analog to digital converters  ---&gt;
+                               &lt;*&gt; TI&#39;s AM335X ADC driver
+</pre></div>
+</div>
+<p>Should the entry “TI’s AM335X ADC driver” be missing the MFD component
+—&gt;</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers  ---&gt;
+    Multifunction device drivers  ---&gt;
+        &lt;M&gt; TI ADC / Touch Screen chip support
+</pre></div>
+</div>
+<p class="rubric">Building as Loadable Kernel Module</p>
+<ul class="simple">
+<li><p>In-case if you want to build the driver as module, use &lt;M&gt; instead of
+&lt;*&gt; during menuconfig while selecting the drivers (as shown below).
+For more information on compiling and installing kernel modules, refer
+to the <a class="reference external" href="Foundational_Components_Kernel_Users_Guide.html">Kernel User’s Guide</a> .
+For more information on loadable modules refer to <a class="reference external" href="http://tldp.org/HOWTO/Module-HOWTO/">Loadable Module
+HOWTO</a> .</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Device Drivers  ---&gt;
+         [M]  Industrial I/O support  ---&gt;
+                  [*]  Enable buffer support within IIO
+                       Analog to digital converters  ---&gt;
+                               &lt;M&gt; TI&#39;s AM335X ADC driver
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Use “make modules” during kernel build to build the ADC driver as
+module. The module should be present in
+<code class="docutils literal notranslate"><span class="pre">drivers/iio/adc/ti_am335x_adc.ko</span></code>.</p></li>
+<li><p>The driver should autoload on filesystem boot. If not, load the
+driver using</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>modprobe ti_am335x_adc
+</pre></div>
+</div>
+<p class="rubric" id="device-tree"><strong>Device Tree</strong></p>
+<p>ADC device tree data is added in
+file(<code class="docutils literal notranslate"><span class="pre">arch/arm/boot/dts/am335x-evm.dts</span></code>) as shown below.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&amp;tscadc {
+         status = &quot;okay&quot;;
+         adc {
+               ti,adc-channels = &lt;4 5 6 7&gt;;
+         };
+};
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The parameter “ti,adc-channels” needs to hold data related to which
+channels you want to use for ADC.</p>
+<ul class="simple">
+<li><p>This example is using channels AIN4, AIN5, AIN6, and AIN7 are used by
+ADC. The remaining channels (0 to 3) are used by TSC.</p></li>
+</ul>
+<p>You can find the source code for ADC in the kernel sources at
+<code class="docutils literal notranslate"><span class="pre">drivers/iio/adc/ti_am335x_adc.c</span></code>.</p>
+<p class="rubric" id="usage"><strong>Usage</strong></p>
+<p>To test ADC, Connect a DC voltage supply to each of the AIN0 through
+AIN7 pins (based on your channel configuration), and vary voltage
+between 0 and 1.8v reference voltage.</p>
+<div
+style="word-wrap: break-word; margin: 5px; padding: 5px 10px; background-color: #fff3f3; border-left: 5px solid #ff3333;"><p><strong>CAUTION</strong> Make sure that the voltage supplied does not cross 1.8v</p>
+</div><p>On loading the module you would see the IIO device created</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@arago-armv7:~# ls -al /sys/bus/iio/devices/iio\:device0/
+drwxr-xr-x    5 root     root             0 Nov  1 22:06 .
+drwxr-xr-x    4 root     root             0 Nov  1 22:06 ..
+drwxr-xr-x    2 root     root             0 Nov  1 22:06 buffer
+-r--r--r--    1 root     root          4096 Nov  1 22:06 dev
+-rw-r--r--    1 root     root          4096 Nov  1 22:06 in_voltage4_raw
+-rw-r--r--    1 root     root          4096 Nov  1 22:06 in_voltage5_raw
+-rw-r--r--    1 root     root          4096 Nov  1 22:06 in_voltage6_raw
+-rw-r--r--    1 root     root          4096 Nov  1 22:06 in_voltage7_raw
+-r--r--r--    1 root     root          4096 Nov  1 22:06 name
+lrwxrwxrwx    1 root     root             0 Nov  1 22:06 of_node -&gt; ../../../../../../firmware/devicetree/base/ocp/tscadc@44e0d000/adc
+drwxr-xr-x    2 root     root             0 Nov  1 22:06 power
+drwxr-xr-x    2 root     root             0 Nov  1 22:06 scan_elements
+lrwxrwxrwx    1 root     root             0 Nov  1 22:06 subsystem -&gt; ../../../../../../bus/iio
+-rw-r--r--    1 root     root          4096 Nov  1 22:06 uevent
+</pre></div>
+</div>
+<p class="rubric" id="modes-of-operation"><strong>Modes of operation</strong></p>
+<p>When the ADC sequencer finishes cycling through all the enabled
+channels, the user can decide if the sequencer should stop (one-shot
+mode), or loop back and schedule again (continuous mode). If one-shot
+mode is enabled, then the sequencer will only be scheduled one time (the
+sequencer HW will automatically disable the StepEnable bit after it is
+scheduled which will guarantee only one sample is taken per channel).
+When the user wants to continuously take samples, continuous mode needs
+to be enabled. One cannot read ADC data from one channel operating in
+One-shot mode and and other in continuous mode at the same time.</p>
+<p class="rubric" id="one-shot-mode"><strong>One-shot Mode</strong></p>
+<p>To read a single ADC output from a particular channel this interface can
+be used.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@arago-armv7:~# cat /sys/bus/iio/devices/iio\:device0/in_voltage4_raw
+645
+</pre></div>
+</div>
+<p>This feature is exposed by IIO through the following files:</p>
+<ul class="simple">
+<li><p>in_voltageX_raw: raw value of the channel X of the ADC</p></li>
+</ul>
+<p class="rubric" id="continuous-mode"><strong>Continuous Mode</strong></p>
+<p class="rubric" id="overview"><strong>Overview</strong></p>
+<p>Important folders in the iio:deviceX directory are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">buffer</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">enable</span></code>: get and set the state of the buffer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code>: get and set the length of the buffer.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@charlie:~# ls -l /sys/bus/iio/devices/iio\:device0/buffer/
+total 0
+-rw-r--r-- 1 root root 4096 Nov  3 22:53 enable
+-rw-r--r-- 1 root root 4096 Nov  3 22:53 length
+-rw-r--r-- 1 root root 4096 Nov  3 22:53 watermark
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Scan_elements directory contains interfaces for elements that will
+be captured for a single sample set in the buffer.</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@arago-armv7:~# ls -al /sys/bus/iio/devices/iio\:device0/scan_elements/
+drwxr-xr-x    2 root     root            0 Jan  1 00:00 .
+drwxr-xr-x    5 root     root            0 Jan  1 00:00 ..
+-rw-r--r--    1 root     root         4096 Jan  1 00:02 in_voltage0_en
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage0_index
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage0_type
+-rw-r--r--    1 root     root         4096 Jan  1 00:02 in_voltage1_en
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage1_index
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage1_type
+-rw-r--r--    1 root     root         4096 Jan  1 00:02 in_voltage2_en
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage2_index
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage2_type
+-rw-r--r--    1 root     root         4096 Jan  1 00:02 in_voltage3_en
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage3_index
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage3_type
+-rw-r--r--    1 root     root         4096 Jan  1 00:02 in_voltage4_en
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage4_index
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage4_type
+-rw-r--r--    1 root     root         4096 Jan  1 00:02 in_voltage5_en
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage5_index
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage5_type
+-rw-r--r--    1 root     root         4096 Jan  1 00:02 in_voltage6_en
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage6_index
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage6_type
+-rw-r--r--    1 root     root         4096 Jan  1 00:02 in_voltage7_en
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage7_index
+-r--r--r--    1 root     root         4096 Jan  1 00:02 in_voltage7_type
+root@arago-armv7:~#
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">scan_elements</span></code> exposes 3 files per channel:</p>
+<ul class="simple">
+<li><p>in_voltageX_en: is this channel enabled?</p></li>
+<li><p>in_voltageX_index: index of this channel in the buffer’s chunks</p></li>
+<li><p>in_voltageX_type : How the ADC stores its data. Reading this file
+should return you a string something like below:</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@arago-armv7:~# cat /sys/bus/iio/devices/iio\:device0/scan_elements/in_voltage1_type
+le:u12/16&gt;&gt;0
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p>le represents the endianness, here little endian</p></li>
+<li><p>u is the sign of the value returned. It could be either u (for
+unsigned) or s (for signed)</p></li>
+<li><p>12 is the number of relevant bits of information</p></li>
+<li><p>16 is the actual number of bits used to store the datum</p></li>
+<li><p>0 is the number of right shifts needed.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p class="rubric" id="how-to-set-it-up"><strong>How to set it up</strong></p>
+<p>To read ADC data continuously we need to enable buffer and channels to
+be used.</p>
+<p>Set up the channels in use (you can enable any combination of the
+channels you want)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@arago-armv7:~# echo 1 &gt; /sys/bus/iio/devices/iio\:device0/scan_elements/in_voltage0_en
+root@arago-armv7:~# echo 1 &gt; /sys/bus/iio/devices/iio\:device0/scan_elements/in_voltage5_en
+root@arago-armv7:~# echo 1 &gt; /sys/bus/iio/devices/iio\:device0/scan_elements/in_voltage7_en
+</pre></div>
+</div>
+<p>Set up the buffer length</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@arago-armv7:~# echo 100 &gt; /sys/bus/iio/devices/iio\:device0/buffer/length
+</pre></div>
+</div>
+<p>Enable the capture</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@arago-armv7:~# echo 1 &gt; /sys/bus/iio/devices/iio\:device0/buffer/enable
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Now, all the captures are exposed in the character device
+<code class="docutils literal notranslate"><span class="pre">/dev/iio:device0</span></code></div>
+</div>
+<p>To stop the capture, just disable the buffer</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@arago-armv7:~# echo 0 &gt; /sys/bus/iio/devices/iio\:device0/buffer/enable
+</pre></div>
+</div>
+<p class="rubric" id="userspace-sample-application"><strong>Userspace Sample Application</strong></p>
+<p>The source code is located under kernel sources at
+<code class="docutils literal notranslate"><span class="pre">tools/iio/iio_generic_buffer.c</span></code>.</p>
+<p>How to compile:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ make -C &lt;kernel-src-dir&gt;/tools/iio ARCH=arm
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">iio_generic_buffer</span></code> application does all the ADC channel “enable”
+and “disable” actions for you. You will only need to specify the IIO
+driver. Application takes <em>buffer length</em> to use (256 in this example)
+and the <em>number of iterations</em> you want to run (3 in this example). By
+just enabling the buffer ADC switches to continuous mode.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@charlie:~# ./iio_generic_buffer -?
+Usage: generic_buffer [options]...
+Capture, convert and output data from IIO device buffer
+  -a         Auto-activate all available channels
+  -A         Force-activate ALL channels
+  -c &lt;n&gt;     Do n conversions
+  -e         Disable wait for event (new data)
+  -g         Use trigger-less mode
+  -l &lt;n&gt;     Set buffer length to n samples
+  --device-name -n &lt;name&gt;
+  --device-num -N &lt;num&gt;
+        Set device by name or number (mandatory)
+  --trigger-name -t &lt;name&gt;
+  --trigger-num -T &lt;num&gt;
+        Set trigger by name or number
+  -w &lt;n&gt;     Set delay between reads in us (event-less mode)
+</pre></div>
+</div>
+<p>For example:-</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>root@charlie:~# ./iio_generic_buffer -N 0 -g -a
+iio device number being used is 0
+trigger-less mode selected
+Enabling all channels
+Enabling: in_voltage7_en
+Enabling: in_voltage4_en
+Enabling: in_voltage6_en
+Enabling: in_voltage5_en
+525.000000 924.000000 988.000000 1039.000000
+754.000000 986.000000 1071.000000 1117.000000
+877.000000 1067.000000 1150.000000 1169.000000
+1003.000000 1143.000000 1230.000000 1226.000000
+1078.000000 1222.000000 1298.000000 1286.000000
+1139.000000 1286.000000 1372.000000 1343.000000
+...
+...
+1863.000000 1954.000000 2031.000000 2074.000000
+1858.000000 1959.000000 2023.000000 2083.000000
+1852.000000 1958.000000 2024.000000 2076.000000
+1866.000000 1964.000000 2029.000000 2083.000000
+1850.000000 1952.000000 2026.000000 2074.000000
+Disabling: in_voltage7_en
+Disabling: in_voltage4_en
+Disabling: in_voltage6_en
+Disabling: in_voltage5_en
+</pre></div>
+</div>
+<p class="rubric" id="adc-driver-limitations"><strong>ADC Driver Limitations</strong></p>
+<p>This driver is based on the IIO (Industrial I/O subsystem), however this
+driver has limited functionality:</p>
+<ol class="arabic simple">
+<li><p>“Out of Range” not supported by ADC driver.</p></li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../../Foundational_Components_Kernel_Drivers.html" class="btn btn-neutral float-left" title="3.2.2. Kernel Drivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Audio.html" class="btn btn-neutral float-right" title="3.2.2.2. Audio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

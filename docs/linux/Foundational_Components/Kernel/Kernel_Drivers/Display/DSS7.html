@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2.2.6. DSS &mdash; Processor SDK Linux for J784s4 Documentation</title><link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/theme_overrides.css" type="text/css" /><link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.2.2.7. GPIO" href="../GPIO.html" />
+    <link rel="prev" title="3.2.2.5. MCAN" href="../MCAN.html" /> 
+  <script src="https://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+   
+
+</head>
+
+<body class="wy-body-for-nav">
+  <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../../../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a>
+   
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"> Processor SDK Linux for J784s4
+          </a>
+              <div class="version">
+                09_02_00
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Overview.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../devices/J7_Family/linux/Release_Specific.html">2. Release Specific</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../Foundational_Components.html">3. Foundational Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_U-Boot.html">3.1. U-Boot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel.html">3.2. Kernel</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Users_Guide.html">3.2.1. Users Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../Foundational_Components_Kernel_Drivers.html">3.2.2. Kernel Drivers</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../ADC.html">3.2.2.1. ADC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Audio.html">3.2.2.2. Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Camera/CSI2RX.html">3.2.2.3. CSI2RX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Crypto.html">3.2.2.4. Crypto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MCAN.html">3.2.2.5. MCAN</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.6. DSS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GPIO.html">3.2.2.7. GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../HYPERFLASH.html">3.2.2.8. HyperBus and HyperFlash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../I2C.html">3.2.2.9. I2C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Network/CPSW-Ethernet.html">3.2.2.10. CPSW Ethernet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_End_Point.html">3.2.2.11. PCIe End Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Backplane.html">3.2.2.12. PCIe Backplane</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PCIe/PCIe_Root_Complex.html">3.2.2.13. PCIe Root Complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PMIC/pmic_tps6594.html">3.2.2.14. TPS6594 PMIC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Power_Management.html">3.2.2.15. Power Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../QSPI.html">3.2.2.16. OSPI/QSPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SERDES/SERDES.html">3.2.2.17. SERDES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SPI.html">3.2.2.18. SPI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/NAND.html">3.2.2.19. NAND</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Storage/MMC-SD.html">3.2.2.20. MMC/SD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UART.html">3.2.2.21. UART</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../UFS.html">3.2.2.22. UFS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../USB/CDNS3.html">3.2.2.23. USB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../VTM.html">3.2.2.24. Voltage &amp; Thermal Management (VTM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_LTP-DDT_Validation.html">3.2.3. LTP-DDT Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Foundational_Components_Kernel_FAQs.html">3.2.4. FAQs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Filesystem.html">3.3. Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Tools.html">3.4. Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_IPC_J784S4.html">3.5. IPC for J784S4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Graphics.html">3.6. Graphics and Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Multimedia_wave5.html">3.7. Multimedia Video Codec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_Virtualization.html">3.8. Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_ATF.html">3.9. ARM Trusted Firmware-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Foundational_Components_OPTEE.html">3.10. OP-TEE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../How_to_Guides.html">4. How to Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Documentation_Tarball.html">5. Documentation Tarball</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../devices/J7_Family/linux/index.html">Processor SDK Linux for J784s4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../devices/J7_Family/linux/index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components.html"><span class="section-number">3. </span>Foundational Components</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel.html"><span class="section-number">3.2. </span>Kernel</a> &raquo;</li>
+          <li><a href="../../../../Foundational_Components_Kernel_Drivers.html"><span class="section-number">3.2.2. </span>Kernel Drivers</a> &raquo;</li>
+      <li><span class="section-number">3.2.2.6. </span>DSS</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="dss">
+<h1><span class="section-number">3.2.2.6. </span>DSS<a class="headerlink" href="#dss" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.2.2.6.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This page gives a basic description of DSS (Display SubSystem) hardware, the Linux kernel drivers (tidss) and various TI boards that use DSS. The technical reference manual (TRM) for the SoC in question, and the board documentation give more detailed descriptions.</p>
+</div>
+<div class="section" id="supported-devices">
+<h2><span class="section-number">3.2.2.6.2. </span>Supported Devices<a class="headerlink" href="#supported-devices" title="Permalink to this headline">¶</a></h2>
+<p>There are many DSS IP versions, all of which support slightly different set of features. DSS versions up to 5 are supported by the omapdrm driver, and DSS versions 6 and up are supported by the tidss driver. This document covers DSS6, DSS7-L, and DSS7-UL which are used on the following TI SoCs or SoC families: K2G, AM65x, AM62x, AM62Ax, AM62Px, J721E, J721S2, J784S4.</p>
+</div>
+<div class="section" id="hardware-architecture">
+<h2><span class="section-number">3.2.2.6.3. </span>Hardware Architecture<a class="headerlink" href="#hardware-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The Display Subsystem (DSS) is a hardware block responsible for fetching pixel data from memory and sending it to a display peripheral like an LCD panel or an DisplayPort monitor. DSS hardware can be divided into two major parts:</p>
+<ul class="simple">
+<li><p>Display Controller (DISPC), which handles fetching the pixel data, doing color conversions, composition, and other pixel manipulation</p></li>
+<li><p>Peripherals, which encode the raw pixel data to standard display signals, like MIPI DPI or DP.</p></li>
+</ul>
+<p>In addition to the SoC’s DSS, boards often contain external display bridges (for example, DPI-to-HDMI bridge) and display panels.</p>
+<img alt="../../../../../_images/DSS7_HW.png" src="../../../../../_images/DSS7_HW.png" />
+<p>The above image gives an overview of the DSS hardware.</p>
+<p>The arrows show how pipelines are connected to overlay managers, which are further connected to video-ports, which finally create an encoded pixel stream for display on the LCD or monitor.</p>
+<div class="section" id="display-controller-dispc">
+<h3><span class="section-number">3.2.2.6.3.1. </span>Display Controller (DISPC)<a class="headerlink" href="#display-controller-dispc" title="Permalink to this headline">¶</a></h3>
+<p>DISPC is the block which is responsible for fetching pixel data from the memory through DMA pipelines, and then create a pixel stream for the peripheral. The pixel stream comprises of a composition of one or more image layers which we finally want to present on the display. DISPC can be split into 3 major sub-blocks:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Pipelines</p></li>
+<li><p>Overlay Managers (Compositors)</p></li>
+<li><p>Video Ports (Timing generators)</p></li>
+</ul>
+</div></blockquote>
+<p>The next three sub-sections provide details on these sub-blocks.</p>
+<div class="section" id="pipelines">
+<h4><span class="section-number">3.2.2.6.3.1.1. </span>Pipelines<a class="headerlink" href="#pipelines" title="Permalink to this headline">¶</a></h4>
+<p>Pipelines (or DMA channels) consist of the HW block which performs DMA to fetch image pixels (of different color formats) from RAM. Besides performing DMA, pipelines perform other functions like replication, ARGB expansion, scaling, color conversion, VC1 range mapping on the input pixels before it’s passed on to the overlay manager. An overlay manager receives pixel data from one or more such pipelines, and performs the task of composing them and passing it on to the video-port.</p>
+<p>There are two types of pipelines: VIDL and VID. The difference between the two is that VID pipelines support scaling, and VIDL does not. The number of pipelines within DSS varies with the DSS IP version used in the SoC.</p>
+</div>
+<div class="section" id="overlay-managers-compositors">
+<h4><span class="section-number">3.2.2.6.3.1.2. </span>Overlay Managers (Compositors)<a class="headerlink" href="#overlay-managers-compositors" title="Permalink to this headline">¶</a></h4>
+<p>Overlay managers are the blocks which take pixel data from one or more pipelines, layer them to form a composition, and create a pixel stream for the video-ports to consume.</p>
+<p>The compositor part takes pixel data from multiple pipelines, composing them on the basis of their position with respect to the complete overlay manager size. Tasks like alpha blending, color-keying and z-order are also performed by the compositor in the overlay manager.</p>
+</div>
+<div class="section" id="video-ports-timing-generators">
+<h4><span class="section-number">3.2.2.6.3.1.3. </span>Video Ports (Timing generators)<a class="headerlink" href="#video-ports-timing-generators" title="Permalink to this headline">¶</a></h4>
+<p>Video ports take a pixel stream from an overlay manager, and encode it into a standard video signal which is understood by the LCD panel/monitor or an internal peripheral (like eDP). These video standards are specified by MIPI or general video/display bodies.</p>
+<p>The timing generator part of the video port is responsible for providing the pixel stream generated by the compositor above according to the timings desired by the peripheral. The timing generator is a state machine which provides RGB data along with control signals like pixel clock, hsync, vsync and data enable. This timing info is used by the panel / peripheral to display the composited frame on the screen.</p>
+</div>
+</div>
+<div class="section" id="soc-hardware-description">
+<h3><span class="section-number">3.2.2.6.3.2. </span>SoC Hardware Description<a class="headerlink" href="#soc-hardware-description" title="Permalink to this headline">¶</a></h3>
+<p>SoC Family: J784S4</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 25%" />
+<col style="width: 32%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>DSS version</p></th>
+<th class="head"><p>Outputs</p></th>
+<th class="head"><p>Pipes</p></th>
+<th class="head"><p>Video ports</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DSS7-L</p></td>
+<td><p>DPI, DP, DSI</p></td>
+<td><p>2 x VIDL, 2 x VID</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="supported-features">
+<h3><span class="section-number">3.2.2.6.3.3. </span>Supported Features<a class="headerlink" href="#supported-features" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="soc-outputs">
+<h4><span class="section-number">3.2.2.6.3.3.1. </span><strong>SoC Outputs</strong><a class="headerlink" href="#soc-outputs" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><dl>
+<dt><strong>MIPI DPI</strong></dt><dd><ul class="simple">
+<li><p>Active matrix</p></li>
+<li><p>RGB</p></li>
+</ul>
+<p><strong>Note:</strong>
+TI EVMs do not provide the DPI signals through a connector, but instead pass the RGB
+data through an DP/HDMI transmitters on-board. Custom EVMs based on these SoCs can
+provide such connectors and can use the Active Matrix LCDs.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>DisplayPort</strong></dt><dd><ul>
+<li><p>SST</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>MIPI DSI</strong></dt><dd><ul>
+<li><p>4 Lane MIPI DSI output</p></li>
+<li><p><strong>Note:</strong> The colors of the DSI display are expected to cyclically shift between 2 sets, RGB -&gt; GBR and RGB -&gt; BRG. It is a known bug.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="evm-outputs">
+<h4><span class="section-number">3.2.2.6.3.3.2. </span><strong>EVM Outputs</strong><a class="headerlink" href="#evm-outputs" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>HDMI Output</strong></dt><dd><ul>
+<li><p>DPI output from SoC converted to HDMI via HDMI encoders on Starter-Kit (SK) EVMs.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<blockquote>
+<div><p><strong>Note:</strong>
+Jacinto CPBs and EVMs do not support DPI to HDMI encoders. It is only available on Jacinto SoCs’ SK-EVM variants.</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>DisplayPort Output</strong></dt><dd><ul>
+<li><p>DisplayPort output from SoC directly.</p></li>
+<li><p>DSI output from SoC converted to DP via DSI-to-DP encoder on board.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="driver-architecture">
+<h2><span class="section-number">3.2.2.6.4. </span>Driver Architecture<a class="headerlink" href="#driver-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The driver for DSS6 / DSS7-L / DSS7-UL IPs is tidss. tidss is a Direct Rendering Manager (DRM) driver, located in the directory drivers/gpu/drm/tidss/ in the kernel tree. tidss does not implement any 3D GPU features, only the Kernel Mode Setting (KMS) features, used to display pixel data on a display.</p>
+<p>In addition to tidss, there are a number of bridge and panel drivers located in drivers/gpu/drm/bridge/ and drivers/gpu/drm/panel/ which provide support for various panels and bridges (both external and internal to SoC).</p>
+<p>The mapping of DRM entities to DSS hardware is roughly as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>DRM term</p></th>
+<th class="head"><p>HW term</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>plane</p></td>
+<td><p>DSS pipeline</p></td>
+</tr>
+<tr class="row-odd"><td><p>crtc</p></td>
+<td><p>DSS videoport</p></td>
+</tr>
+<tr class="row-even"><td><p>encoder</p></td>
+<td><p>Internal and external bridges</p></td>
+</tr>
+<tr class="row-odd"><td><p>connector</p></td>
+<td><p>Connector or a panel</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="driver-features">
+<h3><span class="section-number">3.2.2.6.4.1. </span>Driver Features<a class="headerlink" href="#driver-features" title="Permalink to this headline">¶</a></h3>
+<p>Note: this is not a comprehensive list of features supported/not supported, and new features may be added in every release.</p>
+<dl class="simple">
+<dt><strong>DRM Plane Features</strong></dt><dd><ul class="simple">
+<li><p>CSC</p></li>
+<li><p>Scaler</p></li>
+<li><p>Z-order</p></li>
+<li><p>Global alpha blending</p></li>
+<li><p>Alpha blending (pre-multipled &amp; non-pre-multiplied)</p></li>
+<li><p>Input Video Formats
+(Fourcc codes of supported formats: AR12 AB12 RA12 RG16 BG16 AR15 AB15 AR24 AB24 RA24 BA24 RG24 BG24 AR30 AB30 XR12 XB12 RX12 AR15 AB15 XR24 XB24 RX24 BX24 XR30 XB30 YUYV UYVY NV12)</p></li>
+</ul>
+</dd>
+<dt><strong>DRM CRTC Features</strong></dt><dd><ul class="simple">
+<li><p>Gamma table</p></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="unsupported-features-limitations">
+<h4><span class="section-number">3.2.2.6.4.1.1. </span>Unsupported Features/Limitations<a class="headerlink" href="#unsupported-features-limitations" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>DPI output</strong></dt><dd><ul>
+<li><p>TDM</p></li>
+<li><p>BT-656/1120</p></li>
+<li><p>MIPI DBI/RFBI</p></li>
+<li><p>Interlace</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Open LVDS Display Interface (OLDI)</strong></dt><dd><ul>
+<li><p>The SoC doesn’t support the OLDI TXes, and doesn’t provide the OLDI output.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<ul>
+<li><dl>
+<dt><strong>DisplayPort (MHDP)</strong></dt><dd><ul class="simple">
+<li><p>MST</p></li>
+<li><p><a class="reference external" href="mailto:4K&#37;&#52;&#48;60FPS">4K<span>&#64;</span>60FPS</a> Resolution</p></li>
+</ul>
+<div class="line-block">
+<div class="line">For <a class="reference external" href="mailto:4k&#37;&#52;&#48;60FPS">4k<span>&#64;</span>60FPS</a> resolution, sometimes visual artifacts are seen due to Video Sync Loss.</div>
+<div class="line">Therefore the maximum supported video resolution as of now is limited to <a class="reference external" href="mailto:4K&#37;&#52;&#48;30FPS">4K<span>&#64;</span>30FPS</a> (or equivalent)</div>
+<div class="line">by limiting the dp phy-link rate to 2700Mbps.</div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="driver-configuration">
+<h2><span class="section-number">3.2.2.6.5. </span>Driver Configuration<a class="headerlink" href="#driver-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="kernel-configuration-options">
+<h3><span class="section-number">3.2.2.6.5.1. </span>Kernel Configuration Options<a class="headerlink" href="#kernel-configuration-options" title="Permalink to this headline">¶</a></h3>
+<p>tidss supports building both as built-in or as a module.</p>
+<p>tidss can be found under “Device Drivers/Graphics support” in the kernel menuconfig. You need to enable DRM (CONFIG_DRM) before you can enable tidss (CONFIG_DRM_TIDSS).</p>
+<ul class="simple">
+<li><p>Enable DSS Display Subsystem support (CONFIG_DRM_TIDSS)</p></li>
+</ul>
+<p>Additional kernel config options may be needed, depending on the SoC and board.</p>
+<ul class="simple">
+<li><p>Panels under “Device Drivers/Graphics support/Display Panels”</p></li>
+<li><p>Bridges under “Device Drivers/Graphics support/Display Interface Bridges”</p></li>
+<li><p>PHYs under “Device Drivers/PHY Subsystem”</p></li>
+</ul>
+</div>
+<div class="section" id="device-tree-node">
+<h3><span class="section-number">3.2.2.6.5.2. </span>Device Tree Node<a class="headerlink" href="#device-tree-node" title="Permalink to this headline">¶</a></h3>
+<p>Documentation for tidss device tree node and its properties can be found in linux kernel device tree bindings in below directory
+<code class="docutils literal notranslate"><span class="pre">Documentation/devicetree/bindings/display/ti/</span></code>. Seperate binding files are present for different version of the DSS controller.</p>
+</div>
+</div>
+<div class="section" id="driver-usage">
+<h2><span class="section-number">3.2.2.6.6. </span>Driver Usage<a class="headerlink" href="#driver-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loading-tidss">
+<h3><span class="section-number">3.2.2.6.6.1. </span>Loading tidss<a class="headerlink" href="#loading-tidss" title="Permalink to this headline">¶</a></h3>
+<p>If built as a module, you need to load all the drm, tidss, bridge and panel modules before tidss will start. When tidss starts, it will prints something along these lines:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[    9.207746] [drm] Initialized tidss 1.0.0 20180215 for 4a00000.dss on minor 0
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-tidss">
+<h3><span class="section-number">3.2.2.6.6.2. </span>Using tidss<a class="headerlink" href="#using-tidss" title="Permalink to this headline">¶</a></h3>
+<p>tidss is usually used by the windowing system like X server or Weston, so normally users don’t need to use tidss directly.</p>
+<p>tidss device appears under /dev/dri/ directory, normally card0.</p>
+<p>There is also so called DRM render device node, renderD128, which point to the same tidss device. Only buffer allocations can be done via the render node. The render node can be given more relaxed access restrictions, as the applications can only do buffer allocations from there, and cannot affect the system (except by allocating all the memory).</p>
+<p>Low level userspace applications can use tidss via DRM ioctls. This is made a bit easier with libdrm, which is a wrapper library around DRM ioctls, or kms++ which is a C++11 library, or by Python bindings provided by kms++.</p>
+<p>libdrm is included in TI releases and its sources can be found from:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://gitlab.freedesktop.org/mesa/drm
+</pre></div>
+</div>
+<p>libdrm also contains ‘modetest’ tool, which can be used to get basic information about DRM state, and to show a test pattern on a display. Refer to the section <cite>Testing tidss properties with modetest</cite> below for some examples.</p>
+<p>Another option is kms++, a C++11 library for kernel mode setting which includes a bunch of test utilities and also V4L2 classes and Python bindings for DRM and V4L2. Some kms++ tools are included in TI releases. kms++ can be found from:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://github.com/tomba/kmsxx
+</pre></div>
+</div>
+</div>
+<div class="section" id="testing-tidss">
+<h3><span class="section-number">3.2.2.6.6.3. </span>Testing tidss<a class="headerlink" href="#testing-tidss" title="Permalink to this headline">¶</a></h3>
+<p>kmstest from kms++ is a good tool for testing tidss features. Note that any other applications using DRM (Weston, X) must be killed first. Another tool from kms++ is kmsprint, which can be used to print various bits of information about tidss.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kmsprint
+<span class="go">Connector 0 (39) DP-1 (connected)</span>
+<span class="go">  Encoder 0 (38) NONE</span>
+<span class="go">    Crtc 0 (37) 1920x1080 148.500 1920/88/44/148 1080/4/5/36 60 (60.00)</span>
+<span class="go">      Plane 0 (31) fb-id: 62 (crtcs: 0 1) 0,0 1920x1080 -&gt; 0,0 1920x1080 (AR12 AB12 RA12 RG16 BG16 AR15 AB15 AR24 AB24 RA24 BA24 RG24 BG24 AR30 AB30 XR12 XB12 RX12 AR15 AB15 XR24 XB24 RX24 BX24 XR30 XB30 YUYV UYVY NV12)</span>
+<span class="go">        FB 62 1920x1080</span>
+<span class="go">Connector 1 (48) HDMI-A-1 (disconnected)</span>
+<span class="go">  Encoder 1 (47) NONE</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kmstest<span class="w"> </span>-c<span class="w"> </span>dp<span class="w"> </span>-r<span class="w"> </span>640x480
+<span class="go">Connector 0/@39: DP-1</span>
+<span class="go">  Crtc 0/@37: 640x480 25.175 640/16/96/48/- 480/10/2/33/- 60 (59.94) 0xa 0x40</span>
+<span class="go">  Plane 0/@31: 0,0-640x480</span>
+<span class="go">    Fb 63 640x480-XR24</span>
+<span class="go">press enter to exit</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tidss-properties">
+<h3><span class="section-number">3.2.2.6.6.4. </span>tidss properties<a class="headerlink" href="#tidss-properties" title="Permalink to this headline">¶</a></h3>
+<p>tidss supports configuration via DRM properties. These are standard DRM properties, and DRM documentation describes them. Also, kmsprint can be used to show the supported properties.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 8%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Object</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>zpos</p></td>
+<td><p>plane</p></td>
+<td><p>Z position of a plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>COLOR_ENCODING</p></td>
+<td><p>plane</p></td>
+<td><p>Selects between BT.601 and BT.709 YCbCr color encoding</p></td>
+</tr>
+<tr class="row-even"><td><p>COLOR_RANGE</p></td>
+<td><p>plane</p></td>
+<td><p>Selects between full range and limited range YCbCr encoding</p></td>
+</tr>
+<tr class="row-odd"><td><p>alpha</p></td>
+<td><p>plane</p></td>
+<td><p>Full plane alpha-blending</p></td>
+</tr>
+<tr class="row-even"><td><p>CTM</p></td>
+<td><p>crtc</p></td>
+<td><p>Color Transformation Matrix blob property. Implemented trough Color phase rotation matrix in DSS IP.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAMMA_LUT</p></td>
+<td><p>crtc</p></td>
+<td><p>Blob property to set the gamma lookup table (LUT) mapping pixel data sent to the connector.</p></td>
+</tr>
+<tr class="row-even"><td><p>GAMMA_LUT_SIZE</p></td>
+<td><p>crtc</p></td>
+<td><p>Number of elements in gammma lookup table.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="testing-tidss-properties-with-modetest">
+<h4><span class="section-number">3.2.2.6.6.4.1. </span>Testing tidss properties with modetest<a class="headerlink" href="#testing-tidss-properties-with-modetest" title="Permalink to this headline">¶</a></h4>
+<p>As the name suggests, <code class="docutils literal notranslate"><span class="pre">modetest</span></code> is DRM based mode setting test program available along with libdrm.
+It is an easy-to-use tool to test different features provided by display HWs. The DRM driver for,
+the display HWs, exposes these features as DRM properties, (see the table above), and the <code class="docutils literal notranslate"><span class="pre">modetest</span></code>
+utility uses these properties to configure the display HW.</p>
+<p><code class="docutils literal notranslate"><span class="pre">modetest</span></code> outputs look different based on the number and types of displays connected, but the
+format remains the same. Before looking at this particular <code class="docutils literal notranslate"><span class="pre">modetest</span></code>  output, <code class="docutils literal notranslate"><span class="pre">kmsprint</span></code>
+output is provided as reference.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kmsprint
+<span class="go">Connector 0 (40) LVDS-1 (connected)</span>
+<span class="go">  Encoder 0 (39) LVDS</span>
+<span class="go">    Crtc 0 (38) 1920x1200@60.00 150.275 1920/32/52/24/? 1200/24/8/3/? 60 (60.00) 0x0 0x48</span>
+<span class="go">      Plane 0 (31) fb-id: 51 (crtcs: 0 1) 0,0 1920x1200 -&gt; 0,0 1920x1200 (AR12 AB12 RA12 RG16 BG16 AR15 AB15 AR24 AB24 RA24 BA24 RG24 BG24 AR30 AB30 XR12 XB12 RX12 XR15 XB15 XR24 XB24 RX24 BX24 XR30 XB30 YUYV UYVY NV12)</span>
+<span class="go">        FB 51 1920x1200</span>
+<span class="go">Connector 1 (50) HDMI-A-1 (disconnected)</span>
+<span class="go">  Encoder 1 (49) NONE</span>
+</pre></div>
+</div>
+<p>In the example below, AM625 SK-EVM has been used, but this could extrapolated to all the EVMs
+running TI SoCs that support DSS7-L / DSS7-UL. An OLDI display is being run on the AM625 SK-EVM, while
+the HDMI is disconnected.</p>
+<p>Now, a shortened version of the command: <code class="docutils literal notranslate"><span class="pre">modetest</span> <span class="pre">-M</span> <span class="pre">tidss</span></code> that highlights some information used
+in the examples later.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>modetest<span class="w"> </span>-M<span class="w"> </span>tidss
+<span class="go">Encoders:</span>
+<span class="go">id      crtc    type    possible crtcs  possible clones</span>
+<span class="go">39      38      LVDS    0x00000001      0x00000001</span>
+<span class="go">49      0       none    0x00000002      0x00000002</span>
+
+<span class="go">Connectors:</span>
+<span class="go">id      encoder status          name            size (mm)       modes   encoders</span>
+<span class="go">40      39      connected       LVDS-1          217x136         1       39</span>
+<span class="go">  modes:</span>
+<span class="go">        index name refresh (Hz) hdisp hss hse htot vdisp vss vse vtot</span>
+<span class="gp">  #</span><span class="m">0</span><span class="w"> </span>1920x1200<span class="w"> </span><span class="m">60</span>.00<span class="w"> </span><span class="m">1920</span><span class="w"> </span><span class="m">1952</span><span class="w"> </span><span class="m">2004</span><span class="w"> </span><span class="m">2028</span><span class="w"> </span><span class="m">1200</span><span class="w"> </span><span class="m">1224</span><span class="w"> </span><span class="m">1232</span><span class="w"> </span><span class="m">1235</span><span class="w"> </span><span class="m">150275</span><span class="w"> </span>flags:<span class="w"> </span><span class="p">;</span><span class="w"> </span>type:<span class="w"> </span>preferred,<span class="w"> </span>driver
+<span class="go">  props:</span>
+<span class="go">[ ... ]</span>
+
+<span class="go">50      0       disconnected    HDMI-A-1        0x0             0       49</span>
+<span class="go">  props:</span>
+<span class="go">[ ... ]</span>
+
+<span class="go">CRTCs:</span>
+<span class="go">id      fb      pos     size</span>
+<span class="go">38      51      (0,0)   (1920x1200)</span>
+<span class="gp">  #</span><span class="m">0</span><span class="w"> </span>1920x1200<span class="w"> </span><span class="m">60</span>.00<span class="w"> </span><span class="m">1920</span><span class="w"> </span><span class="m">1952</span><span class="w"> </span><span class="m">2004</span><span class="w"> </span><span class="m">2028</span><span class="w"> </span><span class="m">1200</span><span class="w"> </span><span class="m">1224</span><span class="w"> </span><span class="m">1232</span><span class="w"> </span><span class="m">1235</span><span class="w"> </span><span class="m">150275</span><span class="w"> </span>flags:<span class="w"> </span><span class="p">;</span><span class="w"> </span>type:<span class="w"> </span>preferred,<span class="w"> </span>driver
+<span class="go">  props:</span>
+<span class="go">[ ... ]</span>
+
+<span class="go">48      0       (0,0)   (0x0)</span>
+<span class="gp">  #</span><span class="m">0</span><span class="w">  </span>nan<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>flags:<span class="w"> </span><span class="p">;</span><span class="w"> </span>type:
+<span class="go">  props:</span>
+<span class="go">[ ... ]</span>
+
+<span class="go">Planes:</span>
+<span class="go">id      crtc    fb      CRTC x,y        x,y     gamma size      possible crtcs</span>
+<span class="go">31      38      51      0,0             0,0     0               0x00000003</span>
+<span class="go">  formats: AR12 AB12 RA12 RG16 BG16 AR15 AB15 AR24 AB24 RA24 BA24 RG24 BG24 AR30 AB30 XR12 XB12 RX12 XR15 XB15 XR24 XB24 RX24 BX24 XR30 XB30 YUYV UYVY NV12</span>
+<span class="go">  props:</span>
+<span class="go">[ ... ]</span>
+
+<span class="go">41      0       0       0,0             0,0     0               0x00000003</span>
+<span class="go">  formats: AR12 AB12 RA12 RG16 BG16 AR15 AB15 AR24 AB24 RA24 BA24 RG24 BG24 AR30 AB30 XR12 XB12 RX12 XR15 XB15 XR24 XB24 RX24 BX24 XR30 XB30 YUYV UYVY NV12</span>
+<span class="go">  props:</span>
+<span class="go">[ ... ]</span>
+</pre></div>
+</div>
+<p>From the information above, it can be inferred that the LVDS display ouput has these objects
+associated with it.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Plane with ID = 31.</p></li>
+<li><p>CRTC with ID = 38.</p></li>
+<li><p>Encoder with ID = 39.</p></li>
+<li><p>Connector with ID = 40.</p></li>
+</ul>
+</div></blockquote>
+<p>Note that the plane 31 is the primary plane for CRTC 38 (LVDS Display). And for the HDMI display,
+the associated objects are as follows.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Encoder with ID = 49.</p></li>
+<li><p>Connector with ID = 50.</p></li>
+</ul>
+</div></blockquote>
+<p>Since HDMI display is disconnected at the moment, no CRTC object has been enumerated for it, and
+hence plane 41 remains unused.</p>
+<ul class="simple">
+<li><p><strong>Z order</strong></p></li>
+</ul>
+<p>Z position of the plane when multiple planes are being displayed.</p>
+<p>This property is enumerated as <code class="docutils literal notranslate"><span class="pre">zpos</span></code> in the modetest output. This property can be used with the
+<code class="docutils literal notranslate"><span class="pre">-w</span></code> option of modetest. However, this property is not useful without plane overlaying, as it
+won’t show use any discernible change on the display. Hence, refer the example given in the next
+section.</p>
+<ul class="simple">
+<li><p><strong>Plane Overlaying</strong></p></li>
+</ul>
+<p>Use unused planes as overlay planes.</p>
+<p>Based on the version, the DSS controller can have 2 to 4 video pipelines, which get
+enumerated as DRM planes. If the number of displays connected is less than the
+number of video pipes in the DSS controller, the extra pipes can be used as overlay planes.</p>
+<p>In this example, plane 41 remains an unused plane, while plane 31 acts as a primary plane
+for CRTC 38. To use plane 41 as an overlay on top of plane 31, the following command can be
+used.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>modetest<span class="w"> </span>-M<span class="w"> </span>tidss<span class="w"> </span>-s<span class="w"> </span><span class="m">40</span>@38:1920x1200<span class="w"> </span>-P<span class="w"> </span><span class="m">41</span>@38:1280x720<span class="w"> </span>-w<span class="w"> </span><span class="m">41</span>:zpos:1
+<span class="go">setting mode 1920x1200-60.00Hz on connectors 40, crtc 38</span>
+<span class="go">testing 1280x720@XR24 overlay plane 41</span>
+</pre></div>
+</div>
+<p>In this example, we use the primary plane via its connector and crtc using the <code class="docutils literal notranslate"><span class="pre">-s</span></code> option.
+<code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">40&#64;38:1920x1200</span></code> renders vertical color bars on the LVDS display. Adding the <code class="docutils literal notranslate"><span class="pre">-P</span></code> option,
+<code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">41&#64;38:1280x720</span></code>, renders another frame of color bars (diagonal in this case) of resolution
+1280x720. The <code class="docutils literal notranslate"><span class="pre">-w</span> <span class="pre">41:zpos:1</span></code> ensures that the plane 41 is displayed on top of plane 31 (or else,
+if plane 31 is on top, then plane 41 will be underneath and hence won’t show up on the display).</p>
+<ul class="simple">
+<li><p><strong>Global Alpha Blending</strong></p></li>
+</ul>
+<p>Full plane alpha-blending</p>
+<p>When displaying multiple planes on top of one another, we can assign transparency levels to each of
+the planes using the <code class="docutils literal notranslate"><span class="pre">alpha</span></code> property. For tidss, the value of this property ranges from 0 with
+complete transparency to 65535 with complete opacity.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>modetest<span class="w"> </span>-M<span class="w"> </span>tidss<span class="w"> </span>-s<span class="w"> </span><span class="m">40</span>@38:1920x1200<span class="w"> </span>-P<span class="w"> </span><span class="m">41</span>@38:1280x720<span class="w"> </span>-w<span class="w"> </span><span class="m">41</span>:zpos:0<span class="w"> </span>-w<span class="w"> </span><span class="m">31</span>:zpos:1<span class="w"> </span>-w<span class="w"> </span><span class="m">31</span>:alpha:10000
+<span class="go">setting mode 1920x1200-60.00Hz on connectors 40, crtc 38</span>
+<span class="go">testing 1280x720@XR24 overlay plane 41</span>
+</pre></div>
+</div>
+<p>In this example, we are displaying the overlay plane (41) behind the primary plane (31) by
+manipulating the <code class="docutils literal notranslate"><span class="pre">zpos</span></code> property. Since the overlay plane is of a smaller resolution (1280x720)
+and the primary plane is of resolution 1920x1200, the overlay plane is expected to not be seen.
+However, with the introduction of the alpha property on the primary plane that doesn’t happen. With
+<code class="docutils literal notranslate"><span class="pre">alpha</span></code> = 10000 (out of 65535), faint vertical color bars can be seen on the display, along with
+diagonal color bars as solid.</p>
+<ul class="simple">
+<li><p><strong>Scaling</strong></p></li>
+</ul>
+<p>Scale the frame smaller or larger.</p>
+<p>This feature will only work for plane IDs that map to the VID pipeline of tidss (and not the VIDL
+pipe). Follow this simple rule of thumb to find out if a particular DRM plane is VID or not. DSS-7
+has 4 pipelines in total, while DSS7-UL has 2 pipelines. The VIDL pipelines get enumerated as DRM
+planes first, and then the VID pipes do. Therefore</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For DSS7-L with 4 pipelines and DRM plane IDs 31, 41, 51, and 58, the DRM planes 51 and 58
+are VID pipelines and thus have scaling support.</p></li>
+<li><p>For DSS7-UL with 2 pipelines and DRM plane IDs 31, and 41, the DRM plane 41 is the VID
+pipeline and thus have scaling support.</p></li>
+</ul>
+</div></blockquote>
+<p>The following example was run on DSS7-UL and hence the pipe with scaling capability is DRM plane 41.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>modetest<span class="w"> </span>-M<span class="w"> </span>tidss<span class="w"> </span>-s<span class="w"> </span><span class="m">40</span>@38:1920x1200@AR24<span class="w"> </span>-P<span class="w"> </span><span class="m">41</span>@38:400x400*2
+<span class="go">setting mode 1920x1200-60.00Hz on connectors 40, crtc 38</span>
+<span class="go">testing 400x400@XR24 overlay plane 41</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">*2</span></code> at the end of <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">41&#64;38:400x400*2</span></code> is the scaling factor.</p>
+</div>
+</div>
+<div class="section" id="buffers">
+<h3><span class="section-number">3.2.2.6.6.5. </span>Buffers<a class="headerlink" href="#buffers" title="Permalink to this headline">¶</a></h3>
+<p>The buffers used for tidss can be either allocated from tidss or imported from some other driver (dmabuf import). All buffers must be contiguous.</p>
+<p>tidss supports generic DRM dumb buffers. Dumb buffers are allocated using the generic DRM_IOCTL_MODE_CREATE_DUMB ioctl.</p>
+</div>
+<div class="section" id="fbdev-emulation-dev-fb0">
+<h3><span class="section-number">3.2.2.6.6.6. </span>fbdev emulation (/dev/fb0)<a class="headerlink" href="#fbdev-emulation-dev-fb0" title="Permalink to this headline">¶</a></h3>
+<p>DRM framework supports “emulating” the legacy fbdev API. This feature can be enabled or disabled in the kernel config (CONFIG_DRM_FBDEV_EMULATION). The fbdev emulation offers only basic feature set and the fb is shown on the first display. Fbdev emulation is mainly intended for kernel console or boot splash screens.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../MCAN.html" class="btn btn-neutral float-left" title="3.2.2.5. MCAN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../GPIO.html" class="btn btn-neutral float-right" title="3.2.2.7. GPIO" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2023</a>, Texas Instruments Incorporated. All rights reserved. <br/>
+      <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
