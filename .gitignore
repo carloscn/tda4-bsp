@@ -6,3 +6,5 @@ optee_*
 ti-*
 trusted-firmware-a
 .vscode
+util-linux
+mbedtls

@@ -21,7 +21,7 @@ export OPENSSL_EXPORT==${PWD}/openssl/out
 
 pushd optee_test
 make clean
-make ARCH=arm64 CC="-L${OPENSSL_EXPORT}/lib -I${OPENSSL_EXPORT}/include ${ARCH64_CROSS_COMPILE}gcc "
+make ARCH=arm64 CC="-L${OPENSSL_EXPORT}/lib -I${OPENSSL_EXPORT}/include ${ARCH64_CROSS_COMPILE}gcc " -j16
 popd
 
 echo "[INFO] Build optee_test done!"
