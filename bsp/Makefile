@@ -1,10 +1,12 @@
 include build.cfg
 export $(shell sed 's/=.*//' build.cfg)
 
-.PHONY: all clean distclean atf linux optee-os optee-client openssl mbedtls optee-test uboot
+.PHONY: all clean distclean atf linux optee-os optee-client openssl mbedtls optee-test uboot firmware
 
-all: atf linux optee-os optee-client openssl mbedtls optee-test linux uboot
-
+all: atf linux optee-os optee-client openssl mbedtls optee-test optee-example linux uboot
+docker_all:
+	sudo chmod a+rw .
+	make all
 # Prepare dependencies
 prepare:
 	sudo apt install libgnutls28-dev
@@ -24,11 +26,7 @@ optee-os:
 
 optee-client: optee-os
 	@echo "[INFO] Building OP-TEE Client..."
-	if [ -f optee_os/out/arm-plat-k3/core/tee-pager_v2.bin ]; then \
-		bash build_optee_client.sh; \
-	else \
-		echo "OP-TEE OS needs to be built first."; exit 1; \
-	fi
+	bash build_optee_client.sh
 
 openssl:
 	@echo "[INFO] Building OpenSSL..."
@@ -40,19 +38,14 @@ mbedtls:
 
 optee-test:
 	@echo "[INFO] Building OP-TEE Test..."
-	bash build_optee_test.sh; \
+	bash build_optee_test.sh
 
 optee-example:
 	bash build_optee_example.sh
 
 uboot: atf optee-os
 	@echo "[INFO] Building U-Boot..."
-	if [ -f trusted-firmware-a/build/k3/j784s4/release/bl31.bin ] && \
-	   [ -f optee_os/out/arm-plat-k3/core/tee-pager_v2.bin ]; then \
-		bash build_uboot.sh; \
-	else \
-		echo "ATF or OP-TEE OS is not built correctly."; exit 1; \
-	fi
+	bash build_uboot.sh
 
 # Additional targets
 kernel:
@@ -89,7 +82,7 @@ clean:
 
 distclean: clean
 	@echo "[INFO] Performing distclean..."
-	rm -rf optee_os optee_client optee_test
+	rm -rf optee_os optee_client optee_test optee_examples
 	rm -rf ti-linux-kernel trusted-firmware-a ti-u-boot
-	rm -rf openssl mbedtls
+	rm -rf openssl mbedtls util-linux
 	rm -rf *.tar.gz *.bin

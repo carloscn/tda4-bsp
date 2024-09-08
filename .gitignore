@@ -8,3 +8,5 @@ trusted-firmware-a
 .vscode
 util-linux
 mbedtls
+ti-linux-firmware
+ti-processor-sdk-linux-rt-j7-evm-08_06_01_02-Linux-x86-Install.bin
