@@ -14,11 +14,11 @@ else
     exit -1
 fi
 
-export CC=${ARCH64_CROSS_COMPILE}gcc
 pushd util-linux
 bash autogen.sh
-CC=${ARCH64_CROSS_COMPILE}gcc ./configure --host=aarch64-none-linux-gnu --prefix=${PWD}/out --without-ncures
-make uuidd -j8
+CC=${ARCH64_CROSS_COMPILE}gcc ./configure --host=aarch64-linux-gnu --prefix=${PWD}/out \
+        --disable-all-programs --enable-libuuid
+make -j16
 make install
 popd
 
@@ -34,9 +34,9 @@ else
     exit -1
 fi
 
-
+UTILS_OUT=${PWD}/util-linux/out
 pushd optee_client
-make CC="-L${PWD}/../util-linux/.libs -I${OPENSSL_EXPORT}/include ${ARCH64_CROSS_COMPILE}gcc " CROSS_COMPILE="$ARCH64_CROSS_COMPILE" PLATFORM=k3 CFG_TEE_SUPP_LOG_LEVEL=2 RPMB_EMU=0 CFG_ARM64_core=y PKG_CONFIG=pkg-config
+make CC="${ARCH64_CROSS_COMPILE}gcc -L${UTILS_OUT}/lib -I${UTILS_OUT}/include" CROSS_COMPILE="$ARCH64_CROSS_COMPILE" PLATFORM=k3 CFG_TEE_SUPP_LOG_LEVEL=2 RPMB_EMU=0 CFG_ARM64_core=y PKG_CONFIG=pkg-config
 popd
 
 echo "[INFO] Build optee_client done!"

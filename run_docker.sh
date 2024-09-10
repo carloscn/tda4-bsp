@@ -19,6 +19,9 @@ utils_check_ret() {
 
 DOCKER_TAG=tda4_ubuntu2204_container
 
+# Note, if you use ubuntu 18.04 or 20.04 that the version is lower than your container ubuntu 22.04,
+# the --security-opt seccomp=unconfined should be assigned behind docker run.
+
 if [ -z "$(docker images -q ${DOCKER_TAG})" ]; then
     echo "[INFO] Docker image '${DOCKER_TAG}' not found. Please build_docker.sh first!";
 else
@@ -27,6 +30,7 @@ else
         --cap-add NET_ADMIN \
         --hostname buildserver \
         -it \
+        --security-opt seccomp=unconfined \
         -v ${PWD}/bsp:/home/build/bsp \
         -v ${PWD}/yocto:/home/build/yocto \
         -w /home/build \
