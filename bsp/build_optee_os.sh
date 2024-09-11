@@ -14,11 +14,17 @@ else
 fi
 
 pushd optee_os
-make CROSS_COMPILE=${ARCH32_CROSS_COMPILE} \
+make clean
+make distclean
+make all -j16 \
+     CROSS_COMPILE=${ARCH32_CROSS_COMPILE} \
      CROSS_COMPILE64=${ARCH64_CROSS_COMPILE} \
-     PLATFORM=k3-j721e CFG_ARM64_core=y \
+     PLATFORM=k3-j721e \
+     CFG_ARM64_core=y \
+     CFG_TEE_BENCHMARK=y \
      CFG_TEE_CORE_LOG_LEVEL=2 \
-     CFG_TEE_CORE_DEBUG=y -j16
+     CFG_TEE_CORE_DEBUG=y \
+     CFG_CORE_DUMP_OOM=y
 popd
 
 echo "[INFO] Build optee_os done!"

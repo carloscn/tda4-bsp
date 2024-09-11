@@ -1,0 +1,29 @@
+user_ta_header.o: \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/src/user_ta_header.c \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/compiler.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/config.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/malloc.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/pta_stats.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/stdint.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/limits.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/tee_api_types.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/inttypes.h \
+ /opt/cross-compile/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu/lib/gcc/aarch64-none-linux-gnu/11.3.1/include/stdbool.h \
+ /opt/cross-compile/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu/lib/gcc/aarch64-none-linux-gnu/11.3.1/include/stddef.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/tee_api_defines.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/types_ext.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/unistd.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/tee_ta_api.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/tee_internal_api.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/trace.h \
+ /opt/cross-compile/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu/lib/gcc/aarch64-none-linux-gnu/11.3.1/include/stdarg.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/trace_levels.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/tee_api_compat.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/tee_internal_api_extensions.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/stdio.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/tee_api_defines_extensions.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/user_ta_header.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/util.h \
+ user_ta_header_defines.h include/test_performance_ta.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/utee_syscalls.h \
+ /home/build/bsp/optee_os/out/arm-plat-k3/export-ta_arm64/include/utee_types.h
