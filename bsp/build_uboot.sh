@@ -14,13 +14,13 @@ else
     exit -1
 fi
 
-export BL31=${PWD}/trusted-firmware-a/build/k3/j784s4/release/bl31.bin
+export BL31=${PWD}/trusted-firmware-a/build/k3/generic/release/bl31.bin
 export TEE=${PWD}/optee_os/out/arm-plat-k3/core/tee-pager_v2.bin
-export FIRMWARE_DIR=${PWD}/firmware
+export FIRMWARE_DIR=${PWD}/ti-linux-firmware
 
 pushd ti-u-boot
 make clean
-make ARCH=arm CROSS_COMPILE=${CROSS_COMPILE} j784s4_evm_a72_defconfig
+make ARCH=arm CROSS_COMPILE=${CROSS_COMPILE} j721e_evm_a72_defconfig && \
 make ARCH=arm \
      CROSS_COMPILE="$CROSS_COMPILE" \
      BL31=${BL31} \

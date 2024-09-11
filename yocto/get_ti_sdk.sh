@@ -41,9 +41,9 @@ function utils_wget_download()
 }
 
 utils_wget_download \
-    https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-ymP4CVsxJr/08.06.01.02/ti-processor-sdk-linux-rt-j7-evm-08_06_01_02-Linux-x86-Install.bin \
-    || utils_check_ret $? "wget the ti-processor-sdk-linux-rt-j7-evm-08_06_01_02-Linux-x86-Install.bin"
+    https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-U6uMjOroyO/09.00.00.08/ti-processor-sdk-linux-adas-j721e-evm-09_00_00_08-Linux-x86-Install.bin \
+    || utils_check_ret $? "wget the ti-processor-sdk-linux-adas-j721e-evm-09_00_00_08-Linux-x86-Install.bin"
 
-chmod +x ti-processor-sdk-linux-rt-j7-evm-08_06_01_02-Linux-x86-Install.bin
+chmod +x ti-processor-sdk-linux-adas-j721e-evm-09_00_00_08-Linux-x86-Install.bin
 
-./ti-processor-sdk-linux-rt-j7-evm-08_06_01_02-Linux-x86-Install.bin --prefix . --mode unattended
+./ti-processor-sdk-linux-adas-j721e-evm-09_00_00_08-Linux-x86-Install.bin --prefix . --mode unattended

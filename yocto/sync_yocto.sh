@@ -47,3 +47,5 @@ chmod a+rw -R yocto-build
 pushd yocto-build
 ./oe-layertool-setup.sh -f configs/processor-sdk-analytics/processor-sdk-analytics-09.02.00-config.txt || utils_check_ret  $? "config yocto repo"
 popd
+
+ln -sf docker_build.sh yocto-build/

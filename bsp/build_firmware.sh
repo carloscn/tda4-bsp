@@ -13,9 +13,4 @@ else
     exit -1
 fi
 
-pushd ti-linux-firmware
-make CROSS_COMPILE=${CROSS_COMPILE} ARCH=arm64 defconfig
-make CROSS_COMPILE=${CROSS_COMPILE} ARCH=arm64 -j16
-popd
-
 echo "[INFO] Build ti-linux-firmware done!"

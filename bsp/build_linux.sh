@@ -14,7 +14,7 @@ else
 fi
 
 pushd ti-linux-kernel
-make CROSS_COMPILE=${CROSS_COMPILE} ARCH=arm64 defconfig
+make CROSS_COMPILE=${CROSS_COMPILE} ARCH=arm64 defconfig ti_arm64_prune.config
 make CROSS_COMPILE=${CROSS_COMPILE} ARCH=arm64 -j16
 popd
 

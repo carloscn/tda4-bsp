@@ -16,7 +16,7 @@ fi
 pushd trusted-firmware-a
 git checkout 00f1ec6b8740ccd403e641131e294aabacf2a48b
 make distclean
-make PLAT=k3 TARGET_BOARD=j784s4 SPD=opteed K3_USART=0x8 ARCH=aarch64
+make PLAT=k3 TARGET_BOARD=generic SPD=opteed
 popd
 
 echo "[INFO] Build atf done!"
